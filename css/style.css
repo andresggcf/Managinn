@@ -1,0 +1,294 @@
+body
+{
+  min-height: 100vh;
+  font-family: 'Spartan', sans-serif;
+  color: white;
+}
+
+.OtherScreen
+{
+  display: none !important;
+}
+
+/*
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* Contenedores
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+*/
+.App
+{
+  text-align: center;
+  background-color: #7962f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../img/fondos/Fondo_1.png');
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: calc(10px + 2vmin);
+  
+}
+
+.Registro-Fondo
+{
+  height: 100vh;
+  background-image: url('../img/fondos/FondoRegistro.png');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.Inicio-Fondo
+{
+  height: 100vh;
+  background-image: url('../img/fondos/FondoLogin.png');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.Contenedor-Inicio
+{
+  padding: 0px 80px 0px 80px;
+  margin-bottom: 50px;
+  max-width: 1300px;
+}
+
+.NavBar
+{
+  overflow: hidden;
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+}
+
+.Contenedor-Menu
+{
+  padding: 30px 30px;
+}
+
+.Navegador
+{
+  float: right;
+}
+
+/*
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* Textos
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+*/
+.Texto-Grande
+{
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.Texto-Mediano
+{
+  font-weight: 500;
+}
+
+.Text-Center
+{
+  text-align: center;
+}
+
+.Text-Left
+{
+  text-align: left;
+}
+
+.Parrafo-Pequeño
+{
+  font-weight: 300;
+  font-size: 12pt;
+}
+
+.Parrafo-Extra-Pequeño
+{
+  font-weight: 300;
+  font-size: 10pt;
+}
+
+.Texto-Formulario
+{
+  font-weight: 200;
+  font-size: 8pt;
+  margin-bottom: 1em;
+}
+
+/*
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* Elementos 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+*/
+
+input{
+  border: 0px solid #FFF;
+  border-radius: 4px;
+}
+
+
+.Columna-Registro{
+  height: 100vh;
+  width: 40%;
+  float: right;
+  background-color: #131a40;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.Columna-Inicio
+{
+  height: 100vh;
+  width: 40%;
+  float: right;
+  background-color: #eb5757;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+a:visited{color: #fff;}
+
+.Boton-Principal
+{
+  background-color: #eb5757;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 40px 10px 40px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.Boton-Principal:hover
+{
+  background-color: #f18686;
+  color: #fff;
+  text-decoration: none;
+}
+
+.Boton-Delinieado-Menu
+{
+  color: #fff;
+  border: solid #eb5757;
+  border-radius: 30px;
+  border-width: 2px;
+  transition: 0.3s;
+  font-size: 14px;
+  padding: 15px 30px 10px 30px;
+}
+
+.Boton-Delinieado-Menu:hover
+{
+  color: #fff;
+  text-decoration: none;
+  background-color: #eb5757;
+}
+
+.Boton-Inverso-Menu
+{
+  color: #fff;
+  transition: 0.3s;
+  font-size: 14px;
+  padding: 15px 30px 10px 30px;
+}
+
+.Boton-Inverso-Menu:hover
+{
+  color: #eb5757;
+  text-decoration: none;
+}
+
+.Boton-Submit
+{
+  width: 300px;
+  padding-top: 5px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  height: 60px;
+  border-radius: 50px;
+  font-size: medium;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.Submit-Principal{
+  color: #fff;
+  background-color: #eb5757;
+}
+
+.Submit-Principal:hover
+{
+  color: #eb5757;
+  background-color: #fff ;
+}
+
+.Submit-Secundario{
+  color: #fff;
+  background-color: #131a40;
+}
+
+.Submit-Secundario:hover
+{
+  color: #131a40;
+  background-color: #fff ;
+}
+
+.Enlace-Pequeño-Principal
+{
+  color: #eb5757 !important;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.Enlace-Pequeño-Principal:hover
+{
+  color: #fff !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.Enlace-Pequeño-Secundario
+{
+  color: #131a40 !important;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.Enlace-Pequeño-Secundario:hover
+{
+  color: #fff !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.Form-Field{
+  width: 300px;
+  margin-bottom: 20px;
+  height: 50px;
+  border-radius: 50px;
+  padding-left: 20px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+
+
+@media screen and (max-width: 800px)
+{ 
+  .OtherScreen
+  {
+    display: inherit !important;
+  }
+
+  .Pc-Screen
+  {
+    display: none !important;
+  }
+
+
+}
