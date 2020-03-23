@@ -1,5 +1,5 @@
 <?php
-  include("header.php");
+  require "header.php";
 ?>
 
 <body>
@@ -17,20 +17,35 @@
       <div>
         <p>Boton de google</p> 
         <p class = "Parrafo-Pequeño Text-Center">O crea una cuenta</p>
-        <form>
+        <form action="con_registro.php" method = "post">
           <div>
             <div>
               <p class="Texto-Formulario">Correo electónico</p>
-              <input class = "Form-Field" id="email" placeholder="Correo" type="text"/>
+              <input class = "Form-Field" 
+              name="email_post"
+              placeholder="Correo" 
+              type="email"
+              required/>
             </div>
             <div>
               <p class="Texto-Formulario">Contraseña</p>
-              <input class = "Form-Field"  id="password" placeholder= "Contraseña" type="password"/> 
+              <input class = "Form-Field"  
+              name="password_post"
+              placeholder= "Contraseña" 
+              type="password"
+              required/> 
             </div>
             <div>
-              <input class = "Boton-Submit Submit-Principal"  
-              id="password" 
-              placeholder= "Contraseña" 
+              <p class="Texto-Formulario">Verifica Contraseña</p>
+              <input class = "Form-Field"  
+              name="password_ver_post"
+              placeholder= "Verificar contraseña" 
+              type="password"
+              required/> 
+            </div>
+            <div>
+              <input class = "Boton-Submit Submit-Principal" 
+              name = "Boton-Registro" 
               type="submit"
               value="Registrar"/> 
             </div>
@@ -44,4 +59,4 @@
     </div>
   </div>
 
-<?php	include("footer.php");?>
+<?php	require "footer.php";?>

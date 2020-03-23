@@ -1,4 +1,5 @@
 <?php
+  include('conexion.php');
   include("header.php");
 ?>
 
@@ -17,19 +18,28 @@
       <div>
         <p>Boton de google</p> 
         <p class = "Parrafo-Pequeño Text-Center">O inicia sesión con tu correo</p>
-        <form>
+        <form action="con_inicio.php" method = "post">
           <div>
             <div>
               <p class="Texto-Formulario">Correo electónico</p>
-              <input class = "Form-Field" id="email" placeholder="Correo" type="text"/>
+              <input class="Form-Field" 
+              name="email_post"
+              id="email" 
+              placeholder="Correo" 
+              type="email"/>
             </div>
             <div>
               <p class="Texto-Formulario">Contraseña</p>
-              <input class = "Form-Field"  id="password" placeholder= "Contraseña" type="password"/> 
+              <input class="Form-Field" 
+              name="password_post" 
+              id="password" 
+              placeholder= "Contraseña" 
+              type="password"/> 
             </div>
             <div>
               <input class = "Boton-Submit Submit-Secundario"  
-              id="password" 
+              name="Boton-inicio"
+              id="submit" 
               placeholder= "Contraseña" 
               type="submit"
               value="Iniciar sesión"/> 
@@ -40,6 +50,17 @@
             </p>
           </div>
         </form>
+
+        <?php
+        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+        if(strpos($url,"psw=wrong")==true)
+        {
+          $message = "Usuario no existe.\\nIntenta de nuevo.";
+          echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+        ?>
+
       </div>
     </div>
   </div>
