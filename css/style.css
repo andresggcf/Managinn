@@ -1,7 +1,7 @@
 body
 {
   min-height: 100vh;
-  font-family: 'Spartan', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   color: white;
 }
 
@@ -234,7 +234,7 @@ a:visited{color: #fff;}
   color: #fff;
   font-size: 14px;
   font-weight: 600;
-  padding: 15px 40px 10px 40px;
+  padding: 10px 40px 10px 40px;
   border-radius: 30px;
   transition: 0.3s;
 }
@@ -254,7 +254,7 @@ a:visited{color: #fff;}
   border-width: 2px;
   transition: 0.3s;
   font-size: 14px;
-  padding: 15px 30px 10px 30px;
+  padding: 10px 30px 10px 30px;
 }
 
 .Boton-Delinieado-Menu:hover
@@ -301,6 +301,19 @@ a:visited{color: #fff;}
   font-size: medium;
   font-weight: 500;
   transition: 0.3s;
+}
+
+.Boton-Google
+{
+  background-image: url('../img/iconos/Boton_Google.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-transform: none !important;
+  font-family: 'DM Sans' !important;
+  width: 300px;
+  height: 50px;
+  border-radius: 30px !important;
+  margin-bottom: 30px;
 }
 
 .Submit-Principal{

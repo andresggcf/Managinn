@@ -15,7 +15,7 @@
   <div class="Registro-Fondo">
     <div class="Columna-Registro"> 
       <div>
-        <p>Boton de google</p> 
+        <button class = "Boton-Google"></button> 
         <p class = "Parrafo-Pequeño Text-Center">O crea una cuenta</p>
         <form action="con_registro.php" method = "post">
           <div>
@@ -49,7 +49,7 @@
               type="submit"
               value="Registrar"/> 
             </div>
-            <p class="Parrafo-Extra-Pequeño Text-Center">¿No tienes una cuenta? 
+            <p class="Parrafo-Extra-Pequeño Text-Center">¿Ya tienes una cuenta? 
                 <a href="inicio.php"
                 class = "Enlace-Pequeño-Principal">Inicia Sesión</a>
             </p>

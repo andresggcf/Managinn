@@ -16,7 +16,7 @@
   <div class="Inicio-Fondo">
     <div class="Columna-Inicio"> 
       <div>
-        <p>Boton de google</p> 
+        <button class = "Boton-Google"></button> 
         <p class = "Parrafo-Pequeño Text-Center">O inicia sesión con tu correo</p>
         <form action="con_inicio.php" method = "post">
           <div>
