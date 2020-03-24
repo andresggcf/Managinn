@@ -26,7 +26,9 @@ if(isset($_POST['Boton-inicio']))
     else
     {
       session_start();
-      $_SESSION['usuario'] = $correo;
+      $_SESSION['email_post'] = $correo;
+      $_SESSION['name_post'] = $arregloQuery['nombre'];
+      $_SESSION['role_post'] = $arregloQuery['rol'];
       header("Location: perfil.php?login=sucess");
       exit();
     }

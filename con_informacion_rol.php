@@ -9,16 +9,12 @@ if(isset($_POST['Boton-Finalizar']))
 
   $correo = $_SESSION['email_post'];
 
-  $query_ver = "SELECT * FROM usuarios WHERE correo = '$correo'";
-
-  $resultado = mysqli_query($db, $query_ver);
-  $checkeo = mysqli_fetch_assoc($resultado);
-
-
-  $query_actualizacion = "UPDATE usuarios SET rol = '$rol'
+  $query_rol = "UPDATE usuarios SET rol = '$rol'
   WHERE usuarios.correo = '$correo'";
 
-  mysqli_query($db, $query_actualizacion);
+  echo $query_rol;
+
+  mysqli_query($db, $query_rol);
 
   $_SESSION['role_post'] = $rol;
 
