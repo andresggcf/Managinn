@@ -12,11 +12,9 @@ if(isset($_POST['Boton-Finalizar']))
   $query_rol = "UPDATE usuarios SET rol = '$rol'
   WHERE usuarios.correo = '$correo'";
 
-  echo $query_rol;
-
   mysqli_query($db, $query_rol);
 
   $_SESSION['role_post'] = $rol;
 
-  header ('location: perfil.php');
+  header ('location:bienvenida.php');
 }

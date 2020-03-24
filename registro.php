@@ -55,6 +55,23 @@
             </p>
           </div>
         </form>
+
+        <?php
+        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+        if(strpos($url,"psw=nomatch")==true)
+        {
+          $message = "Las claves no coinciden.\\nIntenta de nuevo.";
+          echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+
+        else if (strpos($url,"user=exists")==true)
+        {
+          $message = "El usuario ya existe.\\nVe a iniciar sesión.";
+          echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+        ?>
+
       </div>
     </div>
   </div>

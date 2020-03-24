@@ -10,7 +10,7 @@ if(isset($_POST['Boton-Registro']))
   //si las claves no coinciden
   if($clave !== $claveVer)
   {
-    header("Location: registro.php?error=passwordnomatch");
+    header("Location: registro.php?psw=nomatch");
     exit();
   }
 
@@ -24,7 +24,7 @@ if(isset($_POST['Boton-Registro']))
 
     if($correo_checkeo['correo'] === $correo)
     {
-      header("Location: registro.php?error=userexists");
+      header("Location: registro.php?user=exists");
       exit();
     }
 

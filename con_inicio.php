@@ -19,7 +19,7 @@ if(isset($_POST['Boton-inicio']))
     $clave_encript = md5($clave);
     if($clave_encript != $arregloQuery['clave'])
     {
-      header("Location: informacion.php?psw=wrong");
+      header("Location: inicio.php?psw=wrong");
       exit();
     }
 
@@ -36,7 +36,7 @@ if(isset($_POST['Boton-inicio']))
 
   else
   {
-    header("Location: index.php");
+    header("Location: inicio.php?user=noexiste");
     exit();
   }
 }

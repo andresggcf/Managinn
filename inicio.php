@@ -56,6 +56,12 @@
 
         if(strpos($url,"psw=wrong")==true)
         {
+          $message = "Clave errada\\nIntenta de nuevo.";
+          echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+
+        else if (strpos($url,"user=noexiste")==true)
+        {
           $message = "Usuario no existe.\\nIntenta de nuevo.";
           echo "<script type='text/javascript'>alert('$message');</script>";
         }

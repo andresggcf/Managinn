@@ -41,7 +41,8 @@ body
   background-position: 50% 50%;
 }
 
-.RegDatos-Fondo{
+.RegDatos-Fondo
+{
   height: 100vh;
   background-image: url('../img/fondos/FondoDatos.png');
   background-size: cover;
@@ -50,6 +51,14 @@ body
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.Bienvenida-Fondo
+{
+  height: 100vh;
+  background-image: url('../img/fondos/FondoBienvenida.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .Caja-Texto{
@@ -106,6 +115,13 @@ body
   float: right;
 }
 
+.Col-2
+{
+  width: 50%;
+  height: 100vh;
+  padding: 0px 15px;
+}
+
 /*
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 * Textos
@@ -142,6 +158,11 @@ body
 {
   font-weight: 300;
   font-size: 10pt;
+}
+
+.Parrafo-Bienvenida
+{
+  margin-bottom: 50px;
 }
 
 .Texto-Formulario
@@ -220,8 +241,8 @@ a:visited{color: #fff;}
 
 .Boton-Principal:hover
 {
-  background-color: #f18686;
-  color: #fff;
+  background-color: #fff;
+  color: #eb5757;
   text-decoration: none;
 }
 
@@ -291,6 +312,18 @@ a:visited{color: #fff;}
 {
   color: #eb5757;
   background-color: #fff ;
+}
+
+.Submit-Inverso
+{
+  color: #eb5757 !important;
+  background-color: #fff ;
+}
+
+.Submit-Inverso:hover
+{
+  color: #fff !important;
+  background-color: #eb5757;
 }
 
 .Submit-Secundario{
