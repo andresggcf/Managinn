@@ -1,8 +1,4 @@
 <?php
-
-/*conectar la base de datos de mySQL con la siguiente funcion
-parametros: servidor, usuario, clave, base de datos*/
-  //include("conexion.php");
   include("header.php");
 ?>
 

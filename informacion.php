@@ -14,12 +14,11 @@ include("header.php");
 
   <div class="RegDatos-Fondo"> 
     <div class="Caja-Texto">
-      <!--<h5><strong> <?php /*echo $_SESSION['email_post']; */?></strong></h5>-->
       <div class = "Modal-1">
         <h2 class="Titulo Text-Center">¡Hola! Déjanos conocerte</h2>
         <p class="Subtitulo Text-Center">Cuéntanos sobre ti y tu trabajo.</p>
 
-        <form action="" method = "post">
+        <form action="con_informacion.php" method = "post">
 
           <div class="Modal-Centro">
 
@@ -39,12 +38,11 @@ include("header.php");
               placeholder= "Nombre de la compañía" 
               type="text"
               required/> 
-             </div>
+            </div>
 
-             <div>
+            <div>
               <input class = "Boton-Submit-Pequeño Submit-Principal Derecha" 
-              name = "Boton-Registro" 
-              placeholder= "Contraseña" 
+              name = "Boton-Siguiente" 
               type="submit"
               value="Siguiente"/> 
             </div>
@@ -54,8 +52,6 @@ include("header.php");
       </div>
     </div>
   </div>
-  <button><a href = "index.php?logout='1'">Salir</a></button>
-
 
 <?php	include("footer.php");?>
 

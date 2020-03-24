@@ -27,7 +27,7 @@ if(isset($_POST['Boton-inicio']))
     {
       session_start();
       $_SESSION['usuario'] = $correo;
-      header("Location: informacion.php?login=sucess");
+      header("Location: perfil.php?login=sucess");
       exit();
     }
   }

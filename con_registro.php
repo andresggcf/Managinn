@@ -26,13 +26,12 @@ if(isset($_POST['Boton-Registro']))
     {
       header("Location: registro.php?error=userexists");
       exit();
-      array_push($error, "Correo ya está registrado");
     }
 
     //registrar el usuario
     else
     {
-
+      session_start();
       //encriptamos la clave
       $clave_md5 = md5($clave);
 

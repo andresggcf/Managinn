@@ -10,6 +10,7 @@ body
   display: none !important;
 }
 
+
 /*
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 * Contenedores
@@ -301,6 +302,22 @@ a:visited{color: #fff;}
 {
   color: #131a40;
   background-color: #fff ;
+}
+
+.Submit-Simple{
+  color:  #eb5757;
+  background-color: #131a40;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+
+.Submit-Simple:hover
+{
+  color: #fff;
+  text-decoration: none;
 }
 
 .Enlace-Pequeño-Principal
