@@ -19,29 +19,29 @@
         <p class = "Parrafo-Pequeño Text-Center">O crea una cuenta</p>
         <form action="con_registro.php" method = "post">
           <div>
-            <div>
-              <p class="Texto-Formulario">Correo electónico</p>
+            <div style = "position: relative;">
               <input class = "Form-Field" 
               name="email_post"
-              placeholder="Correo" 
-              type="email"
+              placeholder="" 
+              type="text"
               required/>
+              <label class="Label-Form Label-Blanco">Correo Electrónico</label>
             </div>
-            <div>
-              <p class="Texto-Formulario">Contraseña</p>
+            <div style = "position: relative;">
               <input class = "Form-Field"  
               name="password_post"
-              placeholder= "Contraseña" 
+              placeholder= "" 
               type="password"
               required/> 
+              <label class="Label-Form Label-Blanco">Contraseña</label>
             </div>
-            <div>
-              <p class="Texto-Formulario">Verifica Contraseña</p>
+            <div style = "position: relative;">
               <input class = "Form-Field"  
               name="password_ver_post"
-              placeholder= "Verificar contraseña" 
+              placeholder= "" 
               type="password"
               required/> 
+              <label class="Label-Form Label-Blanco">Verifica contraseña</label>
             </div>
             <div>
               <input class = "Boton-Submit Submit-Principal" 

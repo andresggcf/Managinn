@@ -17,30 +17,34 @@
     <div class="Columna-Inicio"> 
       <div>
         <button class = "Boton-Google"></button> 
-        <p class = "Parrafo-Pequeño Text-Center">O inicia sesión con tu correo</p>
+        <p class = "Parrafo-Pequeño Text-Center"
+        style = "margin-bottom: 30px">O inicia sesión con tu correo</p>
         <form action="con_inicio.php" method = "post">
           <div>
-            <div>
-              <p class="Texto-Formulario">Correo electónico</p>
+            <div style = "position: relative;">
               <input class="Form-Field" 
               name="email_post"
               id="email" 
-              placeholder="Correo" 
-              type="email"/>
+              placeholder="" 
+              type="text"
+              required/>
+              <label class="Label-Form Label-Blanco">Correo Electrónico</label>
             </div>
-            <div>
-              <p class="Texto-Formulario">Contraseña</p>
+            <div style = "position: relative;">
               <input class="Form-Field" 
               name="password_post" 
+              autocomplete="off"
               id="password" 
-              placeholder= "Contraseña" 
-              type="password"/> 
+              placeholder= "" 
+              type="password"
+              required/> 
+              <label class="Label-Form Label-Blanco">Contraseña</label>
             </div>
             <div>
               <input class = "Boton-Submit Submit-Secundario"  
               name="Boton-inicio"
               id="submit" 
-              placeholder= "Contraseña" 
+              placeholder= "" 
               type="submit"
               value="Iniciar sesión"/> 
             </div>

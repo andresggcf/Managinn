@@ -13,6 +13,15 @@ body
   /* Rules below not implemented in browsers yet */
   -o-user-select: none;
   user-select: none;
+
+  
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none !important;
 }
 
 .Other-Screen
@@ -104,7 +113,9 @@ body
   align-items: center;
   justify-content: center;
   box-shadow: 0px 0px 35px rgba(122, 122, 122, 0.2);
+  display: none;
 }
+
 
 .Modal-Centro
 {
@@ -214,6 +225,38 @@ body
   margin-bottom: 2px !important;
 }
 
+.Texto-Progreso
+{
+  margin-top: 20px;
+}
+
+.progreso-actual
+{
+  color: #eb5757;
+  font-weight: 800;
+}
+
+.progreso-pasado
+{
+  color: #eb5757;
+}
+
+.circulo-actual
+{
+  position: absolute;
+  left: 42%;
+  top: -15px;
+  width: 30px;
+  height: 30px;
+  background-color: #eb5757;
+  border-radius: 30px;
+}
+
+.circulo-pasado
+{
+
+}
+
 .Texto-Rol-Perfil
 {
   font-size: 10pt !important;
@@ -242,11 +285,79 @@ body
   color: white !important;
 }
 
+.Gris
+{
+  color: #8d8d8d !important
+}
+
+.Label-Form
+{
+  position: absolute;
+  top: 12px;
+  left: 20px !important;
+  transition: 0.5s;
+  color: #c2c2c2;
+  pointer-events: none;
+  font-size: 12pt;
+  font-weight: 500;
+}
+
+.Label-Focus
+{
+  top: -20px;
+  left: 5px !important;
+  color: #131a40;
+  font-size: 8pt;
+}
+
+
 /*
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 * Elementos 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url('../img/iconos/Icono-Calendario.svg') no-repeat;
+  width: 18px;
+  height: 25px;
+  border-width: thin;
+  margin-right: 15px;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+}
+
+
+ul
+{
+  text-align: center;
+}
+
+ul li
+{
+  position: relative;
+  align-items: center;
+  display: inline-block;
+  width: 200px;
+}
+
+.Circulo-Progreso
+{
+  position: absolute;
+  left: 45%;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #8d8d8d;
+  border-radius: 20px;
+}
+
 
 .Derecha
 {
@@ -258,11 +369,30 @@ body
 }
 
 
-input{
+input, textarea
+{
   border: 0px solid #FFF;
   border-radius: 4px;
 }
 
+textarea
+{
+  resize: none !important;
+  padding-top: 13px;
+}
+
+.Area-Texto-Crear
+{
+  height: 130px !important;
+  border-radius: 20px !important;
+}
+
+.Caja-Centro
+{
+  position: absolute;
+  left: 49%;
+  margin-top: 20px;
+}
 
 .Columna-Registro{
   background-color: #131a40;
@@ -349,7 +479,7 @@ a:visited{color: #fff;}
   padding: 15px 30px 15px 30px;
   border-radius: 30px;
   margin-left: 140px;
-  margin-top: 90px;
+  margin-top: 0px;
   transition: 0.3s;
   border: #fff;
 }
@@ -358,6 +488,18 @@ a:visited{color: #fff;}
 {
   background-color: #eb575762;
   border: #fff !important;
+}
+
+.Boton-Creacion-Proyecto
+{
+  margin-left: 0px !important;
+  float: right;
+}
+
+.Boton-Cancel-Creacion-Proyecto
+{
+  margin-left: 0px !important;
+  float: left;
 }
 
 
@@ -385,9 +527,8 @@ a:visited{color: #fff;}
 .Boton-Submit
 {
   width: 300px;
-  padding-top: 5px;
   margin-bottom: 20px;
-  margin-top: 40px;
+  margin-top: 20px;
   height: 60px;
   border-radius: 50px;
   font-size: medium;
@@ -397,7 +538,7 @@ a:visited{color: #fff;}
 
 .Boton-Submit-Pequeño
 {
-  width: 150px;
+  width: 140px;
   padding-top: 2px;
   margin-top: 20px;
   height: 60px;
@@ -493,7 +634,7 @@ a:visited{color: #fff;}
 
 .Submit-Simple{
   color:  #eb5757;
-  background-color: #131a40;
+  background-color: #131a4000;
   border: none;
   align-items: center;
   justify-content: center;
@@ -547,7 +688,27 @@ a:visited{color: #fff;}
   text-decoration: none;
 }
 
-.Form-Field{
+.Select-Campo-Equipo
+{
+  position: relative;
+  width: 180px;
+  float: right;
+  height: 50px;
+  padding: 13px 10px 0px 20px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 20px rgba(53, 53, 53, 0.2);
+}
+
+.Select-Equipo
+{
+  font-size: medium ;
+  font-weight: 500 ;
+  border: none;
+  width:100%;
+  background-color: #fff;
+}
+.Form-Field
+{
   width: 300px;
   margin-bottom: 10px;
   height: 50px;
@@ -555,8 +716,29 @@ a:visited{color: #fff;}
   padding-left: 20px;
   font-size: medium;
   font-weight: 500;
+  background-color: #fff !important;
+  margin-bottom: 25px;
+}
+/* Borrar si es necesario*/
+.Form-Field:focus ~ .Label-Form,
+.Form-Field:valid ~ .Label-Form
+{
+  top: -20px;
+  left: 5px !important;
+  color: #131a40;
+  font-size: 8pt;
 }
 
+.Form-Field:focus ~ .Label-Blanco,
+.Form-Field:valid ~ .Label-Blanco
+{
+  color: #ffffff;
+}
+
+.Input-Fondo-Blanco
+{
+  box-shadow: 0px 0px 20px rgba(53, 53, 53, 0.2);
+}
 
 
 @media screen and (max-width: 800px)

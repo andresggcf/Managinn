@@ -50,22 +50,19 @@
                
               </button>
               <div class="dropdown-menu">
-                <!-- Dropdown menu links -->
+                <!-- Dropdown menu -->
                 <a style="color:#eb5757; margin-left: 15px" href = "index.php?logout='1'">Cerrar Sesión</a>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>  
-
   </div>
 
   <div class="Blanco-Fondo"> 
-
-    <!--Crear un proyecto -->
-    <div>
+    <!--Ventana cuando no hay proyectos-->
+    <div id = "Sin-Proyecto">
       <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Primero, crea un proyecto.</h3>
       <p class="Subtitulo Text-Center Negro">Tu sistema de Innovación está conformado por <br>diversos
         factores, uno de ellos es tu portafolio de proyectos.
@@ -77,11 +74,87 @@
       style="margin:10px 0px 60px 55px;">
 
       <div>
-        <a class = "Boton-a-Principal-Fondo-Blanco" 
+        <button class = "Boton-a-Principal-Fondo-Blanco" 
               name = "Boton-Proyecto" 
-               >Crear un Proyecto</a>
+              id = "Boton-Crear-Proyecto"
+               >Crear un Proyecto</button>
+      </div>
+    </div>
+
+    <!--Ventana para crear proyectos-->
+    <div id="Crear-Proyecto" class = "Caja-Texto-Blanco">
+
+      <div class="Progreso-Proyecto">
+          <ul>
+            <li class = "progreso-actual">
+              <div class ="circulo-actual"></div>
+              <p class = "Texto-Progreso">Datos</p>
+            </li>
+            <li class = "Gris">
+              <div class ="Circulo-Progreso"></div>
+              <p class = "Texto-Progreso">Equipo</p>
+            </li>
+            <li class = "Gris">
+              <div class ="Circulo-Progreso"></div>
+              <p class = "Texto-Progreso">Recursos</p>
+            </li>
+          </ul>
       </div>
 
+      <div id = "Creacion1">
+        <div>
+          <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Datos básicos del proyecto</h3>
+          <p class="Subtitulo Text-Center Negro">Queremos conocer tu proyecto, cuéntanos sobre él.
+          </p>
+          <div class = "Caja-Centro">
+            <form class ="FormCrear1" action="con_crearProyecto.php" method = "post">
+              <div>
+                <div style = "position: relative;">
+                  <input class="Form-Field Input-Fondo-Blanco" 
+                  autocomplete="off"
+                  name="proyecto_post"
+                  id="proyecto" 
+                  placeholder="" 
+                  type="text"
+                  required/>
+                  <label class="Label-Form">Nombre del Proyecto</label>
+                </div>
+                <div style = "position: relative;">
+                  <input class="Form-Field Input-Fondo-Blanco" 
+                  autocomplete="off"
+                  name="fecha_post" 
+                  id="fecha" 
+                  placeholder= "" 
+                  type="date"
+                  required/> 
+                  <label class="Label-Form Label-Focus">Fecha de Inicio</label>
+                </div>
+                <div style = "position: relative;">
+                  <textarea class="Form-Field Input-Fondo-Blanco Area-Texto-Crear" 
+                  autocomplete="off"
+                  name="descripcion_post" 
+                  id="descripcion" 
+                  placeholder= "" 
+                  type="text"
+                  required></textarea> 
+                  <label class="Label-Form">Descripción Breve</label>
+                </div>
+                <div>
+                <button class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"  
+                  name="Boton-inicio"
+                  id="Boton-Cancelar-Creacion" 
+                  >Cancelar</button>  
+                  <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
+                  type="submit" 
+                  name="Boton-Continuar"
+                  value="Continuar"
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
    <!-- Si ya hay un proyecto:
@@ -90,6 +163,22 @@
 
     -->
   </div>
+
+
+
+  <script type="text/javascript">
+
+    /* Al hacer clic en el botón de crear proyecto */
+    document.getElementById('Boton-Crear-Proyecto').onclick = function(){
+      document.getElementById('Sin-Proyecto').style.display = 'none';
+      document.getElementById('Crear-Proyecto').style.display = 'block';
+    }
+
+    document.getElementById('Boton-Cancelar-Creacion').onclick = function(){
+      document.getElementById('Sin-Proyecto').style.display = 'block';
+      document.getElementById('Crear-Proyecto').style.display = 'none';
+    }
+  </script>
 
 
 <?php
