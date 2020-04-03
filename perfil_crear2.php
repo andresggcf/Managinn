@@ -73,27 +73,34 @@
     <!--Ventana para crear proyectos-->
     <div id="Crear-Proyecto" class = "Caja-Texto-Blanco" style = "display:block">
 
+      <div class="progress Linea-Progreso">
+        <div class="progress-bar" role="progressbar" aria-valuenow="70"
+          aria-valuemin="0" aria-valuemax="100" style="width:100%">
+      </div>
+      </div>  
       <div class="Progreso-Proyecto">
           <ul>
             <li class = "progreso-pasado">
-              <div class ="circulo-pasado"></div>
+              <div class ="circulo-pasado"><img src="img/iconos/Check-Icon.png" 
+              style="height: 10px; margin-top: -5px;"></div>
               <p class = "Texto-Progreso">Datos</p>
+            </li>
+            <li class = "progreso-pasado">
+              <div class ="circulo-pasado"><img src="img/iconos/Check-Icon.png" 
+              style="height: 10px; margin-top: -5px;"></div>
+              <p class = "Texto-Progreso">Equipo</p>
             </li>
             <li class = "progreso-actual">
               <div class ="circulo-actual"></div>
-              <p class = "Texto-Progreso">Equipo</p>
-            </li>
-            <li class = "Gris">
-              <div class ="Circulo-Progreso"></div>
-              <p class = "Texto-Progreso">Recursos</p>
+              <p class = "Texto-Progreso" style="padding-top:15px;">Recursos</p>
             </li>
           </ul>
       </div>
 
       <div id = "Creacion1">
         <div>
-          <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Invitar al equipo</h3>
-          <p class="Subtitulo Text-Center Negro">Manda una invitación a los integrantes que deseas en este proyecto.
+          <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Asignar recursos</h3>
+          <p class="Subtitulo Text-Center Negro">Registra los recursos iniciales de este proyecto.
           </p>
           <div style="width: 500px; margin-top: 40px;">
             <form class ="FormCrear1" action="perfil_crear2.php" method = "post" id="form-equipo">

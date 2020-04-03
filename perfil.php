@@ -84,17 +84,22 @@
     <!--Ventana para crear proyectos-->
     <div id="Crear-Proyecto" class = "Caja-Texto-Blanco">
 
+    <div class="progress Linea-Progreso">
+        <div class="progress-bar" role="progressbar" aria-valuenow="70"
+          aria-valuemin="0" aria-valuemax="100" style="width:0%">
+      </div>
+      </div>  
       <div class="Progreso-Proyecto">
           <ul>
             <li class = "progreso-actual">
               <div class ="circulo-actual"></div>
-              <p class = "Texto-Progreso">Datos</p>
+              <p class = "Texto-Progreso" style="padding-top:15px;">Datos</p>
             </li>
-            <li class = "Gris">
+            <li class = "progreso-no">
               <div class ="Circulo-Progreso"></div>
               <p class = "Texto-Progreso">Equipo</p>
             </li>
-            <li class = "Gris">
+            <li class = "progreso-no">
               <div class ="Circulo-Progreso"></div>
               <p class = "Texto-Progreso">Recursos</p>
             </li>

@@ -234,18 +234,51 @@ button:focus {
 {
   color: #eb5757;
   font-weight: 800;
+  height: 100px;
 }
 
 .progreso-pasado
 {
   color: #eb5757;
+  top: -15px;
 }
+
+.progreso-no
+{
+  color: #8d8d8d;
+  top: -15px;
+}
+
+.Circulo-Progreso
+{
+  position: absolute;
+  left: 47%;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #8d8d8d;
+  border-radius: 20px;
+}
+
+.Linea-Progreso
+{
+  margin-bottom: -10px;
+  width:63% !important;
+  margin-left: 20%;
+  background-color: #8d8d8d !important;
+  height: 3px !important;
+}
+
+.progress-bar{
+  background-color: #eb5757 !important;
+}
+
 
 .circulo-actual
 {
   position: absolute;
-  left: 42%;
-  top: -15px;
+  left: 46%;
+  top: -6px;
   width: 30px;
   height: 30px;
   background-color: #eb5757;
@@ -254,7 +287,13 @@ button:focus {
 
 .circulo-pasado
 {
-
+  position: absolute;
+  left: 47%;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #eb5757;
+  border-radius: 20px;
 }
 
 .Texto-Rol-Perfil
@@ -344,20 +383,8 @@ ul li
   position: relative;
   align-items: center;
   display: inline-block;
-  width: 200px;
+  width: 33%;
 }
-
-.Circulo-Progreso
-{
-  position: absolute;
-  left: 45%;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  background-color: #8d8d8d;
-  border-radius: 20px;
-}
-
 
 .Derecha
 {
@@ -367,7 +394,6 @@ ul li
 {
   float: left;
 }
-
 
 input, textarea
 {
@@ -740,6 +766,21 @@ a:visited{color: #fff;}
   box-shadow: 0px 0px 20px rgba(53, 53, 53, 0.2);
 }
 
+@media screen and (max-width: 1450px)
+{
+  ul li
+  {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 1160px)
+{
+  ul li
+  {
+    width: 150px;
+  }
+}
 
 @media screen and (max-width: 800px)
 { 
