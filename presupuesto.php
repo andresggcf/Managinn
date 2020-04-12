@@ -55,18 +55,33 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>  
-
   </div>
 
+  <!--Ventana cuando no hay proyectos -->
   <div class="Blanco-Fondo"> 
-    <div class="Caja-Texto-Blanco">
+
+    <div id = "Sin-Presupuesto">
+      <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Por último, plantea los números.</h3>
+      <p class="Subtitulo Text-Center Negro">Aún no tenemos información. Pero no te preocupes, añádela para comenzar.
+      </p>
+
+      <img height="400px" 
+        src="./img/iconos/Ilustracion-Presupuesto-Vacio.png" 
+        alt="Global"
+        style="margin:10px 0px 60px 100px;">
+
+      <div>
+        <button class = "Boton-a-Principal-Fondo-Blanco" 
+                name = "Boton-Proyecto" 
+                id = "Boton-Preferencias"
+                style = "margin: 0px 0px 0px 200px;"
+                >Añadir información</button>
+      </div>
     </div>
   </div>
-
 
 <?php
   include("footer.php");

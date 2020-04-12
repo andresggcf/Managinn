@@ -55,19 +55,35 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>  
-
   </div>
 
+
+  <!--Ventana cuando no hay proyectos -->
   <div class="Blanco-Fondo"> 
-    <div class="Caja-Texto-Blanco">
+
+    <div id = "Sin-Metricas">
+      <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Ahora ajusta tus preferencias en métricas e indicadores.</h3>
+      <p class="Subtitulo Text-Center Negro">Managinn te ayuda a tener completo control y monitoreo de tu sistema de innovación.
+      </p>
+
+      <img height="400px" 
+        src="./img/iconos/Ilustracion-Global-Vacio.png" 
+        alt="Global"
+        style="margin:10px 0px 60px 340px;">
+
+      <div>
+        <button class = "Boton-a-Principal-Fondo-Blanco" 
+                name = "Boton-Proyecto" 
+                id = "Boton-Preferencias"
+                style = "margin: 0px 0px 0px 420px;"
+                >Ajustar Preferencias</button>
+      </div>
     </div>
   </div>
-
-
+  
 <?php
   include("footer.php");
 ?>

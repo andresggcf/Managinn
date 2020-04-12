@@ -52,6 +52,16 @@ button:focus {
   
 }
 
+.Tarjeta-Proyecto
+{
+  border: none !important;
+  border-radius: 20px !important;
+  height: 250px;
+  background: linear-gradient(144deg, rgba(190,190,190,1) 0%, rgba(161,161,161,1) 100%); 
+  color: #fff !important;
+}
+
+
 .Registro-Fondo
 {
   height: 100vh;
@@ -113,7 +123,13 @@ button:focus {
   align-items: center;
   justify-content: center;
   box-shadow: 0px 0px 35px rgba(122, 122, 122, 0.2);
-  display: none;
+}
+
+.Contenedor-Info-Proyectos
+{
+  width : 100%;
+  height: 99vh;
+  padding: 70px 50px 20px 100px;
 }
 
 
@@ -165,6 +181,21 @@ button:focus {
   padding: 0px 15px;
 }
 
+.Contenido-Crear
+{
+  display: block;
+  margin: 0px auto 0px auto;
+  background-color: #8d8d8d;
+}
+
+.Cont-Crear
+{
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /*
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 * Textos
@@ -175,6 +206,21 @@ button:focus {
   font-weight: 700;
   margin-bottom: 30px;
   color: white !important
+}
+
+.Titulo-Tarjeta-P
+{
+  font-size: 18pt;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0px;
+}
+
+.Subtitulo-Tarjeta-P
+{
+  font-size: 12pt;
+  color: white;
+  margin-bottom: -5px;
 }
 
 .Texto-Mediano
@@ -204,6 +250,13 @@ button:focus {
 {
   font-weight: 300;
   font-size: 10pt;
+}
+
+.Titulo-Dashboard
+{
+  color: #434343;
+  font-size: 20pt;
+  font-weight: bold;
 }
 
 .Parrafo-Bienvenida
@@ -367,11 +420,37 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-right: 15px;
 }
 
+.Btn-Add-Proyecto
+{
+  width: 100%;
+  height: 250px;
+  border: none;
+  font-size: 80pt;
+  font-weight: 100;
+  color: #e7e7e7;
+  background-color: rgba(255, 255, 255, 0);
+  height: 250px;
+  border-radius: 20px;
+  border: dashed 5px #e7e7e7;
+  transition: 0.5s;
+}
+
+.Btn-Add-Proyecto:hover
+{
+  color: #a8a7a7;
+  border: dashed 5px #a8a7a7;
+  background-color: #e7e7e7;
+}
+
 input[type="date"]::-webkit-inner-spin-button {
     display: none;
     -webkit-appearance: none;
 }
 
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+}
 
 ul
 {

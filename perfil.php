@@ -5,6 +5,23 @@
   $correo = $_SESSION['email_post'];
   $rol = $_SESSION['role_post'];
 
+  require 'conexion.php';
+  
+  /*Cogemos el id del usuario para ver si tiene proyectos*/
+  $queryIdUsuario = "SELECT id FROM usuarios WHERE correo = '$correo' AND nombre = '$nombre'";
+  $resultado =  mysqli_query($db, $queryIdUsuario);
+  $arregloIdU = mysqli_fetch_assoc($resultado);
+
+  $_SESSION['id_usuario'] = $arregloIdU['id'];
+
+  $id = $_SESSION['id_usuario'];
+
+  $queryConProyectos = "SELECT COUNT(*) FROM equipos WHERE id_usuario = '$id'";
+  $resultado2 =  mysqli_query($db, $queryConProyectos);
+  $arregloProyectos = mysqli_fetch_array($resultado2);
+
+  $contProyectos = $arregloProyectos[0];
+
   include("header.php");
   ?>
 
@@ -40,8 +57,8 @@
           style = "border-radius: 5px; float: left; margin-right: 10px;">
 
           <div style = "float:left;">
-            <p class="Texto-Nombre-Perfil"><strong> <?php echo $_SESSION['name_post'];?></strong></p>
-            <p class="Texto-Rol-Perfil"><?php echo $_SESSION['role_post'];?></p>
+            <p class="Texto-Nombre-Perfil"><strong> <?php echo $nombre;?></strong></p>
+            <p class="Texto-Rol-Perfil"><?php echo $rol?></p>
           </div>
 
           <div class = "Perfil-Dropdown-Container" style = "float: right;">
@@ -60,53 +77,56 @@
     </div>  
   </div>
 
+
   <div class="Blanco-Fondo"> 
+
     <!--Ventana cuando no hay proyectos-->
-    <div id = "Sin-Proyecto">
+    <div id="Sin-Proyecto">
       <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Primero, crea un proyecto.</h3>
       <p class="Subtitulo Text-Center Negro">Tu sistema de Innovación está conformado por <br>diversos
-        factores, uno de ellos es tu portafolio de proyectos.
+          factores, uno de ellos es tu portafolio de proyectos.
       </p>
 
       <img height="400px" 
-      src="./img/iconos/Ilustracion-Dashobard-Vacio.png" 
-      alt="Global"
-      style="margin:10px 0px 60px 55px;">
+        src="./img/iconos/Ilustracion-Dashobard-Vacio.png" 
+        alt="Global"
+        style="margin:10px 0px 60px 55px;">
 
       <div>
         <button class = "Boton-a-Principal-Fondo-Blanco" 
-              name = "Boton-Proyecto" 
-              id = "Boton-Crear-Proyecto"
-               >Crear un Proyecto</button>
+                name = "Boton-Proyecto" 
+                id = "Boton-Crear-Proyecto"
+                >Crear un Proyecto</button>
       </div>
     </div>
 
     <!--Ventana para crear proyectos-->
     <div id="Crear-Proyecto" class = "Caja-Texto-Blanco">
 
-    <div class="progress Linea-Progreso">
+      <div class="progress Linea-Progreso">
         <div class="progress-bar" role="progressbar" aria-valuenow="70"
-          aria-valuemin="0" aria-valuemax="100" style="width:0%">
-      </div>
+            aria-valuemin="0" aria-valuemax="100" style="width:0%">
+        </div>
       </div>  
+
       <div class="Progreso-Proyecto">
-          <ul>
-            <li class = "progreso-actual">
-              <div class ="circulo-actual"></div>
-              <p class = "Texto-Progreso" style="padding-top:15px;">Datos</p>
-            </li>
-            <li class = "progreso-no">
-              <div class ="Circulo-Progreso"></div>
-              <p class = "Texto-Progreso">Equipo</p>
-            </li>
-            <li class = "progreso-no">
-              <div class ="Circulo-Progreso"></div>
-              <p class = "Texto-Progreso">Recursos</p>
-            </li>
-          </ul>
+        <ul>
+          <li class = "progreso-actual">
+            <div class ="circulo-actual"></div>
+            <p class = "Texto-Progreso" style="padding-top:15px;">Datos</p>
+          </li>
+          <li class = "progreso-no">
+            <div class ="Circulo-Progreso"></div>
+            <p class = "Texto-Progreso">Equipo</p>
+          </li>
+          <li class = "progreso-no">
+            <div class ="Circulo-Progreso"></div>
+            <p class = "Texto-Progreso">Recursos</p>
+          </li>
+        </ul>
       </div>
 
-      <div id = "Creacion1">
+      <div>
         <div>
           <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Datos básicos del proyecto</h3>
           <p class="Subtitulo Text-Center Negro">Queremos conocer tu proyecto, cuéntanos sobre él.
@@ -116,44 +136,45 @@
               <div>
                 <div style = "position: relative;">
                   <input class="Form-Field Input-Fondo-Blanco" 
-                  autocomplete="off"
-                  name="proyecto_post"
-                  id="proyecto" 
-                  placeholder="" 
-                  type="text"
-                  required/>
+                    autocomplete="off"
+                    name="proyecto_post"
+                    id="proyecto" 
+                    placeholder="" 
+                    type="text"
+                    required/>
                   <label class="Label-Form">Nombre del Proyecto</label>
                 </div>
                 <div style = "position: relative;">
                   <input class="Form-Field Input-Fondo-Blanco" 
-                  autocomplete="off"
-                  name="fecha_post" 
-                  id="fecha" 
-                  placeholder= "" 
-                  type="date"
-                  required/> 
+                    autocomplete="off"
+                    name="fecha_post" 
+                    id="fecha" 
+                    placeholder= "" 
+                    type="date"
+                    required/> 
                   <label class="Label-Form Label-Focus">Fecha de Inicio</label>
                 </div>
                 <div style = "position: relative;">
                   <textarea class="Form-Field Input-Fondo-Blanco Area-Texto-Crear" 
-                  autocomplete="off"
-                  name="descripcion_post" 
-                  id="descripcion" 
-                  placeholder= "" 
-                  type="text"
-                  required></textarea> 
+                    autocomplete="off"
+                    name="descripcion_post" 
+                    id="descripcion" 
+                    placeholder= "" 
+                    type="text"
+                    required></textarea> 
                   <label class="Label-Form">Descripción Breve</label>
                 </div>
+
                 <div>
-                <button class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"  
-                  name="Boton-inicio"
-                  id="Boton-Cancelar-Creacion" 
-                  >Cancelar</button>  
+                  <button class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"  
+                    name="Boton-inicio"
+                    id="Boton-Cancelar-Creacion" 
+                    >Cancelar</button>  
                   <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
-                  type="submit" 
-                  name="Boton-Continuar"
-                  value="Continuar"
-                  >
+                    type="submit" 
+                    name="Boton-Continuar"
+                    value="Continuar"
+                    >
                 </div>
               </div>
             </form>
@@ -162,27 +183,102 @@
       </div>
     </div>
 
-   <!-- Si ya hay un proyecto:
-    <div class="Caja-Texto-Blanco">
-    </div>
+    <!-- Si ya hay un proyecto: -->
+    <div class = "Contenedor-Info-Proyectos" id="Cont-Proyecto">
+      <p class = "Titulo-Dashboard">Proyectos en Curso (<?php echo $contProyectos ?>)<p>
+      <div class = "row">
+        <?php 
+          require 'conexion.php';
 
-    -->
+          $queryProyectos = "SELECT p.* FROM proyecto p
+          INNER JOIN equipos e ON p.id = e.id_proyecto
+          INNER JOIN usuarios u ON e.id_usuario = u.id 
+          WHERE u.id = $id AND p.estado = 'A'";
+
+          if ($result = mysqli_query($db, $queryProyectos)) 
+          {
+            /* fetch associative array */
+            while ($row = mysqli_fetch_assoc($result)) 
+            { 
+              $idProyecto = $row['id'];
+              $queryFacilitador = "SELECT u.nombre FROM usuarios u
+              INNER JOIN equipos e ON u.id = e.id_usuario WHERE u.rol = 'facilitador'
+              AND e.id_proyecto = $idProyecto";
+
+              $executeFacilitador = mysqli_query($db, $queryFacilitador);
+              $facilitador = mysqli_fetch_assoc($executeFacilitador);
+              ?> 
+              <div class="col-sm-3"> 
+                <div class="card Tarjeta-Proyecto">
+                  <div class="card-body">
+                    <div>
+                      <p class = "Titulo-Tarjeta-P"> <?php echo $row['nombre'];?></p>
+                      <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Facilitador: </b>", $facilitador['nombre'];?></p>
+                      <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Fecha Inicio: </b>", $row['fecha_inicio']?></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <?php
+            }
+          } 
+        ?>
+        <div class = "col-sm-3">
+          <button class = "Btn-Add-Proyecto" id="Boton-Crear-Proyecto-2">+</button>
+        </div>
+      </div>
+    </div>
   </div>
 
 
 
+
   <script type="text/javascript">
-
-    /* Al hacer clic en el botón de crear proyecto */
-    document.getElementById('Boton-Crear-Proyecto').onclick = function(){
-      document.getElementById('Sin-Proyecto').style.display = 'none';
-      document.getElementById('Crear-Proyecto').style.display = 'block';
-    }
-
-    document.getElementById('Boton-Cancelar-Creacion').onclick = function(){
-      document.getElementById('Sin-Proyecto').style.display = 'block';
+    var longProyectos = <?php echo $contProyectos?> ; 
+    console.log ("proyectos en perfil = " + longProyectos);
+    if (longProyectos == 0)
+    {
+      document.getElementById('Cont-Proyecto').style.display = 'none';
       document.getElementById('Crear-Proyecto').style.display = 'none';
+
+      /* Al hacer clic en el botón de crear proyecto */
+      document.getElementById('Boton-Crear-Proyecto').onclick = function()
+      {
+        document.getElementById('Cont-Proyecto').style.display = 'none';
+        document.getElementById('Sin-Proyecto').style.display = 'none';
+        document.getElementById('Crear-Proyecto').style.display = 'block';
+      }
+
+      document.getElementById('Boton-Cancelar-Creacion').onclick = function()
+      {
+        document.getElementById('Cont-Proyecto').style.display = 'none';
+        document.getElementById('Sin-Proyecto').style.display = 'block';
+        document.getElementById('Crear-Proyecto').style.display = 'none';
+      }
     }
+
+    else
+    {
+      document.getElementById('Cont-Proyecto').style.display = 'block';
+      document.getElementById('Sin-Proyecto').style.display = 'none';
+      document.getElementById('Crear-Proyecto').style.display = 'none';
+
+      document.getElementById('Boton-Crear-Proyecto-2').onclick = function()
+      {
+        document.getElementById('Cont-Proyecto').style.display = 'none';
+        document.getElementById('Sin-Proyecto').style.display = 'none';
+        document.getElementById('Crear-Proyecto').style.display = 'block';
+      }
+
+      document.getElementById('Boton-Cancelar-Creacion').onclick = function()
+      {
+        document.getElementById('Cont-Proyecto').style.display = 'block';
+        document.getElementById('Sin-Proyecto').style.display = 'none';
+        document.getElementById('Crear-Proyecto').style.display = 'none';
+      }
+    }
+
+
   </script>
 
 

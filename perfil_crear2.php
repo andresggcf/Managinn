@@ -48,8 +48,8 @@
           style = "border-radius: 5px; float: left; margin-right: 10px;">
 
           <div style = "float:left;">
-            <p class="Texto-Nombre-Perfil"><strong> <?php echo $_SESSION['name_post'];?></strong></p>
-            <p class="Texto-Rol-Perfil"><?php echo $_SESSION['role_post'];?></p>
+            <p class="Texto-Nombre-Perfil"><strong> <?php echo $usuario_nombre;?></strong></p>
+            <p class="Texto-Rol-Perfil"><?php echo $usuario_rol;?></p>
           </div>
 
           <div class = "Perfil-Dropdown-Container" style = "float: right;">
@@ -97,29 +97,54 @@
           </ul>
       </div>
 
-      <div id = "Creacion1">
+      <div class="Cont-Crear">
         <div>
           <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Asignar recursos</h3>
           <p class="Subtitulo Text-Center Negro">Registra los recursos iniciales de este proyecto.
           </p>
-          <div style="width: 500px; margin-top: 40px;">
-            <form class ="FormCrear1" action="perfil_crear2.php" method = "post" id="form-equipo">
-    
-                <div>
-                  <a class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"
-                    href="javascript:history.go(-1)"
-                    style="margin-top: 0px; height: 50px;">Volver</a> 
-                  <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
-                    type="submit" 
-                    name="Boton-Continuar"
-                    id="Boton-Continuar-creacion" 
-                    value="Continuar">
-                </div>
-
-              </div>
-            </form>
-          </div>
         </div>
+
+        <div style="width: 300px; margin-top: 50px;">
+          <form class="FormCrear1" action="con_presupuesto.php" method="post" id="form-presupuesto">
+            <div>  
+              <div style = "position: relative;">
+                <input class="Form-Field Input-Fondo-Blanco" 
+                    autocomplete="off"
+                    name="presupuesto_post"
+                    type="number"
+                    id="currency-field" 
+                    pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
+                    data-type="currency" 
+                    required/>
+                <label class="Label-Form">Presupuesto inicial</label>
+              </div>
+
+              <div style = "position: relative; margin-top: 20px">
+                <p style = "color: #c2c2c2; width: 150px; float:left">
+                Duración estimada (meses)</p>
+                <input class="Form-Field Input-Fondo-Blanco" 
+                    style = "width: 120px; float: right;"
+                    autocomplete="off"
+                    name="duracion_post"
+                    type="number"
+                    required/>
+              </div>
+            </div>
+
+            <div style="width:300px;margin-top: 180px">
+              <a class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"
+                    href="javascript:history.go(-1)"
+                    style="margin-top: 10px; height: 50px;">Cancelar</a> 
+              <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
+                    type="submit" 
+                    name="Boton-crear"
+                    id="Boton-Terminar-creacion" 
+                    value="Continuar">
+            </div>
+
+          </form>
+        </div>
+
       </div>
     </div>
   </div>

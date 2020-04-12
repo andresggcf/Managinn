@@ -72,12 +72,13 @@
 
     <!--Ventana para crear proyectos-->
     <div id="Crear-Proyecto" class = "Caja-Texto-Blanco" style = "display:block">
-  
+
       <div class="progress Linea-Progreso">
         <div class="progress-bar" role="progressbar" aria-valuenow="70"
           aria-valuemin="0" aria-valuemax="100" style="width:50%">
-      </div>
+        </div>
       </div>  
+
       <div class="Progreso-Proyecto">
           <ul>
             <li class = "progreso-pasado">
@@ -96,45 +97,48 @@
           </ul>
       </div>
 
-      <div id = "Creacion1">
+      <div class="Cont-Crear">
         <div>
           <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Invitar al equipo</h3>
           <p class="Subtitulo Text-Center Negro">Manda una invitación a los integrantes que deseas en este proyecto.
           </p>
-          <div style="width: 500px; margin-top: 40px;">
-            <form class ="FormCrear1" action="perfil_crear2.php" method = "post" id="form-equipo">
-              <div>
-                <div style = "position: relative;">
-                  <input class="Form-Field Input-Fondo-Blanco" 
+        </div>
+
+        <div style="width: 500px; margin-top: 40px;">
+          <form class ="FormCrear1" action="perfil_crear2.php" method = "post" id="form-equipo">
+            <div>
+              <div style = "position: relative;">
+                <input class="Form-Field Input-Fondo-Blanco" 
                     autocomplete="off"
                     name="proyecto_post"
                     id="proyecto" 
                     type="text"
                     required/>
-                  <label class="Label-Form">Correo</label>
+                <label class="Label-Form">Correo</label>
 
-                  <div class = "Select-Campo-Equipo">
-                    <select class = "Select-Equipo"id="roles" name="rol_equipo">
-                      <option value="volvo">Facilitador</option>
-                      <option value="saab">Colaborador</option>
-                    </select>
-                    <label class="Label-Form Label-Focus">Rol</label>
-                  </div>
+                <div class = "Select-Campo-Equipo">
+                  <select class = "Select-Equipo"id="roles" name="rol_equipo">
+                    <option value="volvo">Facilitador</option>
+                    <option value="saab">Colaborador</option>
+                  </select>
+                  <label class="Label-Form Label-Focus">Rol</label>
                 </div>
-                <div>
-                  <a class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"
+              </div>
+
+              <div style="width:300px; padding-left: 0px; margin-left: 80px; margin-top: 200px;">
+                <a class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"
                     href="javascript:history.go(-1)"
-                    style="margin-top: 0px; height: 50px;">Volver</a> 
-                  <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
+                    style="margin-top: 0px; height: 50px;">Cancelar</a> 
+                <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
                     type="submit" 
                     name="Boton-Continuar"
                     id="Boton-Continuar-creacion" 
                     value="Continuar">
-                </div>
-
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
+
+
         </div>
       </div>
     </div>
