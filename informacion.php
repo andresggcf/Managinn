@@ -16,28 +16,28 @@ include("header.php");
     <div class="Caja-Texto">
       <div class = "Modal-1">
         <h2 class="Titulo Text-Center">¡Hola! Déjanos conocerte</h2>
-        <p class="Subtitulo Text-Center">Cuéntanos sobre ti y tu trabajo.</p>
+        <p style = "margin-bottom: 50px" class="Subtitulo Text-Center">Cuéntanos sobre ti y tu trabajo.</p>
 
         <form action="con_informacion.php" method = "post">
 
           <div class="Modal-Centro">
 
-            <div>
-              <p class="Texto-Formulario">Nombre</p>
+            <div style = "position: relative;">
               <input class = "Form-Field" 
               name="name_post"
-              placeholder="¿Cómo te llamas?" 
+              placeholder="" 
               type="text"
               required/>
+              <label class="Label-Form Label-Blanco">¿Cómo te llamas?</label>
             </div>
 
-            <div>
-              <p class="Texto-Formulario">Compañía</p>
+            <div style = "position: relative;">
               <input class = "Form-Field"  
               name="company_post"
-              placeholder= "Nombre de la compañía" 
+              placeholder= "" 
               type="text"
-              required/> 
+              required/>
+              <label class="Label-Form Label-Blanco">Nombre de la compañía</label> 
             </div>
 
             <div>

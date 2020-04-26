@@ -16,7 +16,8 @@
     <div class="Columna-Registro"> 
       <div>
         <button class = "Boton-Google"></button> 
-        <p class = "Parrafo-Pequeño Text-Center">O crea una cuenta</p>
+        <p class = "Parrafo-Pequeño Text-Center"
+        style = "margin-bottom: 30px">O crea una cuenta</p>
         <form action="con_registro.php" method = "post">
           <div>
             <div style = "position: relative;">

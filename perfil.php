@@ -16,11 +16,21 @@
 
   $id = $_SESSION['id_usuario'];
 
+  /*Query para sacar la cantidad de proyectos que pertenecen a un perfil*/
   $queryConProyectos = "SELECT COUNT(*) FROM equipos WHERE id_usuario = '$id'";
   $resultado2 =  mysqli_query($db, $queryConProyectos);
   $arregloProyectos = mysqli_fetch_array($resultado2);
 
   $contProyectos = $arregloProyectos[0];
+
+  /*Query que muestra si el perfil tuvo "induccion"*/
+  $queryInduccion = "SELECT induccion FROM usuarios WHERE correo = '$correo' AND nombre = '$nombre'";
+  $resultado3 = mysqli_query($db, $queryInduccion);
+  $arregloInduccion = mysqli_fetch_array($resultado3);
+
+  $_SESSION['induccion'] = $arregloInduccion['induccion'];
+
+  $induccion = $_SESSION['induccion'];
 
   include("header.php");
   ?>
@@ -228,6 +238,29 @@
         </div>
       </div>
     </div>
+
+
+     <!-- Si ya hizo induccion -->
+     <div class = "Contenedor-Info-Proyectos" id="Induc-Proyecto"> 
+      <p class = "Titulo-Dashboard">Proyectos en Curso (0)<p>
+        <div class = "col-sm-3" style="float:left">
+          <button class = "Btn-Add-Proyecto" id="Boton-Crear-Proyecto-2">+</button>
+        </div>
+        <div class = "col-sm-9" style="float:left; height: 95%; position:relative">
+          <div class = "contenedor-Induc-Proyecto">
+            <img height="300px" 
+              src="./img/iconos/Illustracion-Induccion.png" 
+              alt="Global"
+              style="margin-bottom: 30px">
+              <p class = "Titulo-Dashboard"
+              style = "text-align: center;">Ups!<p>
+              <p class="Subtitulo Text-Center Negro">Aún no tienes ningún proyecto en curso.<br>Pero no te preocupes,
+              crea uno para comenzar.
+              </p>
+          </div>
+        </div>
+     </div>
+
   </div>
 
 
@@ -235,46 +268,65 @@
 
   <script type="text/javascript">
     var longProyectos = <?php echo $contProyectos?> ; 
+    var induccion = <?php echo $induccion?>;
+    console.log ("Usuario tuvo induccion? " + induccion);
     console.log ("proyectos en perfil = " + longProyectos);
-    if (longProyectos == 0)
+
+    if (induccion == 0 && longProyectos == 0)
     {
-      document.getElementById('Cont-Proyecto').style.display = 'none';
+      document.getElementById('Sin-Proyecto').style.display = 'block';
       document.getElementById('Crear-Proyecto').style.display = 'none';
+      document.getElementById('Cont-Proyecto').style.display = 'none';
+      document.getElementById('Induc-Proyecto').style.display = 'none';
 
       /* Al hacer clic en el botón de crear proyecto */
       document.getElementById('Boton-Crear-Proyecto').onclick = function()
       {
-        document.getElementById('Cont-Proyecto').style.display = 'none';
         document.getElementById('Sin-Proyecto').style.display = 'none';
         document.getElementById('Crear-Proyecto').style.display = 'block';
+        document.getElementById('Cont-Proyecto').style.display = 'none';
+        document.getElementById('Induc-Proyecto').style.display = 'none';
       }
 
+      /* Al hacer clic en el botón de cancelar creacion proyecto */
       document.getElementById('Boton-Cancelar-Creacion').onclick = function()
       {
-        document.getElementById('Cont-Proyecto').style.display = 'none';
         document.getElementById('Sin-Proyecto').style.display = 'block';
         document.getElementById('Crear-Proyecto').style.display = 'none';
+        document.getElementById('Cont-Proyecto').style.display = 'none';
+        document.getElementById('Induc-Proyecto').style.display = 'none';
       }
     }
 
+    if(induccion == 1 && longProyectos == 0)
+    {
+      /*document.getElementById('Cont-Proyecto').style.display = 'none';
+      document.getElementById('Crear-Proyecto').style.display = 'none';
+      document.getElementById('Sin-Proyecto').style.display = 'none';
+      document.getElementById('Induc-Proyecto').style.display = 'block';*/
+    }
+    
     else
     {
-      document.getElementById('Cont-Proyecto').style.display = 'block';
       document.getElementById('Sin-Proyecto').style.display = 'none';
       document.getElementById('Crear-Proyecto').style.display = 'none';
+      document.getElementById('Cont-Proyecto').style.display = 'block';
+      document.getElementById('Induc-Proyecto').style.display = 'none';
 
       document.getElementById('Boton-Crear-Proyecto-2').onclick = function()
       {
-        document.getElementById('Cont-Proyecto').style.display = 'none';
         document.getElementById('Sin-Proyecto').style.display = 'none';
         document.getElementById('Crear-Proyecto').style.display = 'block';
+        document.getElementById('Cont-Proyecto').style.display = 'none';
+        document.getElementById('Induc-Proyecto').style.display = 'none';
       }
 
       document.getElementById('Boton-Cancelar-Creacion').onclick = function()
       {
-        document.getElementById('Cont-Proyecto').style.display = 'block';
         document.getElementById('Sin-Proyecto').style.display = 'none';
         document.getElementById('Crear-Proyecto').style.display = 'none';
+        document.getElementById('Cont-Proyecto').style.display = 'block';
+        document.getElementById('Induc-Proyecto').style.display = 'none';
       }
     }
 

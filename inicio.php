@@ -14,7 +14,7 @@
   </div>
 
   <div class="Inicio-Fondo">
-    <div class="Columna-Inicio"> 
+    <div class="Columna-Registro"> 
       <div>
         <button class = "Boton-Google"></button> 
         <p class = "Parrafo-Pequeño Text-Center"
@@ -41,16 +41,15 @@
               <label class="Label-Form Label-Blanco">Contraseña</label>
             </div>
             <div>
-              <input class = "Boton-Submit Submit-Secundario"  
+              <input class = "Boton-Submit Submit-Principal"  
               name="Boton-inicio"
               id="submit" 
-              placeholder= "" 
               type="submit"
               value="Iniciar sesión"/> 
             </div>
             <p class="Parrafo-Extra-Pequeño Text-Center">¿No tienes una cuenta? 
                 <a href="registro.php"
-                class = "Enlace-Pequeño-Secundario">Registrate Aquí</a>
+                class = "Enlace-Pequeño-Principal">Registrate Aquí</a>
             </p>
           </div>
         </form>

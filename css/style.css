@@ -52,6 +52,13 @@ button:focus {
   
 }
 
+.contenedor-Induc-Proyecto
+{
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+}
+
 .Tarjeta-Proyecto
 {
   border: none !important;
@@ -65,7 +72,7 @@ button:focus {
 .Registro-Fondo
 {
   height: 100vh;
-  background-image: url('../img/fondos/FondoRegistro.png');
+  background-image: url('../img/fondos/Fondo_1.png');
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -144,7 +151,7 @@ button:focus {
 .Inicio-Fondo
 {
   height: 100vh;
-  background-image: url('../img/fondos/FondoLogin.png');
+  background-image: url('../img/fondos/Fondo_1.png');
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -254,9 +261,9 @@ button:focus {
 
 .Titulo-Dashboard
 {
-  color: #434343;
+  color: #131A40;
   font-size: 20pt;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .Parrafo-Bienvenida
@@ -388,7 +395,7 @@ button:focus {
   top: 12px;
   left: 20px !important;
   transition: 0.5s;
-  color: #c2c2c2;
+  color:rgba(255, 255, 255, 0.473);
   pointer-events: none;
   font-size: 12pt;
   font-weight: 500;
@@ -409,6 +416,33 @@ button:focus {
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 */
 
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+  display: inline-block;
+  width: 180px;
+  height: 180px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 7px 7px 10px rgba(11, 16, 40, 0.25), -7px -7px 10px rgba(23, 32, 79, 0.5), inset 4px 4px 10px rgba(23, 32, 79, 0.5);
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+  background-color: #17AEBF;
+}
+
+.radio-toolbar label:hover {
+  background-color: rgb(119, 240, 253);
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
   color: rgba(0, 0, 0, 0);
   opacity: 1;
@@ -423,7 +457,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .Btn-Add-Proyecto
 {
   width: 100%;
-  height: 250px;
   border: none;
   font-size: 80pt;
   font-weight: 100;
@@ -431,14 +464,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: rgba(255, 255, 255, 0);
   height: 250px;
   border-radius: 20px;
-  border: dashed 5px #e7e7e7;
+  box-shadow: inset 5px 5px 15px rgba(55, 84, 170, 0.15), inset -5px -5px 10px #FFFFFF;
   transition: 0.5s;
 }
 
 .Btn-Add-Proyecto:hover
 {
   color: #a8a7a7;
-  border: dashed 5px #a8a7a7;
   background-color: #e7e7e7;
 }
 
@@ -499,22 +531,17 @@ textarea
   margin-top: 20px;
 }
 
-.Columna-Registro{
-  background-color: #131a40;
-}
-
-.Columna-Inicio{
-  background-color: #eb5757;
-}
-
-.Columna-Inicio, .Columna-Registro
+ .Columna-Registro
 {
-  height: 100vh;
-  width: 40%;
+  height: 80vh;
+  width: 35%;
   float: right;
   align-items: center;
   justify-content: center;
   display: flex;
+  margin-right: 50px;
+  border-radius: 20px;
+  background-color: #131a40;
 }
 
 .Columna-Perfil{
@@ -821,8 +848,10 @@ a:visited{color: #fff;}
   padding-left: 20px;
   font-size: medium;
   font-weight: 500;
-  background-color: #fff !important;
+  background-color: #131A40 !important;
+  box-shadow: inset 5px 5px 15px rgba(11, 16, 40, 0.5), inset -5px -5px 4px #17204F;
   margin-bottom: 25px;
+  color: white !important;
 }
 /* Borrar si es necesario*/
 .Form-Field:focus ~ .Label-Form,
