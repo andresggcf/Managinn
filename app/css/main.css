@@ -1,3 +1,17 @@
+h1, h2, h3, h4, h5, h6 {
+  color: #131a40; }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield; }
+
+/* GLOBAL */
 .Boton-a-Principal-Fondo-Blanco {
   display: block;
   margin: 0 auto; }
@@ -13,7 +27,51 @@
   border: #fff;
   display: block;
   margin: 0 auto; }
+  .Boton-a-Principal-Sin-Fondo.inline {
+    display: inline-block; }
 
 .Boton-a-Principal-Sin-Fondo:hover {
   background-color: #eb575762;
   border: #fff !important; }
+
+#Crear-Implementacion {
+  display: none; }
+
+.Caja-Texto-Blanco {
+  background-color: #F6F7F9; }
+
+.border-radius {
+  border-radius: 25px;
+  -webkit-box-shadow: inset 9px 8px 10px -7px rgba(55, 84, 170, 0.3);
+  -moz-box-shadow: inset 9px 8px 10px -7px rgba(55, 84, 170, 0.3);
+  box-shadow: inset 9px 8px 10px -7px rgba(55, 84, 170, 0.3); }
+
+.input-clear {
+  background-color: transparent;
+  border: none;
+  text-align: center; }
+
+.btn-custom.btn-on {
+  color: #eb5757; }
+
+.global-view .Caja-Centro {
+  position: relative;
+  display: block;
+  width: 100%;
+  left: 0; }
+
+.global-view .Subtitulo {
+  margin-bottom: 60px; }
+
+.global-view .title-forms {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+
+.global-view .Boton-Creacion-Proyecto {
+  float: none;
+  margin: auto !important;
+  display: inline-block; }
+
+/* GLOBAL */

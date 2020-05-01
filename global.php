@@ -8,7 +8,7 @@
   include("header.php");
   ?>
 
-<body>
+<body class="global-view">
   <div class="NavBar">
     <div class="Contenedor-Menu">
       <img src="img/iconos/managinn.png" width="180px" alt="" class="">
@@ -83,11 +83,177 @@
       <div>
         <button class = "Boton-a-Principal-Sin-Fondo" 
                 name = "Boton-Proyecto" 
-                id = "Boton-Preferencias"
+                id = "Boton-Omitir-Preferencias"
                 >Omitir</button>
       </div>
     </div>
+    <!-- Sin Metrica -->
+    <!-- Info Implementacion -->
+    <div id="Crear-Implementacion" class = "Caja-Texto-Blanco">
+
+      <div class="progress Linea-Progreso">
+        <div class="progress-bar" role="progressbar" aria-valuenow="70"
+            aria-valuemin="0" aria-valuemax="100" style="width:0%">
+        </div>
+      </div>  
+
+      <div class="Progreso-Proyecto">
+        <ul class="items_progreso">
+          <li class = "progreso-actual">
+            <div class ="circulo-actual"></div>
+            <p class = "Texto-Progreso" style="padding-top:15px;">Personas</p>
+          </li>
+          <li class = "progreso-no">
+            <div class ="Circulo-Progreso"></div>
+            <p class = "Texto-Progreso">Implementación</p>
+          </li>
+          <li class = "progreso-no">
+            <div class ="Circulo-Progreso"></div>
+            <p class = "Texto-Progreso">Métricas</p>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+          <div class = "Caja-Centro global">
+            <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Datos sobre personas.</h3>
+                  <p class="Subtitulo Text-Center Negro">Con estos datos calcularemos por tí algunos indicadores relacionados con tu equipo.
+                  </p>
+            <form class ="FormCrear1" action="#" method = "post">
+              <div class="tab step1">
+                  <h5 class="title-forms mb-5">Actualmente ¿cuántas personas tienes a cargo en innovación?</h5>
+                <div class="row justify-content-center">
+                  <div class="input-group mb-3 col-3 ml-auto mr-auto border-radius" style="max-width: 170px;">
+                    <div class="input-group-prepend">
+                      <a id="less_persons" class="btn btn-custom btn-on">-</a> 
+                    </div>
+                    <input id="num_persons" type="number" required class="form-control input-clear input-numeric" value="1" >
+                    <div class="input-group-append">
+                      <a id="more_persons" class="btn btn-custom btn-on">+</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-3  mt-4" >
+                    <input class = "Boton-a-Principal-Sin-Fondo inline"  
+                      name="btn_back"
+                      type="button" 
+                      onclick="nextPrev(-1)" 
+                      value="Omitir"
+                      >  
+                    <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
+                      type="button" 
+                      name="Boton-Continuar"
+                      onclick="nextPrev(1)"
+                      value="Continuar"
+                      >
+                  </div>
+                </div>
+              </div> <!-- step1-->
+              <div class="tab step2">
+                <h5 class="title-forms mb-5">Actualmente ¿cuántas dde esas se han capacitado en innovación al menos una vez en los ultimos 6 meses?</h5>
+                <div class="row justify-content-center">
+                  <div class="input-group mb-3 col-6 ml-auto mr-auto border-radius" style="max-width: 170px;">
+                    <div class="input-group-prepend">
+                      <a id="less_persons_cap" class="btn btn-custom btn-on">-</a> 
+                    </div>
+                    <input id="num_persons_cap" type="number" required class="form-control input-clear input-numeric" value="1">
+                    <div class="input-group-append">
+                      <a id="more_persons_cap" class="btn btn-custom btn-on">+</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-3  mt-4" >
+                    <input class = "Boton-a-Principal-Sin-Fondo inline"  
+                      name="btn_back"
+                      type="button" 
+                      onclick="nextPrev(-1)" 
+                      value="Omitir"
+                      > 
+                    <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
+                      type="button" 
+                      name="Boton-Continuar"
+                      onclick="nextPrev(1)"
+                      value="Continuar"
+                      >
+                  </div>
+                </div>
+              </div> <!--step2-->
+              <div class="tab step3">
+                <div class="row justify-content-center">
+                  <div class="input-group mb-3 col-6 ml-auto mr-auto border-radius">
+                    <div class="input-group-prepend">
+                      <a id="less_persons" class="btn btn-custom btn-on">-</a> 
+                    </div>
+                    <input id="num_persons" type="number" required class="form-control input-clear input-numeric" value="1">
+                    <div class="input-group-append">
+                      <a id="more_persons" class="btn btn-custom btn-on">+</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-3  mt-4" >
+                    <input class = "Boton-a-Principal-Sin-Fondo inline"  
+                      name="btn_back"
+                      type="button" 
+                      onclick="nextPrev(-1)" 
+                      value="Omitir"
+                      >  
+                    <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
+                      type="button" 
+                      name="Boton-Continuar"
+                      onclick="nextPrev(1)"
+                      value="Continuar"
+                      >
+                  </div>
+                </div>
+              </div><!--step3-->
+              <div class="tab step4">
+                <div class="row justify-content-center">
+                  <div class="input-group mb-3 col-6 ml-auto mr-auto border-radius">
+                    <div class="input-group-prepend">
+                      <a id="less_persons" class="btn btn-custom btn-on">-</a> 
+                    </div>
+                    <input id="num_persons" type="number" required class="form-control input-clear input-numeric" value="1">
+                    <div class="input-group-append">
+                      <a id="more_persons" class="btn btn-custom btn-on">+</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-3 mt-4" >
+                    <input class = "Boton-a-Principal-Sin-Fondo inline"  
+                      name="btn_back"
+                      type="button" 
+                      onclick="nextPrev(-1)" 
+                      value="Omitir"
+                      >   
+                    <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
+                      type="button" 
+                      name="Boton-Continuar"
+                      onclick="nextPrev(1)"
+                      value="Continuar"
+                      >
+                  </div>
+                </div>
+              </div><!--step4-->
+            </form>
+          </div>
+      </div>
+    </div>
+    <!-- Info Implementacion -->
+    
   </div>
+<style>
+  /* Hide all steps by default: */
+.tab {
+  display: none;
+}
+</style>
+  <script>
+
+  </script>
   
 <?php
   include("footer.php");
