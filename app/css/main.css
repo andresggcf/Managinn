@@ -1,12 +1,8 @@
-@import 'variables';
+.Boton-a-Principal-Fondo-Blanco {
+  display: block;
+  margin: 0 auto; }
 
-.Boton-a-Principal-Fondo-Blanco
-{
-    display: block;
-    margin: 0 auto;
-}
-.Boton-a-Principal-Sin-Fondo
-{
+.Boton-a-Principal-Sin-Fondo {
   color: #eb5757;
   background-color: transparent;
   padding: 15px 30px 15px 30px;
@@ -16,11 +12,8 @@
   transition: 0.3s;
   border: #fff;
   display: block;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
-.Boton-a-Principal-Sin-Fondo:hover
-{
+.Boton-a-Principal-Sin-Fondo:hover {
   background-color: #eb575762;
-  border: #fff !important;
-}
+  border: #fff !important; }

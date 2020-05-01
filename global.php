@@ -78,8 +78,13 @@
         <button class = "Boton-a-Principal-Fondo-Blanco" 
                 name = "Boton-Proyecto" 
                 id = "Boton-Preferencias"
-                style = "margin: 0px 0px 0px 420px;"
                 >Ajustar Preferencias</button>
+      </div>
+      <div>
+        <button class = "Boton-a-Principal-Sin-Fondo" 
+                name = "Boton-Proyecto" 
+                id = "Boton-Preferencias"
+                >Omitir</button>
       </div>
     </div>
   </div>
