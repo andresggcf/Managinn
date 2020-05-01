@@ -1,0 +1,906 @@
+
+
+body
+{
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif !important;
+  color: white !important;
+
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+
+  
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none !important;
+}
+
+.Other-Screen
+{
+  display: none !important;
+}
+
+
+/*
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* Contenedores
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+*/
+.App
+{
+  text-align: center;
+  background-color: #7962f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../img/fondos/Fondo_1.png');
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: calc(10px + 2vmin);
+  
+}
+
+.contenedor-Induc-Proyecto
+{
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+}
+
+.Tarjeta-Proyecto
+{
+  border: none !important;
+  border-radius: 20px !important;
+  height: 250px;
+  background: linear-gradient(144deg, rgba(190,190,190,1) 0%, rgba(161,161,161,1) 100%); 
+  color: #fff !important;
+}
+
+
+.Registro-Fondo
+{
+  height: 100vh;
+  background-image: url('../img/fondos/Fondo_1.png');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.RegDatos-Fondo
+{
+  height: 100vh;
+  background-image: url('../img/fondos/FondoDatos.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Bienvenida-Fondo
+{
+  height: 100vh;
+  background-image: url('../img/fondos/FondoBienvenida.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.Blanco-Fondo
+{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Caja-Texto{
+  height: 450px;
+  width: 750px;
+  background-color: #131a40;
+  border-radius: 50px;
+  padding: 80px 40px 80px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 35px rgba(23, 174, 191, 0.2);
+}
+
+.Caja-Texto-Blanco
+{
+  height: 80%;
+  width: 80%;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 80px 40px 80px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 35px rgba(122, 122, 122, 0.2);
+}
+
+.Contenedor-Info-Proyectos
+{
+  width : 100%;
+  height: 99vh;
+  padding: 70px 50px 20px 100px;
+}
+
+
+.Modal-Centro
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Inicio-Fondo
+{
+  height: 100vh;
+  background-image: url('../img/fondos/Fondo_1.png');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.Contenedor-Inicio
+{
+  padding: 0px 80px 0px 80px;
+  margin-bottom: 50px;
+  max-width: 1300px;
+}
+
+.NavBar
+{
+  overflow: hidden;
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+}
+
+.Contenedor-Menu
+{
+  padding: 30px 30px;
+}
+
+.Navegador
+{
+  float: right;
+}
+
+.Col-2
+{
+  width: 50%;
+  height: 100vh;
+  padding: 0px 15px;
+}
+
+.Contenido-Crear
+{
+  display: block;
+  margin: 0px auto 0px auto;
+  background-color: #8d8d8d;
+}
+
+.Cont-Crear
+{
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* Textos
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+*/
+.Texto-Grande
+{
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: white !important
+}
+
+.Titulo-Tarjeta-P
+{
+  font-size: 18pt;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0px;
+}
+
+.Subtitulo-Tarjeta-P
+{
+  font-size: 12pt;
+  color: white;
+  margin-bottom: -5px;
+}
+
+.Texto-Mediano
+{
+  font-weight: 500;
+  color: white !important
+}
+
+.Text-Center
+{
+  text-align: center;
+}
+
+.Text-Left
+{
+  text-align: left;
+}
+
+.Parrafo-Pequeño
+{
+  font-weight: 300;
+  font-size: 12pt;
+  color: white !important
+}
+
+.Parrafo-Extra-Pequeño
+{
+  font-weight: 300;
+  font-size: 10pt;
+}
+
+.Titulo-Dashboard
+{
+  color: #131A40;
+  font-size: 20pt;
+  font-weight: 900;
+}
+
+.Parrafo-Bienvenida
+{
+  margin-bottom: 50px;
+}
+
+.Texto-Formulario
+{
+  font-weight: 200;
+  font-size: 8pt;
+  margin-bottom: 5px;
+  color: white !important
+}
+
+.Texto-Nombre-Perfil
+{
+  font-size: 11pt;
+  margin-bottom: 2px !important;
+}
+
+.Texto-Progreso
+{
+  margin-top: 20px;
+}
+
+.progreso-actual
+{
+  color: #eb5757;
+  font-weight: 800;
+  height: 100px;
+}
+
+.progreso-pasado
+{
+  color: #eb5757;
+  top: -15px;
+}
+
+.progreso-no
+{
+  color: #8d8d8d;
+  top: -15px;
+}
+
+.Circulo-Progreso
+{
+  position: absolute;
+  left: 47%;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #8d8d8d;
+  border-radius: 20px;
+}
+
+.Linea-Progreso
+{
+  margin-bottom: -10px;
+  width:63% !important;
+  margin-left: 20%;
+  background-color: #8d8d8d !important;
+  height: 3px !important;
+}
+
+.progress-bar{
+  background-color: #eb5757 !important;
+}
+
+
+.circulo-actual
+{
+  position: absolute;
+  left: 46%;
+  top: -6px;
+  width: 30px;
+  height: 30px;
+  background-color: #eb5757;
+  border-radius: 30px;
+}
+
+.circulo-pasado
+{
+  position: absolute;
+  left: 47%;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #eb5757;
+  border-radius: 20px;
+}
+
+.Texto-Rol-Perfil
+{
+  font-size: 10pt !important;
+  margin-bottom: 0px !important;
+}
+
+.Titulo
+{
+  font-weight: 700;;
+  font-size: 20pt;
+}
+
+.Subtitulo
+{
+  font-weight: 100;
+  font-size: 12pt;
+}
+
+.Negro 
+{
+  color: #000 !important;
+}
+
+.Blanco
+{
+  color: white !important;
+}
+
+.Gris
+{
+  color: #8d8d8d !important
+}
+
+.Label-Form
+{
+  position: absolute;
+  top: 12px;
+  left: 20px !important;
+  transition: 0.5s;
+  color:rgba(255, 255, 255, 0.473);
+  pointer-events: none;
+  font-size: 12pt;
+  font-weight: 500;
+}
+
+.Label-Focus
+{
+  top: -20px;
+  left: 5px !important;
+  color: #131a40;
+  font-size: 8pt;
+}
+
+
+/*
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* Elementos 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+*/
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+  display: inline-block;
+  width: 180px;
+  height: 180px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 7px 7px 10px rgba(11, 16, 40, 0.25), -7px -7px 10px rgba(23, 32, 79, 0.5), inset 4px 4px 10px rgba(23, 32, 79, 0.5);
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+  background-color: #17AEBF;
+}
+
+.radio-toolbar label:hover {
+  background-color: rgb(119, 240, 253);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url('../img/iconos/Icono-Calendario.svg') no-repeat;
+  width: 18px;
+  height: 25px;
+  border-width: thin;
+  margin-right: 15px;
+}
+
+.Btn-Add-Proyecto
+{
+  width: 100%;
+  border: none;
+  font-size: 80pt;
+  font-weight: 100;
+  color: #e7e7e7;
+  background-color: rgba(255, 255, 255, 0);
+  height: 250px;
+  border-radius: 20px;
+  box-shadow: inset 5px 5px 15px rgba(55, 84, 170, 0.15), inset -5px -5px 10px #FFFFFF;
+  transition: 0.5s;
+}
+
+.Btn-Add-Proyecto:hover
+{
+  color: #a8a7a7;
+  background-color: #e7e7e7;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
+ul
+{
+  text-align: center;
+}
+
+ul li
+{
+  position: relative;
+  align-items: center;
+  display: inline-block;
+  width: 33%;
+}
+
+.Derecha
+{
+  float: right;
+}
+.Izquierda
+{
+  float: left;
+}
+
+input, textarea
+{
+  border: 0px solid #FFF;
+  border-radius: 4px;
+}
+
+textarea
+{
+  resize: none !important;
+  padding-top: 13px;
+}
+
+.Area-Texto-Crear
+{
+  height: 130px !important;
+  border-radius: 20px !important;
+}
+
+.Caja-Centro
+{
+  position: absolute;
+  left: 49%;
+  margin-top: 20px;
+}
+
+ .Columna-Registro
+{
+  height: 80vh;
+  width: 35%;
+  float: right;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-right: 50px;
+  border-radius: 20px;
+  background-color: #131a40;
+}
+
+.Columna-Perfil{
+  height: 100vh;
+  width: 240px;
+  float: left;
+  background-color: #131a40;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding-top:130px;
+  border-radius: 0px 20px 20px 0px ;
+}
+
+.Elementos-Perfil
+{
+  width: 100%;
+  height: 100%;
+}
+
+.Usuario-Perfil
+{
+  padding: 0px 15px;
+}
+
+.Botones-Perfil
+{
+  height: 90%;
+  display: block;
+}
+
+a:visited{color: #fff;}
+
+.Boton-Principal
+{
+  background-color: #eb5757;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 40px 10px 40px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.Boton-Principal:hover
+{
+  background-color: #fff;
+  color: #eb5757;
+  text-decoration: none;
+}
+
+.Boton-Delinieado-Menu
+{
+  color: #fff;
+  border: solid #eb5757;
+  border-radius: 30px;
+  border-width: 2px;
+  transition: 0.3s;
+  font-size: 14px;
+  padding: 10px 30px 10px 30px;
+}
+
+.Boton-a-Principal-Fondo-Blanco
+{
+  color: #fff;
+  background-color: #eb5757;
+  padding: 15px 30px 15px 30px;
+  border-radius: 30px;
+  margin-left: 140px;
+  margin-top: 0px;
+  transition: 0.3s;
+  border: #fff;
+}
+
+.Boton-a-Principal-Fondo-Blanco:hover
+{
+  background-color: #eb575762;
+  border: #fff !important;
+}
+
+.Boton-Creacion-Proyecto
+{
+  margin-left: 0px !important;
+  float: right;
+}
+
+.Boton-Cancel-Creacion-Proyecto
+{
+  margin-left: 0px !important;
+  float: left;
+}
+
+
+.Boton-Delinieado-Menu:hover
+{
+  color: #fff;
+  text-decoration: none;
+  background-color: #eb5757;
+}
+
+.Boton-Inverso-Menu
+{
+  color: #fff;
+  transition: 0.3s;
+  font-size: 14px;
+  padding: 15px 30px 10px 30px;
+}
+
+.Boton-Inverso-Menu:hover
+{
+  color: #eb5757;
+  text-decoration: none;
+}
+
+.Boton-Submit
+{
+  width: 300px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: 60px;
+  border-radius: 50px;
+  font-size: medium;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.Boton-Submit-Pequeño
+{
+  width: 140px;
+  padding-top: 2px;
+  margin-top: 20px;
+  height: 60px;
+  border-radius: 50px;
+  font-size: medium;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.Boton-Google
+{
+  background-image: url('../img/iconos/Boton_Google.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-transform: none !important;
+  font-family: 'DM Sans' !important;
+  width: 300px;
+  height: 50px;
+  border-radius: 30px !important;
+  margin-bottom: 30px;
+}
+
+
+.Icono-Menu-Perfil
+{
+  color: #fff;
+  border-radius: 50px 0px 0px 50px;
+  border-width: 2px;
+  transition: 0.3s;
+  font-size: 14px;
+  width: 200px;
+  padding: 20px 30px 20px 30px;
+  float: right;
+}
+
+.Icono-Menu-Perfil:hover
+{
+  background-color: #ffffff25;
+}
+
+
+.current
+{
+  background-color: #fff;
+}
+
+
+.current:hover
+{
+  background-color: rgba(255, 255, 255, 0.877) !important;
+}
+
+.current-Icono
+{
+  filter: invert(80%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
+}
+
+
+
+.Submit-Principal{
+  color: #fff;
+  background-color: #eb5757;
+}
+
+.Submit-Principal:hover
+{
+  color: #eb5757;
+  background-color: #fff ;
+}
+
+.Submit-Inverso
+{
+  color: #eb5757 !important;
+  background-color: #fff ;
+}
+
+.Submit-Inverso:hover
+{
+  color: #fff !important;
+  background-color: #eb5757;
+}
+
+.Submit-Secundario{
+  color: #fff;
+  background-color: #131a40;
+}
+
+.Submit-Secundario:hover
+{
+  color: #131a40;
+  background-color: #fff ;
+}
+
+.Submit-Simple{
+  color:  #eb5757;
+  background-color: #131a4000;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+
+.Boton-Dropdown
+{
+  background-color: #131a40 !important;
+  border: #131a40 !important;
+  padding: 9px 5px 9px 5px !important;
+}
+
+.Boton-Dropdown:hover
+{
+  background-color: rgba(255, 255, 255, 0.39) !important;
+}
+
+.Submit-Simple:hover
+{
+  color: #fff;
+  text-decoration: none;
+}
+
+.Enlace-Pequeño-Principal
+{
+  color: #eb5757 !important;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.Enlace-Pequeño-Principal:hover
+{
+  color: #fff !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.Enlace-Pequeño-Secundario
+{
+  color: #131a40 !important;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.Enlace-Pequeño-Secundario:hover
+{
+  color: #fff !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.Select-Campo-Equipo
+{
+  position: relative;
+  width: 180px;
+  float: right;
+  height: 50px;
+  padding: 13px 10px 0px 20px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 20px rgba(53, 53, 53, 0.2);
+}
+
+.Select-Equipo
+{
+  font-size: medium ;
+  font-weight: 500 ;
+  border: none;
+  width:100%;
+  background-color: #fff;
+}
+.Form-Field
+{
+  width: 300px;
+  margin-bottom: 10px;
+  height: 50px;
+  border-radius: 50px;
+  padding-left: 20px;
+  font-size: medium;
+  font-weight: 500;
+  background-color: #131A40 !important;
+  box-shadow: inset 5px 5px 15px rgba(11, 16, 40, 0.5), inset -5px -5px 4px #17204F;
+  margin-bottom: 25px;
+  color: white !important;
+}
+/* Borrar si es necesario*/
+.Form-Field:focus ~ .Label-Form,
+.Form-Field:valid ~ .Label-Form
+{
+  top: -20px;
+  left: 5px !important;
+  color: #131a40;
+  font-size: 8pt;
+}
+
+.Form-Field:focus ~ .Label-Blanco,
+.Form-Field:valid ~ .Label-Blanco
+{
+  color: #ffffff;
+}
+
+.Input-Fondo-Blanco
+{
+  box-shadow: 0px 0px 20px rgba(53, 53, 53, 0.2);
+}
+
+@media screen and (max-width: 1450px)
+{
+  ul li
+  {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 1160px)
+{
+  ul li
+  {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 800px)
+{ 
+  .Other-Screen
+  {
+    display: inherit !important;
+  }
+
+  .Pc-Screen
+  {
+    display: none !important;
+  }
+
+
+}
