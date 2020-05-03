@@ -138,8 +138,8 @@
 
       <div>
         <div>
-          <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Datos básicos del proyecto</h3>
-          <p class="Subtitulo Text-Center Negro">Queremos conocer tu proyecto, cuéntanos sobre él.
+          <h3 class="Text-Center Titulo Azul" style="font-size: 28pt">Datos básicos del proyecto</h3>
+          <p class="Subtitulo Text-Center Azul">Queremos conocer tu proyecto, cuéntanos sobre él.
           </p>
           <div class = "Caja-Centro">
             <form class ="FormCrear1" action="con_crearProyecto.php" method = "post">
@@ -152,7 +152,7 @@
                     placeholder="" 
                     type="text"
                     required/>
-                  <label class="Label-Form">Nombre del Proyecto</label>
+                  <label class="Label-Form Label-Dark">Nombre del Proyecto</label>
                 </div>
                 <div style = "position: relative;">
                   <input class="Form-Field Input-Fondo-Blanco" 
@@ -172,7 +172,7 @@
                     placeholder= "" 
                     type="text"
                     required></textarea> 
-                  <label class="Label-Form">Descripción Breve</label>
+                  <label class="Label-Form Label-Dark">Descripción Breve</label>
                 </div>
 
                 <div>
@@ -222,6 +222,36 @@
                 <div class="card Tarjeta-Proyecto">
                   <div class="card-body">
                     <div>
+                      <div class = "Perfil-Dropdown-Container">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-secondary dropdown-toggle Boton-Dropdown-Proyecto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          </button>
+                          <div class="dropdown-menu proyecto">
+                            <!-- Dropdown menu -->
+                            <a class="proyecto-boton-menu" 
+                              style="margin-left:15px;" 
+                              id="boton-editar"
+                              href=<?php echo "perfil.php?proyecto=",$idProyecto;?>
+                              >
+                              <img  alt="" src="img/iconos/icono-editar.svg" width="40px" height="40px"
+                                style = "margin-top:60px; margin-bottom:15px">
+                            </a>
+                            <a class="proyecto-boton-menu" 
+                              style="margin-left: 15px;" 
+                              >
+                              <img  alt="" src="img/iconos/icono-borrar.svg" width="40px" height="40px"
+                                style = "margin-bottom:15px">
+                            </a>
+                            <a class="proyecto-boton-menu" 
+                              style="margin-left: 15px;" 
+                              >
+                              <img  alt="" src="img/iconos/icono-copiar.svg" width="40px" height="40px"
+                                style = "margin-bottom:15px">
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
                       <p class = "Titulo-Tarjeta-P"> <?php echo $row['nombre'];?></p>
                       <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Facilitador: </b>", $facilitador['nombre'];?></p>
                       <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Fecha Inicio: </b>", $row['fecha_inicio']?></p>
@@ -269,67 +299,79 @@
   <script type="text/javascript">
     var longProyectos = <?php echo $contProyectos?> ; 
     var induccion = <?php echo $induccion?>;
-    console.log ("Usuario tuvo induccion? " + induccion);
-    console.log ("proyectos en perfil = " + longProyectos);
+    console.log ("Usuario tuvo induccion:" + induccion);
+    console.log ("proyectos en perfil: " + longProyectos);
 
-    if (induccion == 0 && longProyectos == 0)
-    {
-      document.getElementById('Sin-Proyecto').style.display = 'block';
-      document.getElementById('Crear-Proyecto').style.display = 'none';
-      document.getElementById('Cont-Proyecto').style.display = 'none';
-      document.getElementById('Induc-Proyecto').style.display = 'none';
-
-      /* Al hacer clic en el botón de crear proyecto */
-      document.getElementById('Boton-Crear-Proyecto').onclick = function()
+    function loadPage(){
+      if (induccion == 0 && longProyectos == 0)
       {
-        document.getElementById('Sin-Proyecto').style.display = 'none';
-        document.getElementById('Crear-Proyecto').style.display = 'block';
-        document.getElementById('Cont-Proyecto').style.display = 'none';
-        document.getElementById('Induc-Proyecto').style.display = 'none';
-      }
-
-      /* Al hacer clic en el botón de cancelar creacion proyecto */
-      document.getElementById('Boton-Cancelar-Creacion').onclick = function()
-      {
+        console.log ("Usuario tuvo induccion: asd " + induccion);
+        
         document.getElementById('Sin-Proyecto').style.display = 'block';
         document.getElementById('Crear-Proyecto').style.display = 'none';
         document.getElementById('Cont-Proyecto').style.display = 'none';
         document.getElementById('Induc-Proyecto').style.display = 'none';
+
+        /* Al hacer clic en el botón de crear proyecto */
+        document.getElementById('Boton-Crear-Proyecto').onclick = function()
+        {
+          document.getElementById('Sin-Proyecto').style.display = 'none';
+          document.getElementById('Crear-Proyecto').style.display = 'block';
+          document.getElementById('Cont-Proyecto').style.display = 'none';
+          document.getElementById('Induc-Proyecto').style.display = 'none';
+        }
+
+        /* Al hacer clic en el botón de cancelar creacion proyecto */
+        document.getElementById('Boton-Cancelar-Creacion').onclick = function()
+        {
+          document.getElementById('Sin-Proyecto').style.display = 'block';
+          document.getElementById('Crear-Proyecto').style.display = 'none';
+          document.getElementById('Cont-Proyecto').style.display = 'none';
+          document.getElementById('Induc-Proyecto').style.display = 'none';
+        }
       }
-    }
 
-    if(induccion == 1 && longProyectos == 0)
-    {
-      /*document.getElementById('Cont-Proyecto').style.display = 'none';
-      document.getElementById('Crear-Proyecto').style.display = 'none';
-      document.getElementById('Sin-Proyecto').style.display = 'none';
-      document.getElementById('Induc-Proyecto').style.display = 'block';*/
-    }
-    
-    else
-    {
-      document.getElementById('Sin-Proyecto').style.display = 'none';
-      document.getElementById('Crear-Proyecto').style.display = 'none';
-      document.getElementById('Cont-Proyecto').style.display = 'block';
-      document.getElementById('Induc-Proyecto').style.display = 'none';
-
-      document.getElementById('Boton-Crear-Proyecto-2').onclick = function()
+      else if(induccion == 1 && longProyectos == 0)
       {
+        /*document.getElementById('Cont-Proyecto').style.display = 'none';
+        document.getElementById('Crear-Proyecto').style.display = 'none';
         document.getElementById('Sin-Proyecto').style.display = 'none';
-        document.getElementById('Crear-Proyecto').style.display = 'block';
-        document.getElementById('Cont-Proyecto').style.display = 'none';
-        document.getElementById('Induc-Proyecto').style.display = 'none';
+        document.getElementById('Induc-Proyecto').style.display = 'block';*/
       }
-
-      document.getElementById('Boton-Cancelar-Creacion').onclick = function()
+      
+      else if (longProyectos != 0)
       {
+        console.log ("Usuario tuvo induccion: asd34 " + induccion);
         document.getElementById('Sin-Proyecto').style.display = 'none';
         document.getElementById('Crear-Proyecto').style.display = 'none';
         document.getElementById('Cont-Proyecto').style.display = 'block';
         document.getElementById('Induc-Proyecto').style.display = 'none';
+
+        document.getElementById('Boton-Crear-Proyecto-2').onclick = function()
+        {
+          document.getElementById('Sin-Proyecto').style.display = 'none';
+          document.getElementById('Crear-Proyecto').style.display = 'block';
+          document.getElementById('Cont-Proyecto').style.display = 'none';
+          document.getElementById('Induc-Proyecto').style.display = 'none';
+        }
+
+        document.getElementById('Boton-Cancelar-Creacion').onclick = function()
+        {
+          document.getElementById('Sin-Proyecto').style.display = 'none';
+          document.getElementById('Crear-Proyecto').style.display = 'none';
+          document.getElementById('Cont-Proyecto').style.display = 'block';
+          document.getElementById('Induc-Proyecto').style.display = 'none';
+        }
       }
     }
 
+    loadPage();
+
+    document.getElementById("boton-editar").onclick = function()
+    {
+      console.log("clicked editar asdasf");
+    }
+    
 
   </script>
 

@@ -64,7 +64,9 @@ button:focus {
   border: none !important;
   border-radius: 20px !important;
   height: 250px;
-  background: linear-gradient(144deg, rgba(190,190,190,1) 0%, rgba(161,161,161,1) 100%); 
+  width: 265px;
+  background: url('../img/fondos/Fondo_proyecto.png') no-repeat!important;
+  background-size: cover !important;
   color: #fff !important;
 }
 
@@ -208,6 +210,12 @@ button:focus {
 * Textos
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 */
+
+.card-body
+{
+  padding: 5px 20px 20px 20px !important;
+}
+
 .Texto-Grande
 {
   font-weight: 700;
@@ -374,6 +382,11 @@ button:focus {
   font-size: 12pt;
 }
 
+.Azul
+{
+  color: #131A40 !important;
+}
+
 .Negro 
 {
   color: #000 !important;
@@ -401,6 +414,11 @@ button:focus {
   font-weight: 500;
 }
 
+.Label-Dark
+{
+  color:rgba(122, 122, 122, 0.664);
+}
+
 .Label-Focus
 {
   top: -20px;
@@ -415,6 +433,23 @@ button:focus {
 * Elementos 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 */
+
+.proyecto-boton-menu
+{
+  background-color: #e7e7e700;
+  margin-left: 220px !important;
+  margin-bottom: 20px !important;
+}
+
+.proyecto
+{
+  background-color: rgba(19, 26, 64, 0.692) !important;
+  height: 250px;
+  width: 265px;
+  border-radius: 20px !important;
+  backdrop-filter: blur(3px) !important;
+  transform: translate3d(-20px, -8px, 0px) !important;
+}
 
 .radio-toolbar input[type="radio"] {
   opacity: 0;
@@ -456,7 +491,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .Btn-Add-Proyecto
 {
-  width: 100%;
+  width: 265px;
   border: none;
   font-size: 80pt;
   font-weight: 100;
@@ -534,14 +569,16 @@ textarea
  .Columna-Registro
 {
   height: 80vh;
-  width: 35%;
-  float: right;
+  width: 100%;
   align-items: center;
   justify-content: center;
   display: flex;
-  margin-right: 50px;
   border-radius: 20px;
   background-color: #131a40;
+  position:absolute;
+  top:50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(0%, -50%);
 }
 
 .Columna-Perfil{
@@ -774,6 +811,21 @@ a:visited{color: #fff;}
   display: flex;
 }
 
+.Boton-Dropdown-Proyecto
+{
+  background-color: rgba(255, 255, 255, 0.0) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 5px 13px 5px 8px !important;
+  margin: 3px 0px 0px 205px !important;
+  z-index: 1005 !important;
+}
+
+.Boton-Dropdown-Proyecto:hover
+{
+  background-color: rgba(255, 255, 255, 0.39) !important;
+}
+
 .Boton-Dropdown
 {
   background-color: #131a40 !important;
@@ -871,7 +923,9 @@ a:visited{color: #fff;}
 
 .Input-Fondo-Blanco
 {
-  box-shadow: 0px 0px 20px rgba(53, 53, 53, 0.2);
+  background: #F6F7F9 !important;
+  box-shadow: inset 5px 5px 15px rgba(55, 84, 170, 0.15), inset -5px -5px 10px #FFFFFF !important;
+  color: #131a40 !important;
 }
 
 @media screen and (max-width: 1450px)
