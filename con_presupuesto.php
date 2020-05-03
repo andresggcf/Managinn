@@ -18,16 +18,20 @@
   {
     require 'conexion.php';
 
-    $_SESSION['presupuesto_post'] = $p_presupuesto;
-    $_SESSION['duracion_post'] = $p_duracion;
+    
+    $newStr = str_replace(',', '', $p_presupuesto); // If you want it to be "185345321"
+    $presupuesto = intval($newStr);
 
+    $_SESSION['presupuesto_post'] = $presupuesto;
+    $_SESSION['duracion_post'] = $p_duracion;
 
     /* Se agrega el presupuesto del proyecto */
     $queryCrearProyecto = "UPDATE proyecto 
-    SET presupuesto_inicial = '$p_presupuesto', 
+    SET presupuesto_inicial = '$presupuesto', 
     duracion_meses = '$p_duracion', 
     estado = 'A'
     WHERE id = '$p_id'";
+    echo $queryCrearProyecto;
     mysqli_query($db, $queryCrearProyecto);
 
     header ('location: perfil.php');

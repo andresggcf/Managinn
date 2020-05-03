@@ -204,7 +204,8 @@
           INNER JOIN equipos e ON p.id = e.id_proyecto
           INNER JOIN usuarios u ON e.id_usuario = u.id 
           WHERE u.id = $id AND p.estado = 'A'";
-
+          echo $queryProyectos;
+          
           if ($result = mysqli_query($db, $queryProyectos)) 
           {
             /* fetch associative array */

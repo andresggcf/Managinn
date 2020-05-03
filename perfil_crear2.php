@@ -111,12 +111,10 @@
                 <input class="Form-Field Input-Fondo-Blanco" 
                     autocomplete="off"
                     name="presupuesto_post"
-                    type="number"
+                    type="text"
                     id="currency-field" 
-                    pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
-                    data-type="currency" 
                     required/>
-                <label class="Label-Form Label-Dark">Presupuesto inicial</label>
+                <label class="Label-Form Label-Dark">Presupuesto inicial COP $</label>
               </div>
 
               <div style = "position: relative; margin-top: 20px">
@@ -149,6 +147,13 @@
     </div>
   </div>
 
+  <script type="text/javascript">
+  document.getElementById("currency-field").focusout = function (){    
+    this.value = parseFloat(this.value.replace(/,/g, ""))
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  </script>
 
 
 <?php
