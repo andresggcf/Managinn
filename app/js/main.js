@@ -53,27 +53,27 @@ $('input[type=number]').change(function(){
     switch (n){
         case 0:
             bar.css('width',"0%");
-            $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual" ).removeClass( "Circulo-Progreso");
-            $(".items_progreso li:nth-child(2)>div").addClass( "Circulo-Progreso" ).removeClass("circulo-actual");
-            $(".items_progreso li:nth-child(3)>div").addClass( "Circulo-Progreso" ).removeClass("circulo-actual");
+            $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual" ).removeClass( "Circulo-Progreso circulo-pasado" );
+            $(".items_progreso li:nth-child(2)>div").addClass( "Circulo-Progreso"  ).removeClass("circulo-actual" );
+            $(".items_progreso li:nth-child(3)>div").addClass( "Circulo-Progreso"  ).removeClass("circulo-actual" );
             break;
       case 1:
         bar.css('width',"25%");
-        $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual" ).removeClass( "Circulo-Progreso");
-        $(".items_progreso li:nth-child(2)>div").addClass( "Circulo-Progreso" ).removeClass("circulo-actual");
-        $(".items_progreso li:nth-child(3)>div").addClass( "Circulo-Progreso" ).removeClass("circulo-actual");
+        $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual"  ).removeClass( "Circulo-Progreso circulo-pasado" );
+        $(".items_progreso li:nth-child(2)>div").addClass( "Circulo-Progreso"  ).removeClass("circulo-actual circulo-pasado" );
+        $(".items_progreso li:nth-child(3)>div").addClass( "Circulo-Progreso"  ).removeClass("circulo-actual circulo-pasado" );
         console.log(n)
         break;
       case 2:
         bar.css('width',"50%");
-        $(".items_progreso li:nth-child(1)>div").addClass( "Circulo-Progreso" ).removeClass("circulo-actual");
-        $(".items_progreso li:nth-child(2)>div").addClass("circulo-actual" ).removeClass( "Circulo-Progreso");
-        $(".items_progreso li:nth-child(3)>div").addClass( "Circulo-Progreso" ).removeClass("circulo-actual");
+        $(".items_progreso li:nth-child(1)>div").addClass( "circulo-pasado"  ).removeClass("circulo-actual" );
+        $(".items_progreso li:nth-child(2)>div").addClass("circulo-actual"  ).removeClass( "Circulo-Progreso circulo-pasado" );
+        $(".items_progreso li:nth-child(3)>div").addClass( "Circulo-Progreso"  ).removeClass("circulo-actual circulo-pasado" );
         console.log(n)
         break;
       case 3:
         bar.css('width',"100%");
-        $(".items_progreso li:nth-child(2)>div").addClass( "Circulo-Progreso" ).removeClass("circulo-actual");
+        $(".items_progreso li:nth-child(2)>div").addClass( "circulo-pasado" ).removeClass("circulo-actual");
         $(".items_progreso li:nth-child(3)>div").addClass("circulo-actual" ).removeClass( "Circulo-Progreso");
         console.log(n)
         break;
@@ -87,7 +87,7 @@ function nextPrev(n) {
     // This function will figure out which tab to display
     var x = document.getElementsByClassName("tab");
     // Exit the function if any field in the current tab is invalid:
-    if (n > 1) return false;
+    if ((n >= 1 && currentTab >= (x.length - 1)) || n < 1 && currentTab == 0) return false;
     // Hide the current tab:
     x[currentTab].style.display = "none";
     // Increase or decrease the current tab by 1:
