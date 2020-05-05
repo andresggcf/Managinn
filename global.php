@@ -114,7 +114,6 @@
         </ul>
       </div>
 
-      <div>
           <div class = "Caja-Centro global">
             <form class ="FormCrear1" action="#" method = "post">
               <div class="tab step1">
@@ -133,8 +132,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="row justify-content-center">
-                  <div class="col-3  mt-4" >
+                <div class="row justify-content-center mt-auto">
+                  <div class="col-5  mt-4 Text-Center" >
                     <input class = "Boton-a-Principal-Sin-Fondo inline"  
                       name="btn_back"
                       type="button" 
@@ -166,8 +165,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="row justify-content-center">
-                  <div class="col-3  mt-4" >
+                <div class="row justify-content-center mt-auto">
+                  <div class="col-5  mt-4 Text-Center" >
                     <input class = "Boton-a-Principal-Sin-Fondo inline"  
                       name="btn_back"
                       type="button" 
@@ -214,8 +213,8 @@
                       </select>
                     </div>  
                 </div>
-                <div class="row justify-content-center">
-                  <div class="col-3  mt-4" >
+                <div class="row justify-content-center mt-auto">
+                  <div class="col-5  mt-4 Text-Center" >
                     <input class = "Boton-a-Principal-Sin-Fondo inline"  
                       name="btn_back"
                       type="button" 
@@ -232,8 +231,8 @@
                 </div>
               </div><!--step3-->
               <div class="tab step4">
-                <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Selecciona las métricas de tu preferencia.</h3>
-                <div class="row justify-content-center">
+                <h3 class="Text-Center Titulo Negro mb-3" style="font-size: 28pt">Selecciona las métricas de tu preferencia.</h3>
+                <div class="row justify-content-center metricas_content ">
                   <div class="input-group mb-3 col-4">
                     <div class="box-shadow">
                       <p class="subtitle Text-Center">Entrada</p>
@@ -286,8 +285,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="row justify-content-center">
-                  <div class="col-3 mt-4" >
+                <div class="row justify-content-center mt-auto">
+                  <div class="col-5  mt-4 Text-Center" >
                     <input class = "Boton-a-Principal-Sin-Fondo inline"  
                       name="btn_back"
                       type="button" 
@@ -298,7 +297,7 @@
                       type="button" 
                       name="Boton-Continuar"
                       onclick="nextPrev(1)"
-                      value="Siguiente"
+                      value="Finalizar"
                       >
                   </div>
                 </div>
@@ -306,7 +305,6 @@
             </form>
           </div>
       </div>
-    </div>
     <!-- Info Implementacion -->
     
   </div>

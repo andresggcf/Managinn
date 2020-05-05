@@ -48,7 +48,7 @@ $('input[type=number]').change(function(){
   function showTab(n) {
     // This function will display the specified tab of the form ...
     var x = document.getElementsByClassName("tab");
-    x[n].style.display = "block";
+    x[n].style.display = "flex";
     var bar = $(".progress-bar");
     switch (n){
         case 0:
