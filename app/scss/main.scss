@@ -3,6 +3,7 @@
 
 h1,h2,h3,h4,h5,h6{
     color:$color-textos;
+    font-weight: 900;
 }
 .subtitle{
     color:$color-textos;
@@ -79,9 +80,14 @@ input[type=number] {
 }
 
 .global-view{
+    /* .Contenedor-Menu{
+        background-color: #fff;
+    } */
     .tab{
         max-width: 750px;
         margin: 0 auto;
+        min-height: 450px;
+        flex-flow: column nowrap;
     }
     .Caja-Centro{
         position: relative;
@@ -115,6 +121,9 @@ input[type=number] {
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
     }
+    .content_inputs{
+        min-height: 180px;
+    }
     select{
         background-color: transparent;
         text-align: center;
@@ -132,6 +141,7 @@ input[type=number] {
         color:$color-textos;
         width: 100%;
         text-align: center;
+        font-weight: bold;
     }
     .divider{
         font-size: 80px;
@@ -173,6 +183,13 @@ input[type=number] {
         top: 4px;
         width: 100%;
         height: 100%;
+    }
+    .metricas_content{
+        margin-top:50px ;
+    }
+    form{
+        min-height: 500px;
+        display: block;
     }
 }
 
@@ -234,6 +251,64 @@ input[type=number] {
       transform: translateY(-50%);
       cursor: pointer;
       visibility: hidden;
+    }
+  }
+body.panel_control{
+    min-height: none;
+    color:$color-textos;
+    background-color: $color-background;
+}
+.panel_control{
+    .NavBar{
+        z-index: 2;
+    }
+    .Columna-Perfil{
+        position: absolute;
+        top: 0;
+        float:none;
+    }
+}
+  .contenedor_dashboard{
+    position: relative;
+    margin-top: 96px;
+    margin-left: 240px;
+    .info_general{
+        background-color: $color-rojo-btn;
+        border-radius: 25px;
+        color:#fff;
+        p,h2,h3,h4{
+            color: #fff;
+        }
+        .nombre{
+            margin-left: 15px;
+            // max-width: 300px;
+        }
+        .mes{
+            background-color: #fff;
+            border-radius: 25px;
+            color:$color-textos;
+            font-size: 1.2em;
+            a{
+                padding: 5px;
+                color:$color-rojo-btn;
+            }
+            span{
+                margin: 0 5px;
+            }
+        }
+    }
+    .escalamiento,
+    .conversion {
+        height: 100%;
+        .texto_escalamiento,
+        .texto_escalamiento{
+            padding: 0 5px;
+        }
+        span{
+            font-size: 2.5em;
+            color: $color-textos;
+            font-weight: 900;
+        }
     }
   }
 /* GLOBAL */
