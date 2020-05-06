@@ -1,4 +1,7 @@
-$('#Sin-Metricas #Boton-Preferencias').click(function(){
+$.noConflict();
+jQuery( document ).ready(function( $ ) {
+  // Code that uses jQuery's $ can follow here.
+  $('#Sin-Metricas #Boton-Preferencias').click(function(){
     $('#Crear-Implementacion').css('display','block');
     $('#Sin-Metricas').css('display','none');
 
@@ -47,7 +50,8 @@ $('input[type=number]').change(function(){
   showTab(currentTab); // Display the current tab
   function showTab(n) {
     // This function will display the specified tab of the form ...
-    var x = document.getElementsByClassName("tab");
+    var x = $(".tab");
+    if(x.length == 0){return false}
     x[n].style.display = "flex";
     var bar = $(".progress-bar");
     switch (n){
@@ -81,11 +85,17 @@ $('input[type=number]').change(function(){
       console.log(n,bar);
     }
   }
+  $( "input[name='btn_back']" ).click(function(){
+    nextPrev(-1)
+  })
+  $( "input[name='Boton-Continuar']" ).click(function(){
+    nextPrev(1)
+  })
   
 
 function nextPrev(n) {
     // This function will figure out which tab to display
-    var x = document.getElementsByClassName("tab");
+    var x = $(".tab");
     // Exit the function if any field in the current tab is invalid:
     if ((n >= 1 && currentTab >= (x.length - 1)) || n < 1 && currentTab == 0) return false;
     // Hide the current tab:
@@ -102,3 +112,15 @@ function nextPrev(n) {
     // Otherwise, display the correct tab:
     showTab(currentTab);
   }
+
+/**
+ * Variables para las metricas GLOBAL
+ */
+var escalamiento = 10;
+var tasa_conversion = 15;
+
+$("#escalamiento").text(escalamiento);
+$("#tasa_conversion").text(tasa_conversion);
+
+}); // Close JQuery noConflict
+

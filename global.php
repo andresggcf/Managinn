@@ -137,13 +137,11 @@
                     <input class = "Boton-a-Principal-Sin-Fondo inline"  
                       name="btn_back"
                       type="button" 
-                      onclick="nextPrev(-1)" 
                       value="Omitir"
                       >  
                     <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
                       type="button" 
                       name="Boton-Continuar"
-                      onclick="nextPrev(1)"
                       value="Siguiente"
                       >
                   </div>
@@ -170,13 +168,11 @@
                     <input class = "Boton-a-Principal-Sin-Fondo inline"  
                       name="btn_back"
                       type="button" 
-                      onclick="nextPrev(-1)" 
                       value="Omitir"
                       > 
                     <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
                       type="button" 
                       name="Boton-Continuar"
-                      onclick="nextPrev(1)"
                       value="Siguiente"
                       >
                   </div>
@@ -218,13 +214,11 @@
                     <input class = "Boton-a-Principal-Sin-Fondo inline"  
                       name="btn_back"
                       type="button" 
-                      onclick="nextPrev(-1)" 
                       value="Omitir"
                       >  
                     <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
                       type="button" 
                       name="Boton-Continuar"
-                      onclick="nextPrev(1)"
                       value="Siguiente"
                       >
                   </div>
@@ -290,13 +284,11 @@
                     <input class = "Boton-a-Principal-Sin-Fondo inline"  
                       name="btn_back"
                       type="button" 
-                      onclick="nextPrev(-1)" 
                       value="Omitir"
                       >   
                     <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
                       type="button" 
                       name="Boton-Continuar"
-                      onclick="nextPrev(1)"
                       value="Finalizar"
                       >
                   </div>

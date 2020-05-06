@@ -82,7 +82,7 @@
                         <img src="img/iconos/EscalamientoPromedio.svg" alt="escalamiento">
                         <div class="texto_escalamiento">
                             <h4>Escalamiento promedio</h4>
-                            <span>
+                            <span id="escalamiento">
                                 0%
                             </span>
                         </div>
@@ -93,7 +93,7 @@
                         <img src="img/iconos/tasadeconversion.svg" alt="conversion">
                         <div class="texto_escalamiento">
                             <h4>Tasa de conversión</h4>
-                            <span>
+                            <span id="tasa_conversion">
                                 0
                             </span>
                         </div>
