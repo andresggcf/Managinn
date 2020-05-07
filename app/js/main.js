@@ -5,7 +5,9 @@ jQuery(document).ready(function ($) {
     $('#Sin-Metricas').css('display', 'none');
 
   })
-
+  /**
+   * Sumar y restar valores en los input de Datos sobre Personas.
+   */
   $('#less_persons').click(function (e) {
     e.preventDefault()
     var num_persons = parseInt($('#num_persons').val());
@@ -35,7 +37,9 @@ jQuery(document).ready(function ($) {
     num_persons++;
     $('#num_persons_cap').val(num_persons)
   })
-
+  /**
+   * Permitir solo valores numericos en los input:number
+   */
   $('input[type=number]').change(function () {
     var valueNumber = $(this).val();
     console.log(valueNumber)
@@ -44,7 +48,9 @@ jQuery(document).ready(function ($) {
     console.log(valueNumber)
     $(this).val(valueNumber)
   });
-
+  /**
+   * Cambiar de pasos en el formulario de Ajustar Preferencias 
+   */
   var currentTab = 0; // Current tab is set to be the first tab (0)
   showTab(currentTab); // Display the current tab
   function showTab(n) {
@@ -90,8 +96,6 @@ jQuery(document).ready(function ($) {
   $("input[name='Boton-Continuar']").click(function () {
     nextPrev(1)
   })
-
-
   function nextPrev(n) {
     var x = $(".tab");
     if ((n >= 1 && currentTab >= (x.length - 1)) || n < 1 && currentTab == 0) return false;
@@ -126,7 +130,9 @@ jQuery(document).ready(function ($) {
   $("#total_presupuesto_usado").text(total_presupuesto_usado);
   $("#valor_actual_neto").text(valor_actual_neto);
   $("#personas_capacitadas_relacion").text(personas_capacitadas_relacion);
-
+  /**
+   * Asignar meses
+   */
   var meses = [
     "Enero",
     "Febrero",
@@ -143,7 +149,6 @@ jQuery(document).ready(function ($) {
   ];
   var d = new Date();
   var n = d.getMonth();
-  console.log(n)
   $('#mes_actual').text(meses[n]);
   $('#less_month').click(function () {
     n--;
@@ -153,7 +158,9 @@ jQuery(document).ready(function ($) {
     n++;
     $('#mes_actual').text(meses[n]);
   })
-
+  /**
+   * Asignar valores random a la grafica cada vez que se cambie de filtro
+   */
   $('.change_graph').click(function (e) {
     e.preventDefault();
     if ($(this).hasClass('active')) {
@@ -170,8 +177,12 @@ jQuery(document).ready(function ($) {
     myChart.data.datasets[1].data = dataComplement;
     myChart.update();
   })
-
-
+  /**
+   * Agregar iconos de personas segun los valores asignados
+   * a las personas capacitadas
+   * @argument personas_capacitadas = Numero de personas capacitadas
+   * @argument personas_capacitadas_total = Numero total de personas
+   */
   var n_personas = [];
   for (let index = 0; index < personas_capacitadas_total; index++) {
     var persona = $('<span />').attr('class', 'persona');
