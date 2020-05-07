@@ -81,10 +81,11 @@
                 >Ajustar Preferencias</button>
       </div>
       <div>
-        <button class = "Boton-a-Principal-Sin-Fondo" 
+        <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
                 name = "Boton-Proyecto" 
                 id = "Boton-Omitir-Preferencias"
-                >Omitir</button>
+                href="global_panel_control.php"
+                >Omitir</a>
       </div>
     </div>
     <!-- Sin Metrica -->
@@ -115,7 +116,8 @@
       </div>
 
           <div class = "Caja-Centro global">
-            <form class ="FormCrear1" action="#" method = "post">
+            <!-- Agregar ACTION para enviar el formulario a donde se quiera guardar la info-->
+            <form class ="FormCrear1" action="#" method = "post"> 
               <div class="tab step1">
                 <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Datos sobre personas.</h3>
                   <p class="Subtitulo Text-Center Negro">Con estos datos calcularemos por tí algunos indicadores relacionados con tu equipo.
@@ -287,7 +289,7 @@
                       value="Omitir"
                       >   
                     <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
-                      type="button" 
+                      type="submit" 
                       name="Boton-Continuar"
                       value="Finalizar"
                       >

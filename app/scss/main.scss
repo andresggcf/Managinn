@@ -18,6 +18,9 @@ p{
 .bg-color{
     background-color: $color-background;
 }
+html,body{
+    color:$color-textos;
+}
 
 
 /* Chrome, Safari, Edge, Opera */
@@ -49,16 +52,23 @@ input[type=number] {
   transition: 0.3s;
   border: #fff;
   display: block;
-  margin: 0 auto;
+  margin: 2px auto;
   &.inline{
       display: inline-block;
   }
-}
-
-.Boton-a-Principal-Sin-Fondo:hover
-{
-  background-color: #eb575762;
-  border: #fff !important;
+  &:visited{
+    color:$color-rojo-btn  ;
+  }
+  &:hover{
+    background-color:#eb575762;
+    color:#fff;
+  }
+    &:focus,
+    &:active{
+        background-color:$color-rojo-btn;
+        border: #fff !important;
+        color:#fff  ;
+    }
 }
 
 #Crear-Implementacion{
@@ -98,7 +108,14 @@ input[type=number] {
             color:#fff;
         }
     }
-    &:hover{
+    &.btn-large{
+        padding: 15px 30px;
+        max-width: 200px;
+    }
+    &:hover,
+    &:visited,
+    &:focus,
+    &:active{
         text-decoration: none;
     }
 }

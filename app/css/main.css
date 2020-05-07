@@ -23,6 +23,9 @@ p {
 .bg-color {
   background-color: #F6F7F9; }
 
+html, body {
+  color: #131a40; }
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -48,13 +51,18 @@ input[type=number] {
   transition: 0.3s;
   border: #fff;
   display: block;
-  margin: 0 auto; }
+  margin: 2px auto; }
   .Boton-a-Principal-Sin-Fondo.inline {
     display: inline-block; }
-
-.Boton-a-Principal-Sin-Fondo:hover {
-  background-color: #eb575762;
-  border: #fff !important; }
+  .Boton-a-Principal-Sin-Fondo:visited {
+    color: #eb5757; }
+  .Boton-a-Principal-Sin-Fondo:hover {
+    background-color: #eb575762;
+    color: #fff; }
+  .Boton-a-Principal-Sin-Fondo:focus, .Boton-a-Principal-Sin-Fondo:active {
+    background-color: #eb5757;
+    border: #fff !important;
+    color: #fff; }
 
 #Crear-Implementacion {
   display: none; }
@@ -88,7 +96,10 @@ input[type=number] {
     .btn-custom.btn-on-bg.active {
       background-color: #eb5757;
       color: #fff; }
-  .btn-custom:hover {
+  .btn-custom.btn-large {
+    padding: 15px 30px;
+    max-width: 200px; }
+  .btn-custom:hover, .btn-custom:visited, .btn-custom:focus, .btn-custom:active {
     text-decoration: none; }
 
 .global-view {

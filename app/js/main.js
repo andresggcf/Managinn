@@ -85,7 +85,7 @@ jQuery(document).ready(function ($) {
     }
   }
   $("input[name='btn_back']").click(function () {
-    nextPrev(-1)
+    nextPrev(1)
   })
   $("input[name='Boton-Continuar']").click(function () {
     nextPrev(1)
