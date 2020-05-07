@@ -9,8 +9,14 @@ h1,h2,h3,h4,h5,h6{
     color:$color-textos;
     font-weight: 900;
 }
+.uppercase{
+    text-transform: uppercase;
+}
 p{
     color:$color-textos;
+}
+.bg-color{
+    background-color: $color-background;
 }
 
 
@@ -74,8 +80,26 @@ input[type=number] {
 }
 
 .btn-custom {
+    padding: 2px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    // margin: 2px auto;
     &.btn-on{
         color:$color-rojo-btn;
+    }
+    &.btn-on-bg{
+        font-size: .8em;
+        padding: 2px 25px;
+        background-color:transparent;
+        color:$color-textos-alpha;
+        border-radius: 25px;
+        &.active{
+            background-color:$color-rojo-btn;
+            color:#fff;
+        }
+    }
+    &:hover{
+        text-decoration: none;
     }
 }
 
@@ -157,8 +181,10 @@ input[type=number] {
         border-radius: 25px;
         background-color: $color-background;
         width: 100%;
-        padding: 5px 8px;
-        &:after{
+        height: 100%;
+        padding: 1rem;
+        &:before{
+            pointer-events: none;
             content: '';
             position: absolute;
             left: 0;
@@ -202,7 +228,7 @@ input[type=number] {
     width: 100%;
 
     label {
-      padding: 5px 15px;
+      padding: 5px;
       width: 100%;
       display: block;
       text-align: center;
@@ -254,7 +280,7 @@ input[type=number] {
     }
   }
 body.panel_control{
-    min-height: none;
+    min-height: none!important;
     color:$color-textos;
     background-color: $color-background;
 }
@@ -272,6 +298,12 @@ body.panel_control{
     position: relative;
     margin-top: 96px;
     margin-left: 240px;
+    h4{
+        font-size: 1.3rem;
+        @media screen and (max-width: $break-x-large){
+            font-size: 1rem;
+        }
+    }
     .info_general{
         background-color: $color-rojo-btn;
         border-radius: 25px;
@@ -281,7 +313,7 @@ body.panel_control{
         }
         .nombre{
             margin-left: 15px;
-            // max-width: 300px;
+            max-width: 300px;
         }
         .mes{
             background-color: #fff;
@@ -291,6 +323,9 @@ body.panel_control{
             a{
                 padding: 5px;
                 color:$color-rojo-btn;
+                &:hover{
+                    text-decoration: none;
+                }
             }
             span{
                 margin: 0 5px;
@@ -310,10 +345,93 @@ body.panel_control{
             font-weight: 900;
         }
     }
+    .dias{
+        span{
+            font-size: 2.5em;
+            color: $color-textos;
+            font-weight: 900;
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+    }
     .grafica{
         width: 100% !important;
         height: 400px !important;
         display: block;
     }
+    .img_icons{
+        margin: 0 10px;
+    }
+    .info_dias{
+        background-color: $color-azul-btn;
+        color:#fff;
+        h5{
+            margin-top: 2rem;
+            margin-bottom: 1em;
+            color:#fff;
+        }
+        p{
+            color:#fff;
+        }
+        img{
+            margin: 1.5em auto;
+            display: block;
+            max-width: 100%;
+        }
+    }
+    .p_capacitadas{
+        .persona{
+            max-width: 100%;
+            margin: 0 2px;
+            position: relative;
+            width: 9px;
+            height: 24px;
+            display: inline-block;
+            color:$color-textos-alpha;
+            &.active{
+                color:$color-textos;
+            }
+            &::before{
+                font-family: 'icomoon';
+                font-size: 1rem;
+                width: 100%;
+                height: 100%;
+                content: '\e92d';
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        span{
+            font-size: 2.5em;
+            color: $color-textos;
+            font-weight: 900;
+            text-align: center;
+        }
+    }
+    .icon_pesos{
+        font-size: 2.5em;
+        position: relative;
+        font-weight: bold;
+        &::before{
+            content: "$";
+            display: block;
+            position: absolute;
+            left: -1em;
+            color: $color-azul-btn;
+            font-weight: bold;
+        }
+    }
+    .total{
+        font-size: 1.5em;
+        color:$color-azul-btn;
+        em{
+            color:$color-textos;
+            font-style: normal;
+        }
+    }
+    
   }
 /* GLOBAL */

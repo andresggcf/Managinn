@@ -61,38 +61,38 @@
     <div class="contenedor_dashboard">
         <div class="container-fluid">
             <div class="row kpi">
-                <div class="col-6">
+                <div class="col-6 my-3">
                     <div class="info_general px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center">
                         <div class="nombre">
                             <h2>Hola,<?php echo $_SESSION['name_post'];?></h2>
                             <p>Asi se ve tu sistema de innovación global en:</p> 
                         </div>
-                        <div class="mes">
-                            <a href="#"><</a>
-                            <span>Diciembre</span>
-                            <a href="#">></a>
+                        <div class="mes d-flex flex-row align-items-center">
+                            <a id="less_month" href="#"><</a>
+                            <span id="mes_actual">Diciembre</span>
+                            <a id="more_month" href="#">></a>
                         </div>
                         <div class="imagen">
                             <img src="img/iconos/ilustracion_saludo.svg" alt="Saludo">
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-3 my-3">
                     <div class="escalamiento box-shadow px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center">
                         <img src="img/iconos/EscalamientoPromedio.svg" alt="escalamiento">
                         <div class="texto_escalamiento">
-                            <h4>Escalamiento promedio</h4>
+                            <h4  class="uppercase">Escalamiento promedio</h4>
                             <span id="escalamiento">
                                 0%
                             </span>
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-3 my-3">
                     <div class="conversion box-shadow px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center">
                         <img src="img/iconos/tasadeconversion.svg" alt="conversion">
                         <div class="texto_escalamiento">
-                            <h4>Tasa de conversión</h4>
+                            <h4  class="uppercase">Tasa de conversión</h4>
                             <span id="tasa_conversion">
                                 0
                             </span>
@@ -100,37 +100,55 @@
                     </div>
                 </div>
             </div>
-            <div class="row graficas">
+            <div class="row graficas align-items-start">
                 <div class="col-10">
-                    Tus metricas
-                    <canvas id="myChart" class="grafica" height="400"></canvas>
-                </div> 
-                <div class="col-2">
-                    <div class="dias">
-                        Días activos
+                    <div class="box-shadow my-3">
+                    <div class="bg-color d-flex align-items-center ">
+                      <h4 class="uppercase flex-grow-1 m-0"> <img src="img/iconos/icono_tus_metricas.svg" alt="Metricas" class="img_icons"> Tus metricas</h4>
+                      <a class="change_graph uppercase btn btn-custom btn-on-bg mx-3 active" href="#">Entrada</a>
+                      <a class="change_graph uppercase btn btn-custom btn-on-bg mx-3" href="#">Proceso</a>
+                      <a class="change_graph uppercase btn btn-custom btn-on-bg mx-3" href="#">Salida</a>
                     </div>
-                    <div class="info_dias">
-                        Descarga tu reporte automatico
+                    <canvas id="myChart" class="bg-color grafica" height="400"></canvas>
                     </div>
-                </div>
-                <div class="col-10">
                     <div class="row">
-                        <div class="col-4">
-                            <h3>Personas capacitadas</h3>
-                            <span>0/0</span>
-                            <div class="n_personas">
-                                muñequitos
+                        <div class="col-4 my-3">
+                            <div class="box-shadow">
+                              <h4 class="uppercase"><img src="img/iconos/icono_personas_capacitadas.svg" alt="" class="img_icons"> Personas capacitadas</h4>
+                              <div class="p_capacitadas d-flex justify-content-center">
+                                <span id="personas_capacitadas_relacion" class="flex-fill">0/0</span>
+                                <div class="n_personas flex-fill p-2">
+                                    
+                                </div>
+                              </div>
                             </div>
                         </div>
-                        <div class="col-4">
-                            <h3>Presupuesto usado</h3>
-                            <span>0</span>
-                            <span class="total">de <em>$0</em></span>
+                        <div class="col-4 my-3">
+                            <div class="box-shadow">
+                              <h4 class="uppercase"><img src="img/iconos/icono_presupuesto_usado.svg" alt="" class="img_icons"> Presupuesto usado</h4>
+                              <div class="d-flex flex-column ml-5">
+                                <span id="presupuesto_usado" class="icon_pesos">0</span>
+                                <span class="total">de <em id="total_presupuesto_usado" >$0</em></span>
+                              </div>
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <h3>Valor actual neto (VAN)</h3>
-                            <span>0</span>
+                        <div class="col-4 my-3 ">
+                            <div class="box-shadow d-flex flex-column">
+                              <h4 class="uppercase"><img src="img/iconos/icono_valor_actual_neto.svg" alt="" class="img_icons"> Valor actual neto (VAN)</h4>
+                              <span id="valor_actual_neto" class="ml-5 icon_pesos">0</span>
+                            </div>
                         </div>
+                    </div>
+                </div> 
+                <div class="col-2 mt-3 d-flex flex-column align-items-center ">
+                    <div class="dias my-3 box-shadow">
+                        <h4 class="uppercase"> <img src="img/iconos/icono_dias_activo.svg" alt="Dias activos" class="img_icons"> Días activos</h4>
+                        <span id="dias_activos">0</span>
+                    </div>
+                    <div class="info_dias p-3 my-3 box-shadow">
+                        <h5>Descarga tu reporte automático</h5>
+                        <p>Olvídate de las largas horas realizando reportes. Descarga el tuyo haciendo clic en el botón de abajo</p>
+                        <img src="img/iconos/ilustracion_reporte_auto.svg" alt="Persona">
                     </div>
                 </div>
             </div>

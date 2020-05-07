@@ -14,8 +14,14 @@ h1, h2, h3, h4, h5, h6 {
   color: #131a40;
   font-weight: 900; }
 
+.uppercase {
+  text-transform: uppercase; }
+
 p {
   color: #131a40; }
+
+.bg-color {
+  background-color: #F6F7F9; }
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -67,8 +73,23 @@ input[type=number] {
   border: none;
   text-align: center; }
 
-.btn-custom.btn-on {
-  color: #eb5757; }
+.btn-custom {
+  padding: 2px 15px;
+  text-decoration: none;
+  cursor: pointer; }
+  .btn-custom.btn-on {
+    color: #eb5757; }
+  .btn-custom.btn-on-bg {
+    font-size: .8em;
+    padding: 2px 25px;
+    background-color: transparent;
+    color: rgba(19, 26, 64, 0.6);
+    border-radius: 25px; }
+    .btn-custom.btn-on-bg.active {
+      background-color: #eb5757;
+      color: #fff; }
+  .btn-custom:hover {
+    text-decoration: none; }
 
 .global-view {
   /* .Contenedor-Menu{
@@ -136,8 +157,10 @@ input[type=number] {
     border-radius: 25px;
     background-color: #F6F7F9;
     width: 100%;
-    padding: 5px 8px; }
-    .global-view .box-shadow:after {
+    height: 100%;
+    padding: 1rem; }
+    .global-view .box-shadow:before {
+      pointer-events: none;
       content: '';
       position: absolute;
       left: 0;
@@ -173,7 +196,7 @@ input[type=number] {
   position: relative;
   width: 100%; }
   .inputGroup label {
-    padding: 5px 15px;
+    padding: 5px;
     width: 100%;
     display: block;
     text-align: center;
@@ -216,7 +239,7 @@ input[type=number] {
     visibility: hidden; }
 
 body.panel_control {
-  min-height: none;
+  min-height: none !important;
   color: #131a40;
   background-color: #F6F7F9; }
 
@@ -232,6 +255,11 @@ body.panel_control {
   position: relative;
   margin-top: 96px;
   margin-left: 240px; }
+  .contenedor_dashboard h4 {
+    font-size: 1.3rem; }
+    @media screen and (max-width: 1440px) {
+      .contenedor_dashboard h4 {
+        font-size: 1rem; } }
   .contenedor_dashboard .info_general {
     background-color: #eb5757;
     border-radius: 25px;
@@ -239,7 +267,8 @@ body.panel_control {
     .contenedor_dashboard .info_general p, .contenedor_dashboard .info_general h2, .contenedor_dashboard .info_general h3, .contenedor_dashboard .info_general h4 {
       color: #fff; }
     .contenedor_dashboard .info_general .nombre {
-      margin-left: 15px; }
+      margin-left: 15px;
+      max-width: 300px; }
     .contenedor_dashboard .info_general .mes {
       background-color: #fff;
       border-radius: 25px;
@@ -248,6 +277,8 @@ body.panel_control {
       .contenedor_dashboard .info_general .mes a {
         padding: 5px;
         color: #eb5757; }
+        .contenedor_dashboard .info_general .mes a:hover {
+          text-decoration: none; }
       .contenedor_dashboard .info_general .mes span {
         margin: 0 5px; }
   .contenedor_dashboard .escalamiento,
@@ -263,9 +294,73 @@ body.panel_control {
       font-size: 2.5em;
       color: #131a40;
       font-weight: 900; }
+  .contenedor_dashboard .dias span {
+    font-size: 2.5em;
+    color: #131a40;
+    font-weight: 900;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    display: block; }
   .contenedor_dashboard .grafica {
     width: 100% !important;
     height: 400px !important;
     display: block; }
+  .contenedor_dashboard .img_icons {
+    margin: 0 10px; }
+  .contenedor_dashboard .info_dias {
+    background-color: #17AEBF;
+    color: #fff; }
+    .contenedor_dashboard .info_dias h5 {
+      margin-top: 2rem;
+      margin-bottom: 1em;
+      color: #fff; }
+    .contenedor_dashboard .info_dias p {
+      color: #fff; }
+    .contenedor_dashboard .info_dias img {
+      margin: 1.5em auto;
+      display: block;
+      max-width: 100%; }
+  .contenedor_dashboard .p_capacitadas .persona {
+    max-width: 100%;
+    margin: 0 2px;
+    position: relative;
+    width: 9px;
+    height: 24px;
+    display: inline-block;
+    color: rgba(19, 26, 64, 0.6); }
+    .contenedor_dashboard .p_capacitadas .persona.active {
+      color: #131a40; }
+    .contenedor_dashboard .p_capacitadas .persona::before {
+      font-family: 'icomoon';
+      font-size: 1rem;
+      width: 100%;
+      height: 100%;
+      content: '\e92d';
+      position: absolute;
+      top: 0;
+      left: 0; }
+  .contenedor_dashboard .p_capacitadas span {
+    font-size: 2.5em;
+    color: #131a40;
+    font-weight: 900;
+    text-align: center; }
+  .contenedor_dashboard .icon_pesos {
+    font-size: 2.5em;
+    position: relative;
+    font-weight: bold; }
+    .contenedor_dashboard .icon_pesos::before {
+      content: "$";
+      display: block;
+      position: absolute;
+      left: -1em;
+      color: #17AEBF;
+      font-weight: bold; }
+  .contenedor_dashboard .total {
+    font-size: 1.5em;
+    color: #17AEBF; }
+    .contenedor_dashboard .total em {
+      color: #131a40;
+      font-style: normal; }
 
 /* GLOBAL */

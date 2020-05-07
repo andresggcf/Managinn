@@ -69,11 +69,23 @@ var myChart = new Chart(ctx, {
                     display: true,
                     labelString: 'Métricas de entrada',
                     fontStyle: 'bold',
-                }
+                },
+                gridLines:{
+                    display: false,
+                    tickMarkLength: 8
+                },
             }]
         },
         legend: {
             display: false
         },
+        layout: {
+            padding: {
+                left: 50,
+                right: 30,
+                top: 30,
+                bottom: 50
+            }
+        }
     }
 });
