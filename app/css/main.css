@@ -263,5 +263,9 @@ body.panel_control {
       font-size: 2.5em;
       color: #131a40;
       font-weight: 900; }
+  .contenedor_dashboard .grafica {
+    width: 100% !important;
+    height: 400px !important;
+    display: block; }
 
 /* GLOBAL */

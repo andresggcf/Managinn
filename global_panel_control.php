@@ -103,6 +103,7 @@
             <div class="row graficas">
                 <div class="col-10">
                     Tus metricas
+                    <canvas id="myChart" class="grafica" height="400"></canvas>
                 </div> 
                 <div class="col-2">
                     <div class="dias">
