@@ -29,6 +29,7 @@ function watch() {
         proxy: {"target": "localhost/managinn"},
     });
     gulp.watch("app/scss/*.scss", style);
+    gulp.watch("app/js/*.js").on('change', browserSync.reload);
     gulp.watch("*.php").on('change', browserSync.reload);
 }
 
