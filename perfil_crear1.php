@@ -99,8 +99,8 @@
 
       <div class="Cont-Crear">
         <div>
-          <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Invitar al equipo</h3>
-          <p class="Subtitulo Text-Center Negro">Manda una invitación a los integrantes que deseas en este proyecto.
+          <h3 class="Text-Center Titulo Azul" style="font-size: 28pt">Invitar al equipo</h3>
+          <p class="Subtitulo Text-Center Azul">Manda una invitación a los integrantes que deseas en este proyecto.
           </p>
         </div>
 
@@ -114,7 +114,7 @@
                     id="proyecto" 
                     type="text"
                     required/>
-                <label class="Label-Form">Correo</label>
+                <label class="Label-Form Label-Dark">Correo</label>
 
                 <div class = "Select-Campo-Equipo">
                   <select class = "Select-Equipo"id="roles" name="rol_equipo">

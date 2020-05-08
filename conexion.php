@@ -4,19 +4,18 @@
 //parametros: servidor, usuario, clave, base de datos
 
 //Valores iMac
-/* $servidor = "localhost";
+$servidor = "localhost";
 $usuario = "root";
 $clave = "root";
-$dbNombre = "managinn"; */
+$dbNombre = "managinn";
 
 //Valores Portatil Dell
-
+/*
 $servidor = "localhost";
 $usuario = "root";
 $clave = "";
 $dbNombre = "managinn";
-
-
+*/
 //Valores Servidor Host
 /*
 $servidor = "localhost";

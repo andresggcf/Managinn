@@ -99,8 +99,8 @@
 
       <div class="Cont-Crear">
         <div>
-          <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Asignar recursos</h3>
-          <p class="Subtitulo Text-Center Negro">Registra los recursos iniciales de este proyecto.
+          <h3 class="Text-Center Titulo Azul" style="font-size: 28pt">Asignar recursos</h3>
+          <p class="Subtitulo Text-Center Azul">Registra los recursos iniciales de este proyecto.
           </p>
         </div>
 
@@ -111,16 +111,14 @@
                 <input class="Form-Field Input-Fondo-Blanco" 
                     autocomplete="off"
                     name="presupuesto_post"
-                    type="number"
+                    type="text"
                     id="currency-field" 
-                    pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
-                    data-type="currency" 
                     required/>
-                <label class="Label-Form">Presupuesto inicial</label>
+                <label class="Label-Form Label-Dark">Presupuesto inicial COP $</label>
               </div>
 
               <div style = "position: relative; margin-top: 20px">
-                <p style = "color: #c2c2c2; width: 150px; float:left">
+                <p style = "color: #131A40; width: 150px; float:left">
                 Duración estimada (meses)</p>
                 <input class="Form-Field Input-Fondo-Blanco" 
                     style = "width: 120px; float: right;"
@@ -149,6 +147,13 @@
     </div>
   </div>
 
+  <script type="text/javascript">
+  document.getElementById("currency-field").focusout = function (){    
+    this.value = parseFloat(this.value.replace(/,/g, ""))
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  </script>
 
 
 <?php

@@ -17,7 +17,6 @@
     <script src="js/global.js"></script>
 
     <link rel="stylesheet" type="text/css" href="app/css/main.css">
-
     <title>Managinn</title>  
 
   </head>
