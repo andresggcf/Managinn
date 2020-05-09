@@ -232,7 +232,7 @@
                             <a class="proyecto-boton-menu" 
                               style="margin-left:15px;" 
                               id="boton-editar"
-                              href=<?php echo "perfil.php?proyecto=",$idProyecto;?>
+                              href=<?php echo "perfil_editar.php?proyecto=",$idProyecto;?>
                               >
                               <img  alt="" src="img/iconos/icono-editar.svg" width="40px" height="40px"
                                 style = "margin-top:60px; margin-bottom:15px">

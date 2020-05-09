@@ -211,6 +211,24 @@ button:focus {
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 */
 
+
+.modal-title
+{
+  color: #131A40;
+  text-align: center;
+  font-weight: bolder;
+  right: 39% !important;
+  position: absolute;
+}
+
+.modal-subtitle
+{
+  color: #131A40;
+  text-align: center;
+  font-weight: bolder;
+  text-align: left;
+}
+
 .card-body
 {
   padding: 5px 20px 20px 20px !important;
@@ -434,11 +452,54 @@ button:focus {
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 */
 
+.contenedor-subir-foto
+{
+  width: 100%;
+  height: 140px;
+  background: #F6F7F9;
+  box-shadow: inset 5px 5px 15px rgba(55, 84, 170, 0.15), inset -5px -5px 10px #FFFFFF;
+  border-radius: 20px;
+}
+
+.modal-backdrop {
+  background-color:#131A40 !important;
+}
+
+.modal-header
+{
+  border: none !important;
+  position: relative;
+  padding: 30px 30px 50px 16px !important;
+}
+
+.modal{
+  top: 80px !important;
+}
+
+.modal-content
+{
+  background: #F6F7F9 !important;
+  box-shadow: 0px 0px 40px rgba(19, 26, 64, 0.2) !important;
+  border-radius: 20px !important;
+  text-align: center !important;
+}
+
+.modal-body
+{
+  padding: 0px 50px !important;
+}
+
+.modal-dialog
+{
+  max-width: 950px !important; 
+  width: 850px !important;
+}
+
 .proyecto-boton-menu
 {
   background-color: #e7e7e700;
-  margin-left: 220px !important;
-  margin-bottom: 20px !important;
+  margin: 0px 0px 0px 210px !important;
+  border: none;
 }
 
 .proyecto
@@ -956,5 +1017,10 @@ a:visited{color: #fff;}
     display: none !important;
   }
 
+@media screen and (min-width: 576px){
+  .modal-dialog {
+    max-width: 850px !important;
+  }
+}
 
 }
