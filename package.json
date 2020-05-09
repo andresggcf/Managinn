@@ -1,0 +1,25 @@
+{
+  "name": "managinn",
+  "version": "1.0.0",
+  "description": "Projecto de Grado Daniela Bedoya",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/ajhades/managinn.git"
+  },
+  "author": "Alvaro Borrero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/ajhades/managinn/issues"
+  },
+  "homepage": "https://gitlab.com/ajhades/managinn#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  },
+  "dependencies": {}
+}
