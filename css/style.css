@@ -4,7 +4,7 @@ body
 {
   min-height: 100vh;
   font-family: 'DM Sans', sans-serif !important;
-  color: white !important;
+  color: white;
 
   -webkit-user-select: none; /* Chrome/Safari */        
   -moz-user-select: none; /* Firefox */

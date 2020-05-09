@@ -16,7 +16,6 @@ $usuario = "root";
 $clave = "";
 $dbNombre = "managinn";
 */
-
 //Valores Servidor Host
 /*
 $servidor = "localhost";
