@@ -54,6 +54,7 @@ if (ctx) {
                     ticks: {
                         min: 0,
                         max: 100,
+                        fontSize:16,
                         callback: function (tick) {
                             return tick.toString() + '%';
                         }
@@ -62,7 +63,9 @@ if (ctx) {
                         display: true,
                         labelString: 'Porcentaje',
                         fontStyle: 'bold',
-                    }
+                        fontSize:15,
+                    },
+                    
                 }],
                 xAxes: [{
                     stacked: true,
@@ -70,10 +73,14 @@ if (ctx) {
                         display: true,
                         labelString: 'Métricas de entrada',
                         fontStyle: 'bold',
+                        fontSize:15,
                     },
                     gridLines: {
                         display: false,
                         tickMarkLength: 8
+                    },
+                    ticks:{
+                        fontSize:16,
                     },
                 }]
             },

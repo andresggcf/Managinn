@@ -98,7 +98,7 @@ input[type=number] {
         color:$color-rojo-btn;
     }
     &.btn-on-bg{
-        font-size: .8em;
+        font-size: 1rem;
         padding: 2px 25px;
         background-color:transparent;
         color:$color-textos-alpha;
@@ -121,9 +121,9 @@ input[type=number] {
 }
 
 .global-view{
-    /* .Contenedor-Menu{
+    .Contenedor-Menu{
         background-color: #fff;
-    } */
+    }
     .tab{
         max-width: 750px;
         margin: 0 auto;
@@ -305,18 +305,47 @@ body.panel_control{
     .NavBar{
         z-index: 2;
     }
+    .icon_home{
+        margin: 25px 27px;
+        img{
+            max-width: 100%;
+            display: block;
+        }
+    }
     .Columna-Perfil{
         position: absolute;
         top: 0;
         float:none;
+        width: 115px;
+        z-index: 3;
+        padding-top: 15px;
+    }
+    .Icono-Menu-Perfil{
+        width: auto;
+        img{
+            filter: invert(100%) grayscale(100%);
+            width: 30px;
+        }
+        &:hover{
+            background-color: #fff;
+            img{
+                filter:none;
+            }
+        }
+    }
+    .current-Icono{
+        filter: none!important;
     }
 }
   .contenedor_dashboard{
     position: relative;
     margin-top: 96px;
-    margin-left: 240px;
+    margin-left: 115px;
+    h2{
+        font-size: 2.3rem;
+    }
     h4{
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         @media screen and (max-width: $break-x-large){
             font-size: 1rem;
         }
@@ -331,14 +360,18 @@ body.panel_control{
         .nombre{
             margin-left: 15px;
             max-width: 300px;
+            p{
+                font-size: 1.25rem;
+            }
         }
         .mes{
             background-color: #fff;
             border-radius: 25px;
             color:$color-textos;
-            font-size: 1.2em;
+            font-size: 1.15rem;
+            min-width: 150px;
             a{
-                padding: 5px;
+                padding: 5px 8px;
                 color:$color-rojo-btn;
                 &:hover{
                     text-decoration: none;
@@ -357,14 +390,22 @@ body.panel_control{
             padding: 0 5px;
         }
         span{
-            font-size: 2.5em;
+            font-size: 3.1em;
             color: $color-textos;
             font-weight: 900;
+        }
+        p{
+            display: inline-block;
+            color:$color-textos;
+            strong{
+                display: block;
+                color:$color-verde;
+            }
         }
     }
     .dias{
         span{
-            font-size: 2.5em;
+            font-size: 3.1em;
             color: $color-textos;
             font-weight: 900;
             text-align: center;
@@ -422,14 +463,14 @@ body.panel_control{
             }
         }
         span{
-            font-size: 2.5em;
+            font-size: 3.1em;
             color: $color-textos;
             font-weight: 900;
             text-align: center;
         }
     }
     .icon_pesos{
-        font-size: 2.5em;
+        font-size: 3.1em;
         position: relative;
         font-weight: bold;
         &::before{
@@ -448,6 +489,11 @@ body.panel_control{
             color:$color-textos;
             font-style: normal;
         }
+    }
+    .btn-flotante{
+        position: absolute;
+        right: 35px;
+        bottom: 35px;
     }
     
   }

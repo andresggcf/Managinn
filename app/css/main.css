@@ -88,7 +88,7 @@ input[type=number] {
   .btn-custom.btn-on {
     color: #eb5757; }
   .btn-custom.btn-on-bg {
-    font-size: .8em;
+    font-size: 1rem;
     padding: 2px 25px;
     background-color: transparent;
     color: rgba(19, 26, 64, 0.6);
@@ -102,103 +102,116 @@ input[type=number] {
   .btn-custom:hover, .btn-custom:visited, .btn-custom:focus, .btn-custom:active {
     text-decoration: none; }
 
-.global-view {
-  /* .Contenedor-Menu{
-        background-color: #fff;
-    } */ }
-  .global-view .tab {
-    max-width: 750px;
-    margin: 0 auto;
-    min-height: 450px;
-    flex-flow: column nowrap; }
-  .global-view .Caja-Centro {
-    position: relative;
-    display: block;
-    width: 100%;
-    left: 0; }
-  .global-view .Subtitulo {
-    margin-bottom: 60px; }
-  .global-view .title-forms {
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center; }
-  .global-view .Boton-Creacion-Proyecto {
-    float: none;
-    margin: auto !important;
-    display: inline-block; }
-  .global-view .circulo-actual {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease; }
-  .global-view .Circulo-Progreso {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease; }
-  .global-view .content_inputs {
-    min-height: 180px; }
-  .global-view select {
-    background-color: transparent;
-    text-align: center;
-    -moz-appearance: none;
-    /* Firefox */
-    -webkit-appearance: none;
-    /* Safari and Chrome */
-    appearance: none;
-    background: url("../../img/iconos/flecha_abajo.svg") 0 0 no-repeat;
-    background-position: calc(100% - 21px) calc(0.7em), calc(100% - 16px) calc(0.7em), 100% 0;
-    background-size: 20px; }
-  .global-view .select_proyectos label {
-    color: #131a40;
-    width: 100%;
-    text-align: center;
-    font-weight: bold; }
-  .global-view .divider {
-    font-size: 80px;
-    color: #131a40;
-    text-align: center;
-    font-weight: 200; }
-  .global-view .box-shadow {
-    -webkit-box-shadow: 11px 20px 46px -35px #3754aa;
-    -moz-box-shadow: 11px 20px 46px -35px #3754aa;
-    box-shadow: 11px 20px 46px -35px #3754aa;
-    position: relative;
-    border-radius: 25px;
-    background-color: #F6F7F9;
-    width: 100%;
-    height: 100%;
-    padding: 1rem; }
-    .global-view .box-shadow:before {
-      pointer-events: none;
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 25px;
-      -webkit-box-shadow: -4px -4px 5px 4px rgba(255, 255, 255, 0.7);
-      -moz-box-shadow: -4px -4px 5px 4px rgba(255, 255, 255, 0.7);
-      box-shadow: -4px -4px 5px 4px rgba(255, 255, 255, 0.7); }
-  .global-view .circulo-pasado:after {
-    font-family: 'icomoon';
-    content: "\e908";
-    color: #fff;
-    font-size: 10px;
-    margin: 0;
-    padding: 0;
+.global-view .Contenedor-Menu {
+  background-color: #fff; }
+
+.global-view .tab {
+  max-width: 750px;
+  margin: 0 auto;
+  min-height: 450px;
+  flex-flow: column nowrap; }
+
+.global-view .Caja-Centro {
+  position: relative;
+  display: block;
+  width: 100%;
+  left: 0; }
+
+.global-view .Subtitulo {
+  margin-bottom: 60px; }
+
+.global-view .title-forms {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+
+.global-view .Boton-Creacion-Proyecto {
+  float: none;
+  margin: auto !important;
+  display: inline-block; }
+
+.global-view .circulo-actual {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.global-view .Circulo-Progreso {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.global-view .content_inputs {
+  min-height: 180px; }
+
+.global-view select {
+  background-color: transparent;
+  text-align: center;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+  background: url("../../img/iconos/flecha_abajo.svg") 0 0 no-repeat;
+  background-position: calc(100% - 21px) calc(0.7em), calc(100% - 16px) calc(0.7em), 100% 0;
+  background-size: 20px; }
+
+.global-view .select_proyectos label {
+  color: #131a40;
+  width: 100%;
+  text-align: center;
+  font-weight: bold; }
+
+.global-view .divider {
+  font-size: 80px;
+  color: #131a40;
+  text-align: center;
+  font-weight: 200; }
+
+.global-view .box-shadow {
+  -webkit-box-shadow: 11px 20px 46px -35px #3754aa;
+  -moz-box-shadow: 11px 20px 46px -35px #3754aa;
+  box-shadow: 11px 20px 46px -35px #3754aa;
+  position: relative;
+  border-radius: 25px;
+  background-color: #F6F7F9;
+  width: 100%;
+  height: 100%;
+  padding: 1rem; }
+  .global-view .box-shadow:before {
+    pointer-events: none;
+    content: '';
     position: absolute;
     left: 0;
-    top: 4px;
+    top: 0;
     width: 100%;
-    height: 100%; }
-  .global-view .metricas_content {
-    margin-top: 50px; }
-  .global-view form {
-    min-height: 500px;
-    display: block; }
+    height: 100%;
+    border-radius: 25px;
+    -webkit-box-shadow: -4px -4px 5px 4px rgba(255, 255, 255, 0.7);
+    -moz-box-shadow: -4px -4px 5px 4px rgba(255, 255, 255, 0.7);
+    box-shadow: -4px -4px 5px 4px rgba(255, 255, 255, 0.7); }
+
+.global-view .circulo-pasado:after {
+  font-family: 'icomoon';
+  content: "\e908";
+  color: #fff;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 100%;
+  height: 100%; }
+
+.global-view .metricas_content {
+  margin-top: 50px; }
+
+.global-view form {
+  min-height: 500px;
+  display: block; }
 
 .inputGroup {
   background-color: transparent;
@@ -257,17 +270,41 @@ body.panel_control {
 .panel_control .NavBar {
   z-index: 2; }
 
+.panel_control .icon_home {
+  margin: 25px 27px; }
+  .panel_control .icon_home img {
+    max-width: 100%;
+    display: block; }
+
 .panel_control .Columna-Perfil {
   position: absolute;
   top: 0;
-  float: none; }
+  float: none;
+  width: 115px;
+  z-index: 3;
+  padding-top: 15px; }
+
+.panel_control .Icono-Menu-Perfil {
+  width: auto; }
+  .panel_control .Icono-Menu-Perfil img {
+    filter: invert(100%) grayscale(100%);
+    width: 30px; }
+  .panel_control .Icono-Menu-Perfil:hover {
+    background-color: #fff; }
+    .panel_control .Icono-Menu-Perfil:hover img {
+      filter: none; }
+
+.panel_control .current-Icono {
+  filter: none !important; }
 
 .contenedor_dashboard {
   position: relative;
   margin-top: 96px;
-  margin-left: 240px; }
+  margin-left: 115px; }
+  .contenedor_dashboard h2 {
+    font-size: 2.3rem; }
   .contenedor_dashboard h4 {
-    font-size: 1.3rem; }
+    font-size: 1.2rem; }
     @media screen and (max-width: 1440px) {
       .contenedor_dashboard h4 {
         font-size: 1rem; } }
@@ -280,13 +317,16 @@ body.panel_control {
     .contenedor_dashboard .info_general .nombre {
       margin-left: 15px;
       max-width: 300px; }
+      .contenedor_dashboard .info_general .nombre p {
+        font-size: 1.25rem; }
     .contenedor_dashboard .info_general .mes {
       background-color: #fff;
       border-radius: 25px;
       color: #131a40;
-      font-size: 1.2em; }
+      font-size: 1.15rem;
+      min-width: 150px; }
       .contenedor_dashboard .info_general .mes a {
-        padding: 5px;
+        padding: 5px 8px;
         color: #eb5757; }
         .contenedor_dashboard .info_general .mes a:hover {
           text-decoration: none; }
@@ -302,11 +342,19 @@ body.panel_control {
       padding: 0 5px; }
     .contenedor_dashboard .escalamiento span,
     .contenedor_dashboard .conversion span {
-      font-size: 2.5em;
+      font-size: 3.1em;
       color: #131a40;
       font-weight: 900; }
+    .contenedor_dashboard .escalamiento p,
+    .contenedor_dashboard .conversion p {
+      display: inline-block;
+      color: #131a40; }
+      .contenedor_dashboard .escalamiento p strong,
+      .contenedor_dashboard .conversion p strong {
+        display: block;
+        color: #30CF5D; }
   .contenedor_dashboard .dias span {
-    font-size: 2.5em;
+    font-size: 3.1em;
     color: #131a40;
     font-weight: 900;
     text-align: center;
@@ -352,12 +400,12 @@ body.panel_control {
       top: 0;
       left: 0; }
   .contenedor_dashboard .p_capacitadas span {
-    font-size: 2.5em;
+    font-size: 3.1em;
     color: #131a40;
     font-weight: 900;
     text-align: center; }
   .contenedor_dashboard .icon_pesos {
-    font-size: 2.5em;
+    font-size: 3.1em;
     position: relative;
     font-weight: bold; }
     .contenedor_dashboard .icon_pesos::before {
@@ -373,5 +421,9 @@ body.panel_control {
     .contenedor_dashboard .total em {
       color: #131a40;
       font-style: normal; }
+  .contenedor_dashboard .btn-flotante {
+    position: absolute;
+    right: 35px;
+    bottom: 35px; }
 
 /* GLOBAL */
