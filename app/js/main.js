@@ -193,5 +193,49 @@ jQuery(document).ready(function ($) {
   }
   $('.n_personas').append(n_personas)
 
+  // Personas
+  $(".add-more").click(function (e) {
+    e.preventDefault();
+    var addto = "#field" + next;
+    var addRemove = "#field" + (next);
+    next = next + 1;
+    var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="field' + next + '" type="text">';
+    var newInput = $(newIn);
+    var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div><div id="field">';
+    var removeButton = $(removeBtn);
+    $(addto).after(newInput);
+    $(addRemove).after(removeButton);
+    $("#field" + next).attr('data-source', $(addto).attr('data-source'));
+    $("#count").val(next);
+
+    $('.remove-me').click(function (e) {
+      e.preventDefault();
+      var fieldNum = this.id.charAt(this.id.length - 1);
+      var fieldID = "#field" + fieldNum;
+      $(this).remove();
+      $(fieldID).remove();
+    });
+  });
+
+  $('#radioBtn a').on('click', function () {
+    var sel = $(this).data('title');
+    var tog = $(this).data('toggle');
+    $('#' + tog).prop('value', sel);
+
+    $('a[data-toggle="' + tog + '"]').not('[data-title="' + sel + '"]').removeClass('active').addClass('notActive');
+    $('a[data-toggle="' + tog + '"][data-title="' + sel + '"]').removeClass('notActive').addClass('active');
+  })
+
+  // Abrir perfil de persona
+  $('.perfil_persona').click(function(e){
+    console.log('click')
+    e.preventDefault();
+    $('.panel_lateral').toggleClass('show');
+  })
+  $('.close_btn').click(function(e){
+    e.preventDefault();
+    $('.panel_lateral').removeClass('show')
+  })
+
 }); // Close JQuery noConflict
 

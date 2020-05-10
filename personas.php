@@ -74,12 +74,8 @@
         alt="Global"
         style="margin:10px 0px 60px 60px;">
 
-      <div>
-        <button class = "Boton-a-Principal-Fondo-Blanco" 
-                name = "Boton-Proyecto" 
-                id = "Boton-Preferencias"
-                style = "margin: 0px 0px 0px 220px;"
-                >Invitar personas</button>
+      <div class="d-flex flex-column align-items-center">
+        <a class = "Boton-a-Principal-Fondo-Blanco" href="personas_invitar.php">Invitar personas</a>
       </div>
     </div>
   </div>
