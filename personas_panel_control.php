@@ -64,7 +64,7 @@
     <div class="new-body">
       <div class="container-fluid">
         <div class="row justify-content-between">
-          <div class="col-3">
+          <div class="col-3 radioBtn_container">
             <div class="form-group">
                 <div class="input-group">
                   <div id="radioBtn" class="btn-group border-radius">

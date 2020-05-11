@@ -545,6 +545,10 @@ body.panel_control {
   font-size: 24px;
   color: rgba(19, 26, 64, 0.6); }
 
+@media screen and (max-width: 1440px) {
+  .personas .radioBtn_container {
+    max-width: 33.333333%; } }
+
 .personas #radioBtn {
   width: 100%;
   padding: 5px 10px; }
@@ -582,6 +586,9 @@ body.panel_control {
   padding-left: 40px;
   transform: translateX(100%);
   transition: transform 2s; }
+  @media screen and (max-width: 1200px) {
+    .panel_lateral {
+      width: 100%; } }
   .panel_lateral.show {
     transform: translateX(0); }
   .panel_lateral h2 {

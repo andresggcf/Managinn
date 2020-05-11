@@ -94,11 +94,11 @@
               </div>
               <div class="row justify-content-center">
                 <div class="col-5  my-3 d-flex justify-content-around" >
-                  <input class = "Boton-a-Principal-Sin-Fondo inline"  
-                    name="btn_back"
-                    type="button" 
-                    value="Omitir"
-                    >  
+                <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                    name = "Boton-Proyecto" 
+                    id = "Boton-Omitir-Preferencias"
+                    href="personas_panel_control.php"
+                    >Omitir</a>
                   <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
                     type="submit" 
                     name="Boton-Continuar"

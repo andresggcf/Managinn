@@ -326,7 +326,7 @@ jQuery(document).ready(function ($) {
     $('#mejora').empty();
     personas.mejora.forEach(element => {
       $('#mejora').append(
-        `<div class="col-xl-1 col-lg-2">
+        `<div class="col-xl-1 col-lg-2 col-md-6">
           <div class="perfil_persona">
             <img class="img-fluid" src="${element.img}" alt="">
             <div class="nombre">${element.nombre}</div>
@@ -338,7 +338,7 @@ jQuery(document).ready(function ($) {
     $('#alto').empty();
     personas.alto.forEach(element => {
       $('#alto').append(
-        `<div class="col-xl-1 col-lg-2">
+        `<div class="col-xl-1 col-lg-2 col-md-6">
           <div class="perfil_persona">
             <img class="img-fluid" src="${element.img}" alt="">
             <div class="nombre">${element.nombre}</div>
