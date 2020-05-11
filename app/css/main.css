@@ -329,7 +329,7 @@ body.panel_control {
 
 .new-body {
   position: relative;
-  margin-top: 96px;
+  margin-top: 60px;
   margin-left: 115px;
   height: 100%; }
 
@@ -522,7 +522,7 @@ body.panel_control {
 
 .personas h2 {
   margin-bottom: 12px;
-  font-size: 50px; }
+  font-size: 2.3rem; }
 
 .personas .nombre {
   font-size: 14px;
@@ -570,6 +570,9 @@ body.panel_control {
     right: 20px;
     top: 6px; }
 
+.personas .grey_effect {
+  opacity: .5; }
+
 .panel_lateral {
   position: absolute;
   top: 0;
@@ -599,7 +602,7 @@ body.panel_control {
     width: 18px;
     cursor: pointer; }
   .panel_lateral .padding-panel {
-    border-radius: 25px;
+    border-radius: 25px 0 0 25px;
     padding-left: 45px;
     padding-right: 50px;
     -webkit-box-shadow: 0px 3px 13px 5px rgba(55, 84, 170, 0.28);

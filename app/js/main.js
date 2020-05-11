@@ -218,6 +218,7 @@ jQuery(document).ready(function ($) {
   });
 
   $('#radioBtn a').on('click', function () {
+    // agregarPersonas();
     var sel = $(this).data('title');
     var tog = $(this).data('toggle');
     $('#' + tog).prop('value', sel);
@@ -226,14 +227,144 @@ jQuery(document).ready(function ($) {
     $('a[data-toggle="' + tog + '"][data-title="' + sel + '"]').removeClass('notActive').addClass('active');
   })
 
+  // Crear personas
+  var personas = {
+    'mejora':[
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+    ],
+    'medio':[],
+    'alto':[
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+    ]
+
+  }
+  // Agregar personas
+  function agregarPersonas(){
+    $('#mejora').empty();
+    personas.mejora.forEach(element => {
+      $('#mejora').append(
+        `<div class="col-xl-1 col-lg-2">
+          <div class="perfil_persona">
+            <img class="img-fluid" src="${element.img}" alt="">
+            <div class="nombre">${element.nombre}</div>
+            <div class="cargo">${element.cargo}</div>
+          </div>
+        </div>`
+      );
+    });
+    $('#alto').empty();
+    personas.alto.forEach(element => {
+      $('#alto').append(
+        `<div class="col-xl-1 col-lg-2">
+          <div class="perfil_persona">
+            <img class="img-fluid" src="${element.img}" alt="">
+            <div class="nombre">${element.nombre}</div>
+            <div class="cargo">${element.cargo}</div>
+          </div>
+        </div>`
+      ).show();
+    });
+  }
+  agregarPersonas();
+  
+
   // Abrir perfil de persona
   $('.perfil_persona').click(function(e){
     console.log('click')
+    $('.perfil_persona').not(this).toggleClass('grey_effect');
+    if($('.panel_lateral').hasClass('show')){
+      $('.perfil_persona').removeClass('grey_effect')
+    }
+    // $(this).removeClass('grey_effect');
     e.preventDefault();
     $('.panel_lateral').toggleClass('show');
   })
   $('.close_btn').click(function(e){
     e.preventDefault();
+    $('.perfil_persona').removeClass('grey_effect')
     $('.panel_lateral').removeClass('show')
   })
 

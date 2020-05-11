@@ -88,118 +88,23 @@
             <h2>
               Rendimiento con necesidad de mejora 
             </h2>
-            <div class="row">
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
+            <div id="mejora" class="row">
             </div>
           </div>
           <div class="col-12 mb-4">
             <h2>
               Rendimiento medio 
             </h2>
+            <div id="medio" class="row">
+
+            </div>
             <p class="not_found">No hay personas en estas categoría</p>
           </div>
           <div class="col-12 mb-4">
             <h2>
               Rendimiento alto 
             </h2>
-            <div class="row">
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="perfil_persona">
-                  <img class="img-fluid" src="img/iconos/avatar_mujer.svg" alt="">
-                  <div class="nombre">Paula Muñoz Vergara</div>
-                  <div class="cargo">Desarrollo</div>
-                </div>
-              </div>
+            <div id="alto" class="row">
             </div>
           </div>
         </div>
@@ -211,8 +116,8 @@
                   <div class="perfil_completo d-flex flex-row justify-content-between align-items-center">
                     <img class="m-0" style="width: 80px;" src="img/iconos/avatar_mujer.svg" alt="">
                     <div class="nombre">
-                      <h2>Natalia Guevara Salcedo</h2>
-                      <div class="cargo">Desarrllo</div>
+                      <h2 class="m-0">Natalia Guevara Salcedo</h2>
+                      <div class="cargo">Desarrollo</div>
                     </div>
                     <a href="#" class="btn btn-custom btn-bg-red btn-large">Escribir mensaje</a>
                   </div>
@@ -275,7 +180,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6 my-3">
+              <!-- <div class="col-6 my-3">
                 <div class="habilidades box-shadow">
                   <h4><img src="img/iconos/habilidadesduras.svg" style="height: 24px;" alt=""> Habilidades Duras</h4>
                   <span class="badge badge-pill badge-azul">php7</span>
@@ -286,7 +191,7 @@
                   <h4><img src="img/iconos/habilidadesblandas.svg" style="height: 22px;" alt=""> Habilidades Blandas</h4>
                   <span class="badge badge-pill badge-rojo">Liderazgo</span>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

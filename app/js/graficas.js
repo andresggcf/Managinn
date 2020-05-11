@@ -104,15 +104,17 @@ var blue_color = "#17AEBF";
 var blue_color_alpha = "#17AEBF7A";
 var data = [8, 12, 20, 10, 20, 5];
 var data2 = [10, 20, 5, 8, 20, 12 ];
+Chart.defaults.global.legend.labels.usePointStyle = true;
 if (ctx2) {
     var myChart = new Chart(ctx2, {
         type: 'line',
         data: {
             labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4', 'Semana 5'],
             datasets: [{
+                label:'actividades asignadas',
                 data: data,
                 borderColor: [
-                    blue_color
+                    '#17AEBF'
                 ],
                 borderWidth: 1,
                 barThickness: 10,
@@ -120,9 +122,10 @@ if (ctx2) {
                 fill:false,
             },
             {
+                label:'actividades finalizadas',
                 data: data2,
                 borderColor: [
-                    blue_color
+                    '#eb5757'
                 ],
                 borderWidth: 1,
                 barThickness: 10,
@@ -168,7 +171,7 @@ if (ctx2) {
                 }]
             },
             legend: {
-                display: false
+                // display: false
             },
             layout: {
                 padding: {
@@ -178,7 +181,7 @@ if (ctx2) {
                     bottom: 10
                 }
             },
-            aspectRatio:3,
+            aspectRatio:4,
         }
     });
 }
