@@ -33,7 +33,7 @@
   $induccion = $_SESSION['induccion'];
 
   include("header.php");
-  ?>
+?>
 
 <body>
   <div class="NavBar">
@@ -106,16 +106,7 @@
         <button class = "Boton-a-Principal-Fondo-Blanco" 
                 name = "Boton-Proyecto" 
                 id = "Boton-Crear-Proyecto"
-                style = "max-width: 200px"
                 >Crear un Proyecto</button>
-      </div>
-      <div>
-        <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
-                style = "padding: 15px 10px; max-width: 190px"
-                name = "Boton-Proyecto" 
-                id = "Boton-Omitir-Preferencias"
-                href="global.php"
-                >Omitir</a>
       </div>
     </div>
 
@@ -185,12 +176,10 @@
                 </div>
 
                 <div>
-                  <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
-                    style = "padding: 15px 30px;float:left"
-                    name = "Boton-Proyecto" 
-                    id = "Boton-Omitir-Preferencias"
-                    href="perfil.php"
-                  >Cancelar</a>
+                  <button class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"  
+                    name="Boton-inicio"
+                    id="Boton-Cancelar-Creacion" 
+                    >Cancelar</button>  
                   <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
                     type="submit" 
                     name="Boton-Continuar"
@@ -215,7 +204,6 @@
           INNER JOIN equipos e ON p.id = e.id_proyecto
           INNER JOIN usuarios u ON e.id_usuario = u.id 
           WHERE u.id = $id AND p.estado = 'A'";
-          echo $queryProyectos;
           
           if ($result = mysqli_query($db, $queryProyectos)) 
           {
@@ -279,6 +267,91 @@
           <button class = "Btn-Add-Proyecto" id="Boton-Crear-Proyecto-2">+</button>
         </div>
       </div>
+
+      <!-- Modal -->
+      <?php 
+        
+        require 'conexion.php';
+
+        $proyectoModal = $_GET['proyecto'];
+
+        $queryModalEditar = "SELECT P.NOMBRE AS NOMBREP, U.NOMBRE AS NOMBREU, P.FECHA_INICIO, P.PRESUPUESTO_INICIAL, 
+        P.DESCRIPCION, P.DURACION_MESES 
+        FROM PROYECTO P INNER JOIN EQUIPOS E ON P.ID = E.ID_PROYECTO 
+        INNER JOIN USUARIOS U ON E.ID_USUARIO = U.ID 
+        WHERE P.ID = $proyectoModal
+        AND U.ROL = 'Facilitador'";
+
+        echo $queryModalEditar;
+
+        $executeModalEditar = mysqli_query($db, $queryModalEditar);
+        $infoProyectoModal = mysqli_fetch_assoc($executeModalEditar);
+        
+      ?>
+      <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="editarModalLabel" color="black">Editar Proyecto</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div style="margin-bottom: 15px;">
+                <h5 class="modal-subtitle" id="editarModalLabel" color="black">Foto del Proyecto</h5>
+                <div class = "contenedor-subir-foto">
+                </div>
+              </div>
+              <div class="row">
+                <div class="column" style=" width:50%; background-color:red">
+                  <div style= "margin-bottom: 15px">
+                    <h5 class="modal-subtitle" id="editarModalLabel" color="black">Nombre:</h5>
+                    <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
+                      <?php echo $infoProyectoModal['NOMBREP'];?>
+                    </p>
+                  </div>
+
+                  <div style= "margin-bottom: 15px">
+                    <h5 class="modal-subtitle" id="editarModalLabel" color="black">Facilitador:</h5>
+                    <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
+                      <?php echo $infoProyectoModal['NOMBREU'];?>
+                    </p>
+                  </div>
+
+                  <div style= "margin-bottom: 15px">
+                    <h5 class="modal-subtitle" id="editarModalLabel" color="black">Fecha de Inicio:</h5>
+                    <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
+                      <?php echo $infoProyectoModal['FECHA_INICIO'];?>
+                    </p>
+                  </div>
+
+                  <div style= "margin-bottom: 15px">
+                    <h5 class="modal-subtitle" id="editarModalLabel" color="black">Presupuesto Inicial:</h5>
+                    <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
+                      <?php echo $infoProyectoModal['PRESUPUESTO_INICIAL'];?>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="column" style="height:200px; width:50%; background-color:blue">
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div>
+                  <a class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"  
+                    name="Boton-Cancelar"
+                    style="color: #eb5757"
+                    >Cancelar</a>  
+                  <a class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
+                    name="Boton-Cambiar"
+                    >Guardar Cambios</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -286,7 +359,7 @@
      <div class = "Contenedor-Info-Proyectos" id="Induc-Proyecto"> 
       <p class = "Titulo-Dashboard">Proyectos en Curso (0)<p>
         <div class = "col-sm-3" style="float:left">
-          <button class = "Btn-Add-Proyecto" id="Boton-Crear-Proyecto-3">+</button>
+          <button class = "Btn-Add-Proyecto" id="Boton-Crear-Proyecto-2">+</button>
         </div>
         <div class = "col-sm-9" style="float:left; height: 95%; position:relative">
           <div class = "contenedor-Induc-Proyecto">
@@ -302,11 +375,7 @@
           </div>
         </div>
      </div>
-
   </div>
-
-
-
 
   <script type="text/javascript">
     var longProyectos = <?php echo $contProyectos?> ; 
@@ -345,26 +414,10 @@
 
       else if(induccion == 1 && longProyectos == 0)
       {
-        document.getElementById('Cont-Proyecto').style.display = 'none';
+        /*document.getElementById('Cont-Proyecto').style.display = 'none';
         document.getElementById('Crear-Proyecto').style.display = 'none';
         document.getElementById('Sin-Proyecto').style.display = 'none';
-        document.getElementById('Induc-Proyecto').style.display = 'block';
-
-        document.getElementById('Boton-Crear-Proyecto-3').onclick = function()
-        {
-          document.getElementById('Sin-Proyecto').style.display = 'none';
-          document.getElementById('Crear-Proyecto').style.display = 'block';
-          document.getElementById('Cont-Proyecto').style.display = 'none';
-          document.getElementById('Induc-Proyecto').style.display = 'none';
-        }
-
-        document.getElementById('Boton-Cancelar-Creacion').onclick = function()
-        {
-          document.getElementById('Sin-Proyecto').style.display = 'none';
-          document.getElementById('Crear-Proyecto').style.display = 'none';
-          document.getElementById('Cont-Proyecto').style.display = 'block';
-          document.getElementById('Induc-Proyecto').style.display = 'none';
-        }
+        document.getElementById('Induc-Proyecto').style.display = 'block';*/
       }
       
       else if (longProyectos != 0)
@@ -403,7 +456,6 @@
 
   </script>
 
-
 <?php
-  include("footer.php");
+  include("footer_2.php");
 ?>

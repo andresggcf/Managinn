@@ -77,8 +77,15 @@
         <button class = "Boton-a-Principal-Fondo-Blanco" 
                 name = "Boton-Proyecto" 
                 id = "Boton-Preferencias"
-                style = "margin: 0px 0px 0px 200px;"
-                >Añadir información</button>
+                style = "max-width: 220px"
+                >Añadir Información</button>
+      </div>
+      <div>
+        <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                name = "Boton-Proyecto" 
+                id = "Boton-Omitir-Preferencias"
+                href="con_induccion.php"
+                >Omitir</a>
       </div>
     </div>
   </div>

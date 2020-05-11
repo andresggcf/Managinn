@@ -15,7 +15,7 @@ include("header.php");
   <div class="RegDatos-Fondo"> 
     <div class="Caja-Texto">
       <div>
-        <h2 class="Titulo Text-Center"
+        <h2 class="Titulo Text-Center Blanco"
         style = "margin-bottom: 50px">¿Qué rol desempeñas?</h2>
 
         <form action="con_informacion_rol.php" method = "post">

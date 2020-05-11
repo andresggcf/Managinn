@@ -64,7 +64,7 @@
                 <div class="col-6 my-3">
                     <div class="info_general px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center">
                         <div class="nombre">
-                            <h2>Hola,<?php echo $_SESSION['name_post'];?></h2>
+                            <h2>Hola, <?php echo $_SESSION['name_post'];?></h2>
                             <p>Asi se ve tu sistema de innovación global en:</p> 
                         </div>
                         <div class="mes d-flex flex-row align-items-center">
@@ -140,15 +140,16 @@
                         </div>
                     </div>
                 </div> 
-                <div class="col-2 mt-3 d-flex flex-column align-items-center ">
+                <div class="col-2 mt-3 d-flex flex-column align-items-center "
+                style = "margin-top: 0px !important">
                     <div class="dias my-3 box-shadow">
                         <h4 class="uppercase"> <img src="img/iconos/icono_dias_activo.svg" alt="Dias activos" class="img_icons"> Días activos</h4>
                         <span id="dias_activos">0</span>
                     </div>
-                    <div class="info_dias p-3 my-3 box-shadow">
-                        <h5>Descarga tu reporte automático</h5>
+                    <div class="info_dias p-3 my-3 box-shadow" style="height=480px">
+                        <h5 style="font-size: 14pt; margin-top: 24px">Descarga tu reporte automático</h5>
                         <p>Olvídate de las largas horas realizando reportes. Descarga el tuyo haciendo clic en el botón de abajo</p>
-                        <img src="img/iconos/ilustracion_reporte_auto.svg" alt="Persona">
+                        <img src="img/iconos/ilustracion_reporte_auto.svg" alt="Persona" style="height: 232px;">
                     </div>
                 </div>
             </div>

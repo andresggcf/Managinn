@@ -78,8 +78,16 @@
         <button class = "Boton-a-Principal-Fondo-Blanco" 
                 name = "Boton-Proyecto" 
                 id = "Boton-Preferencias"
-                style = "margin: 0px 0px 0px 220px;"
-                >Invitar personas</button>
+                style = "max-width: 190px"
+                >Invitar Personas</button>
+      </div>
+      <div>
+        <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                name = "Boton-Proyecto" 
+                id = "Boton-Omitir-Preferencias"
+                href="presupuesto.php"
+                style = "max-width: 180px"
+                >Omitir</a>
       </div>
     </div>
   </div>

@@ -48,6 +48,7 @@ jQuery(document).ready(function ($) {
     console.log(valueNumber)
     $(this).val(valueNumber)
   });
+  
   /**
    * Cambiar de pasos en el formulario de Ajustar Preferencias 
    */
