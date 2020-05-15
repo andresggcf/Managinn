@@ -368,5 +368,12 @@ jQuery(document).ready(function ($) {
     $('.panel_lateral').removeClass('show')
   })
 
+  /**
+   * Presupuesto
+   */
+  $('.datepicker').datepicker({
+    language: 'es'
+  });
+
 }); // Close JQuery noConflict
 

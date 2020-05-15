@@ -165,9 +165,14 @@ select {
     color: #fff;
     min-width: 150px;
     border-radius: 25px; }
+  .btn-custom.btn-bg-azul-claro {
+    background-color: #17AEBF;
+    color: #fff;
+    border-radius: 25px;
+    margin: 10px 0; }
   .btn-custom.btn-large {
     padding: 10px 30px;
-    max-width: 200px; }
+    max-width: 210px; }
   .btn-custom:hover, .btn-custom:visited, .btn-custom:focus, .btn-custom:active {
     text-decoration: none; }
 
@@ -260,6 +265,11 @@ select {
     overflow: hidden;
     border-radius: 25px;
     background-color: #17AEBF; }
+    .inputGroup label.categoria {
+      background-color: #F6F7F9;
+      text-align: left; }
+      .inputGroup label.categoria:before {
+        background-color: #17AEBF; }
     .inputGroup label:before {
       width: 10px;
       height: 10px;
@@ -275,6 +285,11 @@ select {
       z-index: -1; }
   .inputGroup input:checked ~ label {
     color: #fff; }
+    .inputGroup input:checked ~ label.categoria h5, .inputGroup input:checked ~ label.categoria p {
+      color: #fff;
+      text-align: left; }
+    .inputGroup input:checked ~ label.categoria img {
+      filter: brightness(0) invert(1); }
     .inputGroup input:checked ~ label:before {
       transform: translate(-50%, -50%) scale3d(56, 56, 1);
       opacity: 1; }
@@ -289,6 +304,15 @@ select {
     transform: translateY(-50%);
     cursor: pointer;
     visibility: hidden; }
+
+.input-date {
+  position: relative; }
+  .input-date:before {
+    content: '\e906';
+    font-family: 'icomoon';
+    position: absolute;
+    right: 20px;
+    top: 7px; }
 
 body.panel_control {
   min-height: auto !important;
@@ -549,19 +573,6 @@ body.panel_control {
   .personas .radioBtn_container {
     max-width: 33.333333%; } }
 
-.personas #radioBtn {
-  width: 100%;
-  padding: 5px 10px; }
-  .personas #radioBtn a {
-    border-radius: 25px; }
-    .personas #radioBtn a:hover {
-      color: #fff; }
-  .personas #radioBtn .notActive {
-    color: #131a40;
-    background-color: transparent; }
-    .personas #radioBtn .notActive:hover {
-      color: #131a40; }
-
 .personas .filtro {
   position: relative;
   font-size: 1.1rem; }
@@ -576,6 +587,18 @@ body.panel_control {
 
 .personas .grey_effect {
   opacity: .5; }
+
+#radioBtn {
+  width: 100%; }
+  #radioBtn a {
+    border-radius: 25px; }
+    #radioBtn a:hover {
+      color: #fff; }
+  #radioBtn .notActive {
+    color: #131a40;
+    background-color: transparent; }
+    #radioBtn .notActive:hover {
+      color: #131a40; }
 
 .panel_lateral {
   position: absolute;
@@ -640,3 +663,107 @@ body.panel_control {
       color: #fff; }
 
 /* PERSONAS*/
+/* PRESUPUESTO*/
+/* .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+  } */
+/* input[type="range"] { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0; 
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 35px; 
+        height: 35px;
+        border-radius: 100%;
+        background: $color-azul-btn;
+        box-shadow: -100vw 0 0 100vw dodgerblue;
+        border: 2px solid $color-azul-btn;
+    }
+    
+    &::-webkit-slider-runnable-track {
+        background: #ddd;
+    }
+    
+    &::-moz-range-track {
+        height: 5px;
+        background: #ddd;
+    }
+    
+    &::-moz-range-thumb {
+        background: $color-azul-btn;
+        height: 35px;
+        width: 35px;
+        border-radius: 100%;
+        // border: 3px solid $color-azul-btn;
+        box-shadow: -100vw 0 0 100vw dodgerblue;
+        box-sizing: border-box;
+    }
+    
+    &::-ms-fill-lower { 
+        background: dodgerblue;
+    }
+    
+    &::-ms-thumb { 
+        background: #fff;
+        border: 2px solid #999;
+        height: 40px;
+        width: 20px;
+        box-sizing: border-box;
+    }
+    
+    &::-ms-ticks-after { 
+        display: none; 
+    }
+    
+    &::-ms-ticks-before { 
+        display: none; 
+    }
+    
+    &::-ms-track { 
+        background: #ddd;
+        color: transparent;
+        height: 5px;
+        border: none;
+    }
+    
+    &::-ms-tooltip { 
+        display: none;
+    }
+} */
+.presupuesto .Titulo {
+  font-size: 45px; }
+
+.presupuesto .Subtitulo {
+  font-size: 25px; }
+
+.titulo_categorias h5 {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 10px; }
+
+.titulo_categorias p {
+  font-size: 10px;
+  color: rgba(19, 26, 64, 0.6); }
+
+.categoria img {
+  margin: 0 15px; }
+
+/* PRESUPUESTO*/

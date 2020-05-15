@@ -179,9 +179,16 @@ select{
         min-width: 150px;
         border-radius: 25px;
     }
+    &.btn-bg-azul-claro{
+        background-color: $color-azul-btn;
+        color:#fff;
+        // min-width: 150px;
+        border-radius: 25px;
+        margin: 10px 0;
+    }
     &.btn-large{
         padding: 10px 30px;
-        max-width: 200px;
+        max-width: 210px;
     }
     &:hover,
     &:visited,
@@ -285,6 +292,13 @@ select{
       overflow: hidden;
       border-radius: 25px;
       background-color: $color-azul-btn;
+      &.categoria{
+          background-color: $color-background;
+          text-align: left;
+          &:before{
+              background-color: $color-azul-btn;
+          }
+      }
 
       &:before {
         width: 10px;
@@ -304,6 +318,15 @@ select{
 
     input:checked ~ label {
       color: #fff;
+      &.categoria{
+        h5,p{
+            color:#fff;
+            text-align: left;
+        }
+        img{
+            filter:brightness(0) invert(1);
+        }
+      }
 
       &:before {
         transform: translate(-50%, -50%) scale3d(56, 56, 1);
@@ -323,7 +346,18 @@ select{
       cursor: pointer;
       visibility: hidden;
     }
-  }
+}
+.input-date{
+    position: relative;
+    &:before{
+        content:'\e906';
+        font-family: 'icomoon';
+        position: absolute;
+        right: 20px;
+        top: 7px;
+
+    }
+}
 body.panel_control{
     min-height: auto!important;
     color:$color-textos;
@@ -630,23 +664,6 @@ body.panel_control{
             max-width: 33.333333%;
         }
     }
-    #radioBtn {
-        width: 100%;
-        padding: 5px 10px;
-        a{
-            border-radius: 25px;
-            &:hover{
-                color:#fff;
-            }
-        }
-        .notActive{
-            color: $color-textos;
-            background-color: transparent;
-            &:hover{
-                color: $color-textos;
-            }
-        }
-    }
     .filtro{
         position: relative;
         font-size: 1.1rem;
@@ -663,6 +680,23 @@ body.panel_control{
     }
     .grey_effect{
         opacity: .5;
+    }
+}
+#radioBtn {
+    width: 100%;
+    // padding: 5px 10px;
+    a{
+        border-radius: 25px;
+        &:hover{
+            color:#fff;
+        }
+    }
+    .notActive{
+        color: $color-textos;
+        background-color: transparent;
+        &:hover{
+            color: $color-textos;
+        }
     }
 }
 .panel_lateral{
@@ -751,3 +785,117 @@ body.panel_control{
     }
 }
 /* PERSONAS*/
+
+/* PRESUPUESTO*/
+/* .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+  } */
+
+/* input[type="range"] { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0; 
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 35px; 
+        height: 35px;
+        border-radius: 100%;
+        background: $color-azul-btn;
+        box-shadow: -100vw 0 0 100vw dodgerblue;
+        border: 2px solid $color-azul-btn;
+    }
+    
+    &::-webkit-slider-runnable-track {
+        background: #ddd;
+    }
+    
+    &::-moz-range-track {
+        height: 5px;
+        background: #ddd;
+    }
+    
+    &::-moz-range-thumb {
+        background: $color-azul-btn;
+        height: 35px;
+        width: 35px;
+        border-radius: 100%;
+        // border: 3px solid $color-azul-btn;
+        box-shadow: -100vw 0 0 100vw dodgerblue;
+        box-sizing: border-box;
+    }
+    
+    &::-ms-fill-lower { 
+        background: dodgerblue;
+    }
+    
+    &::-ms-thumb { 
+        background: #fff;
+        border: 2px solid #999;
+        height: 40px;
+        width: 20px;
+        box-sizing: border-box;
+    }
+    
+    &::-ms-ticks-after { 
+        display: none; 
+    }
+    
+    &::-ms-ticks-before { 
+        display: none; 
+    }
+    
+    &::-ms-track { 
+        background: #ddd;
+        color: transparent;
+        height: 5px;
+        border: none;
+    }
+    
+    &::-ms-tooltip { 
+        display: none;
+    }
+} */
+.presupuesto{
+    .Titulo{
+        font-size: 45px;
+    }
+    .Subtitulo {
+        font-size: 25px;
+    }
+}
+.titulo_categorias{
+    h5{
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-top: 10px;
+    }
+    p{
+        font-size: 10px;
+        color:$color-textos-alpha
+    }
+    
+}
+.categoria{
+    img{
+        margin: 0 15px;
+    }
+        
+}
+/* PRESUPUESTO*/
