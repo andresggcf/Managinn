@@ -75,35 +75,35 @@
                 <ul class="items_progreso">
                   <li class="progreso-actual">
                     <div class="circulo-actual"></div>
-                    <p class="Texto-Progreso" style="padding-top:15px;">Personas</p>
+                    <p class="Texto-Progreso" style="padding-top:15px;">Inicio</p>
                   </li>
                   <li class="progreso-no">
                     <div class="Circulo-Progreso"></div>
-                    <p class="Texto-Progreso">Implementación</p>
+                    <p class="Texto-Progreso">Actual</p>
                   </li>
                   <li class="progreso-no">
                     <div class="Circulo-Progreso"></div>
-                    <p class="Texto-Progreso">Métricas</p>
+                    <p class="Texto-Progreso">Gastos</p>
                   </li>
                 </ul>
               </div>
               <!-- Agregar ACTION para enviar el formulario a donde se quiera guardar la info-->
               <form class="FormPresupuesto" action="#" method="post">
-                <div class="tab step1 flex-column">
+                <div class="tab tab_presupuesto step1 flex-column">
                   <h3 class="Text-Center Titulo Negro">Presupuesto inicial general.</h3>
                   <p class="mb-5 Subtitulo Text-Center Negro">
                     ¿Cuál es la cantidad de dinero asignado al departamento de innovación?
                   </p>
                   <div class="row justify-content-center">
-                    <div class="input-group mb-3 col-7 border-radius" >
+                    <div class="input-group mb-3 col-4 border-radius" >
                       <input id="presupuesto_inicial" type="number" required class="form-control input-clear input-numeric" placeholder="Presupuesto inicial general">
                     </div>
                     <div class="w-100"></div>
-                    <div class="input-group mb-3 col-7 border-radius input-date" >
+                    <div class="input-group mb-3 col-4 border-radius input-date" >
                       <input id="fecha_presupuesto" type="text" required class="form-control input-clear datepicker " placeholder="Fecha de inicio">
                     </div>
                     <div class="w-100"></div>
-                    <div class="input-group  mb-3 col-7 border-radius">
+                    <div class="input-group  mb-3 col-4 border-radius">
                       <div id="radioBtn" class="btn-group">
                         <a class="btn btn-custom btn-bg-azul-claro btn-large active" data-toggle="select_periodo" data-title="Trimestral">Trimestral</a>
                         <a class="btn btn-custom btn-bg-azul-claro btn-large notActive" data-toggle="select_periodo" data-title="Semestral">Semestral</a>
@@ -120,7 +120,7 @@
                     </div>
                   </div>
                 </div> <!-- step1-->
-                <div class="tab step2 flex-column">
+                <div class="tab tab_presupuesto step2 flex-column">
                   <h3 class="Text-Center Titulo Negro">Presupuesto actual.</h3>
                   <p class="Subtitulo Text-Center Negro">
                     A la fecha, aproximadamente, ¿cuánto queda de presupuesto que ingresó incialmente?
@@ -140,7 +140,7 @@
                 </div>
                 <!--step2-->
                 
-                <div class="tab step3 flex-column">
+                <div class="tab tab_presupuesto step3 flex-column">
                   <h3 class="Text-Center Titulo Negro mb-3">Selecciona categoría de gastos.
                   </h3>
                   <p class="mb-5 Subtitulo Text-Center Negro">
@@ -262,9 +262,9 @@
                   </div>
                   <div class="row justify-content-center mt-auto">
                     <div class="col-5  mt-4 Text-Center">
-                      <input class="Boton-a-Principal-Sin-Fondo inline" name="btn_back" type="button" value="Cancelar">
-                      <input class="Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" type="submit" name="Boton-Continuar"
-                        value="Finalizar">
+                      <a href="presupuesto_panel_control.php" class="Boton-a-Principal-Sin-Fondo inline" name="btn_back" type="button" value="">Cancelar</a>
+                      <a href="presupuesto_panel_control.php" class="Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" type="submit" name="Boton-Continuar"
+                        >Finalizar</a>
                     </div>
                   </div>
                 </div>

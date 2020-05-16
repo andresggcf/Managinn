@@ -898,4 +898,83 @@ body.panel_control{
     }
         
 }
+.valores_conversion{
+    .progress{
+        background-color: $color-azul-btn-alpha;
+        height: 25px;
+    }
+}
+.progress-bar{
+    border-radius: 0 25px 25px 0;
+    &.bg-blue{
+        background-color: $color-azul-btn !important;
+        z-index: 1;
+        margin-left: -12px;
+    }
+    &.bg-green{
+        background-color: $color-verde !important;
+        z-index: 2;
+    }
+    &.bg-red{
+        background-color: $color-rojo-btn !important;
+    }
+}
+.presupuesto{
+    .texto_escalamiento{
+        width: 100%;
+    }
+
+}
+.categorias_presupuesto{
+    a{
+        text-decoration: none;
+    }
+    .bg-blue{
+        background-color: $color-azul-btn;
+        p{
+            color: #fff;
+            font-size: 12px;
+        }
+    }
+    img{
+        filter:brightness(0) invert(1);
+    }
+}
+#value1,
+#value2{
+    font-size: 20px;
+}
+#value1{
+    margin-left: 28%;
+    color:$color-verde;
+}
+#value2{
+    color:$color-azul-btn;
+    margin-left: 15px;
+}
+#p_usado,
+#p_programado{
+    font-size: 15px;
+    position: relative;
+    padding-left: 20px;
+    &:before{
+        content: '\25CF';
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+#p_usado{
+    color:$color-verde;
+}
+#p_programado{
+    color:$color-azul-btn
+}
+#proyectos_convertidos{
+    width: auto!important;
+    min-width: 240px;
+    border-bottom: 1px solid $color-gris;
+    text-transform: uppercase;
+    padding-left: 0;
+}
 /* PRESUPUESTO*/

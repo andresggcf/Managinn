@@ -766,4 +766,72 @@ body.panel_control {
 .categoria img {
   margin: 0 15px; }
 
+.valores_conversion .progress {
+  background-color: rgba(23, 174, 191, 0.2);
+  height: 25px; }
+
+.progress-bar {
+  border-radius: 0 25px 25px 0; }
+  .progress-bar.bg-blue {
+    background-color: #17AEBF !important;
+    z-index: 1;
+    margin-left: -12px; }
+  .progress-bar.bg-green {
+    background-color: #30CF5D !important;
+    z-index: 2; }
+  .progress-bar.bg-red {
+    background-color: #eb5757 !important; }
+
+.presupuesto .texto_escalamiento {
+  width: 100%; }
+
+.categorias_presupuesto a {
+  text-decoration: none; }
+
+.categorias_presupuesto .bg-blue {
+  background-color: #17AEBF; }
+  .categorias_presupuesto .bg-blue p {
+    color: #fff;
+    font-size: 12px; }
+
+.categorias_presupuesto img {
+  filter: brightness(0) invert(1); }
+
+#value1,
+#value2 {
+  font-size: 20px; }
+
+#value1 {
+  margin-left: 28%;
+  color: #30CF5D; }
+
+#value2 {
+  color: #17AEBF;
+  margin-left: 15px; }
+
+#p_usado,
+#p_programado {
+  font-size: 15px;
+  position: relative;
+  padding-left: 20px; }
+  #p_usado:before,
+  #p_programado:before {
+    content: '\25CF';
+    position: absolute;
+    left: 0;
+    top: 0; }
+
+#p_usado {
+  color: #30CF5D; }
+
+#p_programado {
+  color: #17AEBF; }
+
+#proyectos_convertidos {
+  width: auto !important;
+  min-width: 240px;
+  border-bottom: 1px solid #9A9A9A;
+  text-transform: uppercase;
+  padding-left: 0; }
+
 /* PRESUPUESTO*/
