@@ -349,6 +349,18 @@
           ) AS p";
         $resultado2 =  mysqli_query($db, $queryPresupuesto);
         $arregloSuma = mysqli_fetch_assoc($resultado2);
+
+        $queryDias = "SELECT DATEDIFF(SYSDATE(),
+          (SELECT MIN(p.fecha_inicio) 
+            FROM proyecto p 
+            INNER JOIN equipos e ON p.id = e.id_proyecto 
+            INNER JOIN usuarios u ON e.id_usuario = u.id 
+            WHERE u.correo = '$correo')) 
+          AS DIAS_ACTIVO";
+
+        $resultado3 =  mysqli_query($db, $queryDias);
+        $arregloDias = mysqli_fetch_assoc($resultado3);
+
       ?>
       <div class="container-fluid">
         <div class="row kpi">
@@ -626,7 +638,17 @@
        */
       var escalamiento = '10%';
       var tasa_conversion = 15;
-      var dias_activos = 32;
+      var dias_activos = <?php 
+        if($arregloDias['DIAS_ACTIVO']==NULL)
+        {
+          echo 0;
+        }
+        else
+        {
+          echo $arregloDias['DIAS_ACTIVO'];
+        }
+        ?>;
+
       var presupuesto_usado = '<?php $numero = 1500000;
           $numero_cop =  number_format($numero, 0, ',', '.');
           echo $numero_cop;
