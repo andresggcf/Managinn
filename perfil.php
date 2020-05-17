@@ -213,7 +213,9 @@
         <?php 
           require 'conexion.php';
 
-          $queryProyectos = "SELECT p.* FROM proyecto p
+          $queryProyectos = "SELECT p.*, 
+          DATEDIFF(SYSDATE(), p.fecha_inicio) AS DIAS_ACTIVOS 
+          FROM proyecto p
           INNER JOIN equipos e ON p.id = e.id_proyecto
           INNER JOIN usuarios u ON e.id_usuario = u.id 
           WHERE u.id = $id AND p.estado = 'A'";
@@ -268,6 +270,8 @@
                       <p class = "Titulo-Tarjeta-P"> <?php echo $row['nombre'];?></p>
                       <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Facilitador: </b>", $facilitador['nombre'];?></p>
                       <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Fecha Inicio: </b>", $row['fecha_inicio']?></p>
+                      <p class = "Subtitulo-Tarjeta-P"
+                        style="margin-top:15px; "> <?php echo "<b style='font-size:20pt'>".$row['DIAS_ACTIVOS']."</b>  días activos"?></p>
                     </div>
                   </div>
                 </div>

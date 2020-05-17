@@ -200,7 +200,9 @@
         <?php 
           require 'conexion.php';
 
-          $queryProyectos = "SELECT p.* FROM proyecto p
+          $queryProyectos = "SELECT p.*, 
+          DATEDIFF(SYSDATE(), p.fecha_inicio) AS DIAS_ACTIVOS 
+          FROM proyecto p
           INNER JOIN equipos e ON p.id = e.id_proyecto
           INNER JOIN usuarios u ON e.id_usuario = u.id 
           WHERE u.id = $id AND p.estado = 'A'";
@@ -255,6 +257,8 @@
                       <p class = "Titulo-Tarjeta-P"> <?php echo $row['nombre'];?></p>
                       <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Facilitador: </b>", $facilitador['nombre'];?></p>
                       <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Fecha Inicio: </b>", $row['fecha_inicio']?></p>
+                      <p class = "Subtitulo-Tarjeta-P"
+                        style="margin-top:15px; "> <?php echo "<b style='font-size:20pt'>".$row['DIAS_ACTIVOS']."</b>  días activos"?></p>
                     </div>
                   </div>
                 </div>
@@ -299,6 +303,7 @@
               <div style="margin-bottom: 15px;">
                 <h5 class="modal-subtitle" id="editarModalLabel" color="black">Foto del Proyecto</h5>
                 <div class = "contenedor-subir-foto">
+                  <p style="padding-top:60px; color: rgba(122, 122, 122, 0.8)">Arrastra una imagen</p>
                 </div>
               </div>
               <div class="row" style="margin-top:30px">
@@ -365,9 +370,11 @@
               <div>
                   <a class = "btn btn-custom btn-large btn-cancelar-edit"
                     style="color: #eb5757; border-radius:50px; margin-right: 20px"
+                    href="perfil.php"
                     >Cancelar</a>  
                   <a class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
                     name="Boton-Cambiar"
+                    href="perfil.php"
                     >Guardar Cambios</a>
               </div>
             </div>
