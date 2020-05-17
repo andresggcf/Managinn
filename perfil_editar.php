@@ -282,8 +282,6 @@
         WHERE P.ID = $proyectoModal
         AND U.ROL = 'Facilitador'";
 
-        echo $queryModalEditar;
-
         $executeModalEditar = mysqli_query($db, $queryModalEditar);
         $infoProyectoModal = mysqli_fetch_assoc($executeModalEditar);
         
@@ -303,46 +301,70 @@
                 <div class = "contenedor-subir-foto">
                 </div>
               </div>
-              <div class="row">
-                <div class="column" style=" width:50%; background-color:red">
+              <div class="row" style="margin-top:30px">
+                <div class="column" style=" width:50%; padding-left: 20px">
                   <div style= "margin-bottom: 15px">
-                    <h5 class="modal-subtitle" id="editarModalLabel" color="black">Nombre:</h5>
+                    <h5 class="modal-subtitle" style = "margin-bottom: 0" id="editarModalLabel" color="black">Nombre:</h5>
                     <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
                       <?php echo $infoProyectoModal['NOMBREP'];?>
                     </p>
                   </div>
 
                   <div style= "margin-bottom: 15px">
-                    <h5 class="modal-subtitle" id="editarModalLabel" color="black">Facilitador:</h5>
+                    <h5 class="modal-subtitle" style = "margin-bottom: 0" id="editarModalLabel" color="black">Facilitador:</h5>
                     <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
                       <?php echo $infoProyectoModal['NOMBREU'];?>
                     </p>
                   </div>
 
                   <div style= "margin-bottom: 15px">
-                    <h5 class="modal-subtitle" id="editarModalLabel" color="black">Fecha de Inicio:</h5>
+                    <h5 class="modal-subtitle" style = "margin-bottom: 0" id="editarModalLabel" color="black">Fecha de Inicio:</h5>
                     <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
                       <?php echo $infoProyectoModal['FECHA_INICIO'];?>
                     </p>
                   </div>
 
                   <div style= "margin-bottom: 15px">
-                    <h5 class="modal-subtitle" id="editarModalLabel" color="black">Presupuesto Inicial:</h5>
+                    <h5 class="modal-subtitle" style = "margin-bottom: 0" id="editarModalLabel" color="black">Presupuesto Inicial:</h5>
                     <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
-                      <?php echo $infoProyectoModal['PRESUPUESTO_INICIAL'];?>
+                      <?php
+                        $numero = $infoProyectoModal['PRESUPUESTO_INICIAL'];
+                        $numero_cop =  number_format($numero, 0, ',', '.');
+                      echo '$ '.$numero_cop?>
                     </p>
                   </div>
                 </div>
 
-                <div class="column" style="height:200px; width:50%; background-color:blue">
+                <div class="column" style="height:200px; width:50%; padding-left: 20px">
+
+                  <div style= "margin-bottom: 15px">
+                    <h5 class="modal-subtitle" style = "margin-bottom: 0" id="editarModalLabel" color="black">Descripción Breve: </h5>
+                    <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
+                      <?php echo $infoProyectoModal['DESCRIPCION'];?>
+                    </p>
+                  </div>
+
+                  <div style= "margin-bottom: 15px">
+                    <h5 class="modal-subtitle" style = "margin-bottom: 0" id="editarModalLabel" color="black">Equipo:</h5>
+                    <div style="width: 100%; height: 103px;">
+
+                    </div>
+                  </div>
+
+                  <div style= "margin-bottom: 15px">
+                    <h5 class="modal-subtitle" style = "margin-bottom: 0" id="editarModalLabel" color="black">Duración Estimada:</h5>
+                    <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
+                      <?php echo $infoProyectoModal['DURACION_MESES'];?>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+
+            <div class="modal-footer" style="border-top: none; justify-content: center;">
               <div>
-                  <a class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"  
-                    name="Boton-Cancelar"
-                    style="color: #eb5757"
+                  <a class = "btn btn-custom btn-large btn-cancelar-edit"
+                    style="color: #eb5757; border-radius:50px; margin-right: 20px"
                     >Cancelar</a>  
                   <a class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
                     name="Boton-Cambiar"

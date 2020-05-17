@@ -343,7 +343,7 @@
         <div class="row kpi">
           <div class="col-6 my-3">
             <div class="info_general px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center">
-              <div class="nombre">
+              <div class="nombre" style="max-width:85%">
                 <h2>Hola, <?php echo $_SESSION['name_post'];?></h2>
                 <p>Asi se ve tu sistema de innovación global en:</p> 
               </div>

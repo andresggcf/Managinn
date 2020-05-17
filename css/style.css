@@ -552,6 +552,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-right: 15px;
 }
 
+.btn-cancelar-edit:hover
+{
+  color: #fff !important;
+  background-color: #eb575796 !important;
+}
+
 .Btn-Add-Proyecto
 {
   width: 265px;
