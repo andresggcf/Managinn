@@ -338,6 +338,17 @@
 
         $resultado =  mysqli_query($db, $queryDashboardGlobal);
         $arreglo = mysqli_fetch_assoc($resultado);
+
+        $queryPresupuesto = "SELECT SUM(p.presupuesto_inicial) AS SUMA
+          FROM (
+            SELECT u.id, p.presupuesto_inicial 
+            FROM usuarios u 
+            INNER JOIN equipos e ON u.id = e.id_usuario 
+            INNER JOIN proyecto p ON e.id_proyecto = p.id 
+            WHERE u.correo = '$correo'
+          ) AS p";
+        $resultado2 =  mysqli_query($db, $queryPresupuesto);
+        $arregloSuma = mysqli_fetch_assoc($resultado2);
       ?>
       <div class="container-fluid">
         <div class="row kpi">
@@ -616,25 +627,48 @@
       var escalamiento = '10%';
       var tasa_conversion = 15;
       var dias_activos = 32;
-      var presupuesto_usado = 1500000;
-      var total_presupuesto_usado = '$3200000';
-      var valor_actual_neto = 350000;
+      var presupuesto_usado = '<?php $numero = 1500000;
+          $numero_cop =  number_format($numero, 0, ',', '.');
+          echo $numero_cop;
+      ?>';
+
+      var total_presupuesto_usado = "<?php 
+        if($arregloSuma['SUMA']==0)
+        {
+          echo 0;
+        }
+        else{
+          $numero = $arregloSuma['SUMA'];
+          $numero_cop =  number_format($numero, 0, ',', '.');
+          echo '$ '.$numero_cop;
+        }
+      ?>";
+
+      var valor_actual_neto = '<?php
+        $numero = 350000;
+        $numero_cop =  number_format($numero, 0, ',', '.');
+        echo $numero_cop?>';
+
       var personas_capacitadas = <?php 
-      if($arreglo['num_personas_capacitadas']==NULL)
-      {
-        echo 0;
-      }
-      else{
-        echo $arreglo['num_personas_capacitadas'];
-      }?>;
+        if($arreglo['num_personas_capacitadas']==NULL)
+        {
+          echo 0;
+        }
+        else{
+          echo $arreglo['num_personas_capacitadas'];
+        }
+      ?>;
+
       var personas_capacitadas_total = <?php 
-      if ($arreglo['num_personas'] == NULL)
-      {
-        echo 0;
-      }
-      else{
-        echo $arreglo['num_personas'];
-      }?>;
+        if ($arreglo['num_personas'] == NULL)
+        {
+          echo 0;
+        }
+        else{
+          echo $arreglo['num_personas'];
+        }
+      ?>;
+
       var personas_capacitadas_relacion = personas_capacitadas + "/" + personas_capacitadas_total;
 
       /**
