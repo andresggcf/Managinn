@@ -359,7 +359,7 @@ body.panel_control {
 
 .contenedor_dashboard {
   position: relative;
-  margin-top: 96px;
+  margin-top: 60px;
   margin-left: 115px; }
   .contenedor_dashboard h2 {
     font-size: 2.3rem; }
@@ -484,7 +484,9 @@ body.panel_control {
   .contenedor_dashboard .btn-flotante {
     position: absolute;
     right: 35px;
-    bottom: 35px; }
+    bottom: 35px;
+    height: 95px;
+    width: 95px; }
 
 /* GLOBAL */
 /* PERSONAS*/
@@ -785,6 +787,23 @@ body.panel_control {
 .presupuesto .texto_escalamiento {
   width: 100%; }
 
+.presupuesto .contenedor_dashboard .total {
+  font-size: 22px;
+  line-height: 26px;
+  display: block;
+  margin-left: 90px; }
+
+.presupuesto .badge-azul {
+  font-size: 11px; }
+
+.presupuesto .contenedor_dashboard .icon_pesos {
+  line-height: 52px;
+  display: block;
+  margin-left: 90px; }
+
+.presupuesto .contenedor_dashboard .grafica {
+  height: 300px !important; }
+
 .categorias_presupuesto a {
   text-decoration: none; }
 
@@ -833,5 +852,95 @@ body.panel_control {
   border-bottom: 1px solid #9A9A9A;
   text-transform: uppercase;
   padding-left: 0; }
+
+#escalamiento {
+  font-size: 40px;
+  margin: 0 15px 0 50px; }
+
+.valores_escalamiento p {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin: 10px 0;
+  color: #9A9A9A;
+  font-size: 15px; }
+  .valores_escalamiento p strong {
+    color: #30CF5D;
+    display: block; }
+
+.evaluacion_innovacion .metricas {
+  background-color: #17AEBF;
+  color: #fff;
+  border-radius: 25px;
+  height: 100%;
+  position: relative; }
+  .evaluacion_innovacion .metricas span {
+    font-size: 40px;
+    display: block;
+    text-align: center;
+    line-height: 52px; }
+  .evaluacion_innovacion .metricas.resultado {
+    background-color: #eb5757; }
+    .evaluacion_innovacion .metricas.resultado p {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 0;
+      font-size: 15px;
+      line-height: 16px; }
+    .evaluacion_innovacion .metricas.resultado::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 15px 20px 15px 0;
+      border-color: transparent #eb5757 transparent transparent;
+      left: -20px;
+      position: absolute;
+      top: 74px; }
+
+.evaluacion_innovacion h5 {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 100;
+  line-height: 16px; }
+
+.calidad_presupuesto .calidad_relacion {
+  font-size: 40px; }
+
+.calidad_presupuesto h5 {
+  text-transform: uppercase;
+  color: #17AEBF;
+  font-size: 15px;
+  line-height: 16px; }
+
+.tooltip.in {
+  filter: alpha(opacity=90);
+  opacity: .9; }
+
+.tooltip-inner {
+  background-color: #17AEBF;
+  color: #fff; }
+
+#ex1 .slider-selection {
+  background: #17AEBF; }
+
+#ex1Slider {
+  width: 100%; }
+  #ex1Slider .slider.slider-horizontal .slider-track {
+    height: 5px;
+    border-radius: 0; }
+  #ex1Slider .slider-selection {
+    background-color: #17AEBF;
+    background-image: none;
+    border-radius: 0; }
+  #ex1Slider .slider-handle {
+    background-color: #17AEBF;
+    background-image: none; }
+  #ex1Slider .slider-track-high {
+    border-radius: 0;
+    background-color: #131a40;
+    background-image: none; }
 
 /* PRESUPUESTO*/

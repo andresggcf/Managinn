@@ -399,6 +399,11 @@ jQuery(document).ready(function ($) {
   $('.datepicker').datepicker({
     language: 'es'
   });
+  $('#ex1').slider({
+    formatter: function(value) {
+      return numeral(value).format('$ 0,0[.]00');
+    }
+  });
 
 }); // Close JQuery noConflict
 

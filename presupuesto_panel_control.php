@@ -24,14 +24,14 @@
           <a class="Icono-Menu-Perfil" href = "perfil.php">
             <img src="./img/iconos/icono_proyectos.svg" alt="Dashboard">
           </a>
-          <a class="Icono-Menu-Perfil current" >
-            <img class="current-Icono"  src="./img/iconos/icono_global.svg" alt="Global">
+          <a class="Icono-Menu-Perfil " >
+            <img src="./img/iconos/icono_global.svg" alt="Global">
           </a>
           <a class="Icono-Menu-Perfil" href = "personas.php">
             <img src="./img/iconos/icono_personas.svg" alt="Personas">
           </a>
-          <a class="Icono-Menu-Perfil" href = "presupuesto.php">
-            <img src="./img/iconos/icono_presupuesto.svg" alt="Presupuesto">
+          <a class="Icono-Menu-Perfil current" href = "presupuesto.php">
+            <img class="current-Icono" src="./img/iconos/icono_presupuesto.svg" alt="Presupuesto">
           </a>
         </div>
 
@@ -84,7 +84,7 @@
                     <div class="box-shadow px-2 pb-0 pt-2 d-flex flex-row justify-content-around align-items-center">
                         <div class="texto_escalamiento">
                           <h4 class="uppercase"><img src="img/iconos/presupuesto_total.svg" alt="" class="img_icons"> Presupuesto Total</h4>
-                          <div class="d-flex flex-column ml-5">
+                          <div class="d-flex flex-column">
                             <span id="presupuesto_usado" class="icon_pesos">0</span>
                             <span class="total">de <em id="total_presupuesto_usado" >$0</em> <em><span class="badge badge-pill badge-azul">Anual</span></em> </span>
                           </div>
@@ -133,7 +133,7 @@
                   </div>
                 </div>
                 <div class="col-7">
-                    <div class="box-shadow my-3">
+                    <div class="box-shadow mb-3">
                     <div class="bg-color d-flex align-items-center ">
                       <h4 class="uppercase mr-2"> <img src="img/iconos/mapeo_de_gastos.svg" alt="Metricas" class="img_icons"> Mapeo de gastos</h4>
                       <select class="form-control mb-2" id="proyectos_convertidos">
@@ -145,7 +145,7 @@
                         <option>5</option>
                       </select>
                     </div>
-                    <canvas id="chartPresupuesto" class="bg-color grafica" height="400"></canvas>
+                    <canvas id="chartPresupuesto" class="bg-color grafica" height="300"></canvas>
                     </div>
                     
                 </div> 
@@ -153,7 +153,7 @@
             <div class="row">
               <div class="col-3 my-3">
                 <div class="row">
-                  <div class="col-12">
+                  <div class="col-12 mb-4">
                     <div class="box-shadow">
                       <h4 class="uppercase"><img src="img/iconos/alcance.svg" alt="" class="img_icons"> Alcance</h4>
                       <div class="valores_escalamiento d-flex flex-row">
@@ -184,18 +184,53 @@
                 </div>
               </div>
               <div class="col-5 my-3">
-                  <div class="box-shadow">
+                  <div class="evaluacion_innovacion box-shadow">
                     <h4 class="uppercase"><img src="img/iconos/evaluacion.svg" alt="" class="img_icons"> Evaluación de innovación</h4>
-                    <div class="d-flex flex-column ml-5">
-                      <span id="presupuesto_usado" class="icon_pesos">0</span>
-                      <span class="total">de <em id="total_presupuesto_usado" >$0</em></span>
+                    <div class="row">
+                      <div class="col-xl-3 col-lg-4">
+                        <div class="metricas d-flex flex-column justify-content-around px-2 py-5">
+                          <span>0/10</span>
+                          <h5>métricas de entrada </h5>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-lg-4">
+                        <div class="metricas d-flex flex-column justify-content-around px-2 py-5">
+                          <span>0/10</span>
+                          <h5>métricas de entrada </h5>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-lg-4">
+                        <div class="metricas d-flex flex-column justify-content-around px-2 py-5">
+                          <span>0/10</span>
+                          <h5>métricas de entrada </h5>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-lg-4">
+                        <div class="metricas resultado px-2 py-5">
+                          <p>Tu sistema <br>de innovación está en : </p>
+                          <span>0/10</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
               </div>
               <div class="col-4 my-3 ">
-                  <div class="box-shadow d-flex flex-column">
+                  <div class="box-shadow d-flex flex-column calidad_presupuesto">
                     <h4 class="uppercase"><img src="img/iconos/calidad.svg" alt="" class="img_icons"> Calidad</h4>
-                    <span id="valor_actual_neto" class="ml-5 icon_pesos">0</span>
+                    <div class="row align-items-center h-100">
+                      <div class="col-xl-6 col-lg-6 col-md-12 d-flex flex-column align-items-center border-right border-dark my-3">
+                        <span class="calidad_relacion mb-2">0/10</span>
+                        <h5>Proyectos</h5>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-12 d-flex flex-column align-items-center my-3">
+                        <span class="calidad_relacion mb-2">0/10</span>
+                        <h5>Proyectos</h5>
+                      </div>
+                      <div class="col-12 d-flex justify-content-around">
+                        <span>Valoracion Promedio: </span>
+                        <span>0</span>
+                      </div>
+                    </div>
                   </div>
               </div>
           </div>

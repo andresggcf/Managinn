@@ -27,11 +27,11 @@
           <a class="Icono-Menu-Perfil" >
             <img   src="./img/iconos/icono_global.svg" alt="Global">
           </a>
-          <a class="Icono-Menu-Perfil current" href = "personas.php">
-            <img class="current-Icono" src="./img/iconos/icono_personas.svg" alt="Personas">
+          <a class="Icono-Menu-Perfil " href = "personas.php">
+            <img  src="./img/iconos/icono_personas.svg" alt="Personas">
           </a>
-          <a class="Icono-Menu-Perfil" href = "presupuesto.php">
-            <img src="./img/iconos/icono_presupuesto.svg" alt="Presupuesto">
+          <a class="Icono-Menu-Perfil current" href = "presupuesto.php">
+            <img class="current-Icono" src="./img/iconos/icono_presupuesto.svg" alt="Presupuesto">
           </a>
         </div>
 
@@ -113,7 +113,7 @@
                     </div>
                   </div>
                   <div class="row justify-content-center mt-auto">
-                    <div class="col-5  mt-4 Text-Center">
+                    <div class="col-5  mt-4 Text-Center d-flex justify-content-center">
                       <input class="Boton-a-Principal-Sin-Fondo inline" name="btn_back" type="button" value="Cancelar">
                       <input class="Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" type="button" name="Boton-Continuar"
                         value="Siguiente">
@@ -122,16 +122,23 @@
                 </div> <!-- step1-->
                 <div class="tab tab_presupuesto step2 flex-column">
                   <h3 class="Text-Center Titulo Negro">Presupuesto actual.</h3>
-                  <p class="Subtitulo Text-Center Negro">
+                  <p class="Subtitulo Text-Center Negro my-5">
                     A la fecha, aproximadamente, ¿cuánto queda de presupuesto que ingresó incialmente?
                   </p>
-                  <div class="row justify-content-center">
-                    <div class="input-group mb-3 col-7 border-radius">
-                      <input type="range" class="form-control custom-range slider" min="0" max="5" step="0.5" id="customRange3">
+                  <div class="row justify-content-center align-items-center my-5">
+                    <div class="col-2">
+                      <p style="text-align: right;width: 100%;display: block;" >$0</p>
+                    </div>
+                    <div class="input-group my-3 col-8 border-radius d-flex align-items-center" style="height: 54px;">
+                      <!-- <input type="range" class="form-control custom-range slider" min="0" max="5" step="0.5" id="customRange3"> -->
+                      <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100000000" data-slider-step="100000" data-slider-value="0"/> 
+                    </div>
+                    <div class="col-2">
+                      <p>$ 100,000,000</p>
                     </div>
                   </div>
                   <div class="row justify-content-center mt-auto">
-                    <div class="col-5  mt-4 Text-Center">
+                    <div class="col-5  mt-4 Text-Center d-flex justify-content-center">
                       <input class="Boton-a-Principal-Sin-Fondo inline" name="btn_back" type="button" value="Cancelar">
                       <input class="Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" type="button" name="Boton-Continuar"
                         value="Siguiente">
@@ -261,9 +268,9 @@
                     </div>
                   </div>
                   <div class="row justify-content-center mt-auto">
-                    <div class="col-5  mt-4 Text-Center">
+                    <div class="col-5  mt-4 Text-Center d-flex justify-content-center">
                       <a href="presupuesto_panel_control.php" class="Boton-a-Principal-Sin-Fondo inline" name="btn_back" type="button" value="">Cancelar</a>
-                      <a href="presupuesto_panel_control.php" class="Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" type="submit" name="Boton-Continuar"
+                      <a href="presupuesto_panel_control.php" class="py-3 btn btn-custom btn-bg-red btn-large Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" type="submit" name="Boton-Continuar"
                         >Finalizar</a>
                     </div>
                   </div>

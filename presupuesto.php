@@ -77,7 +77,7 @@
         <a class="btn btn-custom btn-large btn-bg-red" name="Boton-Proyecto" id="Boton-Omitir-Preferencias"
           href="presupuesto_informacion.php">Añadir información</a>
         <a class="btn btn-custom btn-on btn-large" name="Boton-Proyecto" id="Boton-Omitir-Preferencias"
-          href="global_panel_control.php">Omitir</a>
+          href="presupuesto_panel_control.php">Omitir</a>
       </div>
     </div>
   </div>
