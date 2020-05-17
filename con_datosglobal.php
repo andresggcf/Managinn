@@ -46,7 +46,14 @@
     WHERE correo = '$correo'";
 
     mysqli_query($db, $queryDatosGlobal);
+
+    /*Despues de ingresar los datos en global, actualizamos el usuario en induccion a global*/
+
+    $queryInduccionGlobal = "UPDATE usuarios SET induccion_global = 1
+    WHERE correo = '$correo'";
     
-    header ('location: global_panel_control.php');
+    mysqli_query($db, $queryInduccionGlobal);
+    
+    header ('location: global.php');
   }
 ?>

@@ -265,8 +265,8 @@ body.panel_control {
 .contenedor_dashboard {
   position: relative;
   margin-top: 0px;
-  padding-top: 45px;
-  margin-left: 240px; }
+  padding-top: 0px;
+  margin-left: 0px; }
   .contenedor_dashboard h4 {
     font-size: 1.3rem; }
     @media screen and (max-width: 1440px) {

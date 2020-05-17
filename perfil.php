@@ -24,13 +24,15 @@
   $contProyectos = $arregloProyectos[0];
 
   /*Query que muestra si el perfil tuvo "induccion"*/
-  $queryInduccion = "SELECT induccion FROM usuarios WHERE correo = '$correo' AND nombre = '$nombre'";
+  $queryInduccion = "SELECT induccion, induccion_global FROM usuarios WHERE correo = '$correo' AND nombre = '$nombre'";
   $resultado3 = mysqli_query($db, $queryInduccion);
   $arregloInduccion = mysqli_fetch_array($resultado3);
 
   $_SESSION['induccion'] = $arregloInduccion['induccion'];
+  $_SESSION['induccion_global'] = $arregloInduccion['induccion_global'];
 
   $induccion = $_SESSION['induccion'];
+  $induccion_gl = $_SESSION['induccion_global'];
 
   include("header.php");
   ?>
@@ -215,7 +217,6 @@
           INNER JOIN equipos e ON p.id = e.id_proyecto
           INNER JOIN usuarios u ON e.id_usuario = u.id 
           WHERE u.id = $id AND p.estado = 'A'";
-          echo $queryProyectos;
           
           if ($result = mysqli_query($db, $queryProyectos)) 
           {
@@ -311,13 +312,14 @@
   <script type="text/javascript">
     var longProyectos = <?php echo $contProyectos?> ; 
     var induccion = <?php echo $induccion?>;
-    console.log ("Usuario tuvo induccion:" + induccion);
+    var ind_global = <?php echo $induccion_gl?>;
+    console.log ("Usuario tuvo induccion:" + induccion + " global: " + ind_global);
     console.log ("proyectos en perfil: " + longProyectos);
 
     function loadPage(){
       if (induccion == 0 && longProyectos == 0)
       {
-        console.log ("Usuario tuvo induccion: asd " + induccion);
+        console.log ("Usuario tuvo induccion: " + induccion);
         
         document.getElementById('Sin-Proyecto').style.display = 'block';
         document.getElementById('Crear-Proyecto').style.display = 'none';
@@ -394,13 +396,6 @@
     }
 
     loadPage();
-
-    document.getElementById("boton-editar").onclick = function()
-    {
-      console.log("clicked editar asdasf");
-    }
-    
-
   </script>
 
 
