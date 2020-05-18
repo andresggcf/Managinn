@@ -368,14 +368,21 @@
 
             <div class="modal-footer" style="border-top: none; justify-content: center;">
               <div>
-                  <a class = "btn btn-custom btn-large btn-cancelar-edit"
-                    style="color: #eb5757; border-radius:50px; margin-right: 20px"
-                    href="perfil.php"
-                    >Cancelar</a>  
-                  <a class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
-                    name="Boton-Cambiar"
-                    href="perfil.php"
-                    >Guardar Cambios</a>
+                <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                        name = "Boton-Proyecto" 
+                        id = "Boton-Omitir-Preferencias"
+                        href="presupuesto.php"
+                        style = "max-width: 180px"
+                        data-dismiss="modal"
+                        >Cancelar</a>
+              </div>
+              <div>
+                <button class = "Boton-a-Principal-Fondo-Blanco" 
+                        name = "Boton-Proyecto" 
+                        id = "Boton-Preferencias"
+                        style = "max-width: 190px"
+                        href = "perfil.php"
+                        >Actualizar</button>
               </div>
             </div>
           </div>

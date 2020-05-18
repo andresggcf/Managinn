@@ -470,16 +470,206 @@
               <span id="dias_activos">0</span>
             </div>
 
-            <div class="info_dias p-3 my-3 box-shadow" style="height=480px">
+            <div class="info_dias p-3 my-3 box-shadow" style="height=480px; position:relative">
               <h5 style="font-size: 14pt; margin-top: 24px">Descarga tu reporte automático</h5>
               <p>Olvídate de las largas horas realizando reportes. Descarga el tuyo haciendo clic en el botón de abajo</p>
               <img src="img/iconos/ilustracion_reporte_auto.svg" alt="Persona" style="height: 232px;">
+              <button class="Boton-Export" data-toggle="modal" data-target="#Modal-Export">
+                <img src="img/iconos/Boton-Export.png" style="width: 25px;margin: 0 15 !important;padding-top:-10px;margin-top: 0px;margin-bottom: 0px;">
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div> <!--Fin Dashboard-global -->
   </div> <!--Fin Blanco-Fondo-->
+
+  <!-- Modal -->
+  <div class="modal fade" 
+    id="Modal-Export" 
+    tabindex="-1" 
+    role="dialog" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width:530px !important">
+      <div class="modal-content" style="height: 500px; max-width:530px">
+        <div class="modal-header" 
+          style = "padding-bottom: 20px !important;padding-left: 110px !important;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div style="
+            margin-bottom: 10px;
+            margin-top: -25px; 
+            height:35px;">
+              <img src="img/iconos/Icono-Export.png" style="margin-left: 80px;width:30px;float:left;margin-right: 20px;">
+              <h5
+                style="color:#eb5757; font-size: 20pt; float: left;">Generar Reporte</h5>
+          </div>
+          <p>Selecciona los ítems que quieres <br>incluir en este reporte.</p>
+        </div>
+        <form class="form-export-global">
+          <div class="modal-body">
+            <div class="row" style="margin-top:10px">
+
+              <div class="column" style=" width:50%; padding-left: 20px; height:200px">
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Fecha</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Desempeño</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Productividad</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Calidad</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Alcance</label>
+                </div>
+              </div>
+
+              <div class="column" style="height:200px; width:50%; padding-left: 20px">
+
+              <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Ejecución</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Categorías</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Presupuesto actual</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Coste</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="modal-footer" style="border-top: none; justify-content: center;">
+            <div>
+              <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                      name = "Boton-Proyecto" 
+                      id = "Boton-Omitir-Preferencias"
+                      href="presupuesto.php"
+                      style = "max-width: 180px"
+                      data-dismiss="modal"
+                      >Cancelar</a>
+            </div>
+            <div>
+              <button class = "Boton-a-Principal-Fondo-Blanco" 
+                      name = "Boton-Proyecto" 
+                      id = "Boton-Preferencias"
+                      style = "max-width: 190px"
+                      >Generar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <script type="text/javascript">
