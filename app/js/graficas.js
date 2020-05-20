@@ -185,3 +185,90 @@ if (ctx2) {
         }
     });
 }
+// Grafica personas
+var ctx3 = document.getElementById('chartPresupuesto');
+var blue_color = "#17AEBF";
+var blue_color_alpha = "#17AEBF7A";
+var data = [8, 12, 20, 10, 20];
+var data2 = [10, 20, 5, 8, 20];
+Chart.defaults.global.legend.labels.usePointStyle = true;
+if (ctx3) {
+    var myChart = new Chart(ctx3, {
+        type: 'line',
+        data: {
+            labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'],
+            datasets: [{
+                label:'Gasto Programado',
+                data: data,
+                borderColor: [
+                    '#17AEBF'
+                ],
+                borderWidth: 1,
+                barThickness: 10,
+                barPercentage: 0.5,
+                fill:false,
+            },
+            {
+                label:'Gasto Real',
+                data: data2,
+                borderColor: [
+                    '#eb5757'
+                ],
+                borderWidth: 1,
+                barThickness: 10,
+                barPercentage: 0.5,
+                fill:false,
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    stacked: false,
+                    ticks: {
+                        min: 5,
+                        max: 30,
+                        fontSize:10,
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Millones de pesos',
+                        fontStyle: 'bold',
+                        fontSize:12,
+                        fontColor:'#131a40',
+                    },
+                    
+                }],
+                xAxes: [{
+                    stacked: false,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Semana',
+                        fontStyle: 'bold',
+                        fontSize:12,
+                        fontColor:'#131a40',
+                    },
+                    gridLines: {
+                        display: false,
+                        tickMarkLength: 8
+                    },
+                    ticks:{
+                        fontSize:10,
+                        fontColor:'#131a40',
+                    },
+                }]
+            },
+            legend: {
+                // display: false
+            },
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 10,
+                    top: 10,
+                    bottom: 10
+                }
+            },
+            aspectRatio:4,
+        }
+    });
+}

@@ -73,12 +73,11 @@
         alt="Global"
         style="margin:10px 0px 60px 100px;">
 
-      <div>
-        <button class = "Boton-a-Principal-Fondo-Blanco" 
-                name = "Boton-Proyecto" 
-                id = "Boton-Preferencias"
-                style = "margin: 0px 0px 0px 200px;"
-                >Añadir información</button>
+      <div class="d-flex flex-column align-items-center">
+        <a class="btn btn-custom btn-large btn-bg-red" name="Boton-Proyecto" id="Boton-Omitir-Preferencias"
+          href="presupuesto_informacion.php">Añadir información</a>
+        <a class="btn btn-custom btn-on btn-large" name="Boton-Proyecto" id="Boton-Omitir-Preferencias"
+          href="presupuesto_panel_control.php">Omitir</a>
       </div>
     </div>
   </div>
