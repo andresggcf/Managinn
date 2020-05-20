@@ -292,6 +292,9 @@ select{
     .close{
         font-size: 40px;
     }
+    .modal-backdrop{
+        background-color: $color-textos;
+    }
     .subtitle-form{
         width: 420px;
         display: block;

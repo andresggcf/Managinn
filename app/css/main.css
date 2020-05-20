@@ -269,6 +269,9 @@ select {
 .global-view .close {
   font-size: 40px; }
 
+.global-view .modal-backdrop {
+  background-color: #131a40; }
+
 .global-view .subtitle-form {
   width: 420px;
   display: block;
