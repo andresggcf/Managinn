@@ -130,7 +130,7 @@
                         <div class="col-4 my-3">
                             <div class="box-shadow">
                               <h4 class="uppercase"><img src="img/iconos/icono_personas_capacitadas.svg" alt="" class="img_icons"> Personas capacitadas</h4>
-                              <div class="p_capacitadas d-flex justify-content-center">
+                              <div class="p_capacitadas d-flex justify-content-center ml-5">
                                 <span id="personas_capacitadas_relacion" class="flex-fill">0/0</span>
                                 <div class="n_personas flex-fill p-2">
                                     

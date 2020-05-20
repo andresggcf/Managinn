@@ -24,7 +24,8 @@ p {
   background-color: #F6F7F9; }
 
 html, body {
-  color: #131a40; }
+  color: #131a40;
+  height: 100%; }
 
 html {
   overflow-x: hidden; }
@@ -42,6 +43,10 @@ img {
 .badge-rojo {
   background-color: #eb5757;
   color: #fff; }
+
+.container-fluid {
+  padding-left: 60px;
+  padding-right: 60px; }
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -353,6 +358,11 @@ body.panel_control {
 .panel_control .current-Icono {
   filter: none !important; }
 
+.general_bg {
+  background-image: url(../../img/fondos/fondo.svg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 .new-body {
   position: relative;
   margin-top: 60px;
@@ -472,11 +482,14 @@ body.panel_control {
     font-weight: bold; }
     .contenedor_dashboard .icon_pesos::before {
       content: "$";
-      display: block;
-      position: absolute;
-      left: -1em;
+      display: inline-block;
+      position: relative;
       color: #17AEBF;
-      font-weight: bold; }
+      font-weight: bold;
+      padding-right: 10px; }
+    @media screen and (max-width: 1440px) {
+      .contenedor_dashboard .icon_pesos {
+        font-size: 40px; } }
   .contenedor_dashboard .total {
     font-size: 1.5em;
     color: #17AEBF; }

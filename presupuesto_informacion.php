@@ -61,7 +61,7 @@
       </div>
     </div>  
 
-    <div class="new-body">
+    <div class="new-body general_bg">
       <div class="container-fluid">
         <div class="row justify-content-center align-items-center">
           <div class="col-xl-10 col-lg-12x">

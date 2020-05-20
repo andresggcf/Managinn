@@ -3,6 +3,7 @@ jQuery(document).ready(function ($) {
   $('#Sin-Metricas #Boton-Preferencias').click(function () {
     $('#Crear-Implementacion').css('display', 'block');
     $('#Sin-Metricas').css('display', 'none');
+    $('.Blanco-Fondo').addClass('general_bg')
 
   })
   /**
