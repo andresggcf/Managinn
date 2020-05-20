@@ -98,6 +98,8 @@ select {
 .Boton-a-Principal-Fondo-Blanco {
   display: block;
   margin: 0 auto; }
+  .Boton-a-Principal-Fondo-Blanco:visited {
+    color: #fff; }
 
 .Boton-a-Principal-Sin-Fondo {
   color: #eb5757;

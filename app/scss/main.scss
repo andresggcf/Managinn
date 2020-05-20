@@ -98,6 +98,9 @@ select{
 {
     display: block;
     margin: 0 auto;
+    &:visited{
+        color:#fff;
+    }
 }
 .Boton-a-Principal-Sin-Fondo
 {
