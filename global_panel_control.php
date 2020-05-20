@@ -84,7 +84,7 @@
                     <div class="escalamiento box-shadow px-2 pb-0 pt-2 d-flex flex-row justify-content-around align-items-center">
                         <img src="img/iconos/EscalamientoPromedio.svg" alt="escalamiento">
                         <div class="texto_escalamiento">
-                            <h4  class="uppercase">Escalamiento promedio</h4>
+                            <h4  class="uppercase">Proyectos Existosos</h4>
                             <div class="valores_escalamiento">
                               <span id="escalamiento">
                                   0%
@@ -101,7 +101,7 @@
                     <div class="conversion box-shadow px-2 pb-0 pt-2 d-flex flex-row justify-content-around align-items-center">
                         <img src="img/iconos/tasadeconversion.svg" alt="conversion">
                         <div class="texto_escalamiento">
-                            <h4  class="uppercase">Tasa de conversión</h4>
+                            <h4  class="uppercase">Lanzados al mercado</h4>
                             <div class="valores_conversion">
                             <span id="tasa_conversion">
                                 0
@@ -169,11 +169,76 @@
                 </div>
             </div>
         </div>
-        <div class="btn-flotante">
+        <div class="btn-flotante" data-toggle="modal" data-target="#exampleModal">
           <img src="img/iconos/boton_reporte.svg" alt="Descargar Reporte">
         </div>
     </div>
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center w-100 mt-3" id="exampleModalLabel"><img src="img/iconos/boton_descarga.svg" alt=""> Generar reporte</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body my-3">
+        <p class="text-center subtitle-form" style="width: 420px;">Selecciona los ítems que quieres incluir en este reporte.</p>
+        <form action="#" class="form_download m-4">
+        <div class="row">
+          <div class="col-6">
+            <div class="custom-control custom-checkbox my-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label" for="customCheck1">Fecha</label>
+            </div>
+            <div class="custom-control custom-checkbox my-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck2">
+              <label class="custom-control-label" for="customCheck2">Desempeño</label>
+            </div>
+            <div class="custom-control custom-checkbox my-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck3">
+              <label class="custom-control-label" for="customCheck3">Productividad</label>
+            </div>
+            <div class="custom-control custom-checkbox my-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck4">
+              <label class="custom-control-label" for="customCheck4">Calidad</label>
+            </div>
+            <div class="custom-control custom-checkbox my-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck5">
+              <label class="custom-control-label" for="customCheck5">Alcance</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="custom-control custom-checkbox my-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck6">
+              <label class="custom-control-label" for="customCheck6">Ejecución</label>
+            </div>
+            <div class="custom-control custom-checkbox my-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck7">
+              <label class="custom-control-label" for="customCheck7">Categorías</label>
+            </div>
+            <div class="custom-control custom-checkbox my-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck8">
+              <label class="custom-control-label" for="customCheck8">Presupuesto actual</label>
+            </div>
+            <div class="custom-control custom-checkbox my-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck9">
+              <label class="custom-control-label" for="customCheck9">Coste</label>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer mx-5 mb-4">
+        <input class="Boton-a-Principal-Sin-Fondo inline" type="button" data-dismiss="modal" value="Cerrar">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        <input class="Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" type="button" name="Boton-Continuar" value="Descargar">
+      </div>
+    </div>
+  </div>
+</div>
 
     
 <?php

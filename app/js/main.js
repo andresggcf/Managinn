@@ -137,7 +137,7 @@ jQuery(document).ready(function ($) {
    * Variables para las metricas GLOBAL
    */
   var escalamiento = '10%';
-  var tasa_conversion = 15;
+  var tasa_conversion = '15%';
   var dias_activos = 32;
   var presupuesto_usado = 1500000;
   var total_presupuesto_usado = '$3200000';

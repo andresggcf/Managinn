@@ -249,9 +249,59 @@ select {
 .global-view .metricas_content {
   margin-top: 50px; }
 
-.global-view form {
+.global-view form.FormCrear1 {
   min-height: 500px;
   display: block; }
+
+.global-view .modal-header,
+.global-view .modal-footer {
+  border: none; }
+
+.global-view #exampleModalLabel {
+  font-size: 30px;
+  line-height: 39px;
+  color: #eb5757;
+  font-weight: bold; }
+
+.global-view .modal-content {
+  border-radius: 25px; }
+
+.global-view .close {
+  font-size: 40px; }
+
+.global-view .subtitle-form {
+  width: 420px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 25px; }
+
+.global-view .form_download {
+  font-size: 25px; }
+
+.global-view .custom-control-label {
+  padding-left: 45px; }
+  .global-view .custom-control-label::before {
+    width: 40px;
+    height: 40px;
+    top: 0;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 9px 8px 10px -7px rgba(55, 84, 170, 0.3);
+    -moz-box-shadow: inset 9px 8px 10px -7px rgba(55, 84, 170, 0.3);
+    box-shadow: inset 9px 8px 10px -7px rgba(55, 84, 170, 0.3); }
+  .global-view .custom-control-label::after {
+    width: 40px;
+    height: 40px;
+    top: 0; }
+
+.global-view .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #eb5757;
+  border-color: #eb5757; }
+
+.global-view .custom-control-input {
+  height: 40px;
+  width: 40px; }
 
 .inputGroup {
   background-color: transparent;

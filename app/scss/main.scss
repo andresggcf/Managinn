@@ -272,9 +272,62 @@ select{
     .metricas_content{
         margin-top:50px ;
     }
-    form{
+    form.FormCrear1{
         min-height: 500px;
         display: block;
+    }
+    .modal-header,
+    .modal-footer{
+        border:none;
+    }
+    #exampleModalLabel{
+        font-size: 30px;
+        line-height: 39px;
+        color: $color-rojo-btn;
+        font-weight: bold;
+    }
+    .modal-content{
+        border-radius: 25px;
+    }
+    .close{
+        font-size: 40px;
+    }
+    .subtitle-form{
+        width: 420px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 25px;
+    }
+    .form_download{
+        font-size: 25px;
+    }
+    .custom-control-label{
+        padding-left: 45px;
+        &::before{
+            width: 40px;
+            height: 40px;
+            top: 0;
+            border:none;
+            border-radius: 5px;
+            -webkit-box-shadow: inset 9px 8px 10px -7px rgba(55,84,170,0.3);
+            -moz-box-shadow: inset 9px 8px 10px -7px rgba(55,84,170,0.3);
+            box-shadow: inset 9px 8px 10px -7px rgba(55,84,170,0.3);
+        }
+        &::after{
+            width: 40px;
+            height: 40px;
+            top: 0;
+            
+        }
+    }
+    .custom-control-input:checked ~ .custom-control-label::before{
+        background-color: $color-rojo-btn;
+        border-color: $color-rojo-btn;
+    }
+    .custom-control-input{
+        height: 40px;
+        width: 40px;
     }
 }
 
