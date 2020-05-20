@@ -24,7 +24,7 @@
           <a class="Icono-Menu-Perfil" href = "perfil.php">
             <img src="./img/iconos/icono_proyectos.svg" alt="Dashboard">
           </a>
-          <a class="Icono-Menu-Perfil " >
+          <a class="Icono-Menu-Perfil "  href = "global.php">
             <img src="./img/iconos/icono_global.svg" alt="Global">
           </a>
           <a class="Icono-Menu-Perfil" href = "personas.php">
