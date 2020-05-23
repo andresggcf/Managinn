@@ -981,7 +981,8 @@ body.panel_control {
   text-transform: uppercase;
   color: #17AEBF;
   font-size: 15px;
-  line-height: 16px; }
+  line-height: 16px;
+  letter-spacing: 0.265em; }
 
 .tooltip.in {
   filter: alpha(opacity=90);
@@ -1010,5 +1011,155 @@ body.panel_control {
     border-radius: 0;
     background-color: #131a40;
     background-image: none; }
+
+#asignado,
+#disponible,
+#no_disponible {
+  position: relative;
+  padding-left: 15px;
+  font-size: 20px;
+  line-height: 26px;
+  width: 100%;
+  display: block;
+  text-align: center; }
+  #asignado::before,
+  #disponible::before,
+  #no_disponible::before {
+    content: '\25CF';
+    position: absolute;
+    left: -10px;
+    font-size: 55px;
+    top: -2px;
+    line-height: 22px; }
+
+#modalPresupuesto .form_download {
+  min-height: auto; }
+
+#asignado::before {
+  color: #17AEBF; }
+
+#disponible::before {
+  color: rgba(103, 190, 200, 0.5); }
+
+#no_disponible::before {
+  color: rgba(175, 218, 224, 0.3);
+  left: -25px; }
+
+#slider12a .slider-track-high, #slider12c .slider-track-high {
+  background: rgba(175, 218, 224, 0.3);
+  border-radius: 0 25px 25px 0;
+  /* &::before{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 15px;
+        height: 100%;
+        background-color: rgba(175, 218, 224, 0.3);
+        right: 0;
+        z-index: 3;
+        border-radius: 0 25px 25px 0;
+    } */ }
+
+#slider12b .slider-track-low, #slider12c .slider-track-low {
+  background: #17AEBF;
+  border-radius: 25px 0 0 25px; }
+  #slider12b .slider-track-low::before, #slider12c .slider-track-low::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 100%;
+    background-color: #17AEBF;
+    right: -10px;
+    z-index: 3;
+    border-radius: 0 25px 25px 0; }
+
+#slider12c .slider-selection {
+  background: rgba(103, 190, 200, 0.5); }
+  #slider12c .slider-selection::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 100%;
+    background-color: rgba(103, 190, 200, 0.5);
+    right: -15px;
+    z-index: 3;
+    border-radius: 0 25px 25px 0; }
+
+#modalPresupuestoLabel {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 39px; }
+
+#modalPresupuesto input[type=button] {
+  font-size: 24px; }
+
+.slider_presupuesto .form-group {
+  margin: 0; }
+
+.slider_presupuesto .slider.slider-horizontal {
+  width: 100%;
+  height: 60px;
+  border-radius: 25px;
+  width: 100%;
+  -webkit-box-shadow: inset 9px 8px 10px -7px rgba(55, 84, 170, 0.3);
+  -moz-box-shadow: inset 9px 8px 10px -7px rgba(55, 84, 170, 0.3);
+  box-shadow: inset 9px 8px 10px -7px rgba(55, 84, 170, 0.3);
+  margin: 10px auto;
+  max-width: 515px; }
+
+.slider_presupuesto .slider.slider-horizontal .tooltip {
+  margin-top: 0;
+  top: 0; }
+
+.slider_presupuesto .slider.slider-horizontal .slider-track {
+  height: 38px;
+  border-radius: 0;
+  position: relative;
+  top: 0;
+  margin: 10px 5px;
+  width: auto;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none; }
+
+.slider_presupuesto .slider-selection {
+  background-color: #17AEBF;
+  background-image: none;
+  border-radius: 0; }
+
+.slider_presupuesto .slider-handle {
+  background-color: #17AEBF;
+  background-image: none; }
+
+.slider_presupuesto .slider-handle.custom.custom {
+  background-color: transparent;
+  display: none; }
+  .slider_presupuesto .slider-handle.custom.custom::before {
+    content: ''; }
+
+.slider_presupuesto img {
+  margin: 0 15px;
+  height: 27px; }
+
+.slider_presupuesto .titulo_valores {
+  text-transform: uppercase;
+  font-size: 16px; }
+
+.min_valor {
+  margin-left: auto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px; }
+
+.max_valor {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px; }
 
 /* PRESUPUESTO*/

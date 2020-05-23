@@ -235,10 +235,89 @@
               </div>
           </div>
         </div>
-        <div class="btn-flotante">
+        <div class="btn-flotante"  data-toggle="modal" data-target="#modalPresupuesto">
           <img src="img/iconos/boton_reporte.svg" alt="Descargar Reporte">
         </div>
     </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalPresupuesto" tabindex="-1" role="dialog" aria-labelledby="modalPresupuestoLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center w-100 mt-3" id="modalPresupuestoLabel"><img src="img/iconos/categoria_presupuesto.png" alt=""> Categorías</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body my-3">
+        <p class="text-center subtitle-form" style="width: 620px;">Distribuye tu presupuesto total en las categorías que seleccionaste anteriormente.</p>
+        <div class="row">
+          <div class="col-12">
+            <div class="row justify-content-center">
+              <div class="col-xl-2 col-lg-12">
+                <span id="asignado">Asignado</span>
+              </div>
+              <div class="col-xl-2 col-lg-12">
+                <span id="disponible">Disponible</span>
+              </div>
+              <div class="col-xl-2 col-lg-12">
+                <span id="no_disponible">No disponible</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form action="#" class="form_download m-5">
+        <div class="row justify-content-center slider_presupuesto">
+          <div class="col-3 justify-content-start d-flex align-items-center">
+            <img src="img/iconos/capacitaciones.svg" alt="">
+            <span class="titulo_valores">Capacitaciones</span>
+          </div>
+          <div class="col-9">
+            <div class="form-group capacitaciones_presupuesto d-flex flex-row align-items-center">
+              <span class="min_valor">$0</span><input id="exCapacitaciones" data-slider-handle="custom" type="text"/><span class="max_valor">$1000000000</span>
+            </div>
+          </div>
+          <div class="col-3 justify-content-start d-flex align-items-center">
+            <img src="img/iconos/papeleria.svg" alt="">
+            <span class="titulo_valores">Papeleria</span>
+          </div>
+          <div class="col-9">
+            <div class="form-group papeleria_presupuesto d-flex flex-row align-items-center">
+              <span class="min_valor">$0</span><input id="exPapeleria" data-slider-handle="custom" type="text"/><span class="max_valor">$1000000000</span>
+            </div>
+          </div>
+          <div class="col-3 justify-content-start d-flex align-items-center">
+            <img src="img/iconos/infraestructura.svg" alt="">
+            <span class="titulo_valores">Infraestructura</span>
+          </div>
+          <div class="col-9">
+            <div class="form-group infraestructura_presupuesto d-flex flex-row align-items-center">
+              <span class="min_valor">$0</span><input id="exInfraestructura" data-slider-handle="custom" type="text"/><span class="max_valor">$1000000000</span>
+            </div>
+          </div>
+          <div class="col-3 justify-content-start d-flex align-items-center">
+            <img src="img/iconos/categorias_presupeusto.png" alt="">
+            <span class="titulo_valores">Otros</span>
+          </div>
+          <div class="col-9">
+            <div class="form-group otros_presupuesto d-flex flex-row align-items-center">
+              <span class="min_valor">$0</span><input id="exOtros" data-slider-handle="custom" type="text"/><span class="max_valor">$1000000000</span>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer mx-5 mb-4">
+        <input class="Boton-a-Principal-Sin-Fondo inline" type="button" data-dismiss="modal" value="Cerrar">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        <input class="Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" type="button" name="Boton-Continuar" value="Ingresar">
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
     
