@@ -1087,6 +1087,12 @@ body.panel_control {
     z-index: 3;
     border-radius: 0 25px 25px 0; }
 
+#modalPresupuestoLabel {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 39px; }
+
 .slider_presupuesto .form-group {
   margin: 0; }
 
@@ -1141,6 +1147,16 @@ body.panel_control {
   font-size: 16px; }
 
 .min_valor {
-  margin-left: auto; }
+  margin-left: auto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px; }
+
+.max_valor {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px; }
 
 /* PRESUPUESTO*/

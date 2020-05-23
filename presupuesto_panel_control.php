@@ -251,9 +251,8 @@
         </button>
       </div>
       <div class="modal-body my-3">
-        <p class="text-center subtitle-form" style="width: 420px;">Distribuye tu presupuesto total en las categorías que seleccionaste anteriormente.</p>
-        <form action="#" class="form_download m-5">
-        <div class="row justify-content-center slider_presupuesto">
+        <p class="text-center subtitle-form" style="width: 620px;">Distribuye tu presupuesto total en las categorías que seleccionaste anteriormente.</p>
+        <div class="row">
           <div class="col-12">
             <div class="row justify-content-center">
               <div class="col-xl-2 col-lg-12">
@@ -267,6 +266,9 @@
               </div>
             </div>
           </div>
+        </div>
+        <form action="#" class="form_download m-5">
+        <div class="row justify-content-center slider_presupuesto">
           <div class="col-3 justify-content-start d-flex align-items-center">
             <img src="img/iconos/capacitaciones.svg" alt="">
             <span class="titulo_valores">Capacitaciones</span>
