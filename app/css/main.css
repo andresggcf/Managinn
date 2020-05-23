@@ -1093,6 +1093,9 @@ body.panel_control {
   font-size: 30px;
   line-height: 39px; }
 
+#modalPresupuesto input[type=button] {
+  font-size: 24px; }
+
 .slider_presupuesto .form-group {
   margin: 0; }
 
