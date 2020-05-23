@@ -74,13 +74,12 @@
         alt="Global"
         style="margin:10px 0px 60px 340px;">
 
-      <div>
+      <div class="d-flex flex-column justify-content-center">
         <button class = "Boton-a-Principal-Fondo-Blanco" 
                 name = "Boton-Proyecto" 
                 id = "Boton-Preferencias"
                 >Ajustar Preferencias</button>
-      </div>
-      <div>
+
         <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
                 name = "Boton-Proyecto" 
                 id = "Boton-Omitir-Preferencias"
