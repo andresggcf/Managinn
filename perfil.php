@@ -268,7 +268,14 @@
                       </div>
 
                       <p class = "Titulo-Tarjeta-P"> <?php echo $row['nombre'];?></p>
-                      <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Facilitador: </b>", $facilitador['nombre'];?></p>
+                      <p class = "Subtitulo-Tarjeta-P"> <b>Facilitador: </b> <?php 
+                        if ($facilitador['nombre']!=NULL)
+                        {
+                          echo $facilitador['nombre'];
+                        }
+                        else{
+                          echo "Pendiente";
+                        }?></p>
                       <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Fecha Inicio: </b>", $row['fecha_inicio']?></p>
                       <p class = "Subtitulo-Tarjeta-P"
                         style="margin-top:15px; "> <?php echo "<b style='font-size:20pt'>".$row['DIAS_ACTIVOS']."</b>  días activos"?></p>

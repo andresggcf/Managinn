@@ -715,7 +715,7 @@
   <script type="text/javascript">
     $.noConflict();
     jQuery(document).ready(function ($) {
-      $('#Sin-Metricas #Boton-Preferencias').click(function () {
+      $('#Boton-Preferencias').click(function () {
         $('#Crear-Implementacion').css('display', 'block');
         $('#Sin-Metricas').css('display', 'none');
         $('#Dashboard-Global').css('display', 'none');
