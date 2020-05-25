@@ -183,7 +183,7 @@ select {
   .btn-custom:hover, .btn-custom:visited, .btn-custom:focus, .btn-custom:active {
     text-decoration: none; }
 
-.global-view .Contenedor-Menu {
+.global-view {
   background-color: #fff; }
 
 .global-view .tab {
@@ -424,7 +424,7 @@ body.panel_control {
 
 .contenedor_dashboard {
   position: relative;
-  margin-top: 60px;
+  margin-top: 20px;
   margin-left: 115px; }
   .contenedor_dashboard h2 {
     font-size: 2.3rem; }
@@ -464,7 +464,7 @@ body.panel_control {
     .contenedor_dashboard .escalamiento .texto_escalamiento,
     .contenedor_dashboard .conversion .texto_escalamiento,
     .contenedor_dashboard .conversion .texto_escalamiento {
-      padding: 0 5px; }
+      padding: 0 30px; }
     .contenedor_dashboard .escalamiento span,
     .contenedor_dashboard .conversion span {
       font-size: 3.1em;
@@ -525,12 +525,12 @@ body.panel_control {
       top: 0;
       left: 0; }
   .contenedor_dashboard .p_capacitadas span {
-    font-size: 3.1em;
+    font-size: 30pt;
     color: #131a40;
     font-weight: 900;
     text-align: center; }
   .contenedor_dashboard .icon_pesos {
-    font-size: 3.1em;
+    font-size: 30pt;
     position: relative;
     font-weight: bold; }
     .contenedor_dashboard .icon_pesos::before {
@@ -866,11 +866,10 @@ body.panel_control {
 
 .presupuesto .contenedor_dashboard .icon_pesos {
   line-height: 52px;
-  display: block;
-  margin-left: 90px; }
+  display: block;}
 
 .presupuesto .contenedor_dashboard .grafica {
-  height: 300px !important; }
+  height: 432px !important; }
 
 .categorias_presupuesto a {
   text-decoration: none; }
@@ -922,8 +921,8 @@ body.panel_control {
   padding-left: 0; }
 
 #escalamiento {
-  font-size: 40px;
-  margin: 0 15px 0 50px; }
+  font-size: 30pt;
+  margin: 0 15px 0 0px; }
 
 .valores_escalamiento p {
   display: flex;
