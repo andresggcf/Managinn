@@ -369,5 +369,206 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script type="text/javascript">
+    $.noConflict();
+    jQuery(document).ready(function ($) {
+      $('#Sin-Metricas #Boton-Preferencias').click(function () {
+        $('#Crear-Implementacion').css('display', 'block');
+        $('#Sin-Metricas').css('display', 'none');
+        $('#Dashboard-Global').css('display', 'none');
+        $('.Blanco-Fondo').addClass('general_bg');
+      })
+
+       /**
+       * Sumar y restar valores en los input de Datos sobre Personas.
+       */
+      $('#less_persons').click(function (e) {
+        e.preventDefault()
+        var num_persons = parseInt($('#num_persons').val());
+        num_persons--;
+        if (num_persons > 0) {
+          $('#num_persons').val(num_persons)
+        }
+      })
+      $('#more_persons').click(function (e) {
+        e.preventDefault()
+        var num_persons = parseInt($('#num_persons').val());
+        num_persons++;
+        $('#num_persons').val(num_persons)
+      })
+
+      $('#less_persons_cap').click(function (e) {
+        e.preventDefault()
+        var num_persons = parseInt($('#num_persons_cap').val());
+        num_persons--;
+        if (num_persons > 0) {
+          $('#num_persons_cap').val(num_persons)
+        }
+      })
+      $('#more_persons_cap').click(function (e) {
+        e.preventDefault()
+        var num_persons = parseInt($('#num_persons_cap').val());
+        num_persons++;
+        $('#num_persons_cap').val(num_persons)
+      })
+
+      /**
+       * Permitir solo valores numericos en los input:number
+       */
+      $('input[type=number]').change(function () {
+        var valueNumber = $(this).val();
+        console.log(valueNumber)
+        valueNumber = parseInt(valueNumber);
+        valueNumber = (!isNaN(valueNumber)) ? valueNumber : 0;
+        console.log(valueNumber)
+        $(this).val(valueNumber)
+      });
+
+      /**
+       * Cambiar de pasos en el formulario de Ajustar Preferencias 
+       */
+      var currentTab = 0; // Current tab is set to be the first tab (0)
+      showTab(currentTab); // Display the current tab
+      function showTab(n) {
+        // This function will display the specified tab of the form ...
+        var x = $(".tab");
+        if (x.length == 0) { return false }
+        x[n].style.display = "flex";
+        var bar = $(".progress-bar");
+        if(!x.hasClass('tab_presupuesto')){
+          switch (n) {
+            case 0:
+              bar.css('width', "0%");
+              $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+              $(".items_progreso li:nth-child(2)>div").addClass("Circulo-Progreso").removeClass("circulo-actual");
+              $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual");
+              break;
+            case 1:
+              bar.css('width', "25%");
+              $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+              $(".items_progreso li:nth-child(2)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
+              $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
+              console.log(n)
+              break;
+            case 2:
+              bar.css('width', "50%");
+              $(".items_progreso li:nth-child(1)>div").addClass("circulo-pasado").removeClass("circulo-actual");
+              $(".items_progreso li:nth-child(2)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+              $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
+              console.log(n)
+              break;
+            case 3:
+              bar.css('width', "100%");
+              $(".items_progreso li:nth-child(2)>div").addClass("circulo-pasado").removeClass("circulo-actual");
+              $(".items_progreso li:nth-child(3)>div").addClass("circulo-actual").removeClass("Circulo-Progreso");
+              console.log(n)
+              break;
+            default:
+              console.log(n, bar);
+          }
+        }else{
+          switch (n) {
+            case 0:
+              bar.css('width', "0%");
+              $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+              $(".items_progreso li:nth-child(2)>div").addClass("Circulo-Progreso").removeClass("circulo-actual");
+              $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual");
+              break;
+            case 1:
+              bar.css('width', "50%");
+              $(".items_progreso li:nth-child(1)>div").addClass("circulo-pasado").removeClass("circulo-actual");
+              $(".items_progreso li:nth-child(2)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+              $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
+              break;
+            case 2:
+              bar.css('width', "100%");
+              $(".items_progreso li:nth-child(2)>div").addClass("circulo-pasado").removeClass("circulo-actual");
+              $(".items_progreso li:nth-child(3)>div").addClass("circulo-actual").removeClass("Circulo-Progreso");
+              console.log(n)
+              break;
+            default:
+              console.log(n, bar);
+          }
+        }
+      }
+      $("input[name='btn_back']").click(function () {
+        nextPrev(1)
+      })
+      $("input[name='Boton-Continuar']").click(function () {
+        nextPrev(1)
+      })
+      function nextPrev(n) {
+        var x = $(".tab");
+        if ((n >= 1 && currentTab >= (x.length - 1)) || n < 1 && currentTab == 0) return false;
+        x[currentTab].style.display = "none";
+        currentTab = currentTab + n;
+        if (currentTab >= x.length) {
+          return false;
+        }
+        showTab(currentTab);
+      }
+
+      /**
+       * Variables para las metricas GLOBAL
+       */
+      var escalamiento = '10%';
+      var tasa_conversion = 15;
+      var dias_activos = <?php 
+        if($arregloDias['DIAS_ACTIVO']==NULL)
+        {
+          echo 0;
+        }
+        else
+        {
+          echo $arregloDias['DIAS_ACTIVO'];
+        }
+        ?>;
+
+      var presupuesto_usado = '<?php $numero = 1500000;
+          $numero_cop =  number_format($numero, 0, ',', '.');
+          echo $numero_cop;
+      ?>';
+
+      var total_presupuesto_usado = "<?php 
+        if($arregloSuma['SUMA']==0)
+        {
+          echo 0;
+        }
+        else{
+          $numero = $arregloSuma['SUMA'];
+          $numero_cop =  number_format($numero, 0, ',', '.');
+          echo '$ '.$numero_cop;
+        }
+      ?>";
+
+      var valor_actual_neto = '<?php
+        $numero = 350000;
+        $numero_cop =  number_format($numero, 0, ',', '.');
+        echo $numero_cop?>';
+
+      var personas_capacitadas = <?php 
+        if($arreglo['num_personas_capacitadas']==NULL)
+        {
+          echo 0;
+        }
+        else{
+          echo $arreglo['num_personas_capacitadas'];
+        }
+      ?>;
+
+      var personas_capacitadas_total = <?php 
+        if ($arreglo['num_personas'] == NULL)
+        {
+          echo 0;
+        }
+        else{
+          echo $arreglo['num_personas'];
+        }
+      ?>;
+
+      var personas_capacitadas_relacion = personas_capacitadas + "/" + personas_capacitadas_total;
+
+    }); // Close JQuery noConflict
+  </script>
   <script src="app/js/graficas.js"></script>
 </body>

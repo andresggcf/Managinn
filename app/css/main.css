@@ -467,7 +467,7 @@ body.panel_control {
       padding: 0 30px; }
     .contenedor_dashboard .escalamiento span,
     .contenedor_dashboard .conversion span {
-      font-size: 3.1em;
+      font-size: 30pt;
       color: #131a40;
       font-weight: 900; }
     .contenedor_dashboard .escalamiento p,
@@ -479,7 +479,7 @@ body.panel_control {
         display: block;
         color: #30CF5D; }
   .contenedor_dashboard .dias span {
-    font-size: 3.1em;
+    font-size: 30pt;
     color: #131a40;
     font-weight: 900;
     text-align: center;

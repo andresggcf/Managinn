@@ -432,56 +432,7 @@
   <script type="text/javascript">
     $.noConflict();
     jQuery(document).ready(function ($) {
-      $('#Sin-Metricas #Boton-Preferencias').click(function () {
-        $('#Crear-Implementacion').css('display', 'block');
-        $('#Sin-Metricas').css('display', 'none');
-        $('#Dashboard-Global').css('display', 'none');
-        $('.Blanco-Fondo').addClass('general_bg');
-      })
-
-      /**
-       * Sumar y restar valores en los input de Datos sobre Personas.
-       */
-      $('#less_persons').click(function (e) {
-        e.preventDefault()
-        var num_persons = parseInt($('#num_persons').val());
-        num_persons--;
-        if (num_persons > 0) {
-          $('#num_persons').val(num_persons)
-        }
-      })
-      $('#more_persons').click(function (e) {
-        e.preventDefault()
-        var num_persons = parseInt($('#num_persons').val());
-        num_persons++;
-        $('#num_persons').val(num_persons)
-      })
-
-      $('#less_persons_cap').click(function (e) {
-        e.preventDefault()
-        var num_persons = parseInt($('#num_persons_cap').val());
-        num_persons--;
-        if (num_persons > 0) {
-          $('#num_persons_cap').val(num_persons)
-        }
-      })
-      $('#more_persons_cap').click(function (e) {
-        e.preventDefault()
-        var num_persons = parseInt($('#num_persons_cap').val());
-        num_persons++;
-        $('#num_persons_cap').val(num_persons)
-      })
-      /**
-       * Permitir solo valores numericos en los input:number
-       */
-      $('input[type=number]').change(function () {
-        var valueNumber = $(this).val();
-        console.log(valueNumber)
-        valueNumber = parseInt(valueNumber);
-        valueNumber = (!isNaN(valueNumber)) ? valueNumber : 0;
-        console.log(valueNumber)
-        $(this).val(valueNumber)
-      });
+      
       
       /**
        * Cambiar de pasos en el formulario de Ajustar Preferencias 
