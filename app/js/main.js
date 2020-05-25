@@ -4,6 +4,7 @@ jQuery(document).ready(function ($) {
     $('#Crear-Implementacion').css('display', 'block');
     $('#Sin-Metricas').css('display', 'none');
     $('#Dashboard-Global').css('display', 'none');
+    $('.Blanco-Fondo').addClass('general_bg');
   })
   /**
    * Sumar y restar valores en los input de Datos sobre Personas.
@@ -49,7 +50,7 @@ jQuery(document).ready(function ($) {
     $(this).val(valueNumber)
   });
   
-  /**
+   /**
    * Cambiar de pasos en el formulario de Ajustar Preferencias 
    */
   var currentTab = 0; // Current tab is set to be the first tab (0)
@@ -60,35 +61,60 @@ jQuery(document).ready(function ($) {
     if (x.length == 0) { return false }
     x[n].style.display = "flex";
     var bar = $(".progress-bar");
-    switch (n) {
-      case 0:
-        bar.css('width', "0%");
-        $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
-        $(".items_progreso li:nth-child(2)>div").addClass("Circulo-Progreso").removeClass("circulo-actual");
-        $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual");
-        break;
-      case 1:
-        bar.css('width', "25%");
-        $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
-        $(".items_progreso li:nth-child(2)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
-        $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
-        console.log(n)
-        break;
-      case 2:
-        bar.css('width', "50%");
-        $(".items_progreso li:nth-child(1)>div").addClass("circulo-pasado").removeClass("circulo-actual");
-        $(".items_progreso li:nth-child(2)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
-        $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
-        console.log(n)
-        break;
-      case 3:
-        bar.css('width', "100%");
-        $(".items_progreso li:nth-child(2)>div").addClass("circulo-pasado").removeClass("circulo-actual");
-        $(".items_progreso li:nth-child(3)>div").addClass("circulo-actual").removeClass("Circulo-Progreso");
-        console.log(n)
-        break;
-      default:
-        console.log(n, bar);
+    if(!x.hasClass('tab_presupuesto')){
+      switch (n) {
+        case 0:
+          bar.css('width', "0%");
+          $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+          $(".items_progreso li:nth-child(2)>div").addClass("Circulo-Progreso").removeClass("circulo-actual");
+          $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual");
+          break;
+        case 1:
+          bar.css('width', "25%");
+          $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+          $(".items_progreso li:nth-child(2)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
+          $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
+          console.log(n)
+          break;
+        case 2:
+          bar.css('width', "50%");
+          $(".items_progreso li:nth-child(1)>div").addClass("circulo-pasado").removeClass("circulo-actual");
+          $(".items_progreso li:nth-child(2)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+          $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
+          console.log(n)
+          break;
+        case 3:
+          bar.css('width', "100%");
+          $(".items_progreso li:nth-child(2)>div").addClass("circulo-pasado").removeClass("circulo-actual");
+          $(".items_progreso li:nth-child(3)>div").addClass("circulo-actual").removeClass("Circulo-Progreso");
+          console.log(n)
+          break;
+        default:
+          console.log(n, bar);
+      }
+    }else{
+      switch (n) {
+        case 0:
+          bar.css('width', "0%");
+          $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+          $(".items_progreso li:nth-child(2)>div").addClass("Circulo-Progreso").removeClass("circulo-actual");
+          $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual");
+          break;
+        case 1:
+          bar.css('width', "50%");
+          $(".items_progreso li:nth-child(1)>div").addClass("circulo-pasado").removeClass("circulo-actual");
+          $(".items_progreso li:nth-child(2)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+          $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
+          break;
+        case 2:
+          bar.css('width', "100%");
+          $(".items_progreso li:nth-child(2)>div").addClass("circulo-pasado").removeClass("circulo-actual");
+          $(".items_progreso li:nth-child(3)>div").addClass("circulo-actual").removeClass("Circulo-Progreso");
+          console.log(n)
+          break;
+        default:
+          console.log(n, bar);
+      }
     }
   }
   $("input[name='btn_back']").click(function () {
@@ -112,7 +138,7 @@ jQuery(document).ready(function ($) {
    * Variables para las metricas GLOBAL
    */
   var escalamiento = '10%';
-  var tasa_conversion = 15;
+  var tasa_conversion = '15%';
   var dias_activos = 32;
   var presupuesto_usado = 1500000;
   var total_presupuesto_usado = '$3200000';
@@ -193,6 +219,205 @@ jQuery(document).ready(function ($) {
     n_personas.push(persona);
   }
   $('.n_personas').append(n_personas)
+
+  // Personas
+  $(".add-more").click(function (e) {
+    e.preventDefault();
+    var addto = "#field" + next;
+    var addRemove = "#field" + (next);
+    next = next + 1;
+    var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="field' + next + '" type="text">';
+    var newInput = $(newIn);
+    var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div><div id="field">';
+    var removeButton = $(removeBtn);
+    $(addto).after(newInput);
+    $(addRemove).after(removeButton);
+    $("#field" + next).attr('data-source', $(addto).attr('data-source'));
+    $("#count").val(next);
+
+    $('.remove-me').click(function (e) {
+      e.preventDefault();
+      var fieldNum = this.id.charAt(this.id.length - 1);
+      var fieldID = "#field" + fieldNum;
+      $(this).remove();
+      $(fieldID).remove();
+    });
+  });
+
+  $('#radioBtn a').on('click', function () {
+    // agregarPersonas();
+    var sel = $(this).data('title');
+    var tog = $(this).data('toggle');
+    $('#' + tog).prop('value', sel);
+
+    $('a[data-toggle="' + tog + '"]').not('[data-title="' + sel + '"]').removeClass('active').addClass('notActive');
+    $('a[data-toggle="' + tog + '"][data-title="' + sel + '"]').removeClass('notActive').addClass('active');
+  })
+
+  // Crear personas
+  var personas = {
+    'mejora':[
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+    ],
+    'medio':[],
+    'alto':[
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+      {
+        nombre:'Jorge Castaño Valencia',
+        cargo:'Recursos',
+        img:'img/iconos/avatar_hombre.svg'
+      },
+      {
+        nombre:'Paula Muñoz Vergara',
+        cargo:'Desarrollo',
+        img:'img/iconos/avatar_mujer.svg'
+      },
+    ]
+
+  }
+  // Agregar personas
+  function agregarPersonas(){
+    $('#mejora').empty();
+    personas.mejora.forEach(element => {
+      $('#mejora').append(
+        `<div class="col-xl-1 col-lg-2 col-md-6">
+          <div class="perfil_persona">
+            <img class="img-fluid" src="${element.img}" alt="">
+            <div class="nombre">${element.nombre}</div>
+            <div class="cargo">${element.cargo}</div>
+          </div>
+        </div>`
+      );
+    });
+    $('#alto').empty();
+    personas.alto.forEach(element => {
+      $('#alto').append(
+        `<div class="col-xl-1 col-lg-2 col-md-6">
+          <div class="perfil_persona">
+            <img class="img-fluid" src="${element.img}" alt="">
+            <div class="nombre">${element.nombre}</div>
+            <div class="cargo">${element.cargo}</div>
+          </div>
+        </div>`
+      ).show();
+    });
+  }
+  agregarPersonas();
+  
+
+  // Abrir perfil de persona
+  $('.perfil_persona').click(function(e){
+    console.log('click')
+    $('.perfil_persona').not(this).toggleClass('grey_effect');
+    if($('.panel_lateral').hasClass('show')){
+      $('.perfil_persona').removeClass('grey_effect')
+    }
+    // $(this).removeClass('grey_effect');
+    e.preventDefault();
+    $('.panel_lateral').toggleClass('show');
+  })
+  $('.close_btn').click(function(e){
+    e.preventDefault();
+    $('.perfil_persona').removeClass('grey_effect')
+    $('.panel_lateral').removeClass('show')
+  })
+
+  /**
+   * Presupuesto
+   */
+  $('.datepicker').datepicker({
+    language: 'es'
+  });
+  $('#ex1').slider({
+    formatter: function(value) {
+      return numeral(value).format('$ 0,0[.]00');
+    }
+  });
+  $("#exCapacitaciones").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [9000000, 70000000],formatter: function(value) {
+    return numeral(value[0]).format('$ 0,0[.]00') + ' - '+numeral(value[1]).format('$ 0,0[.]00');
+  } });
+  $("#exPapeleria").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [90000000, 70000000] ,formatter: function(value) {
+    return numeral(value[0]).format('$ 0,0[.]00') + ' - '+numeral(value[1]).format('$ 0,0[.]00');
+  } });
+  $("#exInfraestructura").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [90000000, 70000000] ,formatter: function(value) {
+    return numeral(value[0]).format('$ 0,0[.]00') + ' - '+numeral(value[1]).format('$ 0,0[.]00');
+  } });
+  $("#exOtros").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [90000000, 90000000] ,formatter: function(value) {
+    return numeral(value[0]).format('$ 0,0[.]00') + ' - '+numeral(value[1]).format('$ 0,0[.]00');
+  } });
 
 }); // Close JQuery noConflict
 

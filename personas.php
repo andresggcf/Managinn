@@ -75,12 +75,9 @@
         style="margin:10px 0px 60px 60px;">
 
       <div>
-        <button class = "Boton-a-Principal-Fondo-Blanco" 
-                name = "Boton-Proyecto" 
-                id = "Boton-Preferencias"
-                style = "max-width: 190px"
-                >Invitar Personas</button>
-      </div>
+        <div class="d-flex flex-column align-items-center">
+          <a class = "Boton-a-Principal-Fondo-Blanco" href="personas_invitar.php">Invitar personas</a>
+        </div>
       <div>
         <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
                 name = "Boton-Proyecto" 
