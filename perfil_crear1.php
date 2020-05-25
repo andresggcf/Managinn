@@ -118,8 +118,8 @@
 
                 <div class = "Select-Campo-Equipo">
                   <select class = "Select-Equipo"id="roles" name="rol_equipo">
-                    <option value="volvo">Facilitador</option>
-                    <option value="saab">Colaborador</option>
+                    <option value="facilitador">Facilitador</option>
+                    <option value="colaborador">Colaborador</option>
                   </select>
                   <label class="Label-Form Label-Focus">Rol</label>
                 </div>

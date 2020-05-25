@@ -108,10 +108,9 @@
         <button class = "Boton-a-Principal-Fondo-Blanco" 
                 name = "Boton-Proyecto" 
                 id = "Boton-Crear-Proyecto"
-                style = "max-width: 200px"
+                style = "max-width: 200px; margin-left: 140px;"
                 >Crear un Proyecto</button>
-      </div>
-      <div>
+
         <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
                 style = "padding: 15px 10px; max-width: 190px"
                 name = "Boton-Proyecto" 

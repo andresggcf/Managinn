@@ -207,7 +207,7 @@
             </div>
 
             <div class="info_dias p-3 my-3 box-shadow" style="height=480px; position:relative">
-              <h5 style="font-size: 14pt; margin-top: 24px">!!!!! Descarga tu reporte automático</h5>
+              <h5 style="font-size: 14pt; margin-top: 24px">Descarga tu reporte automático</h5>
               <p>Olvídate de las largas horas realizando reportes. Descarga el tuyo haciendo clic en el botón de abajo</p>
               <img src="img/iconos/ilustracion_reporte_auto.svg" alt="Persona" style="height: 232px;">
               <button class="Boton-Export" data-toggle="modal" data-target="#Modal-Export">
@@ -247,7 +247,7 @@
           </div>
           <p>Selecciona los ítems que quieres (REEMPLAZAR CON NUEVO MODAL) <br>incluir en este reporte.</p>
         </div>
-        <form class="form-export-global">
+        <form class="form-export-global" action="con_datos_modal.php" method = "post">
           <div class="modal-body">
             <div class="row" style="margin-top:10px">
 
@@ -260,7 +260,8 @@
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
-                      border-radius: 6px !important;">
+                      border-radius: 6px !important;"
+                    name="fecha_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
@@ -274,11 +275,12 @@
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
-                      border-radius: 6px !important;">
+                      border-radius: 6px !important;"
+                    name="desempeno_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
-                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Desempeño</label>
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Personas</label>
                 </div>
 
                 <div class="form-check" style="text-align: left; margin-bottom: 10px">
@@ -288,7 +290,8 @@
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
-                      border-radius: 6px !important;">
+                      border-radius: 6px !important;"
+                    name="productividad_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
@@ -302,7 +305,8 @@
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
-                      border-radius: 6px !important;">
+                      border-radius: 6px !important;"
+                    name="calidad_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
@@ -316,7 +320,8 @@
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
-                      border-radius: 6px !important;">
+                      border-radius: 6px !important;"
+                    name="alcance_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
@@ -333,7 +338,8 @@
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
-                      border-radius: 6px !important;">
+                      border-radius: 6px !important;"
+                    name="ejecucion_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
@@ -347,7 +353,8 @@
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
-                      border-radius: 6px !important;">
+                      border-radius: 6px !important;"
+                    name="categorias_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
@@ -361,7 +368,8 @@
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
-                      border-radius: 6px !important;">
+                      border-radius: 6px !important;"
+                    name="presupuesto_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
@@ -375,7 +383,8 @@
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
-                      border-radius: 6px !important;">
+                      border-radius: 6px !important;"
+                    name="coste_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
@@ -397,9 +406,10 @@
             </div>
             <div>
               <button class = "Boton-a-Principal-Fondo-Blanco" 
-                      name = "Boton-Proyecto" 
-                      id = "Boton-Preferencias"
+                      name = "Boton-PDF" 
+                      id = "Boton-Generar-PDF"
                       style = "max-width: 190px"
+                      type="submit" 
                       >Generar</button>
             </div>
           </form>

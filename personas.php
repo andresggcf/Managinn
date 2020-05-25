@@ -74,17 +74,18 @@
         alt="Global"
         style="margin:10px 0px 60px 60px;">
 
-      <div>
-        <div class="d-flex flex-column align-items-center">
-          <a class = "Boton-a-Principal-Fondo-Blanco" href="personas_invitar.php">Invitar personas</a>
-        </div>
+      <div class="d-flex flex-column align-items-center">
+        <a class = "Boton-a-Principal-Fondo-Blanco" 
+          href="personas_invitar.php"
+          >Invitar personas</a>
+      </div>
       <div>
         <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
-                name = "Boton-Proyecto" 
-                id = "Boton-Omitir-Preferencias"
-                href="presupuesto.php"
-                style = "max-width: 180px"
-                >Omitir</a>
+        style = "padding: 15px 10px; max-width: 190px"
+        name = "Boton-Proyecto" 
+        id = "Boton-Omitir-Preferencias"
+        href="global.php"
+       >Omitir</a>
       </div>
     </div>
   </div>

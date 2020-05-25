@@ -74,10 +74,23 @@
         style="margin:10px 0px 60px 100px;">
 
       <div class="d-flex flex-column align-items-center">
-        <a class="btn btn-custom btn-large btn-bg-red" name="Boton-Proyecto" id="Boton-Omitir-Preferencias"
+        <!--<a class="btn btn-custom btn-large btn-bg-red" name="Boton-Proyecto" id="Boton-Omitir-Preferencias"
           href="presupuesto_informacion.php">Añadir información</a>
         <a class="btn btn-custom btn-on btn-large" name="Boton-Proyecto" id="Boton-Omitir-Preferencias"
-          href="presupuesto_panel_control.php">Omitir</a>
+          href="presupuesto_panel_control.php">Omitir</a>-->
+
+        <a class = "Boton-a-Principal-Fondo-Blanco" 
+          href="presupuesto_informacion.php"
+          >Añadir información</a>
+      </div>
+      <div>
+        <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+        style = "padding: 15px 10px; max-width: 190px"
+        name = "Boton-Proyecto" 
+        id = "Boton-Omitir-Preferencias"
+        href="con_induccion.php"
+       >Omitir</a>
+
       </div>
     </div>
   </div>

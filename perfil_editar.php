@@ -219,6 +219,8 @@
 
               $executeFacilitador = mysqli_query($db, $queryFacilitador);
               $facilitador = mysqli_fetch_assoc($executeFacilitador);
+
+              $_SESSION['facilitador_1'] = $facilitador['nombre'];
               ?> 
               <div class="col-sm-3"> 
                 <div class="card Tarjeta-Proyecto">
@@ -255,7 +257,14 @@
                       </div>
 
                       <p class = "Titulo-Tarjeta-P"> <?php echo $row['nombre'];?></p>
-                      <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Facilitador: </b>", $facilitador['nombre'];?></p>
+                      <p class = "Subtitulo-Tarjeta-P"> <b>Facilitador: </b> <?php 
+                        if ($_SESSION['facilitador_1'] !=NULL)
+                        {
+                          echo $_SESSION['facilitador_1'] ;
+                        }
+                        else{
+                          echo "Pendiente";
+                        }?></p>
                       <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Fecha Inicio: </b>", $row['fecha_inicio']?></p>
                       <p class = "Subtitulo-Tarjeta-P"
                         style="margin-top:15px; "> <?php echo "<b style='font-size:20pt'>".$row['DIAS_ACTIVOS']."</b>  días activos"?></p>
@@ -279,15 +288,14 @@
 
         $proyectoModal = $_GET['proyecto'];
 
-        $queryModalEditar = "SELECT P.NOMBRE AS NOMBREP, U.NOMBRE AS NOMBREU, P.FECHA_INICIO, P.PRESUPUESTO_INICIAL, 
-        P.DESCRIPCION, P.DURACION_MESES 
-        FROM PROYECTO P INNER JOIN EQUIPOS E ON P.ID = E.ID_PROYECTO 
-        INNER JOIN USUARIOS U ON E.ID_USUARIO = U.ID 
-        WHERE P.ID = $proyectoModal
-        AND U.ROL = 'Facilitador'";
+        $queryModalEditar = "SELECT p.nombre AS NOMBREP, p.fecha_inicio, p.presupuesto_inicial, 
+        p.descripcion, p.duracion_meses
+        FROM proyecto p INNER JOIN equipos e ON p.id = e.id_proyecto 
+        INNER JOIN usuarios u ON e.id_usuario = u.id
+        WHERE p.id = $proyectoModal";
 
-        $executeModalEditar = mysqli_query($db, $queryModalEditar);
-        $infoProyectoModal = mysqli_fetch_assoc($executeModalEditar);
+        $resultModal= mysqli_query($db, $queryModalEditar);
+        $infoProyectoModal = mysqli_fetch_assoc($resultModal);
         
       ?>
       <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarModalLabel" aria-hidden="true">
@@ -318,14 +326,21 @@
                   <div style= "margin-bottom: 15px">
                     <h5 class="modal-subtitle" style = "margin-bottom: 0" id="editarModalLabel" color="black">Facilitador:</h5>
                     <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
-                      <?php echo $infoProyectoModal['NOMBREU'];?>
+                      <?php 
+                      if($_SESSION['facilitador_1']!=NULL){
+                        echo $_SESSION['facilitador_1'];
+                      }
+                      else{
+                          echo "Pendiente";
+                      }
+                       ?>
                     </p>
                   </div>
 
                   <div style= "margin-bottom: 15px">
                     <h5 class="modal-subtitle" style = "margin-bottom: 0" id="editarModalLabel" color="black">Fecha de Inicio:</h5>
                     <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
-                      <?php echo $infoProyectoModal['FECHA_INICIO'];?>
+                      <?php echo $infoProyectoModal['fecha_inicio'];?>
                     </p>
                   </div>
 
@@ -333,7 +348,7 @@
                     <h5 class="modal-subtitle" style = "margin-bottom: 0" id="editarModalLabel" color="black">Presupuesto Inicial:</h5>
                     <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
                       <?php
-                        $numero = $infoProyectoModal['PRESUPUESTO_INICIAL'];
+                        $numero = $infoProyectoModal['presupuesto_inicial'];
                         $numero_cop =  number_format($numero, 0, ',', '.');
                       echo '$ '.$numero_cop?>
                     </p>
@@ -345,7 +360,7 @@
                   <div style= "margin-bottom: 15px">
                     <h5 class="modal-subtitle" style = "margin-bottom: 0" id="editarModalLabel" color="black">Descripción Breve: </h5>
                     <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
-                      <?php echo $infoProyectoModal['DESCRIPCION'];?>
+                      <?php echo $infoProyectoModal['descripcion'];?>
                     </p>
                   </div>
 
@@ -359,7 +374,7 @@
                   <div style= "margin-bottom: 15px">
                     <h5 class="modal-subtitle" style = "margin-bottom: 0" id="editarModalLabel" color="black">Duración Estimada:</h5>
                     <p class="Subtitulo Azul" style="text-align: left; font-size:16pt">
-                      <?php echo $infoProyectoModal['DURACION_MESES'];?>
+                      <?php echo $infoProyectoModal['duracion_meses'];?>
                     </p>
                   </div>
                 </div>
