@@ -86,13 +86,9 @@
         $resultado2 =  mysqli_query($db, $queryPresupuesto);
         $arregloSuma = mysqli_fetch_assoc($resultado2);
 
-        $queryDias = "SELECT DATEDIFF(SYSDATE(),
-          (SELECT MIN(p.fecha_inicio) 
-            FROM proyecto p 
-            INNER JOIN equipos e ON p.id = e.id_proyecto 
-            INNER JOIN usuarios u ON e.id_usuario = u.id 
-            WHERE u.correo = '$correo')) 
-          AS DIAS_ACTIVO";
+        $queryDias = "SELECT DATEDIFF(SYSDATE(),(SELECT u.creacion FROM usuarios u 
+        WHERE u.correo = 'director@gmail.com'))
+        AS DIAS_ACTIVO;";
 
         $resultado3 =  mysqli_query($db, $queryDias);
         $arregloDias = mysqli_fetch_assoc($resultado3);
@@ -210,7 +206,7 @@
               <h5 style="font-size: 14pt; margin-top: 24px">Descarga tu reporte automático</h5>
               <p>Olvídate de las largas horas realizando reportes. Descarga el tuyo haciendo clic en el botón de abajo</p>
               <img src="img/iconos/ilustracion_reporte_auto.svg" alt="Persona" style="height: 232px;">
-              <button class="Boton-Export" data-toggle="modal" data-target="#Modal-Export">
+              <button class="Boton-Export" data-toggle="modal" data-target="#Modal-Export-Global">
                 <img src="img/iconos/Boton-Export.png" style="width: 25px;margin: 0 15 !important;padding-top:-10px;margin-top: 0px;margin-bottom: 0px;">
               </button>
             </div>
@@ -222,7 +218,7 @@
 
   <!-- Modal -->
   <div class="modal fade" 
-    id="Modal-Export" 
+    id="Modal-Export-Global" 
     tabindex="-1" 
     role="dialog" 
     aria-labelledby="exampleModalLabel" 
@@ -245,124 +241,79 @@
               <h5
                 style="color:#eb5757; font-size: 20pt; float: left;">Generar Reporte</h5>
           </div>
-          <p>Selecciona los ítems que quieres (REEMPLAZAR CON NUEVO MODAL) <br>incluir en este reporte.</p>
+          <p>Selecciona los ítems que quieres<br>incluir en este reporte.</p>
         </div>
-        <form class="form-export-global" action="con_datos_modal.php" method = "post">
+        <form class="form-export-global" action="con_pdf_global.php" method = "post">
           <div class="modal-body">
             <div class="row" style="margin-top:10px">
 
               <div class="column" style=" width:50%; padding-left: 20px; height:200px">
 
                 <div class="form-check" style="text-align: left; margin-bottom: 10px">
-                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                  <input type="checkbox" class="form-check-input" id="escalamiento_check"
                    style="width: 20px !important;
                       height: 20px !important;
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
                       border-radius: 6px !important;"
-                    name="fecha_post">
+                    name="escalamiento_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
-                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Fecha</label>
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Escalamiento Promedio</label>
                 </div>
 
                 <div class="form-check" style="text-align: left; margin-bottom: 10px">
-                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                  <input type="checkbox" class="form-check-input" id="tasa_check"
                    style="width: 20px !important;
                       height: 20px !important;
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
                       border-radius: 6px !important;"
-                    name="desempeno_post">
+                    name="tasa_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
-                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Personas</label>
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Tasa de Conversión</label>
                 </div>
 
                 <div class="form-check" style="text-align: left; margin-bottom: 10px">
-                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                  <input type="checkbox" class="form-check-input" id="dias_check"
                    style="width: 20px !important;
                       height: 20px !important;
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
                       border-radius: 6px !important;"
-                    name="productividad_post">
+                    name="dias_act_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
-                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Productividad</label>
-                </div>
-
-                <div class="form-check" style="text-align: left; margin-bottom: 10px">
-                  <input type="checkbox" class="form-check-input" id="fechaCheck"
-                   style="width: 20px !important;
-                      height: 20px !important;
-                      background: #F6F7F9 !important;
-                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
-                        inset -2px -2px 5px #FFFFFF !important;
-                      border-radius: 6px !important;"
-                    name="calidad_post">
-                  <label 
-                    class="form-check-label" 
-                    for="fechaCheck"
-                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Calidad</label>
-                </div>
-
-                <div class="form-check" style="text-align: left; margin-bottom: 10px">
-                  <input type="checkbox" class="form-check-input" id="fechaCheck"
-                   style="width: 20px !important;
-                      height: 20px !important;
-                      background: #F6F7F9 !important;
-                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
-                        inset -2px -2px 5px #FFFFFF !important;
-                      border-radius: 6px !important;"
-                    name="alcance_post">
-                  <label 
-                    class="form-check-label" 
-                    for="fechaCheck"
-                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Alcance</label>
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Días Activos</label>
                 </div>
               </div>
 
               <div class="column" style="height:200px; width:50%; padding-left: 20px">
 
-              <div class="form-check" style="text-align: left; margin-bottom: 10px">
-                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="personas_check"
                    style="width: 20px !important;
                       height: 20px !important;
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
                       border-radius: 6px !important;"
-                    name="ejecucion_post">
+                    name="personas_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
-                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Ejecución</label>
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Personas Capacitadas</label>
                 </div>
 
                 <div class="form-check" style="text-align: left; margin-bottom: 10px">
-                  <input type="checkbox" class="form-check-input" id="fechaCheck"
-                   style="width: 20px !important;
-                      height: 20px !important;
-                      background: #F6F7F9 !important;
-                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
-                        inset -2px -2px 5px #FFFFFF !important;
-                      border-radius: 6px !important;"
-                    name="categorias_post">
-                  <label 
-                    class="form-check-label" 
-                    for="fechaCheck"
-                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Categorías</label>
-                </div>
-
-                <div class="form-check" style="text-align: left; margin-bottom: 10px">
-                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                  <input type="checkbox" class="form-check-input" id="presupuesto_check"
                    style="width: 20px !important;
                       height: 20px !important;
                       background: #F6F7F9 !important;
@@ -373,22 +324,22 @@
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
-                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Presupuesto actual</label>
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Presupuesto</label>
                 </div>
 
                 <div class="form-check" style="text-align: left; margin-bottom: 10px">
-                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                  <input type="checkbox" class="form-check-input" id="vlr_port_check"
                    style="width: 20px !important;
                       height: 20px !important;
                       background: #F6F7F9 !important;
                       box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
                         inset -2px -2px 5px #FFFFFF !important;
                       border-radius: 6px !important;"
-                    name="coste_post">
+                    name="vlr_portafolio_post">
                   <label 
                     class="form-check-label" 
                     for="fechaCheck"
-                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Coste</label>
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Valor del Portafolio</label>
                 </div>
               </div>
 
@@ -544,12 +495,12 @@
         }
         ?>;
 
-      var presupuesto_usado = '<?php $numero = 1500000;
+      var total_presupuesto_usado = '<?php $numero = 1500000;
           $numero_cop =  number_format($numero, 0, ',', '.');
-          echo $numero_cop;
+          echo '$ '.$numero_cop;
       ?>';
 
-      var total_presupuesto_usado = "<?php 
+      var presupuesto_usado = "<?php 
         if($arregloSuma['SUMA']==0)
         {
           echo 0;
@@ -557,7 +508,7 @@
         else{
           $numero = $arregloSuma['SUMA'];
           $numero_cop =  number_format($numero, 0, ',', '.');
-          echo '$ '.$numero_cop;
+          echo $numero_cop;
         }
       ?>";
 
