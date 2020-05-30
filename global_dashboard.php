@@ -103,7 +103,8 @@
                 <p>Asi se ve tu sistema de innovación global en:</p> 
               </div>
 
-              <div class="mes d-flex flex-row align-items-center">
+              <div class="mes d-flex flex-row align-items-center"
+                style="padding-left: 2.5%">
                 <a id="less_month" href="#"><</a>
                 <span id="mes_actual">Diciembre</span>
                 <a id="more_month" href="#">></a>

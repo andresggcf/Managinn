@@ -266,7 +266,9 @@
                         </div>
                       </div>
 
-                      <p class = "Titulo-Tarjeta-P"> <?php echo $row['nombre'];?></p>
+                      <a href="perfil_dashboard.php?proyecto=<?php echo $idProyecto;?>">
+                        <p class = "Titulo-Tarjeta-P"> <?php echo $row['nombre'];?></p>
+                      </a>
                       <p class = "Subtitulo-Tarjeta-P"> <b>Facilitador: </b> <?php 
                         if ($facilitador['nombre']!=NULL)
                         {
