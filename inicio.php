@@ -48,7 +48,7 @@
                 type="submit"
                 value="Iniciar sesión"/> 
               </div>
-              <p class="Parrafo-Extra-Pequeño Text-Center">¿No tienes una cuenta? 
+              <p class="Parrafo-Extra-Pequeño Text-Center Blanco">¿No tienes una cuenta? 
                   <a href="registro.php"
                   class = "Enlace-Pequeño-Principal">Registrate Aquí</a>
               </p>

@@ -15,8 +15,8 @@ include("header.php");
   <div class="RegDatos-Fondo"> 
     <div class="Caja-Texto">
       <div class = "Modal-1">
-        <h2 class="Titulo Text-Center">¡Hola! Déjanos conocerte</h2>
-        <p style = "margin-bottom: 50px" class="Subtitulo Text-Center">Cuéntanos sobre ti y tu trabajo.</p>
+        <h2 class="Titulo Text-Center Blanco">¡Hola! Déjanos conocerte</h2>
+        <p style = "margin-bottom: 50px" class="Subtitulo Blanco Text-Center">Cuéntanos sobre ti y tu trabajo.</p>
 
         <form action="con_informacion.php" method = "post">
 

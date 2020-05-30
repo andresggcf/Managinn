@@ -211,6 +211,24 @@ button:focus {
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 */
 
+
+.modal-title
+{
+  color: #131A40;
+  text-align: center;
+  font-weight: bolder;
+  right: 39% !important;
+  position: absolute;
+}
+
+.modal-subtitle
+{
+  color: #131A40;
+  text-align: center;
+  font-weight: bolder;
+  text-align: left;
+}
+
 .card-body
 {
   padding: 5px 20px 20px 20px !important;
@@ -291,6 +309,7 @@ button:focus {
 {
   font-size: 11pt;
   margin-bottom: 2px !important;
+  color:white;
 }
 
 .Texto-Progreso
@@ -368,6 +387,7 @@ button:focus {
 {
   font-size: 10pt !important;
   margin-bottom: 0px !important;
+  color: white;
 }
 
 .Titulo
@@ -434,11 +454,54 @@ button:focus {
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 */
 
+.contenedor-subir-foto
+{
+  width: 100%;
+  height: 140px;
+  background: #F6F7F9;
+  box-shadow: inset 5px 5px 15px rgba(55, 84, 170, 0.15), inset -5px -5px 10px #FFFFFF;
+  border-radius: 20px;
+}
+
+.modal-backdrop {
+  background-color:#131A40 !important;
+}
+
+.modal-header
+{
+  border: none !important;
+  position: relative;
+  padding: 30px 30px 50px 16px !important;
+}
+
+.modal{
+  top: 80px !important;
+}
+
+.modal-content
+{
+  background: #F6F7F9 !important;
+  box-shadow: 0px 0px 40px rgba(19, 26, 64, 0.2) !important;
+  border-radius: 20px !important;
+  text-align: center !important;
+}
+
+.modal-body
+{
+  padding: 0px 50px !important;
+}
+
+.modal-dialog
+{
+  max-width: 950px !important; 
+  width: 850px !important;
+}
+
 .proyecto-boton-menu
 {
   background-color: #e7e7e700;
-  margin-left: 220px !important;
-  margin-bottom: 20px !important;
+  margin: 0px 0px 0px 210px !important;
+  border: none;
 }
 
 .proyecto
@@ -449,6 +512,19 @@ button:focus {
   border-radius: 20px !important;
   backdrop-filter: blur(3px) !important;
   transform: translate3d(-20px, -8px, 0px) !important;
+}
+
+.input[type=checkbox]
+{
+  width: 39px !important;
+  height: 39px !important;
+  left: 1016.08px !important;
+  top: 541.71px !important;
+
+  /* Nuevo Fondo */
+  background: #F6F7F9 !important;
+  box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), inset -2px -2px 5px #FFFFFF !important;
+  border-radius: 6px !important;
 }
 
 .radio-toolbar input[type="radio"] {
@@ -487,6 +563,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 25px;
   border-width: thin;
   margin-right: 15px;
+}
+
+.btn-cancelar-edit:hover
+{
+  color: #fff !important;
+  background-color: #eb575796 !important;
 }
 
 .Btn-Add-Proyecto
@@ -623,6 +705,26 @@ a:visited{color: #fff;}
   transition: 0.3s;
 }
 
+.Boton-Export
+{
+  height: 65px; 
+  width: 65px; 
+  position:absolute; 
+  background-color: #eb5757!important; 
+  border:none !important; 
+  margin: 0; 
+  right: 5px; 
+  bottom: -25px;
+  border-radius: 50px;
+  box-shadow: 2px 4px 10px rgba(235, 87, 87, 0.55);
+  transition: 0.3s;
+}
+
+.Boton-Export:hover
+{
+  background-color: #e59b9b!important;
+}
+
 .Boton-Principal:hover
 {
   background-color: #fff;
@@ -632,7 +734,7 @@ a:visited{color: #fff;}
 
 .Boton-Delinieado-Menu
 {
-  color: #fff;
+  color: #fff; 
   border: solid #eb5757;
   border-radius: 30px;
   border-width: 2px;
@@ -643,7 +745,7 @@ a:visited{color: #fff;}
 
 .Boton-a-Principal-Fondo-Blanco
 {
-  color: #fff;
+  color: #fff !important;
   background-color: #eb5757;
   padding: 15px 30px 15px 30px;
   border-radius: 30px;
@@ -889,7 +991,6 @@ a:visited{color: #fff;}
   font-weight: 500 ;
   border: none;
   width:100%;
-  background-color: #fff;
 }
 .Form-Field
 {
@@ -956,5 +1057,10 @@ a:visited{color: #fff;}
     display: none !important;
   }
 
+@media screen and (min-width: 576px){
+  .modal-dialog {
+    max-width: 850px !important;
+  }
+}
 
 }

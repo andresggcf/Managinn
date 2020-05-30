@@ -1,10 +1,10 @@
 $.noConflict();
 jQuery(document).ready(function ($) {
-  $('#Sin-Metricas #Boton-Preferencias').click(function () {
+  $('#Boton-Preferencias').click(function () {
     $('#Crear-Implementacion').css('display', 'block');
     $('#Sin-Metricas').css('display', 'none');
-    $('.Blanco-Fondo').addClass('general_bg')
-
+    $('#Dashboard-Global').css('display', 'none');
+    $('.Blanco-Fondo').addClass('general_bg');
   })
   /**
    * Sumar y restar valores en los input de Datos sobre Personas.
@@ -49,7 +49,8 @@ jQuery(document).ready(function ($) {
     console.log(valueNumber)
     $(this).val(valueNumber)
   });
-  /**
+  
+   /**
    * Cambiar de pasos en el formulario de Ajustar Preferencias 
    */
   var currentTab = 0; // Current tab is set to be the first tab (0)
@@ -163,7 +164,7 @@ jQuery(document).ready(function ($) {
   $("#presupuesto_usado").text(presupuesto_usado);
   $("#total_presupuesto_usado").text(total_presupuesto_usado);
   $("#valor_actual_neto").text(valor_actual_neto);
-  $("#personas_capacitadas_relacion").text(personas_capacitadas_relacion);
+  //$("#personas_capacitadas_relacion").text(personas_capacitadas_relacion);
   /**
    * Asignar meses
    */
