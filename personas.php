@@ -8,56 +8,68 @@
   include("header.php");
   ?>
 
-<body>
-  <div class="NavBar">
-    <div class="Contenedor-Menu">
-      <img src="img/iconos/managinn.png" width="180px" alt="" class="">
+<body class="global-view panel_control">
+<div class="NavBar">
+    <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
+      <a href="#">
+        <img src="img/iconos/solicitudes.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/icono-checklist.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/notificaciones.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/settings.svg" alt="">
+      </a>
     </div>
   </div>
 
-  <div>
-    <div class = "Columna-Perfil">
-      <div class = "Elementos-Perfil">
-        <div class = "Botones-Perfil">
-          <a class="Icono-Menu-Perfil" href = "perfil.php">
-            <img src="./img/iconos/Etiqueta-Dashboard.svg" alt="Dashboard" height="25px">
-          </a>
-          <a class="Icono-Menu-Perfil" href = "global.php">
-            <img src="./img/iconos/Etiqueta-Global.svg" alt="Global" height="25px">
-          </a>
-          <a class="Icono-Menu-Perfil current">
-            <img class="current-Icono" src="./img/iconos/Etiqueta-Personas.svg" alt="Personas" height="27px">
-          </a>
-          <a class="Icono-Menu-Perfil" href = "presupuesto.php">
-            <img src="./img/iconos/Etiqueta-Presupuesto.svg" alt="Presupuesto" height="25px">
-          </a>
+  <div class="Columna-Perfil d-flex flex-column">
+    <div class="icon_home">
+      <img src="img/iconos/inn.svg" width="180px" alt="" class="">
+    </div>
+    <div class="Elementos-Perfil">
+      <div class="Botones-Perfil">
+        <a class="Icono-Menu-Perfil" href="perfil.php">
+          <img src="./img/iconos/icono_proyectos.svg" alt="Dashboard">
+        </a>
+        <a class="Icono-Menu-Perfil" href="global.php">
+          <img src="./img/iconos/icono_global.svg" alt="Global">
+        </a>
+        <a class="Icono-Menu-Perfil current" href="personas.php">
+          <img class="current-Icono"  src="./img/iconos/icono_personas.svg" alt="Personas">
+        </a>
+        <a class="Icono-Menu-Perfil " href="presupuesto.php">
+          <img src="./img/iconos/icono_presupuesto.svg" alt="Presupuesto">
+        </a>
+      </div>
+  
+      <div class="Usuario-Perfil">
+  
+        <img src="./img/iconos/Icono-Perfil.png" alt="Icono" height="45px"
+          style="border-radius: 5px; float: left; margin-right: 10px;">
+  
+        <div style="float:left;">
+          <p class="Texto-Nombre-Perfil"><strong> <?php echo $_SESSION['name_post'];?></strong></p>
+          <p class="Texto-Rol-Perfil"><?php echo $_SESSION['role_post'];?></p>
         </div>
-
-        <div class = "Usuario-Perfil"> 
-
-          <img src = "./img/iconos/Icono-Perfil.png" alt="Icono" 
-          height="45px"
-          style = "border-radius: 5px; float: left; margin-right: 10px;">
-
-          <div style = "float:left;">
-            <p class="Texto-Nombre-Perfil"><strong> <?php echo $_SESSION['name_post'];?></strong></p>
-            <p class="Texto-Rol-Perfil"><?php echo $_SESSION['role_post'];?></p>
-          </div>
-
-          <div class = "Perfil-Dropdown-Container" style = "float: right;">
-            <div class="btn-group dropright ">
-              <button type="button" class="btn btn-secondary dropdown-toggle Boton-Dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               
-              </button>
-              <div class="dropdown-menu">
-                <!-- Dropdown menu links -->
-                <a style="color:#eb5757; margin-left: 15px" href = "index.php?logout='1'">Cerrar Sesión</a>
-              </div>
+  
+        <div class="Perfil-Dropdown-Container" style="float: right;">
+          <div class="btn-group dropright ">
+            <button type="button" class="btn btn-secondary dropdown-toggle Boton-Dropdown" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+  
+            </button>
+            <div class="dropdown-menu">
+              <!-- Dropdown menu links -->
+              <a style="color:#eb5757; margin-left: 15px" href="index.php?logout='1'">Cerrar Sesión</a>
             </div>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 
 

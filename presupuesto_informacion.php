@@ -10,8 +10,19 @@
 
 <body class="panel_control presupuesto">
   <div class="NavBar">
-    <div class="Contenedor-Menu">
-      <!-- <img src="img/iconos/managinn.png" width="180px" alt="" class=""> -->
+    <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
+      <a href="#">
+        <img src="img/iconos/solicitudes.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/icono-checklist.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/notificaciones.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/settings.svg" alt="">
+      </a>
     </div>
   </div>
 
@@ -63,7 +74,7 @@
 
     <div class="new-body general_bg">
       <div class="container-fluid">
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center py-5">
           <div class="col-xl-10 col-lg-12x">
             <div class="body-popup box-shadow ">
               <div class="mt-5 progress Linea-Progreso">
@@ -72,7 +83,7 @@
                 </div>
               </div>
               <div class="Progreso-Proyecto">
-                <ul class="items_progreso">
+                <ul class="items_progreso d-flex">
                   <li class="progreso-actual">
                     <div class="circulo-actual"></div>
                     <p class="Texto-Progreso" style="padding-top:15px;">Inicio</p>
@@ -95,15 +106,15 @@
                     ¿Cuál es la cantidad de dinero asignado al departamento de innovación?
                   </p>
                   <div class="row justify-content-center">
-                    <div class="input-group mb-3 col-4 border-radius" >
+                    <div class="input-group mb-4 col-4 border-radius" >
                       <input id="presupuesto_inicial" type="number" required class="form-control input-clear input-numeric" placeholder="Presupuesto inicial general">
                     </div>
                     <div class="w-100"></div>
-                    <div class="input-group mb-3 col-4 border-radius input-date" >
+                    <div class="input-group mb-4 col-4 border-radius input-date" >
                       <input id="fecha_presupuesto" type="text" required class="form-control input-clear datepicker " placeholder="Fecha de inicio">
                     </div>
                     <div class="w-100"></div>
-                    <div class="input-group  mb-3 col-4 border-radius">
+                    <div class="input-group  mb-4 col-4 border-radius">
                       <div id="radioBtn" class="btn-group">
                         <a class="btn btn-custom btn-bg-azul-claro btn-large active" data-toggle="select_periodo" data-title="Trimestral">Trimestral</a>
                         <a class="btn btn-custom btn-bg-azul-claro btn-large notActive" data-toggle="select_periodo" data-title="Semestral">Semestral</a>
