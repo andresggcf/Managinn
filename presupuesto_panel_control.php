@@ -9,9 +9,21 @@
   ?>
 
 <body class="global-view panel_control presupuesto">
-  <div class="NavBar">
-    <div class="Contenedor-Menu">
+<div class="NavBar">
+    <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
       <!-- <img src="img/iconos/managinn.png" width="180px" alt="" class=""> -->
+      <a href="#">
+        <img src="img/iconos/solicitudes.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/icono-checklist.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/notificaciones.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/settings.svg" alt="">
+      </a>
     </div>
   </div>
 
