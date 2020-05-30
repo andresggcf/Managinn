@@ -118,17 +118,20 @@
 
                 <div class = "Select-Campo-Equipo">
                   <select class = "Select-Equipo"id="roles" name="rol_equipo">
-                    <option value="volvo">Facilitador</option>
-                    <option value="saab">Colaborador</option>
+                    <option value="facilitador">Facilitador</option>
+                    <option value="colaborador">Colaborador</option>
                   </select>
                   <label class="Label-Form Label-Focus">Rol</label>
                 </div>
               </div>
 
               <div style="width:300px; padding-left: 0px; margin-left: 80px; margin-top: 200px;">
-                <a class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"
-                    href="javascript:history.go(-1)"
-                    style="margin-top: 0px; height: 50px;">Cancelar</a> 
+              <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                    style = "padding: 15px 30px;float:left"
+                    name = "Boton-Proyecto" 
+                    id = "Boton-Omitir-Preferencias"
+                    href="perfil.php"
+                  >Cancelar</a>
                 <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
                     type="submit" 
                     name="Boton-Continuar"

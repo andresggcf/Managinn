@@ -51,7 +51,7 @@
                 type="submit"
                 value="Registrar"/> 
               </div>
-              <p class="Parrafo-Extra-Pequeño Text-Center">¿Ya tienes una cuenta? 
+              <p class="Parrafo-Extra-Pequeño Text-Center Blanco">¿Ya tienes una cuenta? 
                   <a href="inicio.php"
                   class = "Enlace-Pequeño-Principal">Inicia Sesión</a>
               </p>

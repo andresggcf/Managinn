@@ -367,6 +367,204 @@
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" 
+    id="Modal-Export-Presupuesto" 
+    tabindex="-1" 
+    role="dialog" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    
+    <div class="modal-dialog" role="document" style="max-width:530px !important">
+      <div class="modal-content" style="height: 500px; max-width:530px">
+        <div class="modal-header" 
+          style = "padding-bottom: 20px !important;padding-left: 110px !important;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div style="
+            margin-bottom: 10px;
+            margin-top: -25px; 
+            height:35px;">
+              <img src="img/iconos/Icono-Export.png" style="margin-left: 80px;width:30px;float:left;margin-right: 20px;">
+              <h5
+                style="color:#eb5757; font-size: 20pt; float: left;">Generar Reporte</h5>
+          </div>
+          <p>Selecciona los ítems que quieres (REEMPLAZAR CON NUEVO MODAL) <br>incluir en este reporte.</p>
+        </div>
+        <form class="form-export-global" action="con_pdf_presupuesto.php" method = "post">
+          <div class="modal-body">
+            <div class="row" style="margin-top:10px">
+
+              <div class="column" style=" width:50%; padding-left: 20px; height:200px">
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="fecha_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Fecha</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="desempeno_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Personas</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="productividad_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Productividad</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="calidad_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Calidad</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="alcance_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Alcance</label>
+                </div>
+              </div>
+
+              <div class="column" style="height:200px; width:50%; padding-left: 20px">
+
+              <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="ejecucion_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Ejecución</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="categorias_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Categorías</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="presupuesto_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Presupuesto actual</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="fechaCheck"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="coste_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Coste</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="modal-footer" style="border-top: none; justify-content: center;">
+            <div>
+              <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                      name = "Boton-Proyecto" 
+                      id = "Boton-Omitir-Preferencias"
+                      href="presupuesto.php"
+                      style = "max-width: 180px"
+                      data-dismiss="modal"
+                      >Cancelar</a>
+            </div>
+            <div>
+              <button class = "Boton-a-Principal-Fondo-Blanco" 
+                      name = "Boton-PDF" 
+                      id = "Boton-Generar-PDF"
+                      style = "max-width: 190px"
+                      type="submit" 
+                      >Generar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
     

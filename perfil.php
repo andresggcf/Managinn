@@ -24,13 +24,15 @@
   $contProyectos = $arregloProyectos[0];
 
   /*Query que muestra si el perfil tuvo "induccion"*/
-  $queryInduccion = "SELECT induccion FROM usuarios WHERE correo = '$correo' AND nombre = '$nombre'";
+  $queryInduccion = "SELECT induccion, induccion_global FROM usuarios WHERE correo = '$correo' AND nombre = '$nombre'";
   $resultado3 = mysqli_query($db, $queryInduccion);
   $arregloInduccion = mysqli_fetch_array($resultado3);
 
   $_SESSION['induccion'] = $arregloInduccion['induccion'];
+  $_SESSION['induccion_global'] = $arregloInduccion['induccion_global'];
 
   $induccion = $_SESSION['induccion'];
+  $induccion_gl = $_SESSION['induccion_global'];
 
   include("header.php");
   ?>
@@ -106,7 +108,15 @@
         <button class = "Boton-a-Principal-Fondo-Blanco" 
                 name = "Boton-Proyecto" 
                 id = "Boton-Crear-Proyecto"
+                style = "max-width: 200px; margin-left: 140px;"
                 >Crear un Proyecto</button>
+
+        <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                style = "padding: 15px 10px; max-width: 190px"
+                name = "Boton-Proyecto" 
+                id = "Boton-Omitir-Preferencias"
+                href="global.php"
+                >Omitir</a>
       </div>
     </div>
 
@@ -176,10 +186,12 @@
                 </div>
 
                 <div>
-                  <button class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"  
-                    name="Boton-inicio"
-                    id="Boton-Cancelar-Creacion" 
-                    >Cancelar</button>  
+                  <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                    style = "padding: 15px 30px;float:left"
+                    name = "Boton-Proyecto" 
+                    id = "Boton-Omitir-Preferencias"
+                    href="perfil.php"
+                  >Cancelar</a>
                   <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
                     type="submit" 
                     name="Boton-Continuar"
@@ -200,11 +212,12 @@
         <?php 
           require 'conexion.php';
 
-          $queryProyectos = "SELECT p.* FROM proyecto p
+          $queryProyectos = "SELECT p.*, 
+          DATEDIFF(SYSDATE(), p.fecha_inicio) AS DIAS_ACTIVOS 
+          FROM proyecto p
           INNER JOIN equipos e ON p.id = e.id_proyecto
           INNER JOIN usuarios u ON e.id_usuario = u.id 
           WHERE u.id = $id AND p.estado = 'A'";
-          echo $queryProyectos;
           
           if ($result = mysqli_query($db, $queryProyectos)) 
           {
@@ -232,7 +245,7 @@
                             <a class="proyecto-boton-menu" 
                               style="margin-left:15px;" 
                               id="boton-editar"
-                              href=<?php echo "perfil.php?proyecto=",$idProyecto;?>
+                              href=<?php echo "perfil_editar.php?proyecto=",$idProyecto;?>
                               >
                               <img  alt="" src="img/iconos/icono-editar.svg" width="40px" height="40px"
                                 style = "margin-top:60px; margin-bottom:15px">
@@ -254,8 +267,17 @@
                       </div>
 
                       <p class = "Titulo-Tarjeta-P"> <?php echo $row['nombre'];?></p>
-                      <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Facilitador: </b>", $facilitador['nombre'];?></p>
+                      <p class = "Subtitulo-Tarjeta-P"> <b>Facilitador: </b> <?php 
+                        if ($facilitador['nombre']!=NULL)
+                        {
+                          echo $facilitador['nombre'];
+                        }
+                        else{
+                          echo "Pendiente";
+                        }?></p>
                       <p class = "Subtitulo-Tarjeta-P"> <?php echo "<b>Fecha Inicio: </b>", $row['fecha_inicio']?></p>
+                      <p class = "Subtitulo-Tarjeta-P"
+                        style="margin-top:15px; "> <?php echo "<b style='font-size:20pt'>".$row['DIAS_ACTIVOS']."</b>  días activos"?></p>
                     </div>
                   </div>
                 </div>
@@ -275,7 +297,7 @@
      <div class = "Contenedor-Info-Proyectos" id="Induc-Proyecto"> 
       <p class = "Titulo-Dashboard">Proyectos en Curso (0)<p>
         <div class = "col-sm-3" style="float:left">
-          <button class = "Btn-Add-Proyecto" id="Boton-Crear-Proyecto-2">+</button>
+          <button class = "Btn-Add-Proyecto" id="Boton-Crear-Proyecto-3">+</button>
         </div>
         <div class = "col-sm-9" style="float:left; height: 95%; position:relative">
           <div class = "contenedor-Induc-Proyecto">
@@ -300,13 +322,14 @@
   <script type="text/javascript">
     var longProyectos = <?php echo $contProyectos?> ; 
     var induccion = <?php echo $induccion?>;
-    console.log ("Usuario tuvo induccion:" + induccion);
+    var ind_global = <?php echo $induccion_gl?>;
+    console.log ("Usuario tuvo induccion:" + induccion + " global: " + ind_global);
     console.log ("proyectos en perfil: " + longProyectos);
 
     function loadPage(){
       if (induccion == 0 && longProyectos == 0)
       {
-        console.log ("Usuario tuvo induccion: asd " + induccion);
+        console.log ("Usuario tuvo induccion: " + induccion);
         
         document.getElementById('Sin-Proyecto').style.display = 'block';
         document.getElementById('Crear-Proyecto').style.display = 'none';
@@ -334,10 +357,26 @@
 
       else if(induccion == 1 && longProyectos == 0)
       {
-        /*document.getElementById('Cont-Proyecto').style.display = 'none';
+        document.getElementById('Cont-Proyecto').style.display = 'none';
         document.getElementById('Crear-Proyecto').style.display = 'none';
         document.getElementById('Sin-Proyecto').style.display = 'none';
-        document.getElementById('Induc-Proyecto').style.display = 'block';*/
+        document.getElementById('Induc-Proyecto').style.display = 'block';
+
+        document.getElementById('Boton-Crear-Proyecto-3').onclick = function()
+        {
+          document.getElementById('Sin-Proyecto').style.display = 'none';
+          document.getElementById('Crear-Proyecto').style.display = 'block';
+          document.getElementById('Cont-Proyecto').style.display = 'none';
+          document.getElementById('Induc-Proyecto').style.display = 'none';
+        }
+
+        document.getElementById('Boton-Cancelar-Creacion').onclick = function()
+        {
+          document.getElementById('Sin-Proyecto').style.display = 'none';
+          document.getElementById('Crear-Proyecto').style.display = 'none';
+          document.getElementById('Cont-Proyecto').style.display = 'block';
+          document.getElementById('Induc-Proyecto').style.display = 'none';
+        }
       }
       
       else if (longProyectos != 0)
@@ -367,13 +406,6 @@
     }
 
     loadPage();
-
-    document.getElementById("boton-editar").onclick = function()
-    {
-      console.log("clicked editar asdasf");
-    }
-    
-
   </script>
 
 

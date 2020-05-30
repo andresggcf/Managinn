@@ -18,7 +18,6 @@
   {
     require 'conexion.php';
 
-    
     $newStr = str_replace(',', '', $p_presupuesto); // If you want it to be "185345321"
     $presupuesto = intval($newStr);
 
@@ -31,7 +30,6 @@
     duracion_meses = '$p_duracion', 
     estado = 'A'
     WHERE id = '$p_id'";
-    echo $queryCrearProyecto;
     mysqli_query($db, $queryCrearProyecto);
 
     header ('location: perfil.php');
