@@ -8,28 +8,41 @@
   include("header.php");
   ?>
 
-<body>
-  <div class="NavBar">
-    <div class="Contenedor-Menu">
-      <img src="img/iconos/managinn.png" width="180px" alt="" class="">
+<body class="panel_control presupuesto">
+<div class="NavBar">
+    <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
+      <a href="#">
+        <img src="img/iconos/solicitudes.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/icono-checklist.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/notificaciones.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/settings.svg" alt="">
+      </a>
     </div>
   </div>
 
-  <div>
-    <div class = "Columna-Perfil">
+  <div class = "Columna-Perfil d-flex flex-column">
+      <div class="icon_home">
+        <img src="img/iconos/inn.svg" width="180px" alt="" class="">
+      </div>
       <div class = "Elementos-Perfil">
         <div class = "Botones-Perfil">
           <a class="Icono-Menu-Perfil" href = "perfil.php">
-            <img src="./img/iconos/Etiqueta-Dashboard.svg" alt="Dashboard" height="25px">
+            <img src="./img/iconos/icono_proyectos.svg" alt="Dashboard">
           </a>
-          <a class="Icono-Menu-Perfil" href = "global.php">
-            <img src="./img/iconos/Etiqueta-Global.svg" alt="Global" height="25px">
+          <a class="Icono-Menu-Perfil"  href = "global.php">
+            <img   src="./img/iconos/icono_global.svg" alt="Global">
           </a>
-          <a class="Icono-Menu-Perfil" href = "personas.php">
-            <img src="./img/iconos/Etiqueta-Personas.svg" alt="Personas" height="27px">
+          <a class="Icono-Menu-Perfil " href = "personas.php">
+            <img  src="./img/iconos/icono_personas.svg" alt="Personas">
           </a>
-          <a class="Icono-Menu-Perfil current">
-            <img class="current-Icono" src="./img/iconos/Etiqueta-Presupuesto.svg" alt="Presupuesto" height="25px">
+          <a class="Icono-Menu-Perfil current" href = "presupuesto.php">
+            <img class="current-Icono" src="./img/iconos/icono_presupuesto.svg" alt="Presupuesto">
           </a>
         </div>
 
@@ -57,8 +70,7 @@
           </div>
         </div>
       </div>
-    </div>  
-  </div>
+    </div> 
 
   <!--Ventana cuando no hay proyectos -->
   <div class="Blanco-Fondo"> 
