@@ -65,12 +65,26 @@ select{
     calc(100% - 16px) calc(0.7em),
     100% 0;
     background-size: 20px;
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+    
+    option{
+        text-align: center;
+        padding-left: 30px;
+        text-align-last: center;
+        text-align: center;
+        -ms-text-align-last: center;
+        -moz-text-align-last: center;
+        color:$color-textos;
+    }
 }
 .select_proyectos label{
     color:$color-textos;
     width: 100%;
     text-align: center;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .box-shadow{
@@ -78,7 +92,7 @@ select{
     -moz-box-shadow: 11px 20px 46px -35px rgba(55,84,170,1);
     box-shadow: 11px 20px 46px -35px rgba(55,84,170,1);
     position: relative;
-    border-radius: 25px;
+    border-radius: 15px;
     background-color: $color-background;
     width: 100%;
     height: 100%;
@@ -91,7 +105,7 @@ select{
         top: 0;
         width: 100%;
         height: 100%;
-        border-radius: 25px;
+        border-radius: 15px;
         -webkit-box-shadow: -4px -4px 5px 4px rgba(255,255,255,0.7);
         -moz-box-shadow: -4px -4px 5px 4px rgba(255,255,255,0.7);
         box-shadow: -4px -4px 5px 4px rgba(255,255,255,0.7);
@@ -138,9 +152,11 @@ select{
 
 #Crear-Implementacion{
     display: none;
+    margin-top: 35px;
 }
 .Caja-Texto-Blanco{
     background-color: $color-background;
+    // max-height: 670px;
 }
 .border-radius{
     border-radius: 25px;
@@ -203,17 +219,38 @@ select{
     &:active{
         text-decoration: none;
     }
+    &.btn-shadow-red{
+        -webkit-box-shadow: 0px 0px 15px 1px rgba(235,87,87,0.5);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(235,87,87,0.5);
+        box-shadow: 0px 0px 15px 1px rgba(235,87,87,0.5);
+    }
 }
 
 .global-view{
+    .Texto-Progreso{
+        color:$color-textos-alpha;
+        margin-top: 40px;
+        font-size: 20px;
+    }
     .Contenedor-Menu{
         background-color: #fff;
+        padding: 10px;
+        a{
+            display: block;
+            margin: 0 15px;
+        }
+        img{
+            max-height: 35px;
+        }
     }
     .tab{
         max-width: 750px;
         margin: 0 auto;
         min-height: 450px;
         flex-flow: column nowrap;
+        &.step4{
+            max-width: 1000px;
+        }
     }
     .Caja-Centro{
         position: relative;
@@ -225,10 +262,11 @@ select{
         margin-bottom: 60px;
     }
     .title-forms{
-        max-width: 400px;
+        max-width: 500px;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+        font-weight: normal;
     }
     .Boton-Creacion-Proyecto{
         float: none;
@@ -240,12 +278,30 @@ select{
         -moz-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
+        top: -5px;
+        left: 49%;
+        &+p{
+            color:$color-rojo-btn;
+            font-weight: normal;
+            font-weight: normal;
+            font-size: 30px;
+            line-height: 39px;
+        }
+    }
+    .progreso_global{
+        .Circulo-Progreso{
+            top:0;
+        }
+        .progreso-no{
+            top: -10px;
+        }
     }
     .Circulo-Progreso{
         -webkit-transition: all 0.5s ease;
         -moz-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
+        top:-10px;
     }
     .content_inputs{
         min-height: 180px;
@@ -256,21 +312,48 @@ select{
         text-align: center;
         font-weight: 200;
     }
-    .circulo-pasado:after{
-        font-family: 'icomoon';
-        content: "\e908";
-        color: #fff;
-        font-size: 10px;
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        left: 0;
-        top: 4px;
-        width: 100%;
-        height: 100%;
+    .divider_icon{
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            background-image: url(../../img/iconos/linea-diagonal.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: -90px;
+        }
+    }
+    .progreso-no{
+        top: 0;
+    }
+    .circulo-pasado{
+        top:-10px;
+        left: 48%;
+        &+p{
+            color:$color-rojo-btn;
+            font-weight: normal;
+        }
+        &:after{
+            font-family: 'icomoon';
+            content: "\e908";
+            color: #fff;
+            font-size: 10px;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 100%;
+            height: 100%;
+        }
     }
     .metricas_content{
         margin-top:50px ;
+        .subtitle{
+            font-size: 25px;
+        }
     }
     form.FormCrear1{
         min-height: 500px;
@@ -280,14 +363,24 @@ select{
     .modal-footer{
         border:none;
     }
+    #exampleModal{
+        .modal-body{
+            padding: 0 116px;
+        }
+    }
     #exampleModalLabel{
         font-size: 30px;
         line-height: 39px;
         color: $color-rojo-btn;
         font-weight: bold;
+        
+    }
+    .modal-lg{
+        max-width: 896px;
     }
     .modal-content{
         border-radius: 25px;
+        background-color: $color-background;
     }
     .close{
         font-size: 40px;
@@ -354,7 +447,10 @@ select{
       transition: color 200ms ease-in;
       overflow: hidden;
       border-radius: 25px;
-      background-color: $color-azul-btn;
+      font-size: 20px;
+      line-height: 27px;
+      
+      background-color: $color-azul-btn-alpha;
       &.categoria{
           background-color: $color-background;
           text-align: left;
@@ -368,7 +464,7 @@ select{
         height: 10px;
         border-radius: 50%;
         content: '';
-        background-color: $color-rojo-btn;
+        background-color: $color-azul-btn;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -381,6 +477,7 @@ select{
 
     input:checked ~ label {
       color: #fff;
+      background-color: transparent;
       &.categoria{
         h5,p{
             color:#fff;
@@ -443,7 +540,7 @@ body.panel_control{
         float:none;
         width: 115px;
         z-index: 3;
-        padding-top: 15px;
+        padding-top: 0;
         min-height: auto;
         height: 100%;
     }
@@ -460,9 +557,61 @@ body.panel_control{
             }
         }
     }
+    ul{
+        padding-top: 10px;
+    }
+    ul li{
+        height: 100px;
+        // overflow: hidden;
+    }
     .current-Icono{
         filter: none!important;
     }
+    .Contenedor-Menu{
+        background-color: #fff;
+        padding: 22px 45px;
+        // margin-left: 240px;
+        a{
+            display: block;
+            margin: 0 15px;
+        }
+        img{
+            max-height: 35px;
+        }
+    }
+    .Texto-Progreso{
+        color:$color-textos-alpha;
+    }
+    .progreso-pasado{
+        color: #eb5757;
+        font-weight: normal;
+        height: 100px;
+        .Texto-Progreso{
+            color:$color-rojo-btn;
+            font-size: 20px;
+        }
+    }
+    .circulo-actual{
+        top:0;
+    }
+    .progreso-no{
+        top: 0;
+    }
+    .progreso-actual{
+        top: -15px;
+        .Texto-Progreso{
+            color:$color-rojo-btn;
+            font-size: 25px;
+        }
+    }
+    .Circulo-Progreso{
+        top: -10px;
+    }
+    .circulo-pasado{
+        top: 0;
+        left: 49%;
+    }
+    
 }
 .general_bg{
     background-image: url(../../img/fondos/fondo.svg);
@@ -471,19 +620,21 @@ body.panel_control{
 }
 .new-body{
     position: relative;
-    margin-top: 60px;
+    margin-top: 80px;
     margin-left: 115px;
     height: 100%;
+    padding-top: 15px;
 }
   .contenedor_dashboard{
     position: relative;
-    margin-top: 60px;
+    margin-top: 80px;
     margin-left: 115px;
     h2{
         font-size: 2.3rem;
     }
     h4{
         font-size: 1.2rem;
+        letter-spacing: 0.125em;
         @media screen and (max-width: $break-x-large){
             font-size: 1rem;
         }
@@ -492,14 +643,20 @@ body.panel_control{
         background-color: $color-rojo-btn;
         border-radius: 25px;
         color:#fff;
+        padding-left: 35px;
+        padding-right: 30px;
+        padding-top: 25px;
         p,h2,h3,h4{
             color: #fff;
         }
         .nombre{
             margin-left: 15px;
             max-width: 300px;
+            padding-bottom: 15px;
             p{
                 font-size: 1.25rem;
+                margin-bottom: 0;
+                line-height: 27px;
             }
         }
         .mes{
@@ -507,7 +664,10 @@ body.panel_control{
             border-radius: 25px;
             color:$color-textos;
             font-size: 1.15rem;
-            min-width: 150px;
+            min-width: 210px;
+            height: 46px;
+            text-transform: uppercase;
+            letter-spacing: 0.125em;
             a{
                 padding: 5px 8px;
                 color:$color-rojo-btn;
@@ -525,7 +685,7 @@ body.panel_control{
         height: 100%;
         .texto_escalamiento,
         .texto_escalamiento{
-            padding: 0 5px;
+            padding: 15px 5px 15px;
         }
         span{
             font-size: 3.1em;
@@ -543,13 +703,15 @@ body.panel_control{
     }
     .dias{
         span{
-            font-size: 3.1em;
+            font-size: 74px;
             color: $color-textos;
             font-weight: 900;
-            text-align: center;
             width: 100%;
             margin: 0 auto;
             display: block;
+            line-height: 73px;
+            text-align: center;
+            letter-spacing: 0.085em;
         }
     }
     .grafica{
@@ -572,7 +734,7 @@ body.panel_control{
             color:#fff;
         }
         img{
-            margin: 1.5em auto;
+            margin: 1.5em auto 1.5em 0;
             display: block;
             max-width: 100%;
         }
@@ -611,6 +773,7 @@ body.panel_control{
         font-size: 3.1em;
         position: relative;
         font-weight: bold;
+        letter-spacing: 0.085em;
         &::before{
             content: "$";
             display: inline-block;
@@ -626,26 +789,67 @@ body.panel_control{
     .total{
         font-size: 1.5em;
         color:$color-azul-btn;
+        padding-left: 45px;
         em{
             color:$color-textos;
             font-style: normal;
+            letter-spacing: 0.085em;
         }
     }
     .btn-flotante{
         position: absolute;
-        right: 35px;
-        bottom: 35px;
+        right: 37px;
+        bottom: 0px;
         height: 95px;
         width: 95px;
     }
     
   }
+  .icono_info {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 15px;
+    height: 15px;
+    &.popup{
+        top: -1px;
+        right: -30px;
+    }
+}
+.icono_mas {
+    position: absolute;
+    right: 12px;
+    width: 9px;
+    height: 19px;
+    top:50%;
+    font-size: 1em;
+    a{
+        display: block;
+    }
+    img{
+        display: block;
+        max-height: 100%;
+    }
+}
+.check-blue {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+}
+.required_email{
+    position: absolute;
+    top: 10px;
+    font-size: 25px;
+    color: $color-rojo-btn;
+    right: -6px;
+}
 /* GLOBAL */
 
 /* PERSONAS*/
 
 .Boton-a-Principal-Fondo-Blanco{
     display: inline-block;
+    padding: 15px 35px;
     &:hover{
         text-decoration: none;
         color:#fff ;
@@ -661,8 +865,13 @@ body.panel_control{
         margin-bottom: 25px;
     }
     small{
+        margin-top: 16px;
         display: block;
         width: 100%;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 26px;
         text-align: center;
         a{
             color:$color-azul-btn;
@@ -673,6 +882,45 @@ body.panel_control{
     background-color: transparent;
     border: none;
     padding-left: 20px;
+    color: $color-textos;
+    &::-webkit-input-placeholder { color: $color-textos }  /* WebKit, Blink, Edge */
+    &:-moz-placeholder { color: $color-textos }  /* Mozilla Firefox 4 to 18 */
+    &::-moz-placeholder { color: $color-textos }  /* Mozilla Firefox 19+ */
+    &:-ms-input-placeholder { color: $color-textos }  /* Internet Explorer 10-11 */
+    &::-ms-input-placeholder { color: $color-textos }  /* Microsoft Edge */
+}
+#mejora,.mejora,
+#medio,.medio,
+#alto,.alto{
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    transition: all 2s ease;
+}
+.tab_presupuesto.step1{
+    .input-group{
+        height: 70px;
+        input{
+            padding: 12px 20px;
+            text-align: left;
+        }
+        a{
+            font-size: 20px;
+            line-height: 26px;
+        }
+    }
+    .form-control{
+        font-size: 24px;
+        height: auto;
+        
+    }
+    .border-radius{
+        border-radius: 35px;
+    }
+}
+#less_persons,
+#more_persons{
+    font-size: 19px;
 }
 .invitar_mas,
 .seleccionar_lista{
@@ -691,6 +939,7 @@ body.panel_control{
         border-radius: 100%;
         padding: 7px;
         color:#fff;
+        margin-right: 5px;
     }
 }
 .invitar_mas:before{
@@ -699,10 +948,31 @@ body.panel_control{
 .seleccionar_lista:before{
     content: '\e90c';
 }
+.invitados {
+    padding-top: 130px;
+    .subtitle{
+        font-weight: 300;
+        margin-bottom: 40px;
+    }
+    .body_p{
+        max-width: 580px; 
+        margin: 0 auto; 
+        display: block;
+        padding: 10px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 33px;
+        text-align: center;
+    }
+    .btn-custom.btn-large{
+        font-size: 24px;
+    }
+}
 .nombre_invitados{
     font-size: 50px;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 .personas{
     h2{
@@ -759,7 +1029,7 @@ body.panel_control{
     width: 100%;
     // padding: 5px 10px;
     a{
-        border-radius: 25px;
+        border-radius: 35px;
         &:hover{
             color:#fff;
         }
@@ -794,6 +1064,8 @@ body.panel_control{
     h4{
         display: flex;
         align-items: center;
+        letter-spacing: 0.125em;
+        text-transform: uppercase;
         img{
             margin-right: 10px;
         }
@@ -832,16 +1104,30 @@ body.panel_control{
         span{
             font-size: 10px;
         }
+        .capacitacion{
+            min-height: 124px;
+            .progress{
+                height: 10px;
+            }
+        }
     }
     .perfil_creativo{
+        
         .herramienta{
             flex-basis: 30%;
+        }
+        h5{
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color:$color-rojo-btn;
         }
         span{
             border-right: 1px solid $color-rojo-btn;
         }
         p{
             font-size: 14px;
+            line-height: 100%;
+            color:$color-rojo-btn;
         }
     }
     #chartDesempeno{
@@ -850,10 +1136,16 @@ body.panel_control{
     .bg-blue-texture{
         background-image: url('../../img/fondos/Fondo_proyecto.png');
         background-repeat: no-repeat;
-        border-radius: 25px;
+        border-radius: 15px;
         padding: 10px;
         p{
             color:#fff;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 14px;
+        }
+        .progress{
+            border-radius: 0;
         }
     }
 }
@@ -958,9 +1250,10 @@ body.panel_control{
         font-size: 16px;
         text-transform: uppercase;
         margin-top: 10px;
+        letter-spacing: 0.125em;
     }
     p{
-        font-size: 10px;
+        font-size: 13px;
         color:$color-textos-alpha
     }
     
@@ -991,6 +1284,9 @@ body.panel_control{
     &.bg-red{
         background-color: $color-rojo-btn !important;
     }
+    &.bg-yellow{
+        background-color: $color-amarillo !important;
+    }
 }
 .presupuesto{
     .texto_escalamiento{
@@ -1000,7 +1296,8 @@ body.panel_control{
         font-size: 22px;
         line-height: 26px;
         display: block;
-        margin-left: 90px;
+        margin-left: 10px;
+        padding-left: 5px;
     }
     .badge-azul{
         font-size: 11px;
@@ -1008,7 +1305,7 @@ body.panel_control{
     .contenedor_dashboard .icon_pesos{
         line-height: 52px;
         display: block;
-        margin-left: 90px;
+        margin-left: 15px;
     }
     .contenedor_dashboard .grafica{
         height: 300px !important;
@@ -1017,6 +1314,16 @@ body.panel_control{
 .categorias_presupuesto{
     a{
         text-decoration: none;
+    }
+    .icono_mas{
+        right: 20px;
+        top: 45%;
+        z-index: 4;
+    }
+    .more_cat{
+        
+        color:$color-textos-alpha;
+        font-size: 50px;
     }
     .bg-blue{
         background-color: $color-azul-btn;
@@ -1027,6 +1334,9 @@ body.panel_control{
     }
     img{
         filter:brightness(0) invert(1);
+    }
+    .categoria{
+        min-height: 128px;
     }
 }
 #value1,
@@ -1065,23 +1375,46 @@ body.panel_control{
     border-bottom: 1px solid $color-gris;
     text-transform: uppercase;
     padding-left: 0;
+    letter-spacing: 0.125em;
 }
-#escalamiento {
+#proyectos_convertidos2{
+    width: auto!important;
+    min-width: 240px;
+    padding-left: 0;
+}
+#escalamiento,
+#tasa_conversion {
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    margin-left: 15px;
+    font-weight: bold;
     font-size: 40px;
-    margin: 0 15px 0 50px;
+    line-height: 52px;
+    text-align: center;
+    margin-left: 45px;
+    .value{
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 65px;
+        letter-spacing: 0.085em;
+    }
+    p{
+        margin: 0;
+    }
 }
 .valores_escalamiento {
     p{
         display: flex;
         flex-flow: column;
         justify-content: center;
-        margin: 10px 0;
+        // margin: 0;
         color: $color-gris;
         font-size: 15px;
         strong{
             color:$color-verde;
             display: block;
-        }
+        }margin:  0 0 0 10px;
     }
 }
 .evaluacion_innovacion{
@@ -1131,6 +1464,8 @@ body.panel_control{
 .calidad_presupuesto{
     .calidad_relacion{
         font-size: 40px;
+        font-weight: bold;
+        line-height: 52px;
     }
     h5{
         text-transform: uppercase;
@@ -1138,6 +1473,9 @@ body.panel_control{
         font-size: 15px;
         line-height: 16px;
         letter-spacing: 0.265em;
+    }
+    .border-dark{
+        border-color: $color-textos-alpha!important;
     }
 }
 .tooltip.in {

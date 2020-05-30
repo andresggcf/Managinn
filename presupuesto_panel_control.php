@@ -9,9 +9,21 @@
   ?>
 
 <body class="global-view panel_control presupuesto">
-  <div class="NavBar">
-    <div class="Contenedor-Menu">
+<div class="NavBar">
+    <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
       <!-- <img src="img/iconos/managinn.png" width="180px" alt="" class=""> -->
+      <a href="#">
+        <img src="img/iconos/solicitudes.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/icono-checklist.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/notificaciones.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/settings.svg" alt="">
+      </a>
     </div>
   </div>
 
@@ -65,10 +77,10 @@
         <div class="container-fluid">
             <div class="row kpi">
                 <div class="col-5 my-3">
-                    <div class="info_general px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center">
+                    <div class="info_general px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center h-100">
                         <div class="nombre">
                             <h2>Hola,<?php echo $_SESSION['name_post'];?></h2>
-                            <p>Asi se ve tu sistema de innovación global en:</p> 
+                            <p>Este es el presupuesto del sistema de innovación en:</p> 
                         </div>
                         <div class="mes d-flex flex-row align-items-center justify-content-around">
                             <a id="less_month" href="#"><</a>
@@ -88,6 +100,16 @@
                             <span id="presupuesto_usado" class="icon_pesos">0</span>
                             <span class="total">de <em id="total_presupuesto_usado" >$0</em> <em><span class="badge badge-pill badge-azul">Anual</span></em> </span>
                           </div>
+                        </div>
+                        <div class="icono_info">
+                          <a href="#">
+                            <img src="img/iconos/icono-informacion.svg" alt="">
+                          </a>
+                        </div>
+                        <div class="icono_mas">
+                          <a href="#">
+                            <img src="img/iconos/flecha_derecha.svg" alt="">
+                          </a>
                         </div>
                     </div>
                 </div>
@@ -114,25 +136,30 @@
                 </div>
             </div>
             <div class="row graficas">
-                <div class="col-5">
+                <div class="col-5 my-3">
                   <div class="box-shadow">
                     <h4 class="uppercase"><img src="img/iconos/categorias_presupeusto.png" alt="Metricas" class="img_icons">Categorias</h4>
                     <div class="row pt-4 categorias_presupuesto">
                       <div class="col-lg-6 col-xl-3">
-                        <a href="#" class="bg-blue p-4 box-shadow d-flex flex-column justify-content-center">
-                          <img src="img/iconos/capacitaciones_cat.svg" alt="capacitaciones">
-                          <p class="text-center mt-3">Capacitaciones</p>
+                        <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center">
+                          <img class="mt-auto" src="img/iconos/capacitaciones_cat.svg" alt="capacitaciones">
+                          <p class="text-center mt-auto mb-0">Capacitaciones</p>
                         </a>
+                        <div class="icono_mas">
+                          <a href="#">
+                            <img src="img/iconos/flecha_derecha.svg" alt="">
+                          </a>
+                        </div>
                       </div>
                       <div class="col-lg-6 col-xl-3 d-flex">
-                        <a class="border-radius d-flex flex-column justify-content-center align-items-center" href="#">
+                        <a class="border-radius d-flex flex-column justify-content-center align-items-center more_cat" href="#">
                           +
                         </a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-7">
+                <div class="col-7 my-3">
                     <div class="box-shadow mb-3">
                     <div class="bg-color d-flex align-items-center ">
                       <h4 class="uppercase mr-2"> <img src="img/iconos/mapeo_de_gastos.svg" alt="Metricas" class="img_icons"> Mapeo de gastos</h4>
@@ -146,17 +173,22 @@
                       </select>
                     </div>
                     <canvas id="chartPresupuesto" class="bg-color grafica" height="300"></canvas>
+                    <div class="icono_info">
+                      <a href="#">
+                        <img src="img/iconos/icono-informacion.svg" alt="">
+                      </a>
+                    </div>
                     </div>
                     
                 </div> 
             </div>
             <div class="row">
-              <div class="col-3 my-3">
+              <div class="col-3 mt-3">
                 <div class="row">
                   <div class="col-12 mb-4">
                     <div class="box-shadow">
                       <h4 class="uppercase"><img src="img/iconos/alcance.svg" alt="" class="img_icons"> Alcance</h4>
-                      <div class="valores_escalamiento d-flex flex-row">
+                      <div class="valores_escalamiento d-flex flex-row py-2">
                         <span id="escalamiento">
                             0%
                         </span>
@@ -164,13 +196,23 @@
                           <strong>+0%</strong>
                           que el mes anterior
                         </p>
+                      </div>
+                      <div class="icono_info">
+                        <a href="#">
+                          <img src="img/iconos/icono-informacion.svg" alt="">
+                        </a>
+                      </div>
+                      <div class="icono_mas">
+                        <a href="#">
+                          <img src="img/iconos/flecha_derecha.svg" alt="">
+                        </a>
                       </div>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="box-shadow">
                       <h4 class="uppercase"><img src="img/iconos/coste.svg" alt="" class="img_icons"> Coste</h4>
-                      <div class="valores_escalamiento d-flex flex-row">
+                      <div class="valores_escalamiento d-flex flex-row py-2">
                         <span id="escalamiento">
                             0%
                         </span>
@@ -179,14 +221,24 @@
                           que el mes anterior
                         </p>
                       </div>
+                      <div class="icono_info">
+                        <a href="#">
+                          <img src="img/iconos/icono-informacion.svg" alt="">
+                        </a>
+                      </div>
+                      <div class="icono_mas">
+                        <a href="#">
+                          <img src="img/iconos/flecha_derecha.svg" alt="">
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-5 my-3">
-                  <div class="evaluacion_innovacion box-shadow">
+              <div class="col-6 mt-3">
+                  <div class="evaluacion_innovacion box-shadow d-flex flex-column">
                     <h4 class="uppercase"><img src="img/iconos/evaluacion.svg" alt="" class="img_icons"> Evaluación de innovación</h4>
-                    <div class="row">
+                    <div class="row h-100 my-3">
                       <div class="col-xl-3 col-lg-4">
                         <div class="metricas d-flex flex-column justify-content-around px-2 py-5">
                           <span>0/10</span>
@@ -212,24 +264,33 @@
                         </div>
                       </div>
                     </div>
+                    <div class="icono_info">
+                      <a href="#">
+                        <img src="img/iconos/icono-informacion.svg" alt="">
+                      </a>
+                    </div>
                   </div>
               </div>
-              <div class="col-4 my-3 ">
+              <div class="col-3 mt-3 ">
                   <div class="box-shadow d-flex flex-column calidad_presupuesto">
                     <h4 class="uppercase"><img src="img/iconos/calidad.svg" alt="" class="img_icons"> Calidad</h4>
                     <div class="row align-items-center h-100">
                       <div class="col-xl-6 col-lg-6 col-md-12 d-flex flex-column align-items-center border-right border-dark my-3">
-                        <span class="calidad_relacion mb-2">0/10</span>
+                        <span class="calidad_relacion mb-2">0/ 10</span>
                         <h5>Proyectos</h5>
                       </div>
                       <div class="col-xl-6 col-lg-6 col-md-12 d-flex flex-column align-items-center my-3">
-                        <span class="calidad_relacion mb-2">0/10</span>
-                        <h5>Proyectos</h5>
+                        <span class="calidad_relacion mb-2">0/ 10</span>
+                        <h5>Equipos</h5>
                       </div>
-                      <div class="col-12 d-flex justify-content-around">
-                        <span>Valoracion Promedio: </span>
-                        <span>0</span>
+                      <div class="col-12 d-flex justify-content-center">
+                        <span>Valoracion Promedio</span>
                       </div>
+                    </div>
+                    <div class="icono_info">
+                      <a href="#">
+                        <img src="img/iconos/icono-informacion.svg" alt="">
+                      </a>
                     </div>
                   </div>
               </div>

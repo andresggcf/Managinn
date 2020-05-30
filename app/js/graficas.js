@@ -10,7 +10,7 @@ if (ctx) {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Personas', 'Ideas', 'Prototipos', 'Sesiones', 'Clientes', 'Horas'],
+            labels: ['PERSONAS', 'IDEAS', 'PROTOTIPOS', 'SESIONES', 'CLIENTES', 'HORAS'],
             datasets: [{
                 data: data,
                 backgroundColor: [
@@ -57,13 +57,16 @@ if (ctx) {
                         fontSize:16,
                         callback: function (tick) {
                             return tick.toString() + '%';
-                        }
+                        },
+                        // padding:5
+                        fontColor:'#131A40',
                     },
                     scaleLabel: {
                         display: true,
                         labelString: 'Porcentaje',
                         fontStyle: 'bold',
                         fontSize:15,
+                        fontColor:'#131A40',
                     },
                     
                 }],
@@ -74,6 +77,7 @@ if (ctx) {
                         labelString: 'Métricas de entrada',
                         fontStyle: 'bold',
                         fontSize:15,
+                        fontColor:'#131A40',
                     },
                     gridLines: {
                         display: false,
@@ -81,6 +85,7 @@ if (ctx) {
                     },
                     ticks:{
                         fontSize:16,
+                        fontColor:'#131A40',
                     },
                 }]
             },
@@ -89,10 +94,10 @@ if (ctx) {
             },
             layout: {
                 padding: {
-                    left: 50,
+                    left: 54,
                     right: 30,
-                    top: 30,
-                    bottom: 50
+                    top: 28,
+                    bottom: 28
                 }
             }
         }
@@ -109,7 +114,7 @@ if (ctx2) {
     var myChart = new Chart(ctx2, {
         type: 'line',
         data: {
-            labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4', 'Semana 5'],
+            labels: ['SEMANA 1', 'SEMANA 2', 'SEMANA 3', 'SEMANA 4', 'SEMANA 5'],
             datasets: [{
                 label:'actividades asignadas',
                 data: data,
@@ -155,7 +160,7 @@ if (ctx2) {
                     stacked: false,
                     scaleLabel: {
                         display: true,
-                        labelString: 'SEMANA',
+                        labelString: 'Semana',
                         fontStyle: 'bold',
                         fontSize:12,
                         fontColor:'#131a40',
@@ -196,7 +201,7 @@ if (ctx3) {
     var myChart = new Chart(ctx3, {
         type: 'line',
         data: {
-            labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'],
+            labels: ['SEMANA 1', 'SEMANA 2', 'SEMANA 3', 'SEMANA 4'],
             datasets: [{
                 label:'Gasto Programado',
                 data: data,

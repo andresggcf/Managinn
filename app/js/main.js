@@ -72,14 +72,17 @@ jQuery(document).ready(function ($) {
         case 1:
           bar.css('width', "25%");
           $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+          
           $(".items_progreso li:nth-child(2)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
           $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
           console.log(n)
           break;
-        case 2:
-          bar.css('width', "50%");
-          $(".items_progreso li:nth-child(1)>div").addClass("circulo-pasado").removeClass("circulo-actual");
-          $(".items_progreso li:nth-child(2)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+          case 2:
+            bar.css('width', "50%");
+            $(".items_progreso li:nth-child(1)>div").addClass("circulo-pasado").removeClass("circulo-actual");
+            $(".items_progreso li:nth-child(2)").addClass("progreso-actual").removeClass("progreso-no");
+            $(".items_progreso li:nth-child(2)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
+            $(".items_progreso li:nth-child(3)").addClass("progreso-actual").removeClass("progreso-no");
           $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
           console.log(n)
           break;
@@ -103,12 +106,17 @@ jQuery(document).ready(function ($) {
         case 1:
           bar.css('width', "50%");
           $(".items_progreso li:nth-child(1)>div").addClass("circulo-pasado").removeClass("circulo-actual");
+          $(".items_progreso li:nth-child(1)").addClass("progreso-pasado").removeClass("progreso-actual");
+          $(".items_progreso li:nth-child(2)").addClass("progreso-actual").removeClass("progreso-no");
           $(".items_progreso li:nth-child(2)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
           $(".items_progreso li:nth-child(3)>div").addClass("Circulo-Progreso").removeClass("circulo-actual circulo-pasado");
           break;
         case 2:
           bar.css('width', "100%");
           $(".items_progreso li:nth-child(2)>div").addClass("circulo-pasado").removeClass("circulo-actual");
+          $(".items_progreso li:nth-child(1)").addClass("progreso-pasado").removeClass("progreso-actual");
+          $(".items_progreso li:nth-child(2)").addClass("progreso-pasado").removeClass("progreso-actual");
+          $(".items_progreso li:nth-child(3)").addClass("progreso-actual").removeClass("progreso-no");
           $(".items_progreso li:nth-child(3)>div").addClass("circulo-actual").removeClass("Circulo-Progreso");
           console.log(n)
           break;
@@ -150,8 +158,8 @@ jQuery(document).ready(function ($) {
   /**
    * Asignar de variables
    */
-  $("#escalamiento").text(escalamiento);
-  $("#tasa_conversion").text(tasa_conversion);
+  $("#escalamiento .value").text(escalamiento);
+  $("#tasa_conversion .value").text(tasa_conversion);
   $("#dias_activos").text(dias_activos);
   $("#presupuesto_usado").text(presupuesto_usado);
   $("#total_presupuesto_usado").text(total_presupuesto_usado);
@@ -353,7 +361,7 @@ jQuery(document).ready(function ($) {
     $('#mejora').empty();
     personas.mejora.forEach(element => {
       $('#mejora').append(
-        `<div class="col-xl-1 col-lg-2 col-md-6">
+        `<div class="col-xl-1 col-lg-2 col-md-6 my-2">
           <div class="perfil_persona">
             <img class="img-fluid" src="${element.img}" alt="">
             <div class="nombre">${element.nombre}</div>
@@ -380,19 +388,65 @@ jQuery(document).ready(function ($) {
 
   // Abrir perfil de persona
   $('.perfil_persona').click(function(e){
-    console.log('click')
-    $('.perfil_persona').not(this).toggleClass('grey_effect');
+    console.log($(this).parent().parent())
     if($('.panel_lateral').hasClass('show')){
+      return;
       $('.perfil_persona').removeClass('grey_effect')
+      $('.alto,.medio,.mejora').show();
+      $('.alto,.medio,.mejora').addClass('col-12').removeClass('col-5');
+      console.log('close and rollback')
+      $('#alto > div,#mejora > div,#medio > div').each( function (element,value) {
+        $(value).addClass('col-xl-1 col-lg-2').removeClass('col-xl-4 col-lg-4');
+      })
     }
+    var id_parent = $(this).parent().parent().attr('id')
+    $('.perfil_persona').not(this).toggleClass('grey_effect');
     // $(this).removeClass('grey_effect');
     e.preventDefault();
     $('.panel_lateral').toggleClass('show');
+    switch (id_parent){
+      case 'mejora':
+        $('.alto,.medio').hide();
+        $('.mejora').removeClass('col-12').addClass('col-5');
+        $('#mejora > div').each( function (element,value) {
+          console.log(element,value)
+          $(value).addClass('col-xl-4 col-lg-4').removeClass('col-xl-1 col-lg-2');
+        })
+        break;
+      case 'medio':
+        $('.alto,.mejora').hide();
+        $('.medio').removeClass('col-12').addClass('col-5');
+        $('#medio > div').each( function (element,value) {
+          console.log(element,value)
+          $(value).addClass('col-xl-4 col-lg-4').removeClass('col-xl-1 col-lg-2');
+        })
+        break;
+      case 'alto':
+        $('.mejora,.medio').hide();
+        $('.alto').removeClass('col-12').addClass('col-5');
+        $('#alto > div').each( function (element,value) {
+          console.log(element,value)
+          $(value).addClass('col-xl-4 col-lg-4').removeClass('col-xl-1 col-lg-2');
+        })
+        break;
+      default:
+        $('#alto > div,#mejora > div,#medio > div').each( function (element,value) {
+          console.log(element,value)
+          $(value).addClass('col-xl-1 col-lg-2').removeClass('col-xl-4 col-lg-4');
+        })
+        break;
+    }
   })
   $('.close_btn').click(function(e){
     e.preventDefault();
     $('.perfil_persona').removeClass('grey_effect')
-    $('.panel_lateral').removeClass('show')
+    $('.panel_lateral').removeClass('show');
+    $('.alto,.medio,.mejora').show();
+    $('.alto,.medio,.mejora').addClass('col-12').removeClass('col-5');
+    $('#alto > div,#mejora > div,#medio > div').each( function (element,value) {
+      console.log(element,value)
+      $(value).addClass('col-xl-1 col-lg-2').removeClass('col-xl-4 col-lg-4');
+    })
   })
 
   /**

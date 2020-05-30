@@ -9,51 +9,72 @@
   ?>
 
 <body class="panel_control presupuesto">
-
-  <div class = "Columna-Perfil d-flex flex-column">
-    <div class="icon_home">
-      <img src="img/iconos/inn.svg" width="180px" alt="" class="">
+  <div class="NavBar">
+    <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
+      <a href="#">
+        <img src="img/iconos/solicitudes.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/icono-checklist.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/notificaciones.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/settings.svg" alt="">
+      </a>
     </div>
-    <div class = "Elementos-Perfil">
-      <div class = "Botones-Perfil">
-        <a class="Icono-Menu-Perfil" href = "perfil.php">
-          <img src="./img/iconos/icono_proyectos.svg" alt="Dashboard">
-        </a>
-        <a class="Icono-Menu-Perfil"  href = "global.php">
-          <img   src="./img/iconos/icono_global.svg" alt="Global">
-        </a>
-        <a class="Icono-Menu-Perfil " href = "personas.php">
-          <img  src="./img/iconos/icono_personas.svg" alt="Personas">
-        </a>
-        <a class="Icono-Menu-Perfil current" href = "presupuesto.php">
-          <img class="current-Icono" src="./img/iconos/icono_presupuesto.svg" alt="Presupuesto">
-        </a>
+  </div>
+
+    <div class = "Columna-Perfil d-flex flex-column">
+      <div class="icon_home">
+        <img src="img/iconos/inn.svg" width="180px" alt="" class="">
       </div>
+      <div class = "Elementos-Perfil">
+        <div class = "Botones-Perfil">
+          <a class="Icono-Menu-Perfil" href = "perfil.php">
+            <img src="./img/iconos/icono_proyectos.svg" alt="Dashboard">
+          </a>
+          <a class="Icono-Menu-Perfil"  href = "global.php">
+            <img   src="./img/iconos/icono_global.svg" alt="Global">
+          </a>
+          <a class="Icono-Menu-Perfil " href = "personas.php">
+            <img  src="./img/iconos/icono_personas.svg" alt="Personas">
+          </a>
+          <a class="Icono-Menu-Perfil current" href = "presupuesto.php">
+            <img class="current-Icono" src="./img/iconos/icono_presupuesto.svg" alt="Presupuesto">
+          </a>
+        </div>
 
-      <div class = "Usuario-Perfil"> 
+        <div class = "Usuario-Perfil"> 
 
-        <img src = "./img/iconos/Icono-Perfil.png" alt="Icono" 
+          <img src = "./img/iconos/Icono-Perfil.png" alt="Icono" 
           height="45px"
           style = "border-radius: 5px; float: left; margin-right: 10px;">
 
-        <div class = "Perfil-Dropdown-Container" style = "float: right;">
-          <div class="btn-group dropright ">
-            <button type="button" class="btn btn-secondary dropdown-toggle Boton-Dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div style = "float:left;">
+            <p class="Texto-Nombre-Perfil"><strong> <?php echo $_SESSION['name_post'];?></strong></p>
+            <p class="Texto-Rol-Perfil"><?php echo $_SESSION['role_post'];?></p>
+          </div>
+
+          <div class = "Perfil-Dropdown-Container" style = "float: right;">
+            <div class="btn-group dropright ">
+              <button type="button" class="btn btn-secondary dropdown-toggle Boton-Dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                
-            </button>
-            <div class="dropdown-menu">
-              <!-- Dropdown menu links -->
-              <a style="color:#eb5757; margin-left: 15px" href = "index.php?logout='1'">Cerrar Sesión</a>
+              </button>
+              <div class="dropdown-menu">
+                <!-- Dropdown menu links -->
+                <a style="color:#eb5757; margin-left: 15px" href = "index.php?logout='1'">Cerrar Sesión</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>  
+    </div>  
 
     <div class="new-body general_bg">
       <div class="container-fluid">
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center py-5">
           <div class="col-xl-10 col-lg-12x">
             <div class="body-popup box-shadow ">
               <div class="mt-5 progress Linea-Progreso">
@@ -62,7 +83,7 @@
                 </div>
               </div>
               <div class="Progreso-Proyecto">
-                <ul class="items_progreso">
+                <ul class="items_progreso d-flex">
                   <li class="progreso-actual">
                     <div class="circulo-actual"></div>
                     <p class="Texto-Progreso" style="padding-top:15px;">Inicio</p>
@@ -85,15 +106,15 @@
                     ¿Cuál es la cantidad de dinero asignado al departamento de innovación?
                   </p>
                   <div class="row justify-content-center">
-                    <div class="input-group mb-3 col-4 border-radius" >
+                    <div class="input-group mb-4 col-4 border-radius" >
                       <input id="presupuesto_inicial" type="number" required class="form-control input-clear input-numeric" placeholder="Presupuesto inicial general">
                     </div>
                     <div class="w-100"></div>
-                    <div class="input-group mb-3 col-4 border-radius input-date" >
+                    <div class="input-group mb-4 col-4 border-radius input-date" >
                       <input id="fecha_presupuesto" type="text" required class="form-control input-clear datepicker " placeholder="Fecha de inicio">
                     </div>
                     <div class="w-100"></div>
-                    <div class="input-group  mb-3 col-4 border-radius">
+                    <div class="input-group  mb-4 col-4 border-radius">
                       <div id="radioBtn" class="btn-group">
                         <a class="btn btn-custom btn-bg-azul-claro btn-large active" data-toggle="select_periodo" data-title="Trimestral">Trimestral</a>
                         <a class="btn btn-custom btn-bg-azul-claro btn-large notActive" data-toggle="select_periodo" data-title="Semestral">Semestral</a>
@@ -273,8 +294,7 @@
       </div>
       <!--container-fluid-->
     </div>
-    
-<style>
+    <style>
   /* Hide all steps by default: */
 .tab {
   display: none;

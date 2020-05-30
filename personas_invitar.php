@@ -9,9 +9,21 @@
   ?>
 
 <body class="panel_control">
-  <div class="NavBar">
-    <div class="Contenedor-Menu">
-      <!--<img src="img/iconos/managinn.png" width="180px" alt="" class="">-->
+<div class="NavBar">
+    <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
+      <!-- <img src="img/iconos/managinn.png" width="180px" alt="" class=""> -->
+      <a href="#">
+        <img src="img/iconos/solicitudes.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/icono-checklist.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/notificaciones.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/settings.svg" alt="">
+      </a>
     </div>
   </div>
 
@@ -63,7 +75,7 @@
 
     <div class="new-body general_bg">
       <div class="container-fluid">
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center py-5">
           <div class="col-8">
             <div class="body-popup box-shadow ">
               <div class="title text-center">
@@ -72,13 +84,14 @@
                 </h2>
                 <p>Enviaremos una invitación a esta(s) persona(s), recibirán acceso una vez se registren.</p>
               </div>
-              <form action="">
+              <form action="personas_invitados.php">
                 <div class="row justify-content-center select_proyectos">
                   <div class="form-group mb-3 col-5 my-3">
                     <input class="form-control border-radius" type="email" name="email_invite" id="email_invite" placeholder="Email">
+                    <span class="required_email">*</span>
                   </div>
                   <div class="form-group mb-3 col-3 my-3">
-                    <select class="form-control border-radius" id="proyectos_convertidos" >
+                    <select class="form-control border-radius" id="proyectos_convertidos2" >
                       <option value="" disabled selected>Asignar rol</option>
                       <option>Desarrollo</option>
                       <option>Diseño</option>
@@ -93,7 +106,7 @@
                   </div> 
               </div>
               <div class="row justify-content-center">
-                <div class="col-5  my-3 d-flex justify-content-around" >
+                <div class="col-5 mt-5 mb-3 d-flex justify-content-around" >
                 <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
                     name = "Boton-Proyecto" 
                     id = "Boton-Omitir-Preferencias"

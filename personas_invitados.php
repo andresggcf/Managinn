@@ -10,8 +10,20 @@
 
 <body class="panel_control">
   <div class="NavBar">
-    <div class="Contenedor-Menu">
+    <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
       <!-- <img src="img/iconos/managinn.png" width="180px" alt="" class=""> -->
+      <a href="#">
+        <img src="img/iconos/solicitudes.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/icono-checklist.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/notificaciones.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/settings.svg" alt="">
+      </a>
     </div>
   </div>
 
@@ -63,9 +75,9 @@
 
     <div class="new-body general_bg">
       <div class="container-fluid">
-        <div class="row justify-content-center align-items-center">
+        <div class="invitados row justify-content-center align-items-center">
           <div class="col-6">
-            <div class="body-popup box-shadow ">
+            <div class="body-popup box-shadow pb-5">
               <div class="title text-center">
                 <h3 class="subtitle">
                   Has enviado una invitación a:
@@ -73,11 +85,11 @@
                 <h1 class="nombre_invitados">
                   Paula Muñoz y 1+
                 </h1>
-                <p class="">Enviaremos una invitación a esta(s) persona(s), recibirán acceso una vez se registren.</p>
+                <p class="body_p">Esta(s) persona(s) se añadirá(n) a tu lista en cuanto acepte(n) la invitación y se una(n) a Managinn’</p>
               </div>
               <div class="row justify-content-center">
                 <div class="col-6  mt-3 mb-0 d-flex justify-content-around" >
-                  <a class="btn btn-custom  btn-bg-red btn-large" href="personas_invitar.php">Ok</a>
+                  <a class="btn btn-custom  btn-bg-red btn-large" href="personas_panel_control.php">Ok</a>
                 </div>
                 <div class="w-100"></div>
                 <div class="col-6 mt-0 mb-4">
