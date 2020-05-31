@@ -22,7 +22,7 @@
   ?>
 
 <body class="global-view panel_control">
-<div class="NavBar">
+  <div class="NavBar">
     <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
       <a href="#">
         <img src="img/iconos/solicitudes.svg" alt="">

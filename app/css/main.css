@@ -30,8 +30,8 @@ html, body {
 html {
   overflow-x: hidden; }
 
-a:visited {
-  color: #131a40; }
+/*a:visited {
+  color: #131a40; }*/
 
 img {
   max-width: 100%; }
@@ -67,9 +67,9 @@ select {
   /* Safari and Chrome */
   appearance: none;
   background: url("../../img/iconos/flecha_abajo.svg") 0 0 no-repeat;
-  background-position: calc(100% - 21px) calc(0.7em), calc(100% - 16px) calc(0.7em), 100% 0;
+  background-position: calc(100% - 21px) calc(0.4em), calc(100% - 16px) calc(0.4em), 100% 0;
   background-size: 20px;
-  text-align-last: center;
+  /*text-align-last: center;*/
   text-align: center;
   -ms-text-align-last: center;
   -moz-text-align-last: center; }
@@ -146,7 +146,7 @@ select {
   margin-top: 35px; }
 
 .Caja-Texto-Blanco {
-  background-color: #F6F7F9; }
+  background-color: #e5e5e5; }
 
 .border-radius {
   border-radius: 25px;
@@ -498,12 +498,13 @@ body.panel_control {
 
 .panel_control .Contenedor-Menu {
   background-color: #fff;
-  padding: 22px 45px; }
+  box-shadow: 0px 4px 10px rgba(55, 84, 170, 0.15);
+  padding: 10px 45px; }
   .panel_control .Contenedor-Menu a {
     display: block;
     margin: 0 15px; }
   .panel_control .Contenedor-Menu img {
-    max-height: 35px; }
+    max-height: 20px; }
 
 .panel_control .Texto-Progreso {
   color: rgba(19, 26, 64, 0.6); }

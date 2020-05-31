@@ -6,6 +6,10 @@
   $usuario_rol = $_SESSION['role_post'];
   $usuario_id = $_SESSION['id_usuario'];
 
+  $nombre = $_SESSION['name_post'];
+  $correo = $_SESSION['email_post'];
+  $rol = $_SESSION['role_post'];
+
   $p_nombre = $_SESSION['proyecto_nombre'];
   $p_fecha = $_SESSION['fecha_proyecto'];
   $p_descripcion = $_SESSION['desc_proyecto'];
@@ -16,16 +20,29 @@
   include("header.php");
   ?>
 
-<body>
+<body style="background-color: #e5e5e5" class="panel_control1">
   <div class="NavBar">
-    <div class="Contenedor-Menu">
-      <img src="img/iconos/managinn.png" width="180px" alt="" class="">
+    <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
+      <a href="#">
+        <img src="img/iconos/solicitudes.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/icono-checklist.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/notificaciones.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/settings.svg" alt="">
+      </a>
     </div>
   </div>
 
-  <div>
+  <div style="position:fixed;">
     <div class = "Columna-Perfil">
       <div class = "Elementos-Perfil">
+        <img src="img/iconos/managinn.png" width="180px" alt="" class=""
+        style="margin-left:30px; margin-bottom: 110px">
         <div class = "Botones-Perfil">
           <a class="Icono-Menu-Perfil current">
             <img class="current-Icono" src="./img/iconos/Etiqueta-Dashboard.svg" alt="Dashboard" height="25px">
@@ -48,8 +65,8 @@
           style = "border-radius: 5px; float: left; margin-right: 10px;">
 
           <div style = "float:left;">
-            <p class="Texto-Nombre-Perfil"><strong> <?php echo $usuario_nombre;?></strong></p>
-            <p class="Texto-Rol-Perfil"><?php echo $usuario_rol;?></p>
+            <p class="Texto-Nombre-Perfil"><strong> <?php echo $nombre;?></strong></p>
+            <p class="Texto-Rol-Perfil"><?php echo $rol?></p>
           </div>
 
           <div class = "Perfil-Dropdown-Container" style = "float: right;">
@@ -68,7 +85,8 @@
     </div>  
   </div>
 
-  <div class="Blanco-Fondo"> 
+
+  <div class="Blanco-Fondo" style="padding-left: 240px;"> 
 
     <!--Ventana para crear proyectos-->
     <div id="Crear-Proyecto" class = "Caja-Texto-Blanco" style = "display:block">
@@ -130,9 +148,12 @@
             </div>
 
             <div style="width:300px;margin-top: 180px">
-              <a class = "Boton-a-Principal-Fondo-Blanco Submit-Simple Boton-Cancel-Creacion-Proyecto"
+              <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                    style = "padding: 15px 30px;float:left"
+                    name = "Boton-Proyecto" 
+                    id = "Boton-Omitir-Preferencias"
                     href="javascript:history.go(-1)"
-                    style="margin-top: 10px; height: 50px;">Cancelar</a> 
+                  >Cancelar</a> 
               <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
                     type="submit" 
                     name="Boton-crear"

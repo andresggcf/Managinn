@@ -25,9 +25,25 @@
   ?>
 
 <body class="global-view panel_control presupuesto">
+  <div class="NavBar">
+    <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
+      <a href="#">
+        <img src="img/iconos/solicitudes.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/icono-checklist.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/notificaciones.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/settings.svg" alt="">
+      </a>
+    </div>
+  </div>
 
   <div class = "Columna-Perfil d-flex flex-column">
-    <div class="icon_home">
+    <div class="icon_home" style="margin-bottom: 120px">
       <img src="img/iconos/inn.svg" width="180px" alt="" class="">
     </div>
     <div class = "Elementos-Perfil">
@@ -46,8 +62,7 @@
         </a>
       </div>
 
-      <div class = "Usuario-Perfil"> 
-
+      <div class = "Usuario-Perfil" style="margin-top: 110px"> 
         <img src = "./img/iconos/Icono-Perfil.png" alt="Icono" 
           height="45px"
           style = "border-radius: 5px; float: left; margin-right: 10px;">
