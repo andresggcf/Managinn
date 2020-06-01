@@ -146,7 +146,7 @@
         <ul>
           <li class = "progreso-actual">
             <div class ="circulo-actual"></div>
-            <p class = "Texto-Progreso" style="padding-top:15px;">Datos</p>
+            <p class = "Texto-Progreso" style="padding-top:15px; color: #eb5757">Datos</p>
           </li>
           <li class = "progreso-no">
             <div class ="Circulo-Progreso"></div>

@@ -207,9 +207,7 @@
               <h5 style="font-size: 14pt; margin-top: 24px">Descarga tu reporte automático</h5>
               <p>Olvídate de las largas horas realizando reportes. Descarga el tuyo haciendo clic en el botón de abajo</p>
               <img src="img/iconos/ilustracion_reporte_auto.svg" alt="Persona" style="height: 232px;">
-              <button class="Boton-Export" data-toggle="modal" data-target="#Modal-Export-Global">
-                <img src="img/iconos/Boton-Export.png" style="width: 25px;margin: 0 15 !important;padding-top:-10px;margin-top: 0px;margin-bottom: 0px;">
-              </button>
+
             </div>
           </div>
         </div>

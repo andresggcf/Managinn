@@ -256,6 +256,7 @@ button:focus {
   position: fixed; 
   top: 0; 
   width: 100%; 
+  box-shadow: 0px 4px 10px rgba(55, 84, 170, 0.15);
 }
 
 .Contenedor-Menu
