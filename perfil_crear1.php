@@ -20,7 +20,7 @@
   include("header.php");
   ?>
 
-<body style="background-color: #e5e5e5" class="panel_control1">
+<body style="background-color: #f6f7f9" class="panel_control1">
   <div class="NavBar">
     <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
       <a href="#">

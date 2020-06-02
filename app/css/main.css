@@ -90,6 +90,7 @@ select {
 
 .box-shadow {
   box-sizing: border-box;
+  box-shadow: 10px 10px 15px rgba(55, 84, 170, 0.15), -10px -10px 15px #FFFFFF, inset 4px 4px 20px rgba(255, 255, 255, 0.5);
   position: relative;
   border-radius: 15px;
   background-color: #F6F7F9;
@@ -144,7 +145,7 @@ select {
   margin-top: 35px; }
 
 .Caja-Texto-Blanco {
-  background-color: #e5e5e5; }
+  background-color: #f6f7f9; }
 
 .border-radius {
   border-radius: 25px;
@@ -533,7 +534,7 @@ body.panel_control {
   position: relative;
   margin-top: 40px;
   margin-left: 115px; 
-  background-color: #e5e5e5 !important;}
+  background-color: #f6f7f9 !important;}
   .contenedor_dashboard h2 {
     font-size: 2.3rem; }
   .contenedor_dashboard h4 {
