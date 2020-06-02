@@ -116,7 +116,6 @@
       ?>
     <div class="container-fluid">
       <div class="row kpi">
-
         <div class="flex-fill my-3 mr-3" style="max-width:691px;">
           <div class="info_general d-flex flex-row justify-content-between align-items-center">
             <div class="nombre">
@@ -681,7 +680,18 @@
        * Variables para las metricas GLOBAL
        */
       var escalamiento = '10%';
-      var tasa_conversion = '15%';
+      var tasa_conversion = 15;
+      var dias_activos = <?php 
+        if($arregloDias['DIAS_ACTIVO']==NULL)
+        {
+          echo 0;
+        }
+        else
+        {
+          echo $arregloDias['DIAS_ACTIVO'];
+        }
+        ?>;
+
       var total_presupuesto_usado = '<?php $numero = 1500000;
           $numero_cop =  number_format($numero, 0, ',', '.');
           echo '$ '.$numero_cop;

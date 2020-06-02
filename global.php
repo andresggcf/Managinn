@@ -351,7 +351,7 @@
         document.getElementById('Crear-Implementacion').style.display = 'none';
       }
       else{
-        window.location.href = "global_panel_control.php";
+        window.location.href = "global_dashboard.php";
       }
     }
 

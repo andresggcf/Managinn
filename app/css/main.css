@@ -89,9 +89,7 @@ select {
   font-weight: normal; }
 
 .box-shadow {
-  -webkit-box-shadow: 11px 20px 46px -35px #3754aa;
-  -moz-box-shadow: 11px 20px 46px -35px #3754aa;
-  box-shadow: 10px 10px 15px rgba(55, 84, 170, 0.15), -10px -10px 15px #FFFFFF, inset 4px 4px 20px rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
   position: relative;
   border-radius: 15px;
   background-color: #F6F7F9;
@@ -584,7 +582,7 @@ body.panel_control {
     .contenedor_dashboard .escalamiento .texto_escalamiento,
     .contenedor_dashboard .conversion .texto_escalamiento,
     .contenedor_dashboard .conversion .texto_escalamiento {
-      padding: 15px 5px 15px; }
+      padding: 0px 5px 0px 5px; }
     .contenedor_dashboard .escalamiento span,
     .contenedor_dashboard .conversion span {
       font-size: 3.1em;
@@ -652,7 +650,7 @@ body.panel_control {
     font-weight: 900;
     text-align: center; }
   .contenedor_dashboard .icon_pesos {
-    font-size: 3.1em;
+    /*font-size: 3.1em;*/
     position: relative;
     font-weight: bold;
     letter-spacing: 0.085em; }
@@ -1119,9 +1117,6 @@ body.panel_control {
   display: block;
   margin-left: 15px; }
 
-.presupuesto .contenedor_dashboard .grafica {
-  height: 300px !important; }
-
 .categorias_presupuesto a {
   text-decoration: none; }
 
@@ -1197,7 +1192,7 @@ body.panel_control {
   margin-left: 15px;
   font-weight: bold;
   font-size: 40px;
-  line-height: 52px;
+  /*line-height: 52px;*/
   text-align: center;
   margin-left: 45px; }
   #escalamiento .value,
