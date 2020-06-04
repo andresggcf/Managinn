@@ -77,8 +77,8 @@
   <div class="Blanco-Fondo"> 
 
     <div id = "Sin-Equipo">
-      <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Es momento de reunir a tu equipo.</h3>
-      <p class="Subtitulo Text-Center Negro">Aún no tenemos información. Pero no te preocupes, añádela para comenzar.
+      <h3 class="Text-Center Titulo" style="font-size: 28pt">Es momento de reunir a tu equipo.</h3>
+      <p class="Subtitulo Text-Center">Aún no tenemos información. Pero no te preocupes, añádela para comenzar.
       </p>
 
       <img height="400px" 
