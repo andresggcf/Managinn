@@ -30,8 +30,8 @@ html, body {
 html {
   overflow-x: hidden; }
 
-a:visited {
-  color: #131a40; }
+/*a:visited {
+  color: #131a40; }*/
 
 img {
   max-width: 100%; }
@@ -67,9 +67,9 @@ select {
   /* Safari and Chrome */
   appearance: none;
   background: url("../../img/iconos/flecha_abajo.svg") 0 0 no-repeat;
-  background-position: calc(100% - 21px) calc(0.7em), calc(100% - 16px) calc(0.7em), 100% 0;
+  background-position: calc(100% - 21px) calc(0.4em), calc(100% - 16px) calc(0.4em), 100% 0;
   background-size: 20px;
-  text-align-last: center;
+  /*text-align-last: center;*/
   text-align: center;
   -ms-text-align-last: center;
   -moz-text-align-last: center; }
@@ -89,9 +89,8 @@ select {
   font-weight: normal; }
 
 .box-shadow {
-  -webkit-box-shadow: 11px 20px 46px -35px #3754aa;
-  -moz-box-shadow: 11px 20px 46px -35px #3754aa;
-  box-shadow: 11px 20px 46px -35px #3754aa;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 15px rgba(55, 84, 170, 0.15), -10px -10px 15px #FFFFFF, inset 4px 4px 20px rgba(255, 255, 255, 0.5);
   position: relative;
   border-radius: 15px;
   background-color: #F6F7F9;
@@ -146,7 +145,7 @@ select {
   margin-top: 35px; }
 
 .Caja-Texto-Blanco {
-  background-color: #F6F7F9; }
+  background-color: #f6f7f9; }
 
 .border-radius {
   border-radius: 25px;
@@ -202,17 +201,17 @@ select {
 
 .global-view .Texto-Progreso {
   color: rgba(19, 26, 64, 0.6);
-  margin-top: 40px;
-  font-size: 20px; }
+  margin-top: 30px; 
+  }
 
 .global-view .Contenedor-Menu {
   background-color: #fff;
-  padding: 10px; }
+  padding: 10px 45px; }
   .global-view .Contenedor-Menu a {
     display: block;
     margin: 0 15px; }
   .global-view .Contenedor-Menu img {
-    max-height: 35px; }
+    max-height: 20px; }
 
 .global-view .tab {
   max-width: 750px;
@@ -243,25 +242,8 @@ select {
   margin: auto !important;
   display: inline-block; }
 
-.global-view .circulo-actual {
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  top: -5px;
-  left: 49%; }
-  .global-view .circulo-actual + p {
-    color: #eb5757;
-    font-weight: normal;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 39px; }
-
 .global-view .progreso_global .Circulo-Progreso {
   top: 0; }
-
-.global-view .progreso_global .progreso-no {
-  top: -10px; }
 
 .global-view .Circulo-Progreso {
   -webkit-transition: all 0.5s ease;
@@ -295,7 +277,6 @@ select {
   top: 0; }
 
 .global-view .circulo-pasado {
-  top: -10px;
   left: 48%; }
   .global-view .circulo-pasado + p {
     color: #eb5757;
@@ -498,12 +479,14 @@ body.panel_control {
 
 .panel_control .Contenedor-Menu {
   background-color: #fff;
-  padding: 22px 45px; }
+  box-shadow: 0px 4px 10px rgba(55, 84, 170, 0.15) !important;
+  z-index: -10;
+  padding: 10px 45px; }
   .panel_control .Contenedor-Menu a {
     display: block;
     margin: 0 15px; }
   .panel_control .Contenedor-Menu img {
-    max-height: 35px; }
+    max-height: 20px; }
 
 .panel_control .Texto-Progreso {
   color: rgba(19, 26, 64, 0.6); }
@@ -549,8 +532,9 @@ body.panel_control {
 
 .contenedor_dashboard {
   position: relative;
-  margin-top: 80px;
-  margin-left: 115px; }
+  margin-top: 40px;
+  margin-left: 115px; 
+  background-color: #f6f7f9 !important;}
   .contenedor_dashboard h2 {
     font-size: 2.3rem; }
   .contenedor_dashboard h4 {
@@ -599,7 +583,7 @@ body.panel_control {
     .contenedor_dashboard .escalamiento .texto_escalamiento,
     .contenedor_dashboard .conversion .texto_escalamiento,
     .contenedor_dashboard .conversion .texto_escalamiento {
-      padding: 15px 5px 15px; }
+      padding: 0px 5px 0px 5px; }
     .contenedor_dashboard .escalamiento span,
     .contenedor_dashboard .conversion span {
       font-size: 3.1em;
@@ -667,7 +651,7 @@ body.panel_control {
     font-weight: 900;
     text-align: center; }
   .contenedor_dashboard .icon_pesos {
-    font-size: 3.1em;
+    /*font-size: 3.1em;*/
     position: relative;
     font-weight: bold;
     letter-spacing: 0.085em; }
@@ -1134,9 +1118,6 @@ body.panel_control {
   display: block;
   margin-left: 15px; }
 
-.presupuesto .contenedor_dashboard .grafica {
-  height: 300px !important; }
-
 .categorias_presupuesto a {
   text-decoration: none; }
 
@@ -1192,12 +1173,12 @@ body.panel_control {
   color: #17AEBF; }
 
 #proyectos_convertidos {
-  width: auto !important;
+  /*width: auto !important;
   min-width: 240px;
   border-bottom: 1px solid #9A9A9A;
   text-transform: uppercase;
   padding-left: 0;
-  letter-spacing: 0.125em; }
+  letter-spacing: 0.125em;*/ }
 
 #proyectos_convertidos2 {
   width: auto !important;
@@ -1212,7 +1193,7 @@ body.panel_control {
   margin-left: 15px;
   font-weight: bold;
   font-size: 40px;
-  line-height: 52px;
+  /*line-height: 52px;*/
   text-align: center;
   margin-left: 45px; }
   #escalamiento .value,

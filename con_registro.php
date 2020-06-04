@@ -35,7 +35,7 @@ if(isset($_POST['Boton-Registro']))
       //encriptamos la clave
       $clave_md5 = md5($clave);
 
-      $query_registro = "INSERT INTO usuarios (correo, clave, creacion) VALUES ('$correo','$clave_md5',DATE_FORMAT(SYSDATE(), '%d/%m/%y'))";
+      $query_registro = "INSERT INTO usuarios (correo, clave, creacion) VALUES ('$correo','$clave_md5',DATE_FORMAT(SYSDATE(), '%y/%m/%d'))";
       mysqli_query($db, $query_registro);
 
       $_SESSION['email_post'] = $correo;

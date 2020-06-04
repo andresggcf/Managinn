@@ -9,7 +9,7 @@ include("header.php");
 
 
 <body>
-  <div class="NavBar">
+  <div class="NavBar" style="box-shadow: none;">
     <div class="Contenedor-Menu">
       <img src="img/iconos/managinn2.png" width="180px" alt="" class="">
     </div>
