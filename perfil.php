@@ -37,16 +37,29 @@
   include("header.php");
   ?>
 
-<body>
+<body style="background-color: #f6f7f9" class="panel_control1">
   <div class="NavBar">
-    <div class="Contenedor-Menu">
-      <img src="img/iconos/managinn.png" width="180px" alt="" class="">
+    <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
+      <a href="#">
+        <img src="img/iconos/solicitudes.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/icono-checklist.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/notificaciones.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/settings.svg" alt="">
+      </a>
     </div>
   </div>
 
-  <div>
+  <div style="position:fixed;">
     <div class = "Columna-Perfil">
       <div class = "Elementos-Perfil">
+        <img src="img/iconos/managinn.png" width="180px" alt="" class=""
+        style="margin-left:30px; margin-bottom: 110px">
         <div class = "Botones-Perfil">
           <a class="Icono-Menu-Perfil current">
             <img class="current-Icono" src="./img/iconos/Etiqueta-Dashboard.svg" alt="Dashboard" height="25px">
@@ -90,7 +103,7 @@
   </div>
 
 
-  <div class="Blanco-Fondo"> 
+  <div class="Blanco-Fondo" style="padding-left: 240px;"> 
 
     <!--Ventana cuando no hay proyectos-->
     <div id="Sin-Proyecto">
@@ -108,7 +121,7 @@
         <button class = "Boton-a-Principal-Fondo-Blanco" 
                 name = "Boton-Proyecto" 
                 id = "Boton-Crear-Proyecto"
-                style = "max-width: 200px; margin-left: 140px;"
+                style = "max-width: 210px; margin-left: 140px;"
                 >Crear un Proyecto</button>
 
         <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
@@ -133,7 +146,7 @@
         <ul>
           <li class = "progreso-actual">
             <div class ="circulo-actual"></div>
-            <p class = "Texto-Progreso" style="padding-top:15px;">Datos</p>
+            <p class = "Texto-Progreso" style="padding-top:15px; color: #eb5757">Datos</p>
           </li>
           <li class = "progreso-no">
             <div class ="Circulo-Progreso"></div>
@@ -266,7 +279,9 @@
                         </div>
                       </div>
 
-                      <p class = "Titulo-Tarjeta-P"> <?php echo $row['nombre'];?></p>
+                      <a href="perfil_dashboard.php?proyecto=<?php echo $idProyecto;?>">
+                        <p class = "Titulo-Tarjeta-P"> <?php echo $row['nombre'];?></p>
+                      </a>
                       <p class = "Subtitulo-Tarjeta-P"> <b>Facilitador: </b> <?php 
                         if ($facilitador['nombre']!=NULL)
                         {

@@ -23,8 +23,26 @@
 
 <body class="global-view panel_control presupuesto">
 
+  <div class="NavBar">
+    <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
+      <!-- <img src="img/iconos/managinn.png" width="180px" alt="" class=""> -->
+      <a href="#">
+        <img src="img/iconos/solicitudes.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/icono-checklist.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/notificaciones.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="img/iconos/settings.svg" alt="">
+      </a>
+    </div>
+  </div>
+
   <div class = "Columna-Perfil d-flex flex-column">
-    <div class="icon_home">
+    <div class="icon_home" style="margin-bottom: 120px">
       <img src="img/iconos/inn.svg" width="180px" alt="" class="">
     </div>
     <div class = "Elementos-Perfil">
@@ -33,7 +51,7 @@
           <img src="./img/iconos/icono_proyectos.svg" alt="Dashboard">
         </a>
         <a class="Icono-Menu-Perfil current"  href = "global.php">
-          <img class="current-Icono" src="./img/iconos/icono_global.svg" alt="Global">
+          <img class="current-Icono"  src="./img/iconos/icono_global.svg" alt="Global">
         </a>
         <a class="Icono-Menu-Perfil " href = "personas.php">
           <img  src="./img/iconos/icono_personas.svg" alt="Personas">
@@ -43,8 +61,7 @@
         </a>
       </div>
 
-      <div class = "Usuario-Perfil"> 
-
+      <div class = "Usuario-Perfil" style="margin-top: 110px"> 
         <img src = "./img/iconos/Icono-Perfil.png" alt="Icono" 
           height="45px"
           style = "border-radius: 5px; float: left; margin-right: 10px;">
@@ -64,7 +81,6 @@
     </div>
   </div>  
 
-  
   <div class="Blanco-Fondo">
     <div id="Dashboard-Global" class="contenedor_dashboard"> <!--Inicio Dashboard-Global -->
       <?php
@@ -87,134 +103,343 @@
         $arregloSuma = mysqli_fetch_assoc($resultado2);
 
         $queryDias = "SELECT DATEDIFF(SYSDATE(),(SELECT u.creacion FROM usuarios u 
-        WHERE u.correo = 'director@gmail.com'))
+        WHERE u.correo = '$correo'))
         AS DIAS_ACTIVO;";
 
         $resultado3 =  mysqli_query($db, $queryDias);
         $arregloDias = mysqli_fetch_assoc($resultado3);
 
+        $pro_lanzados = ($arreglo['num_proy_convertidos']/$arreglo['num_proy_totales']) * 100;
+        $pro_exitosos = (1/$arreglo['num_proy_totales'])*100;
+
       ?>
-      <div class="container-fluid">
-        <div class="row kpi">
-          <div class="col-6 my-3">
-            <div class="info_general px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center">
-              <div class="nombre" style="max-width:85%">
-                <h2>Hola, <?php echo $_SESSION['name_post'];?></h2>
-                <p>Asi se ve tu sistema de innovación global en:</p> 
-              </div>
-
-              <div class="mes d-flex flex-row align-items-center">
-                <a id="less_month" href="#"><</a>
-                <span id="mes_actual">Diciembre</span>
-                <a id="more_month" href="#">></a>
-              </div>
-
-              <div class="imagen">
-                <img src="img/iconos/ilustracion_saludo.svg" alt="Saludo">
-              </div>
+     <div class="container-fluid">
+      <div class="row kpi">
+        <div class="flex-fill my-3 mr-3" style="max-width:691px;">
+          <div class="info_general d-flex flex-row justify-content-between align-items-center">
+            <div class="nombre">
+              <h2>Hola, <?php echo $_SESSION['name_post'];?></h2>
+              <p>Asi se ve tu sistema de innovación global en:</p> 
+            </div>
+            <div class="mes d-flex flex-row align-items-center justify-content-around">
+              <a id="less_month" href="#"><</a>
+              <span id="mes_actual">Diciembre</span>
+              <a id="more_month" href="#">></a>
+            </div>
+            <div class="imagen">
+              <img src="img/iconos/ilustracion_saludo.svg" alt="Saludo">
             </div>
           </div>
-
-          <div class="col-3 my-3">
-            <div class="escalamiento box-shadow px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center">
-              <img src="img/iconos/EscalamientoPromedio.svg" alt="escalamiento">
-              <div class="texto_escalamiento">
-                <h4  class="uppercase">Escalamiento promedio</h4>
-                <span id="escalamiento">
-                  0%
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-3 my-3">
-            <div class="conversion box-shadow px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center">
-              <img src="img/iconos/tasadeconversion.svg" alt="conversion">
-              <div class="texto_escalamiento">
-                <h4  class="uppercase">Tasa de conversión</h4>
-                <span id="tasa_conversion">
-                  0
-                </span>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        <div class="row graficas align-items-start">
-          <div class="col-10">
-            <div class="box-shadow my-3">
-              <div class="bg-color d-flex align-items-center ">
-                <h4 class="uppercase flex-grow-1 m-0"> <img src="img/iconos/icono_tus_metricas.svg" alt="Metricas" class="img_icons"> Tus metricas</h4>
-                <a class="change_graph uppercase btn btn-custom btn-on-bg mx-3 active" href="#">Entrada</a>
-                <a class="change_graph uppercase btn btn-custom btn-on-bg mx-3" href="#">Proceso</a>
-                <a class="change_graph uppercase btn btn-custom btn-on-bg mx-3" href="#">Salida</a>
-              </div>
-              <canvas id="myChart" class="bg-color grafica" height="400"></canvas>
-            </div>
-
-            <div class="row">
-
-              <div class="col-4 my-3">
-                <div class="box-shadow">
-                  <h4 class="uppercase">
-                    <img src="img/iconos/icono_personas_capacitadas.svg" alt="" class="img_icons"> Personas capacitadas
-                  </h4>
-                  <div class="p_capacitadas d-flex justify-content-center">
-                    <span id="personas_capacitadas_relacion" class="flex-fill">
-                      0/0
-                    </span>
-                    <div class="n_personas flex-fill p-2">
-                                    
-                    </div>
-                  </div>
+        <div class="flex-fill row">
+          <div class="col-6 my-3">
+            <div class="escalamiento box-shadow px-2 pb-0 pt-2 d-flex flex-row justify-content-around align-items-center">
+              <img src="img/iconos/EscalamientoPromedio.svg" alt="escalamiento">
+              <div class="texto_escalamiento">
+                <h4 class="uppercase  mb-2" style="padding-left: 20px">Proyectos Exitosos</h4>
+                <div class="valores_escalamiento d-flex flex-row align-items-center">
+                  <span id="escalamiento">
+                    <div class="value">0%</div>
+                    <div>Proyectos</div>
+                  </span>
+                  <p>
+                    <strong style="color:#eb5757">-1,5%</strong>
+                      que el mes anterior
+                  </p>
                 </div>
               </div>
-
-              <div class="col-4 my-3">
-                <div class="box-shadow">
-                  <h4 class="uppercase"><img src="img/iconos/icono_presupuesto_usado.svg" alt="" class="img_icons"> Presupuesto usado</h4>
-                  <div class="d-flex flex-column ml-5">
-                    <span id="presupuesto_usado" class="icon_pesos">0</span>
-                    <span class="total">de <em id="total_presupuesto_usado" >$0</em></span>
-                  </div>
+              <div class="icono_info">
+                <a href="#">
+                  <img src="img/iconos/icono-informacion.svg" alt="">
+                </a>
+              </div>
+              <div class="icono_mas">
+                <a href="#">
+                  <img src="img/iconos/flecha_derecha.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 my-3">
+            <div class="conversion box-shadow px-2 pb-0 pt-2 d-flex flex-row justify-content-around align-items-center">
+              <img src="img/iconos/tasadeconversion.svg" alt="conversion">
+              <div class="texto_escalamiento">
+                <h4 class="uppercase mb-2" style="padding-left: 20px">Lanzados al mercado</h4>
+                <div class="valores_conversion d-flex flex-row align-items-center">
+                  <span id="tasa_conversion" style="margin-right: 10px">
+                    <div class="value">0%</div>
+                    <div>Proyectos</div>
+                  </span>
+                  <p style="margin-top: 10px;">
+                    <strong>+2%</strong>
+                    que el mes anterior
+                  </p>
                 </div>
               </div>
-
-              <div class="col-4 my-3 ">
-                <div class="box-shadow d-flex flex-column">
-                  <h4 class="uppercase">
-                    <img src="img/iconos/icono_valor_actual_neto.svg" alt="" class="img_icons"> Valor actual neto (VAN)
-                  </h4>
-                  <span id="valor_actual_neto" class="ml-5 icon_pesos">0</span>
-                </div>
+              <div class="icono_info">
+                <a href="#">
+                  <img src="img/iconos/icono-informacion.svg" alt="">
+                </a>
               </div>
-
-            </div>
-          </div> 
-
-          <div class="col-2 mt-3 d-flex flex-column align-items-center "
-            style = "margin-top: 0px !important">
-            <div class="dias my-3 box-shadow">
-              <h4 class="uppercase"> 
-                <img src="img/iconos/icono_dias_activo.svg" alt="Dias activos" class="img_icons"> Días activos
-              </h4>
-              <span id="dias_activos">0</span>
-            </div>
-
-            <div class="info_dias p-3 my-3 box-shadow" style="height=480px; position:relative">
-              <h5 style="font-size: 14pt; margin-top: 24px">Descarga tu reporte automático</h5>
-              <p>Olvídate de las largas horas realizando reportes. Descarga el tuyo haciendo clic en el botón de abajo</p>
-              <img src="img/iconos/ilustracion_reporte_auto.svg" alt="Persona" style="height: 232px;">
-              <button class="Boton-Export" data-toggle="modal" data-target="#Modal-Export-Global">
-                <img src="img/iconos/Boton-Export.png" style="width: 25px;margin: 0 15 !important;padding-top:-10px;margin-top: 0px;margin-bottom: 0px;">
-              </button>
+              <div class="icono_mas">
+                <a href="#">
+                  <img src="img/iconos/flecha_derecha.svg" alt="">
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div> <!--Fin Dashboard-global -->
-  </div> <!--Fin Blanco-Fondo-->
+      <div class="row graficas align-items-start">
+        <div class="col-10">
+          <div class="box-shadow my-3">
+            <div class="bg-color d-flex align-items-center ">
+              <h4 class="uppercase flex-grow-1 m-0"> <img src="img/iconos/icono_tus_metricas.svg" alt="Metricas" class="img_icons"> Tus métricas</h4>
+              <a class="change_graph uppercase btn btn-custom btn-on-bg mx-3 active" href="#">Entrada</a>
+              <a class="change_graph uppercase btn btn-custom btn-on-bg mx-3" href="#">Proceso</a>
+              <a class="change_graph uppercase btn btn-custom btn-on-bg mx-3" href="#">Salida</a>
+            </div>
+            <canvas id="myChart" class="bg-color grafica" height="400"></canvas>
+          </div>
+          <div class="row">
+            <div class="col-4 my-4">
+              <div class="box-shadow">
+                <h4 class="uppercase"><img src="img/iconos/icono_personas_capacitadas.svg" alt="" class="img_icons"> Personas capacitadas</h4>
+                <div class="p_capacitadas d-flex justify-content-center ml-5">
+                  <span id="personas_capacitadas_relacion" class="flex-fill">0/0</span>
+                  <div class="n_personas flex-fill py-2 px-4">
+                  </div>
+                </div>
+                <div class="icono_info">
+                  <a href="#">
+                    <img src="img/iconos/icono-informacion.svg" alt="">
+                  </a>
+                </div>
+                <div class="icono_mas">
+                  <a href="#">
+                    <img src="img/iconos/flecha_derecha.svg" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 my-4">
+              <div class="box-shadow">
+                <h4 class="uppercase"><img src="img/iconos/icono_presupuesto_usado.svg" alt="" class="img_icons"> Has gastado</h4>
+                <div class="d-flex flex-column ml-5">
+                  <h1 id="presupuesto_usado" class="icon_pesos">0</h1>
+                  <h4 class="total" style="margin-left: 40px !important; font-weight:300">de <em id="total_presupuesto_usado" >$0</em></h4>
+                </div>
+                <div class="icono_info">
+                  <a href="#">
+                    <img src="img/iconos/icono-informacion.svg" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 my-4 ">
+              <div class="box-shadow d-flex flex-column">
+                <h4 class="uppercase"><img src="img/iconos/icono_valor_actual_neto.svg" alt="" class="img_icons"> Tu portafolio vale</h4>
+                  <h1 id="valor_actual_neto" class="ml-5 icon_pesos">0</h1>
+                  <div class="icono_info">
+                    <a href="#">
+                      <img src="img/iconos/icono-informacion.svg" alt="">
+                    </a>
+                  </div>
+                  <div class="icono_mas">
+                    <a href="#">
+                      <img src="img/iconos/flecha_derecha.svg" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div class="col-2 d-flex flex-column align-items-center" style="padding-right: 0px;">
+            <div class="dias mt-3 pb-1 box-shadow">
+              <h4 class="uppercase"> <img src="img/iconos/icono_dias_activo.svg" alt="Dias activos" class="img_icons">Días activos</h4>
+              <h2 class="Text-Center"><?php 
+              if($arregloDias['DIAS_ACTIVO']==NULL)
+              {
+                echo 0;
+              }
+              else
+              {
+                echo $arregloDias['DIAS_ACTIVO'];
+              }
+              ;?></h2>
+              <p class="Text-Center">Días</p>
+              <div class="icono_mas">
+                <a href="#">
+                  <img src="img/iconos/flecha_derecha.svg" alt="">
+                </a>
+              </div>
+            </div>
+          <div class="info_dias p-0 my-3 box-shadow">
+            <h5 class="px-4">Descarga tu reporte automático</h5>
+            <p class="px-4">Olvídate de las largas horas realizando reportes. Descarga el tuyo haciendo clic en el botón de abajo <img class="m-0 p-0" style="width: 12px;filter: brightness(0) invert(1);display: inline;" src="img/iconos/boton_descarga.svg" alt=""></p>
+            <img src="img/iconos/ilustracion_reporte_auto.svg" alt="Persona">
+            <button class="Boton-Export" data-toggle="modal" data-target="#Modal-Export-Global">
+                <img src="img/iconos/Boton-Export.png" style="width: 25px;margin: 0px 13px;margin-bottom: 0px;">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" 
+    id="Modal-Export-Global" 
+    tabindex="-1" 
+    role="dialog" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    
+    <div class="modal-dialog" role="document" style="max-width:530px !important">
+      <div class="modal-content" style="height: 500px; max-width:530px">
+        <div class="modal-header" 
+          style = "padding-bottom: 20px !important;padding-left: 110px !important;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div style="
+            margin-bottom: 10px;
+            margin-top: -25px; 
+            height:35px;">
+              <img src="img/iconos/Icono-Export.png" style="margin-left: 80px;width:30px;float:left;margin-right: 20px;">
+              <h5
+                style="color:#eb5757; font-size: 20pt; float: left;">Generar Reporte</h5>
+          </div>
+          <p>Selecciona los ítems que quieres<br>incluir en este reporte.</p>
+        </div>
+        <form class="form-export-global" action="con_pdf_global.php" method = "post">
+          <div class="modal-body">
+            <div class="row" style="margin-top:10px">
+
+              <div class="column" style=" width:50%; padding-left: 20px; height:200px">
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="escalamiento_check"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="escalamiento_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Escalamiento Promedio</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="tasa_check"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="tasa_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Tasa de Conversión</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="dias_check"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="dias_act_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Días Activos</label>
+                </div>
+              </div>
+
+              <div class="column" style="height:200px; width:50%; padding-left: 20px">
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="personas_check"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="personas_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Personas Capacitadas</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="presupuesto_check"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="presupuesto_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Presupuesto</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="vlr_port_check"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="vlr_portafolio_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Valor del Portafolio</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="modal-footer" style="border-top: none; justify-content: center;">
+            <div>
+              <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                      name = "Boton-Proyecto" 
+                      id = "Boton-Omitir-Preferencias"
+                      href="presupuesto.php"
+                      style = "max-width: 180px"
+                      data-dismiss="modal"
+                      >Cancelar</a>
+            </div>
+            <div>
+              <button class = "Boton-a-Principal-Fondo-Blanco" 
+                      name = "Boton-PDF" 
+                      id = "Boton-Generar-PDF"
+                      style = "max-width: 190px"
+                      type="submit" 
+                      >Generar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal -->
   <div class="modal fade" 
@@ -482,18 +707,9 @@
       /**
        * Variables para las metricas GLOBAL
        */
-      var escalamiento = '10%';
-      var tasa_conversion = 15;
-      var dias_activos = <?php 
-        if($arregloDias['DIAS_ACTIVO']==NULL)
-        {
-          echo 0;
-        }
-        else
-        {
-          echo $arregloDias['DIAS_ACTIVO'];
-        }
-        ?>;
+      var escalamiento = "<?php echo $pro_exitosos?>%";
+      var tasa_conversion = "<?php echo $pro_lanzados?>%";
+      var dias_activos = 20;
 
       var total_presupuesto_usado = '<?php $numero = 1500000;
           $numero_cop =  number_format($numero, 0, ',', '.');

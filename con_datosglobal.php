@@ -45,6 +45,8 @@
     FROM usuarios u
     WHERE correo = '$correo'";
 
+    //echo $queryDatosGlobal;
+
     mysqli_query($db, $queryDatosGlobal);
 
     /*Despues de ingresar los datos en global, actualizamos el usuario en induccion a global*/
