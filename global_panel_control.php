@@ -116,7 +116,7 @@
       ?>
     <div class="container-fluid">
       <div class="row kpi">
-        <div class="flex-fill my-3 mr-3" style="max-width:691px;">
+        <div class="my-3 col-5 d-flex">
           <div class="info_general d-flex flex-row justify-content-between align-items-center">
             <div class="nombre">
               <h2>Hola, <?php echo $_SESSION['name_post'];?></h2>
@@ -133,7 +133,8 @@
           </div>
         </div>
 
-        <div class="flex-fill row">
+        <div class="col-7">
+          <div class="row">
           <div class="col-6 my-3">
             <div class="escalamiento box-shadow px-2 pb-0 pt-2 d-flex flex-row justify-content-around align-items-center">
               <img src="img/iconos/EscalamientoPromedio.svg" alt="escalamiento">
@@ -190,6 +191,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
       <div class="row graficas align-items-start">

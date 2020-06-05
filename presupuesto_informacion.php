@@ -101,8 +101,8 @@
               <!-- Agregar ACTION para enviar el formulario a donde se quiera guardar la info-->
               <form class="FormPresupuesto" action="#" method="post">
                 <div class="tab tab_presupuesto step1 flex-column">
-                  <h3 class="Text-Center Titulo Negro">Presupuesto inicial general.</h3>
-                  <p class="mb-5 Subtitulo Text-Center Negro">
+                  <h3 class="Text-Center Titulo ">Presupuesto inicial general.</h3>
+                  <p class="mb-5 Subtitulo Text-Center ">
                     ¿Cuál es la cantidad de dinero asignado al departamento de innovación?
                   </p>
                   <div class="row justify-content-center">
@@ -132,8 +132,8 @@
                   </div>
                 </div> <!-- step1-->
                 <div class="tab tab_presupuesto step2 flex-column">
-                  <h3 class="Text-Center Titulo Negro">Presupuesto actual.</h3>
-                  <p class="Subtitulo Text-Center Negro my-5">
+                  <h3 class="Text-Center Titulo ">Presupuesto actual.</h3>
+                  <p class="Subtitulo Text-Center  my-5">
                     A la fecha, aproximadamente, ¿cuánto queda de presupuesto que ingresó incialmente?
                   </p>
                   <div class="row justify-content-center align-items-center my-5">
@@ -159,9 +159,9 @@
                 <!--step2-->
                 
                 <div class="tab tab_presupuesto step3 flex-column">
-                  <h3 class="Text-Center Titulo Negro mb-3">Selecciona categoría de gastos.
+                  <h3 class="Text-Center Titulo  mb-3">Selecciona categoría de gastos.
                   </h3>
-                  <p class="mb-5 Subtitulo Text-Center Negro">
+                  <p class="mb-5 Subtitulo Text-Center ">
                     ¿En cuáles de estas categorías inviertes el presupuesto para el departamento de innovación? <br>Si no encuentras alguno, no te procupes, puedes agregarlo más tarde.
                   </p>
                   <div class="row justify-content-center">

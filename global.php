@@ -178,8 +178,8 @@
 
 
           <div class="tab step2">
-            <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Datos sobre personas.</h3>
-            <p class="Subtitulo Text-Center Negro">Con estos datos calcularemos por tí algunos indicadores relacionados con tu equipo.
+            <h3 class="Text-Center Titulo " style="font-size: 28pt">Datos sobre personas.</h3>
+            <p class="Subtitulo Text-Center ">Con estos datos calcularemos por tí algunos indicadores relacionados con tu equipo.
             </p>
             <h5 class="title-forms mb-5">Actualmente ¿cuántas de esas se han capacitado en innovación al menos una vez en los ultimos 6 meses?
             </h5>
@@ -212,8 +212,8 @@
           </div> <!--step2-->
 
           <div class="tab step3">
-            <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Implementación de proyectos.</h3>
-            <p class="Subtitulo Text-Center Negro">Del total de proyectos de tu portafolio, ¿cuántos se conviertieron en un <br> producto/mejor/servicio/modelo/metodología al finalizar?.
+            <h3 class="Text-Center Titulo " style="font-size: 28pt">Implementación de proyectos.</h3>
+            <p class="Subtitulo Text-Center ">Del total de proyectos de tu portafolio, ¿cuántos se conviertieron en un <br> producto/mejor/servicio/modelo/metodología al finalizar?.
             </p>
             <div class="row row-cols-2 justify-content-center select_proyectos">
               <div class="form-group mb-3 col-3 ">
@@ -260,7 +260,7 @@
           </div><!--step3-->
 
           <div class="tab step4">
-            <h3 class="Text-Center Titulo Negro mb-3" style="font-size: 28pt">Selecciona las métricas de tu preferencia.</h3>
+            <h3 class="Text-Center Titulo  mb-3" style="font-size: 28pt">Selecciona las métricas de tu preferencia.</h3>
             <div class="row justify-content-center metricas_content ">
               <div class="input-group mb-3 col-4">
                 <div class="box-shadow">

@@ -1,6 +1,7 @@
 var ctx = document.getElementById('myChart');
 var blue_color = "#17AEBF";
 var blue_color_alpha = "#17AEBF7A";
+var red_color = "#eb5757";
 var data = [85, 40, 13, 50, 20, 30];
 var dataComplement = []
 data.forEach(function (element, index) {
@@ -112,30 +113,47 @@ var data2 = [10, 20, 5, 8, 20, 12 ];
 Chart.defaults.global.legend.labels.usePointStyle = true;
 if (ctx2) {
     var myChart = new Chart(ctx2, {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: ['SEMANA 1', 'SEMANA 2', 'SEMANA 3', 'SEMANA 4', 'SEMANA 5'],
             datasets: [{
                 label:'actividades asignadas',
                 data: data,
+                backgroundColor: [
+                    blue_color,
+                    blue_color,
+                    blue_color,
+                    blue_color,
+                    blue_color,
+                    blue_color,
+                ],
                 borderColor: [
-                    '#17AEBF'
+                    blue_color
                 ],
                 borderWidth: 1,
                 barThickness: 10,
                 barPercentage: 0.5,
-                fill:false,
+                // fill:false,
             },
             {
                 label:'actividades finalizadas',
                 data: data2,
+                backgroundColor: [
+                    red_color,
+                    red_color,
+                    red_color,
+                    red_color,
+                    red_color,
+                    red_color,
+
+                ],
                 borderColor: [
-                    '#eb5757'
+                    blue_color
                 ],
                 borderWidth: 1,
                 barThickness: 10,
                 barPercentage: 0.5,
-                fill:false,
+                // fill:false,
             }]
         },
         options: {
