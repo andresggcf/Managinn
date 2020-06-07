@@ -108,6 +108,44 @@
               <h4 class="uppercase" style="margin: 25px 0 0 35px"> 
                 <img src="img/iconos/icono_dias_activo.svg" alt="Dias activos" class="img_icons" style="margin-right: 15px"> ESTADO
               </h4>
+              <div class="progress" style="background-color: rgba(23, 174, 191, 0.2); 
+                width: 100%; 
+                height: 30px;
+                margin-top: 40px;
+                margin-bottom: 10px;
+                position: relative;">
+                <div class="progress-bar" role="progressbar" style="width: <?php echo $arregloProyecto['estimado']?>%; height: 30px; position: absolute;
+                  background-color: #17AEBF !important" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                </div>
+                <div class="progress-bar" role="progressbar" style="width: <?php echo $arregloProyecto['progreso']?>%; height: 30px; position: absolute;
+                  background-color: #FBD534 !important" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+              <div class="containter-estados row" style= "margin: 0">
+                <div class="col-sm-5">
+                  <div style="width: 20px; 
+                    height: 20px; 
+                    border-radius: 30px;
+                    margin-top: 5px; 
+                    background-color: #FBD534;
+                    float: left;"></div>
+                  <p style="color: #FBD534;
+                    margin: 3px 0 0 25px;">Avance real: <span
+                      style="font-weight: 700"><?php echo $arregloProyecto['progreso']?>%</span></p>
+                </div>
+                <div class="col-sm-7">
+                  <div style="width: 20px; 
+                    height: 20px; 
+                    border-radius: 30px; 
+                    margin-top: 5px; 
+                    background-color: #17AEBF;
+                    float: left;"></div>
+                   <p style="color: #17AEBF;
+                    margin: 3px 0 0 25px;
+                    ">Esperado: <span
+                      style="font-weight: 700"><?php echo $arregloProyecto['estimado']?>%</span></p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -143,6 +181,59 @@
               <h4 class="uppercase" style="margin: 25px 0 0 35px"> 
                 <img src="img/iconos/icono-equipo.svg" alt="Dias activos" class="img_icons" style="margin-right: 15px"> EQUIPO ASIGNADO
               </h4>
+              <div class="row" style="margin: 0; padding: 15px 30px;">
+
+                <div class="col-sm-3" style="height: 100%;">
+                  <img src = "./img/iconos/Icono-Perfil.png" alt="Icono" 
+                    height="45px"
+                    style = "border-radius: 45px; float: left; margin-left: 22px;">
+                  <p class="Texto-Nombre-Perfil Text-Center" style="color: #131A40"><strong><?php echo $nombre;?></strong></p>
+                  <p class="Texto-Rol-Perfil Text-Center" style="color: #131A40"><?php echo $rol?></p>
+                </div>
+
+                <?php 
+                  require 'conexion.php';
+
+                  $queryEquipo = "SELECT e.id_usuario, u.nombre, u.rol 
+                  FROM equipos e 
+                  INNER JOIN usuarios u 
+                  ON e.id_usuario = u.id 
+                  WHERE e.id_proyecto = ".$_GET['proyecto']."
+                  AND u.id NOT IN (
+                    SELECT us.id 
+                    FROM usuarios us 
+                    WHERE correo = '$correo') 
+                  LIMIT 3;";
+
+                  if ($result = mysqli_query($db, $queryEquipo))
+                  {
+                    while ($row = mysqli_fetch_assoc($result)) 
+                    { 
+                      ?>
+                      <div class="col-sm-3" style="height: 100%;">
+                        <img src = "./img/iconos/Icono-Perfil.png" alt="Icono" 
+                        height="45px"
+                        style = "border-radius: 45px; float: left; margin-left: 22px;">
+                        <p class="Texto-Nombre-Perfil Text-Center" style="color: #131A40"><strong><?php echo $row['nombre'];?></strong></p>
+                        <p class="Texto-Rol-Perfil Text-Center" style="color: #131A40"><?php echo $row['rol'];?></p>
+                      </div>
+                    <?php
+                    }
+                  }
+                ?>
+
+                
+
+                <div class="col-sm-3" style="height: 100%;">
+
+                </div>
+
+                <div class="col-sm-3" style="height: 100%;">
+
+                </div>
+
+                
+              </div>
             </div>
 
             <div class="card-dash-blanco" style="min-height: 180px !important;">
@@ -166,146 +257,55 @@
               <h4 class="uppercase" style="margin: 25px 0 0 35px"> 
                 <img src="img/iconos/icono-evaluacion.svg" alt="Dias activos" class="img_icons" style="margin-right: 15px"> EVALUACIÓN DEL PROYECTO
               </h4>
-            </div>
-          </div>
-          <div class="col-sm-3 col-card-bc" style="">
-            <div class="card-dash-blanco">
-              <h4 class="uppercase" style="margin: 25px 0 0 35px"> 
-                <img src="img/iconos/icono-roi.svg" alt="Dias activos" class="img_icons" style="margin-right: 15px"> ROI
-              </h4>
-            </div>
-          </div>
-          <div class="col-sm-4 col-card-br" style="">
-            <div class="card-dash-blanco">
-              <h4 class="uppercase" style="margin: 25px 0 0 35px"> 
-                <img src="img/iconos/icono-activo.svg" alt="Dias activos" class="img_icons" style="margin-right: 15px"> ACTIVO
-              </h4>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div id="Dashboard-Global" class="contenedor_dashboard" style="display: none"> <!--Inicio Dashboard-Global -->
-      <div class="container-fluid">
-        <div class="row kpi">
-          <div class="col-4 my-3">
-            <div class="info_general px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center">
-              <div class="nombre" style="max-width:85%">
-                <p style="margin-bottom: 0px">Estás viendo el proyecto:</p> 
-                <h2><?php echo $arregloProyecto['nombre'];?></h2>
-                <p style="margin-bottom: 0px">Inició en: <?php echo $arregloFechas['F_INICIO']; ?></p> 
-                <p style="margin-bottom: 15px; width: 330px">Final estimado en: <?php echo $arregloFechas['F_FIN']; ?></p> 
-              </div>
-
-              <div class="mes d-flex flex-row align-items-center">
-                <a id="less_month" href="#"><</a>
-                <span id="mes_actual">Diciembre</span>
-                <a id="more_month" href="#">></a>
-              </div>
-
-              <div class="imagen">
-                <img src="img/iconos/ilustracion_saludo.svg" alt="Saludo">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4 my-3">
-            <div class="escalamiento box-shadow px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center">
-              <img src="img/iconos/EscalamientoPromedio.svg" alt="escalamiento">
-              <div class="texto_escalamiento">
-                <h4  class="uppercase">Escalamiento promedio</h4>
-                <span id="escalamiento">
-                  0%
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4 my-3">
-            <div class="conversion box-shadow px-2 pb-0 pt-2 d-flex flex-row justify-content-between align-items-center">
-              <img src="img/iconos/tasadeconversion.svg" alt="conversion">
-              <div class="texto_escalamiento">
-                <h4  class="uppercase">Tasa de conversión</h4>
-                <span id="tasa_conversion">
-                  0
-                </span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="row graficas align-items-start">
-          <div class="col-8">
-            <div class="box-shadow my-3">
-              <div class="bg-color d-flex align-items-center ">
-                <h4 class="uppercase flex-grow-1 m-0"> <img src="img/iconos/icono_tus_metricas.svg" alt="Metricas" class="img_icons"> Tus metricas</h4>
-                <a class="change_graph uppercase btn btn-custom btn-on-bg mx-3 active" href="#">Entrada</a>
-                <a class="change_graph uppercase btn btn-custom btn-on-bg mx-3" href="#">Proceso</a>
-                <a class="change_graph uppercase btn btn-custom btn-on-bg mx-3" href="#">Salida</a>
-              </div>
-              <canvas id="myChart" class="bg-color grafica" height="400"></canvas>
-            </div>
-          </div> 
-
-          <div class="col-4 mt-3 d-flex flex-column align-items-center "
-            style = "margin-top: 0px !important">
-            <div class="dias my-3 box-shadow">
-              <h4 class="uppercase"> 
-                <img src="img/iconos/icono_dias_activo.svg" alt="Dias activos" class="img_icons"> Días activos
-              </h4>
-              <span id="dias_activos">0</span>
-            </div>
-            <div class="dias my-3 box-shadow">
-              <h4 class="uppercase"> 
-                <img src="img/iconos/icono_dias_activo.svg" alt="Dias activos" class="img_icons"> Días activos
-              </h4>
-              <span id="dias_activos">0</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="row">
-            <div class="col-4 my-3">
-              <div class="box-shadow">
-                <h4 class="uppercase">
-                  <img src="img/iconos/icono_personas_capacitadas.svg" alt="" class="img_icons"> Personas capacitadas
-                </h4>
-                <div class="p_capacitadas d-flex justify-content-center">
-                  <span id="personas_capacitadas_relacion" class="flex-fill">
-                    0/0
-                  </span>
-                  <div class="n_personas flex-fill p-2">
-                                  
+              <div class="row" style= "margin: 15px 0px">
+                <div class="col-sm-4">
+                  <div class="card-azul">
+                    <h2 class= "text-center" style="color:white">0/10</h2>
+                    <p class= "text-center" style="color:white; margin-bottom: 0; font-size: 10pt">VALOR<br>GENERADO</p>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="card-azul">
+                    <h2 class= "text-center" style="color:white">0/10</h2>
+                    <p class= "text-center" style="color:white; margin-bottom: 0; font-size: 10pt">NIVEL DE<br>DIFERENCIACION</p>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="card-azul">
+                    <h2 class= "text-center" style="color:white">0/10</h2>
+                    <p class= "text-center" style="color:white; margin-bottom: 0; font-size: 10pt">NIVEL DE<br>IMPLEMENTACION</p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="col-4 my-3">
-              <div class="box-shadow">
-                <h4 class="uppercase"><img src="img/iconos/icono_presupuesto_usado.svg" alt="" class="img_icons"> Presupuesto usado</h4>
-                <div class="d-flex flex-column ml-5">
-                  <span id="presupuesto_usado" class="icon_pesos">0</span>
-                  <span class="total">de <em id="total_presupuesto_usado" >$0</em></span>
-                </div>
+          </div>
+          <div class="col-sm-3 col-card-bc" style="">
+            <div class="card-dash-blanco">
+              <h4 class="uppercase" style="margin: 25px 0 0 35px; color: rgba(0,0,0, 0.3) "> 
+                <img src="img/iconos/icono-roi.svg" alt="Dias activos" class="img_icons" 
+                  style="margin-right: 15px; 
+                    filter: saturate(100%) brightness(100%) opacity(40%) contrast(100%) !important;"> ROI
+              </h4>
+              <div style="margin-top: 20px">
+                <h1 class = "Text-Center" style="color: rgba(0,0,0, 0.3)">0 %</h1>
+                <p class = "Text-Center" style="font-weight: 900; color: rgba(0,0,0, 0.3)">NEGATIVO ( &lt 0 )</p>
               </div>
             </div>
-
-            <div class="col-4 my-3 ">
-              <div class="box-shadow d-flex flex-column">
-                <h4 class="uppercase">
-                  <img src="img/iconos/icono_valor_actual_neto.svg" alt="" class="img_icons"> Valor actual neto (VAN)
-                </h4>
-                <span id="valor_actual_neto" class="ml-5 icon_pesos">0</span>
+          </div>
+          <div class="col-sm-4 col-card-br" style="">
+            <div class="card-dash-blanco">
+              <h4 class="uppercase" style="margin: 25px 0 0 35px; color: rgba(0,0,0, 0.3) "> 
+                <img src="img/iconos/icono-activo.svg" alt="Dias activos" class="img_icons" 
+                style="margin-right: 15px;
+                  filter: saturate(100%) brightness(100%) opacity(40%) contrast(100%) !important;"> ACTIVO
+              </h4>
+              <div style="margin-top: 20px">
+                <h1 class = "Text-Center" style="color: rgba(0,0,0, 0.3)">$ 0</h1>
               </div>
             </div>
-
           </div>
         </div>
+
       </div>
     </div> <!--Fin Dashboard-perfil -->
   </div> <!--Fin Blanco-Fondo-->

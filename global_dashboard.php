@@ -108,9 +108,10 @@
 
         $resultado3 =  mysqli_query($db, $queryDias);
         $arregloDias = mysqli_fetch_assoc($resultado3);
-
-        $pro_lanzados = ($arreglo['num_proy_convertidos']/$arreglo['num_proy_totales']) * 100;
-        $pro_exitosos = (1/$arreglo['num_proy_totales'])*100;
+        //proyectos totales = 3
+        //proyectos convertidos = 1
+        $pro_lanzados = 0;
+        $pro_exitosos = round(($arreglo['num_proy_convertidos']/$arreglo['num_proy_totales']) * 100, 1);
 
       ?>
      <div class="container-fluid">
