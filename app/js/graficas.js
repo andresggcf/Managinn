@@ -95,10 +95,10 @@ if (ctx) {
             },
             layout: {
                 padding: {
-                    left: 54,
-                    right: 30,
-                    top: 28,
-                    bottom: 28
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0
                 }
             }
         }
@@ -172,7 +172,6 @@ if (ctx2) {
                         fontSize:12,
                         fontColor:'#131a40',
                     },
-                    
                 }],
                 xAxes: [{
                     stacked: false,
@@ -295,3 +294,234 @@ if (ctx3) {
         }
     });
 }
+
+//Grafica de proyectos
+var ctx4 = document.getElementById('chartProyecto');
+var blue = "#17AEBF";
+var blue_alpha = "#17AEBF7A";
+var red = "#EB5757";
+var red_alpha = "#EB57577A";
+var datapr = [25, 45, 20, 10, 50];
+var datapr2 = [5, 20, 5, 8, 20];
+var dataComplement1 = [];
+var dataComplement2 = [];
+//Chart.defaults.global.legend.labels.usePointStyle = true;
+datapr.forEach(function (element) {
+    dataComplement1.push(100 - element)
+});
+datapr2.forEach(function (element) {
+    dataComplement2.push(100 - element)
+});
+if(ctx4){
+    var chartProyecto = new Chart(ctx4,{
+        type: 'bar',
+        data: {
+            labels: ['INVESTIGACIÓN', 'DEFINICIÓN', 'IMPLEMENTACIÓN', 'CORRECCIÓN', 'LANZAMIENTO'],
+            datasets: [
+                {
+                    data: datapr,
+                    backgroundColor:[
+                        blue,
+                        blue,
+                        blue,
+                        blue,
+                        blue
+                    ],
+                    barThickness: 15
+                },
+                /*{
+                    data: dataComplement1,
+                    backgroundColor: [
+                        blue_alpha,
+                        blue_alpha,
+                        blue_alpha,
+                        blue_alpha,
+                        blue_alpha
+                    ],
+                    barThickness: 15
+                },*/
+                {
+                    data: datapr2,
+                    backgroundColor:[
+                        red,
+                        red,
+                        red,
+                        red,
+                        red
+                    ],
+                    barThickness: 15
+                },
+                /*{
+                    data: dataComplement2,
+                    backgroundColor: [
+                        red_alpha,
+                        red_alpha,
+                        red_alpha,
+                        red_alpha,
+                        red_alpha
+                    ],
+                    barThickness: 15
+                }*/
+            ]
+        },
+        options: {
+            scales: {
+                yAxes:[{
+                    //stacked: true,
+                    ticks: {
+                        min: 0,
+                        max: 100,
+                        stepSize: 20,
+                        fontSize:10,
+                        callback: function (tick) {
+                            return tick.toString() + '%';
+                        },
+                        fontColor:'#131A40'
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Cumplimiento',
+                        fontStyle: 'bold',
+                        fontSize:12,
+                        fontColor:'#131a40',
+                    }
+                }],
+                xAxes:[{
+                    //stacked: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Métricas de entrada',
+                        fontStyle: 'bold',
+                        fontSize:12,
+                        fontColor:'#131A40',
+                    },
+                    gridLines: {
+                        display: false,
+                        tickMarkLength: 8
+                    },
+                    ticks:{
+                        fontSize:10,
+                        fontColor:'#131A40',
+                    }
+                }]
+            },
+            legend: {
+                display: false,
+            },
+            layout: {
+                padding: {
+                    left: 54,
+                    right: 30,
+                    top: 28,
+                    bottom: 28
+                }
+            }
+        }
+    });
+}
+
+// Grafica personas
+/*var ctx4 = document.getElementById('chartProyecto');
+var blue_color = "#17AEBF";
+var blue_color_alpha = "#17AEBF7A";
+var datapr = [8, 12, 20, 10, 20, 5];
+var datapr2 = [10, 20, 5, 8, 20, 12 ];
+Chart.defaults.global.legend.labels.usePointStyle = true;
+if (ctx4) {
+    var myChart = new Chart(ctx4, {
+        type: 'bar',
+        data: {
+            labels: ['INVESTIGACIÓN', 'DEFINICIÓN', 'IMPLEMENTACIÓN', 'CORRECCIÓN', 'LANZAMIENTO'],
+            datasets: [{
+                label:'actividades asignadas',
+                data: datapr,
+                backgroundColor: [
+                    blue_color,
+                    blue_color,
+                    blue_color,
+                    blue_color,
+                    blue_color,
+                    blue_color,
+                ],
+                borderColor: [
+                    blue_color
+                ],
+                borderWidth: 1,
+                barThickness: 10,
+                barPercentage: 0.5,
+                // fill:false,
+            },
+            {
+                label:'actividades finalizadas',
+                data: datapr2,
+                backgroundColor: [
+                    red_color,
+                    red_color,
+                    red_color,
+                    red_color,
+                    red_color,
+                    red_color,
+
+                ],
+                borderColor: [
+                    blue_color
+                ],
+                borderWidth: 1,
+                barThickness: 10,
+                barPercentage: 0.5,
+                // fill:false,
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    stacked: false,
+                    ticks: {
+                        min: 0,
+                        max: 100,
+                        fontSize:10,
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Actividades',
+                        fontStyle: 'bold',
+                        fontSize:12,
+                        fontColor:'#131a40',
+                    },
+                    
+                }],
+                xAxes: [{
+                    stacked: false,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Etapa',
+                        fontStyle: 'bold',
+                        fontSize:12,
+                        fontColor:'#131a40',
+                    },
+                    gridLines: {
+                        display: false,
+                        tickMarkLength: 8
+                    },
+                    ticks:{
+                        fontSize:10,
+                        fontColor:'#131a40',
+                    },
+                }]
+            },
+            legend: {
+                display: false
+            },
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 10,
+                    top: 10,
+                    bottom: 10
+                }
+            },
+            aspectRatio:4,
+        }
+    });
+}
+*/

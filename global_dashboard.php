@@ -730,7 +730,7 @@
       ?>";
 
       var valor_actual_neto = '<?php
-        $numero = 350000;
+        $numero = 0;
         $numero_cop =  number_format($numero, 0, ',', '.');
         echo $numero_cop?>';
 
