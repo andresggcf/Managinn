@@ -35,11 +35,11 @@
           <a class="Icono-Menu-Perfil" href = "perfil.php">
             <img src="./img/iconos/Etiqueta-Dashboard.svg" alt="Dashboard" height="25px">
           </a>
-          <a class="Icono-Menu-Perfil current">
-            <img class="current-Icono" src="./img/iconos/Etiqueta-Global.svg" alt="Global" height="25px">
+          <a class="Icono-Menu-Perfil" href = "global.php">
+            <img  src="./img/iconos/Etiqueta-Global.svg" alt="Global" height="25px">
           </a>
-          <a class="Icono-Menu-Perfil" href = "personas.php">
-            <img src="./img/iconos/Etiqueta-Personas.svg" alt="Personas" height="27px">
+          <a class="Icono-Menu-Perfil current" href = "personas.php">
+            <img class="current-Icono" src="./img/iconos/Etiqueta-Personas.svg" alt="Personas" height="27px">
           </a>
           <a class="Icono-Menu-Perfil" href = "presupuesto.php">
             <img src="./img/iconos/Etiqueta-Presupuesto.svg" alt="Presupuesto" height="25px">
@@ -72,7 +72,7 @@
       </div>
     </div>  
   </div>    
-  
+
     <div class="new-body general_bg">
       <div class="container-fluid">
         <div class="row justify-content-center align-items-center py-5">

@@ -44,3 +44,4 @@ CREATE TABLE `usuarios`
 PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 ALTER TABLE `usuarios` ADD `creacion` DATE NULL DEFAULT NULL AFTER `nombre`;
+ALTER TABLE `proyecto` ADD `progreso` INT NOT NULL DEFAULT '3' AFTER `estado`;

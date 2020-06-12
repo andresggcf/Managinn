@@ -363,6 +363,9 @@ select {
   height: 40px;
   width: 40px; }
 
+.global-view ul li {
+  width: 100%; }
+
 .inputGroup {
   background-color: transparent;
   display: block;
@@ -547,7 +550,7 @@ body.panel_control {
     letter-spacing: 0.125em; }
     @media screen and (max-width: 1440px) {
       .contenedor_dashboard h4 {
-        font-size: 1rem; } }
+        font-size: 14px; } }
   .contenedor_dashboard .info_general {
     background-color: #eb5757;
     border-radius: 25px;
@@ -555,6 +558,12 @@ body.panel_control {
     padding-left: 35px;
     padding-right: 30px;
     padding-top: 25px; }
+    @media screen and (max-width: 1440px) {
+      .contenedor_dashboard .info_general {
+        padding-left: 20px;
+        padding-right: 0px;
+        padding-top: 20px;
+        height: 100%; } }
     .contenedor_dashboard .info_general p, .contenedor_dashboard .info_general h2, .contenedor_dashboard .info_general h3, .contenedor_dashboard .info_general h4 {
       color: #fff; }
     .contenedor_dashboard .info_general .nombre {
@@ -612,6 +621,9 @@ body.panel_control {
     line-height: 73px;
     text-align: center;
     letter-spacing: 0.085em; }
+    @media screen and (max-width: 1440px) {
+      .contenedor_dashboard .dias span {
+        font-size: 50px; } }
   .contenedor_dashboard .grafica {
     width: 100% !important;
     height: 400px !important;
@@ -650,11 +662,22 @@ body.panel_control {
       position: absolute;
       top: 0;
       left: 0; }
+      @media screen and (max-width: 1440px) {
+        .contenedor_dashboard .p_capacitadas .persona::before {
+          font-size: 14px; } }
+    @media screen and (max-width: 1440px) {
+      .contenedor_dashboard .p_capacitadas .persona {
+        width: 7px;
+        height: 20px; } }
   .contenedor_dashboard .p_capacitadas span {
     font-size: 3.1em;
     color: #131a40;
     font-weight: 900;
     text-align: center; }
+    @media screen and (max-width: 1440px) {
+      .contenedor_dashboard .p_capacitadas span {
+        font-size: 24px;
+        height: 100%; } }
   .contenedor_dashboard .icon_pesos {
     /*font-size: 3.1em;*/
     position: relative;
@@ -669,7 +692,7 @@ body.panel_control {
       padding-right: 10px; }
     @media screen and (max-width: 1440px) {
       .contenedor_dashboard .icon_pesos {
-        font-size: 40px; } }
+        font-size: 36px; } }
   .contenedor_dashboard .total {
     font-size: 1.5em;
     color: #17AEBF;
@@ -829,6 +852,9 @@ body.panel_control {
   .invitados .subtitle {
     font-weight: 300;
     margin-bottom: 40px; }
+    @media screen and (max-width: 1440px) {
+      .invitados .subtitle {
+        font-size: 26px; } }
   .invitados .body_p {
     max-width: 580px;
     margin: 0 auto;
@@ -839,6 +865,9 @@ body.panel_control {
     font-size: 25px;
     line-height: 33px;
     text-align: center; }
+    @media screen and (max-width: 1440px) {
+      .invitados .body_p {
+        font-size: 18px; } }
   .invitados .btn-custom.btn-large {
     font-size: 24px; }
 
@@ -846,6 +875,9 @@ body.panel_control {
   font-size: 50px;
   font-weight: bold;
   margin-bottom: 60px; }
+  @media screen and (max-width: 1440px) {
+    .nombre_invitados {
+      font-size: 40px; } }
 
 .personas h2 {
   margin-bottom: 12px;
@@ -1202,12 +1234,20 @@ body.panel_control {
   /*line-height: 52px;*/
   text-align: center;
   margin-left: 45px; }
+  @media screen and (max-width: 1440px) {
+    #escalamiento,
+    #tasa_conversion {
+      font-size: 16px; } }
   #escalamiento .value,
   #tasa_conversion .value {
     font-weight: 600;
     font-size: 50px;
     line-height: 65px;
     letter-spacing: 0.085em; }
+    @media screen and (max-width: 1440px) {
+      #escalamiento .value,
+      #tasa_conversion .value {
+        font-size: 30px; } }
   #escalamiento p,
   #tasa_conversion p {
     margin: 0; }

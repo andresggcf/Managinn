@@ -107,8 +107,8 @@
 
     <!--Ventana cuando no hay proyectos-->
     <div id="Sin-Proyecto">
-      <h3 class="Text-Center Titulo Negro" style="font-size: 28pt">Primero, crea un proyecto.</h3>
-      <p class="Subtitulo Text-Center Negro">Tu sistema de Innovación está conformado por <br>diversos
+      <h3 class="Text-Center Titulo Azul" style="font-size: 28pt">Primero, crea un proyecto.</h3>
+      <p class="Subtitulo Text-Center Azul">Tu sistema de Innovación está conformado por diversos <br>
           factores, uno de ellos es tu portafolio de proyectos.
       </p>
 
