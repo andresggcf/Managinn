@@ -425,6 +425,9 @@ select{
         height: 40px;
         width: 40px;
     }
+    ul li{
+        width: 100%;
+    }
 }
 
 
@@ -636,7 +639,7 @@ body.panel_control{
         font-size: 1.2rem;
         letter-spacing: 0.125em;
         @media screen and (max-width: $break-x-large){
-            font-size: 1rem;
+            font-size: 14px;
         }
     }
     .info_general{
@@ -646,6 +649,12 @@ body.panel_control{
         padding-left: 35px;
         padding-right: 30px;
         padding-top: 25px;
+        @media screen and (max-width: $break-x-large){
+            padding-left: 20px;
+            padding-right: 0px;
+            padding-top: 20px;
+            height: 100%;
+        }
         p,h2,h3,h4{
             color: #fff;
         }
@@ -712,6 +721,9 @@ body.panel_control{
             line-height: 73px;
             text-align: center;
             letter-spacing: 0.085em;
+            @media screen and (max-width: $break-x-large){
+                font-size: 50px;
+            }
         }
     }
     .grafica{
@@ -760,6 +772,13 @@ body.panel_control{
                 position: absolute;
                 top: 0;
                 left: 0;
+                @media screen and (max-width: $break-x-large){
+                    font-size: 14px;
+                }
+            }
+            @media screen and (max-width: $break-x-large){
+                width: 7px;
+                height: 20px;
             }
         }
         span{
@@ -767,6 +786,10 @@ body.panel_control{
             color: $color-textos;
             font-weight: 900;
             text-align: center;
+            @media screen and (max-width: $break-x-large){
+                font-size: 24px;
+                height: 100%;
+            }
         }
     }
     .icon_pesos{
@@ -783,7 +806,7 @@ body.panel_control{
             padding-right: 10px;
         }
         @media screen and (max-width: $break-x-large){
-            font-size: 40px;
+            font-size: 36px;
         }
     }
     .total{
@@ -953,6 +976,9 @@ body.panel_control{
     .subtitle{
         font-weight: 300;
         margin-bottom: 40px;
+        @media screen and (max-width: $break-x-large){
+            font-size: 26px;
+        }
     }
     .body_p{
         max-width: 580px; 
@@ -964,6 +990,9 @@ body.panel_control{
         font-size: 25px;
         line-height: 33px;
         text-align: center;
+        @media screen and (max-width: $break-x-large){
+            font-size: 18px;
+        }
     }
     .btn-custom.btn-large{
         font-size: 24px;
@@ -973,6 +1002,9 @@ body.panel_control{
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 60px;
+    @media screen and (max-width: $break-x-large){
+        font-size: 40px;
+    }
 }
 .personas{
     h2{
@@ -1393,11 +1425,17 @@ body.panel_control{
     line-height: 52px;
     text-align: center;
     margin-left: 45px;
+    @media screen and (max-width: $break-x-large){
+        font-size: 16px;
+    }
     .value{
         font-weight: 600;
         font-size: 50px;
         line-height: 65px;
         letter-spacing: 0.085em;
+        @media screen and (max-width: $break-x-large){
+            font-size: 30px;
+        }
     }
     p{
         margin: 0;

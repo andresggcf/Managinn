@@ -41,5 +41,5 @@
     $queryGuardarEquipo = "INSERT INTO equipos (id_usuario, id_proyecto) VALUES ('$id_usu','$id_pr')";
     mysqli_query($db, $queryGuardarEquipo);
 
-    header ('location: perfil_crear1.php');
+    header ('location: perfil_invitar.php');
   }
