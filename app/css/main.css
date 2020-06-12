@@ -441,7 +441,12 @@ body.panel_control {
 
 .panel_control .NavBar {
   z-index: 2; }
-
+.NavBar{
+  z-index: 2;
+}
+.NavBar+div{
+  z-index: 3;
+}
 .panel_control .icon_home {
   margin: 25px 27px; }
   .panel_control .icon_home img {
@@ -525,10 +530,10 @@ body.panel_control {
 
 .new-body {
   position: relative;
-  margin-top: 80px;
+  /* margin-top: 44px; */
   margin-left: 115px;
   height: 100%;
-  padding-top: 15px; }
+  padding-top: 75px; }
 
 .contenedor_dashboard {
   position: relative;
@@ -1077,7 +1082,8 @@ body.panel_control {
 
 .titulo_categorias p {
   font-size: 13px;
-  color: rgba(19, 26, 64, 0.6); }
+  color: rgba(19, 26, 64, 0.6);
+  line-height: 13px; }
 
 .categoria img {
   margin: 0 15px; }
