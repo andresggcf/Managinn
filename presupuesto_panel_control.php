@@ -8,7 +8,7 @@
   include("header.php");
   ?>
 
-<body class="global-view panel_control presupuesto">
+<body class="global-view panel_control presupuesto h-100" style="position:absolute;">
 <div class="NavBar">
     <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
       <!-- <img src="img/iconos/managinn.png" width="180px" alt="" class=""> -->

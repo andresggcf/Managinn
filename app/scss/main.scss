@@ -18,9 +18,15 @@ p{
 .bg-color{
     background-color: $color-background;
 }
+html{
+    height: 100%;
+    background-image: url(../../img/fondos/fondo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 html,body{
     color:$color-textos;
-    height: 100%;
+    // height: 100%;
 }
 html{overflow-x: hidden;}
 a:visited{
@@ -251,6 +257,9 @@ select{
         &.step4{
             max-width: 1000px;
         }
+        /* input[type=button]{
+            font-size: 24px;
+        } */
     }
     .Caja-Centro{
         position: relative;
@@ -260,13 +269,15 @@ select{
     }
     .Subtitulo {
         margin-bottom: 60px;
+        font-size: 22px;
     }
     .title-forms{
-        max-width: 500px;
+        max-width: 600px;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
         font-weight: normal;
+        font-size: 25px;
     }
     .Boton-Creacion-Proyecto{
         float: none;
@@ -286,6 +297,11 @@ select{
             font-weight: normal;
             font-size: 30px;
             line-height: 39px;
+        }
+    }
+    .progreso-actual:last-child{
+        .circulo-actual{
+            left: 46%;
         }
     }
     .progreso_global{
@@ -572,14 +588,14 @@ body.panel_control{
     }
     .Contenedor-Menu{
         background-color: #fff;
-        padding: 22px 45px;
+        padding: 15px 45px;
         // margin-left: 240px;
         a{
             display: block;
             margin: 0 15px;
         }
         img{
-            max-height: 35px;
+            max-height: 25px;
         }
     }
     .Texto-Progreso{
@@ -617,20 +633,22 @@ body.panel_control{
     
 }
 .general_bg{
-    background-image: url(../../img/fondos/fondo.svg);
+    /* background-image: url(../../img/fondos/fondo.svg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    background-color: transparent !important;
+    overflow: hidden;
 }
 .new-body{
     position: relative;
-    margin-top: 80px;
+    margin-top: 65px;
     margin-left: 115px;
     height: 100%;
     padding-top: 15px;
 }
   .contenedor_dashboard{
     position: relative;
-    margin-top: 80px;
+    margin-top: 65px;
     margin-left: 115px;
     h2{
         font-size: 2.3rem;
@@ -1286,7 +1304,8 @@ body.panel_control{
     }
     p{
         font-size: 13px;
-        color:$color-textos-alpha
+        color:$color-textos-alpha;
+        line-height: 13px;
     }
     
 }

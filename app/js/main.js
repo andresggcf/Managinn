@@ -4,6 +4,7 @@ jQuery(document).ready(function ($) {
     $('#Crear-Implementacion').css('display', 'block');
     $('#Sin-Metricas').css('display', 'none');
     $('.Blanco-Fondo').addClass('general_bg')
+    $('body').addClass('general_bg');
 
   })
   /**
@@ -63,6 +64,7 @@ jQuery(document).ready(function ($) {
     if(!x.hasClass('tab_presupuesto')){
       switch (n) {
         case 0:
+          // $('body').addClass('general_bg');
           bar.css('width', "0%");
           $(".items_progreso li:nth-child(1)>div").addClass("circulo-actual").removeClass("Circulo-Progreso circulo-pasado");
           $(".items_progreso li:nth-child(2)>div").addClass("Circulo-Progreso").removeClass("circulo-actual");

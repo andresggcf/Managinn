@@ -8,7 +8,7 @@
   include("header.php");
   ?>
 
-<body class="panel_control">
+<body class="panel_control h-100 general_bg">
 <div class="NavBar">
     <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
       <!-- <img src="img/iconos/managinn.png" width="180px" alt="" class=""> -->

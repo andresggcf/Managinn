@@ -23,9 +23,14 @@ p {
 .bg-color {
   background-color: #F6F7F9; }
 
+html {
+  height: 100%;
+  background-image: url(../../img/fondos/fondo.svg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 html, body {
-  color: #131a40;
-  height: 100%; }
+  color: #131a40; }
 
 html {
   overflow-x: hidden; }
@@ -218,7 +223,10 @@ select {
   max-width: 750px;
   margin: 0 auto;
   min-height: 450px;
-  flex-flow: column nowrap; }
+  flex-flow: column nowrap;
+  /* input[type=button]{
+            font-size: 24px;
+        } */ }
   .global-view .tab.step4 {
     max-width: 1000px; }
 
@@ -229,14 +237,16 @@ select {
   left: 0; }
 
 .global-view .Subtitulo {
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  font-size: 22px; }
 
 .global-view .title-forms {
-  max-width: 500px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-weight: normal; }
+  font-weight: normal;
+  font-size: 25px; }
 
 .global-view .Boton-Creacion-Proyecto {
   float: none;
@@ -256,6 +266,9 @@ select {
     font-weight: normal;
     font-size: 30px;
     line-height: 39px; }
+
+.global-view .progreso-actual:last-child .circulo-actual {
+  left: 46%; }
 
 .global-view .progreso_global .Circulo-Progreso {
   top: 0; }
@@ -501,12 +514,12 @@ body.panel_control {
 
 .panel_control .Contenedor-Menu {
   background-color: #fff;
-  padding: 22px 45px; }
+  padding: 15px 45px; }
   .panel_control .Contenedor-Menu a {
     display: block;
     margin: 0 15px; }
   .panel_control .Contenedor-Menu img {
-    max-height: 35px; }
+    max-height: 25px; }
 
 .panel_control .Texto-Progreso {
   color: rgba(19, 26, 64, 0.6); }
@@ -539,20 +552,22 @@ body.panel_control {
   left: 49%; }
 
 .general_bg {
-  background-image: url(../../img/fondos/fondo.svg);
-  background-repeat: no-repeat;
-  background-size: cover; }
+  /* background-image: url(../../img/fondos/fondo.svg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+  background-color: transparent !important;
+  overflow: hidden; }
 
 .new-body {
   position: relative;
-  margin-top: 80px;
+  margin-top: 65px;
   margin-left: 115px;
   height: 100%;
   padding-top: 15px; }
 
 .contenedor_dashboard {
   position: relative;
-  margin-top: 80px;
+  margin-top: 65px;
   margin-left: 115px; }
   .contenedor_dashboard h2 {
     font-size: 2.3rem; }
@@ -1125,7 +1140,8 @@ body.panel_control {
 
 .titulo_categorias p {
   font-size: 13px;
-  color: rgba(19, 26, 64, 0.6); }
+  color: rgba(19, 26, 64, 0.6);
+  line-height: 13px; }
 
 .categoria img {
   margin: 0 15px; }
