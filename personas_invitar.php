@@ -1,14 +1,24 @@
 <?php
   session_start();
-  
+
+  $usuario_nombre = $_SESSION['name_post'];
+  $usuario_correo = $_SESSION['email_post'];
+  $usuario_rol = $_SESSION['role_post'];
+  $usuario_id = $_SESSION['id_usuario'];
+
   $nombre = $_SESSION['name_post'];
   $correo = $_SESSION['email_post'];
   $rol = $_SESSION['role_post'];
 
+  $p_nombre = $_SESSION['proyecto_nombre'];
+  $p_fecha = $_SESSION['fecha_proyecto'];
+  $p_descripcion = $_SESSION['desc_proyecto'];
+  $p_id= $_SESSION['id_proyecto'];
+  
   include("header.php");
-  ?>
+?>
 
-<body class="global-view panel_control1">
+<body style="background-color: #f6f7f9" class="panel_control1">
   <div class="NavBar">
     <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
       <a href="#">
@@ -32,11 +42,11 @@
         <img src="img/iconos/managinn.png" width="180px" alt="" class=""
         style="margin-left:30px; margin-bottom: 110px">
         <div class = "Botones-Perfil">
-          <a class="Icono-Menu-Perfil" href = "perfil.php">
+          <a class="Icono-Menu-Perfil">
             <img src="./img/iconos/Etiqueta-Dashboard.svg" alt="Dashboard" height="25px">
           </a>
           <a class="Icono-Menu-Perfil" href = "global.php">
-            <img  src="./img/iconos/Etiqueta-Global.svg" alt="Global" height="25px">
+            <img src="./img/iconos/Etiqueta-Global.svg" alt="Global" height="25px">
           </a>
           <a class="Icono-Menu-Perfil current" href = "personas.php">
             <img class="current-Icono" src="./img/iconos/Etiqueta-Personas.svg" alt="Personas" height="27px">
@@ -71,64 +81,165 @@
         </div>
       </div>
     </div>  
-  </div>    
+  </div>
 
-    <div class="new-body general_bg">
-      <div class="container-fluid">
-        <div class="row justify-content-center align-items-center py-5">
-          <div class="col-8">
-            <div class="body-popup box-shadow ">
-              <div class="title text-center">
-                <h2>
-                  Tu equipo de trabajo
-                </h2>
-                <p>Enviaremos una invitación a esta(s) persona(s), recibirán acceso una vez se registren.</p>
-              </div>
-              <form action="personas_invitados.php">
-                <div class="row justify-content-center select_proyectos">
-                  <div class="form-group mb-3 col-5 my-3">
-                    <input class="form-control border-radius" type="email" name="email_invite" id="email_invite" placeholder="Email">
-                    <span class="required_email">*</span>
-                  </div>
-                  <div class="form-group mb-3 col-3 my-3">
-                    <select class="form-control border-radius" id="proyectos_convertidos2" >
-                      <option value="" disabled selected>Asignar rol</option>
-                      <option>Desarrollo</option>
-                      <option>Diseño</option>
-                      <option>Marketing</option>
-                      <option>Recursos</option>
-                    </select>
-                  </div> 
-                  <div class="w-100"></div>
-                  <div class="col-8 d-flex flex-column mt-3 mb-5">
-                    <a href="" class="invitar_mas">  Invitar a más personas</a>
-                    <a href="" class="seleccionar_lista"> Seleccionar desde tu lista</a>
-                  </div> 
-              </div>
-              <div class="row justify-content-center">
-                <div class="col-5 mt-5 mb-3 d-flex justify-content-around" >
-                <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
-                    name = "Boton-Proyecto" 
-                    id = "Boton-Omitir-Preferencias"
-                    href="personas_panel_control.php"
-                    >Omitir</a>
-                  <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
-                    type="submit" 
-                    name="Boton-Continuar"
-                    value="Enviar"
-                    >
-                </div>
-              </div>
-              </form>
-            </div>
+  <div class="Blanco-Fondo" style="padding-left: 240px;"> 
+
+<!--Ventana para crear proyectos-->
+  <div id="Crear-Proyecto" class = "Caja-Texto-Blanco" style = "display:block; height: 75%; width: 67%">
+
+    <div class="Cont-Crear">
+      <div>
+        <h3 class="Text-Center Titulo Azul" style="font-size: 28pt">Invitar al equipo</h3>
+        <p class="Subtitulo Text-Center Azul">Manda una invitación a los integrantes que deseas en este proyecto.<br>
+          Copia cada enlace dependiendo del rol que deseas asignarle a las personas de tu equipo.
+        </p>
+      </div>
+
+      <div style="width: 700px; margin-top: 10px;">
+        <div class="row" style=" width: 100% ; margin-bottom: 40px">
+          <div class="col-3" style=""></div>
+          <div class="col-3" style="padding-left: 0px; padding-right: 0px;"> 
+            <p style = "margin-top: 10px" class="Subtitulo Azul">Escoge un proyecto:</p>
+          </div>
+          <div class="col-4">      
+            <select class="form-control mb-2" id="proyectos_convertidos" 
+                style="border-bottom: solid 1px; border-radius: 0px; padding-left: 5px" onchange="select(this.value)">
+                <option value="" selected disabled>Proyecto</option>
+              <?php
+
+                require 'conexion.php';
+                  
+                $queryPr = "SELECT  P.id, P.nombre 
+                FROM proyecto P INNER JOIN equipos E ON E.id_proyecto = P.id 
+                WHERE E.id_usuario = $usuario_id";
+
+                echo $queryPr;
+                if ($result = mysqli_query($db, $queryPr)) 
+                {
+                   /* fetch associative array */
+                  while ($row = mysqli_fetch_assoc($result)) 
+                  { 
+                    $nombrep = $row['nombre'];
+                    $idpr = $row['id'];
+              ?>  
+                   <option value="<?php echo $idpr ?>"><?php echo $nombrep ?></option>
+
+              <?php
+                  }
+                }
+              ?>
+            </select>
+          </div>
+          <div class="col-2" style="padding-left: 20px; padding-right: 0px;">
           </div>
         </div>
+
+        <p style = "margin-bottom: 10px" class="Subtitulo Azul">Enviar una invitación para ser <strong style="font-weight: 700 ; color: #eb5757">
+        Facilitador.</strong></p>
+
+        <div style = "width: 100%; margin-bottom: 40px" class = "row">
+          <div class="col-sm-8">
+            <input id = "h1fac" class = "input-copy" value="Generando Enlace...">
+          </div>
+          <div class="col-sm-4">
+            <button onclick="funcCopiar()"
+              class = "Boton-a-Principal-Fondo-Blanco" 
+              name = "Boton-Proyecto" 
+              id = "Boton-Crear-Proyecto"
+              style = "max-width: 210px;"
+              >Copiar Enlace</button>
+          </div>
+        </div>
+
+        <p style = "margin-bottom: 10px" class="Subtitulo Azul">Enviar una invitación para ser <strong style="font-weight: 700 ; color: #eb5757">
+        Colaborador.</strong></p>
+
+        <div style = "width: 100%;" class = "row">
+          <div class="col-sm-8">
+            <input id = "h1col" class = "input-copy" value="Generando Enlace...">
+          </div>
+          <div class="col-sm-4">
+            <button onclick="funcCopiar2()"
+              class = "Boton-a-Principal-Fondo-Blanco" 
+              name = "Boton-Proyecto" 
+              id = "Boton-Crear-Proyecto"
+              style = "max-width: 210px;"
+              >Copiar Enlace</button>
+          </div>
+        </div>
+
+
+        <form class ="FormCrear1" action="personas_invitados.php" method = "post" id="form-equipo">
+          <div style="width:300px; padding-left: 0px; margin-left: 220px; margin-top: 100px;">
+            <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                  style = "padding: 15px 30px;float:left"
+                  name = "Boton-Proyecto" 
+                  id = "Boton-Omitir"
+                  href="personas.php"
+                >Cancelar</a>
+              <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
+                  type="submit" 
+                  name="Boton-Continuar"
+                  id="Boton-Continuar-creacion" 
+                  value="Continuar">
+            </div>
+        </form>
       </div>
-      <!--container-fluid-->
     </div>
+  </div>
+</div>
 
 
-    
+
+
 <?php
-include("footer.php");
+include("footer_3.php");
 ?>
+
+<script type="text/javascript">
+var numero = 1; 
+
+function funcCopiar() {
+var copyText = document.getElementById("h1fac");
+copyText.select();
+copyText.setSelectionRange(0, 99999)
+document.execCommand("copy");
+alert("El enlace fue copiado: " + copyText.value);
+}
+
+function funcCopiar2() {
+var copyText = document.getElementById("h1col");
+copyText.select();
+copyText.setSelectionRange(0, 99999)
+document.execCommand("copy");
+alert("El enlace fue copiado: " + copyText.value);
+}
+
+function select(text) {
+  numero += 1;
+  console.log( "numero " + numero);
+  var texto1="http://luxapp002managinn.site/perfil_invitar.php?pr="+text+"&rol=f"
+  var texto2="http://luxapp002managinn.site/perfil_invitar.php?pr="+text+"&rol=c"
+
+  if(numero % 2 == 0)
+  {
+    document.getElementById("h1fac").value=texto1;
+    document.getElementById("h1fac").style.color="#131A40";
+    document.getElementById("h1col").value=texto2;
+    document.getElementById("h1col").style.color="#131A40";
+  }
+
+  else
+  {
+    document.getElementById("h1fac").value=texto1;
+    document.getElementById("h1fac").style.color="#17AEBF";
+    document.getElementById("h1col").value=texto2;
+    document.getElementById("h1col").style.color="#17AEBF";
+  }
+
+
+}
+</script>
+
+</body>

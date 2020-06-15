@@ -374,7 +374,7 @@
               <div class="col-3" style="height: 16px;">
                 <select class="form-control mb-2" id="proyectos_convertidos" 
                 style="border-bottom: solid 1px; border-radius: 0px; padding-left: 5px" onchange="select(this.value)">
-                  <option value="" selected disabled>Selecciona una opcion</option>
+                  <option value="" selected disabled>Selecciona una opción</option>
                   <?php
                     if($arreglo['papeleria'] == 'on')
                     {

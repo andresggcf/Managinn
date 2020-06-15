@@ -4,6 +4,15 @@
   $nombre = $_SESSION['name_post'];
   $correo = $_SESSION['email_post'];
   $rol = $_SESSION['role_post'];
+  $usuario_id = $_SESSION['id_usuario'];
+
+  require 'conexion.php';
+
+  $queryInduccion = "SELECT induccion, induccion_personas FROM usuarios WHERE correo = '$correo' AND nombre = '$nombre'";
+  $resultado = mysqli_query($db, $queryInduccion);
+  $arregloInduccion = mysqli_fetch_array($resultado);
+
+  $induccion_per =  $arregloInduccion['induccion_personas'];
 
   include("header.php");
   ?>
@@ -98,6 +107,26 @@
       </div>
     </div>
   </div>
+
+  <script type="text/javascript">
+    var ind_per = <?php echo $induccion_per ?>;
+    console.log("usuario tuvo induccion personas: " + ind_per);
+
+    function loadPage(){
+      console.log ("loadPage()");
+      if (ind_per == 0 )
+      {
+        console.log ("ind_per = 0 ? :" + ind_per);
+      }
+      else
+      {
+        console.log ("ind_per = 1 ? :" + ind_per);
+        window.location.href="personas_panel_control.php"
+      }
+    }
+
+    loadPage();
+  </script>
 
 
 <?php
