@@ -207,11 +207,12 @@ if (ctx2) {
         }
     });
 }
+/*
 // Grafica personas
 var ctx3 = document.getElementById('chartPresupuesto');
 var blue_color = "#17AEBF";
 var blue_color_alpha = "#17AEBF7A";
-var data = [8, 12, 20, 10, 20];
+var data = [1, 12, 20, 10, 20];
 var data2 = [10, 20, 5, 8, 20];
 Chart.defaults.global.legend.labels.usePointStyle = true;
 if (ctx3) {
@@ -280,7 +281,7 @@ if (ctx3) {
                 }]
             },
             legend: {
-                // display: false
+                display: false
             },
             layout: {
                 padding: {
@@ -293,7 +294,7 @@ if (ctx3) {
             aspectRatio:4,
         }
     });
-}
+}*/
 
 //Grafica de proyectos
 var ctx4 = document.getElementById('chartProyecto');

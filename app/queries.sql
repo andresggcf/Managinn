@@ -45,3 +45,25 @@ PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 ALTER TABLE `usuarios` ADD `creacion` DATE NULL DEFAULT NULL AFTER `nombre`;
 ALTER TABLE `proyecto` ADD `progreso` INT NOT NULL DEFAULT '3' AFTER `estado`;
+
+CREATE TABLE `data_presupuesto` 
+( `id` INT NOT NULL AUTO_INCREMENT , 
+`director` INT NOT NULL , 
+`presupuesto_gen` BIGINT(17) NOT NULL , 
+`fecha_inicio` DATE NOT NULL , 
+`periodo` VARCHAR(15) NOT NULL DEFAULT 'Trimestral' , 
+`presupuesto_act` BIGINT(17) NOT NULL DEFAULT '0', 
+`papeleria` VARCHAR(5) NOT NULL DEFAULT 'false' , 
+`capacitaciones` VARCHAR(5) NOT NULL DEFAULT 'false' , 
+`infraestructura` VARCHAR(5) NOT NULL DEFAULT 'false' , 
+`salario` VARCHAR(5) NOT NULL DEFAULT 'false' ,
+`licencias` VARCHAR(5) NOT NULL DEFAULT 'false' , 
+`mobiliario` VARCHAR(5) NOT NULL DEFAULT 'false' , 
+`experimentacion` VARCHAR(5) NOT NULL DEFAULT 'false' , 
+`materiales` VARCHAR(5) NOT NULL DEFAULT 'false' , 
+`desarrollo` VARCHAR(5) NOT NULL DEFAULT 'false' , 
+PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `usuarios` ADD 
+`induccion_personas` INT NOT NULL DEFAULT '0' AFTER `induccion_global`, 
+ADD `induccion_presupuesto` INT NOT NULL DEFAULT '0' AFTER `induccion_personas`;

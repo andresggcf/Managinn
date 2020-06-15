@@ -375,17 +375,8 @@
     var blue_alpha = "#17AEBF7A";
     var red = "#EB5757";
     var red_alpha = "#EB57577A";
-    var datapr = [33, 10, 5, 2, 3];
-    var datapr2 = [20, 2, 3, 1, 1];
-    var dataComplement1 = [];
-    var dataComplement2 = [];
-    //Chart.defaults.global.legend.labels.usePointStyle = true;
-    datapr.forEach(function (element) {
-      dataComplement1.push(100 - element)
-    });
-    datapr2.forEach(function (element) {
-      dataComplement2.push(100 - element)
-    });
+    var datapr = [33, 15, 0, 0, 0];
+    var datapr2 = [25, 7, 0, 0, 0];
     if(ctx4){
       var chartProyecto = new Chart(ctx4,{
         type: 'bar',
@@ -404,17 +395,6 @@
               ],
               barThickness: 15
             },
-            /*{
-              data: dataComplement1,
-              backgroundColor: [
-                blue_alpha,
-                blue_alpha,
-                blue_alpha,
-                blue_alpha,
-                blue_alpha
-              ],
-              barThickness: 15
-            },*/
             {
               data: datapr2,
               backgroundColor:[
@@ -426,17 +406,6 @@
               ],
               barThickness: 15
             },
-            /*{
-              data: dataComplement1,
-              backgroundColor: [
-                red_alpha,
-                red_alpha,
-                red_alpha,
-                red_alpha,
-                red_alpha
-              ],
-              barThickness: 15
-            },*/
           ]
         },
         options: {
@@ -482,10 +451,10 @@
           },
           layout: {
             padding: {
-              left: 54,
-              right: 30,
-              top: 28,
-              bottom: 28
+              left: 10,
+              right: 10,
+              top: 10,
+              bottom: 10
             }
           }
         }

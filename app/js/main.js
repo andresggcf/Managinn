@@ -461,16 +461,31 @@ jQuery(document).ready(function ($) {
     }
   });
   $("#exCapacitaciones").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [9000000, 70000000],formatter: function(value) {
-    return numeral(value[0]).format('$ 0,0[.]00') + ' - '+numeral(value[1]).format('$ 0,0[.]00');
+    return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
   } });
   $("#exPapeleria").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [90000000, 70000000] ,formatter: function(value) {
-    return numeral(value[0]).format('$ 0,0[.]00') + ' - '+numeral(value[1]).format('$ 0,0[.]00');
+    return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
   } });
   $("#exInfraestructura").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [90000000, 70000000] ,formatter: function(value) {
-    return numeral(value[0]).format('$ 0,0[.]00') + ' - '+numeral(value[1]).format('$ 0,0[.]00');
+    return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
   } });
-  $("#exOtros").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [90000000, 90000000] ,formatter: function(value) {
-    return numeral(value[0]).format('$ 0,0[.]00') + ' - '+numeral(value[1]).format('$ 0,0[.]00');
+  $("#exMobiliario").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [90000000, 70000000] ,formatter: function(value) {
+    return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+  } });
+  $("#exMateriales").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [90000000, 70000000] ,formatter: function(value) {
+    return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+  } });
+  $("#exDesarrollo").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [90000000, 70000000] ,formatter: function(value) {
+    return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+  } });
+  $("#exSalarios").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [90000000, 70000000] ,formatter: function(value) {
+    return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+  } });
+  $("#exExperimentacion").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [90000000, 70000000] ,formatter: function(value) {
+    return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+  } });
+  $("#exLicencias").slider({ id: "slider12c", step: 100000,min: 0, max: 100000000, range: true, value: [90000000, 90000000] ,formatter: function(value) {
+    return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
   } });
 
 }); // Close JQuery noConflict

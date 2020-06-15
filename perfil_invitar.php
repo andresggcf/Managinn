@@ -102,7 +102,7 @@
             <li class = "progreso-pasado">
               <div class ="circulo-pasado"><img src="img/iconos/Check-Icon.png" 
               style="height: 10px; margin-top: -5px;"></div>
-              <p class = "Texto-Progreso">Datos</p>
+              <p class = "Texto-Progreso"  style="color: #eb5757">Datos</p>
             </li>
             <li class = "progreso-actual">
               <div class ="circulo-actual"></div>

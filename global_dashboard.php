@@ -708,8 +708,8 @@
       /**
        * Variables para las metricas GLOBAL
        */
-      var escalamiento = "<?php echo $pro_exitosos?>%";
-      var tasa_conversion = "<?php echo $pro_lanzados?>%";
+      var escalamiento = "<?php echo number_format($pro_exitosos,1, ',', '.');?>%";
+      var tasa_conversion = "<?php echo number_format($pro_lanzados,1, ',', '.');?>%";
       var dias_activos = 20;
 
       var total_presupuesto_usado = '<?php $numero = 1500000;

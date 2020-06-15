@@ -5,6 +5,16 @@
   $correo = $_SESSION['email_post'];
   $rol = $_SESSION['role_post'];
 
+  require 'conexion.php';
+
+  $queryInduccion = "SELECT induccion, induccion_presupuesto FROM usuarios WHERE correo = '$correo' AND nombre = '$nombre'";
+  $resultado = mysqli_query($db, $queryInduccion);
+  $arregloInduccion = mysqli_fetch_array($resultado);
+
+  $_SESSION['induccion_presupuesto'] = $arregloInduccion['induccion_presupuesto'];
+
+  $induccion_pr = $_SESSION['induccion_presupuesto'];
+
   include("header.php");
   ?>
 
@@ -87,7 +97,7 @@
         style="margin:10px 0px 60px 100px;">
 
       <div class="d-flex flex-column align-items-center">
-        <a class = "Boton-a-Principal-Fondo-Blanco" href="presupuesto_informacion.php">Invitar personas</a>
+        <a class = "Boton-a-Principal-Fondo-Blanco" href="presupuesto_informacion2.php">Añadir información</a>
         <a class = "Boton-a-Principal-Sin-Fondo inline"  
             style="text-decoration: none; width: 190px; padding-left: 70px"
             name="btn_back"
@@ -99,6 +109,26 @@
       </div>
     </div>
   </div>
+
+  <script type="text/javascript">
+    var ind_pr = <?php echo $induccion_pr ?>;
+    console.log("usuario tuvo induccion presupuesto: " + ind_pr);
+
+    function loadPage(){
+      console.log ("loadPage()");
+      if (ind_pr == 0 )
+      {
+        console.log ("ind_pr = 0 ? :" + ind_pr);
+      }
+      else
+      {
+        console.log ("ind_pr = 1 ? :" + ind_pr);
+        window.location.href="presupuesto_panel_control.php"
+      }
+    }
+
+    loadPage();
+  </script>
 
 <?php
   include("footer.php");
