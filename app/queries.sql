@@ -67,3 +67,20 @@ PRIMARY KEY (`id`)) ENGINE = InnoDB;
 ALTER TABLE `usuarios` ADD 
 `induccion_personas` INT NOT NULL DEFAULT '0' AFTER `induccion_global`, 
 ADD `induccion_presupuesto` INT NOT NULL DEFAULT '0' AFTER `induccion_personas`;
+
+ALTER TABLE `proyecto` ADD `presupuesto_usado` INT(13) NOT NULL DEFAULT '0' AFTER `progreso`;
+
+ALTER TABLE `proyecto` ADD `investigacion_p` INT NOT NULL DEFAULT '0' AFTER `presupuesto_usado`, 
+ADD `investigacion_c` INT NOT NULL DEFAULT '0' AFTER `investigacion_p`, 
+ADD `definicion_p` INT NOT NULL DEFAULT '0' AFTER `investigacion_c`, 
+ADD `definicion_c` INT NOT NULL DEFAULT '0' AFTER `definicion_p`, 
+ADD `implementacion_p` INT NOT NULL DEFAULT '0' AFTER `definicion_c`, 
+ADD `implementacion_c` INT NOT NULL DEFAULT '0' AFTER `implementacion_p`, 
+ADD `correcion_p` INT NOT NULL DEFAULT '0' AFTER `implementacion_c`, 
+ADD `correcion_c` INT NOT NULL DEFAULT '0' AFTER `correcion_p`, 
+ADD `lanzamiento_p` INT NOT NULL DEFAULT '0' AFTER `correcion_c`, 
+ADD `lanzamiento_c` INT NOT NULL DEFAULT '0' AFTER `lanzamiento_p`;
+
+ALTER TABLE `proyecto` CHANGE `progreso` `progreso` INT(11) NOT NULL DEFAULT '0';
+
+ALTER TABLE `proyecto` ADD `etapa` VARCHAR(20) NOT NULL DEFAULT 'Investigacion' AFTER `presupuesto_usado`;

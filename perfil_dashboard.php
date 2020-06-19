@@ -137,29 +137,43 @@
                 <div class="progress-bar" role="progressbar" style="width: <?php echo $porcentajePr?>%; height: 30px; position: absolute;
                   background-color: #17AEBF !important" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                 </div>
-                <div class="progress-bar" role="progressbar" style="width: <?php echo $arregloProyecto['progreso']?>%; height: 30px; position: absolute;
-                  background-color: #FBD534 !important" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div id="barra-avance" class="progress-bar" role="progressbar" style="width: <?php echo $arregloProyecto['progreso']?>%; height: 30px; position: absolute;
+                background-color: <?php
+                if($porcentajePr-$arregloProyecto['progreso'] <= 5)
+                {
+                  echo "#30CF5D !important";
+                } 
+                else if ($porcentajePr-$arregloProyecto['progreso'] > 5 and $porcentajePr-$arregloProyecto['progreso'] <= 20)
+                {
+                  echo "#FBD534 !important";
+                }
+                else
+                {
+                  echo "#EB5757 !important";
+                }
+                ?>"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
               <div class="containter-estados row" style= "margin: 0">
                 <div class="col-sm-5">
-                  <div style="width: 20px; 
+                  <a id= "boton-avance" style="width: 20px; 
                     height: 20px; 
                     border-radius: 30px;
                     margin-top: 5px; 
-                    background-color: #FBD534;
-                    float: left;"></div>
-                  <p style="color: #FBD534;
-                    margin: 3px 0 0 25px;">Avance real: <span
+                    float: left;"
+                    href="cambio1.php?id=<?php echo $_GET['proyecto']?>"></a>
+                  <p id="percent-avance"style="margin: 3px 0 0 25px;">Avance real: <span
                       style="font-weight: 700"><?php echo $arregloProyecto['progreso']?>%</span></p>
                 </div>
                 <div class="col-sm-7">
-                  <div style="width: 20px; 
+                  <a style="width: 20px; 
                     height: 20px; 
                     border-radius: 30px; 
                     margin-top: 5px; 
                     background-color: #17AEBF;
-                    float: left;"></div>
+                    float: left;"
+                    href="cambio2.php?id=<?php echo $_GET['proyecto']?>"></a>
                    <p style="color: #17AEBF;
                     margin: 3px 0 0 25px;
                     ">Esperado: <span
@@ -176,7 +190,27 @@
                   <img src="img/iconos/icono-etapa.svg" alt="Dias activos" class="img_icons" 
                   style="margin-right: 15px;"> ETAPA ACTUAL
                 </h4>
-                <h2 style="color: white; margin-top: 20px; margin-left: 40%">Definición</h2>
+                <h2 style="color: white; margin-top: 20px; margin-left: 25%"><?php 
+                if($arregloProyecto['etapa']=="Investigacion")
+                {
+                  echo "Investigación";
+                }
+                else if ($arregloProyecto['etapa']=="Definicion")
+                {
+                  echo "Definición";
+                }
+                else if ($arregloProyecto['etapa']=="Implementacion")
+                {
+                  echo "Implementación";
+                }
+                else if ($arregloProyecto['etapa']=="Correcion")
+                {
+                  echo "Corrección";
+                }
+                else
+                {
+                  echo "Lanzamiento";
+                }?></h2>
               </div>
               <div class="col-sm-4" style="position:relative">
                 <img style="position: absolute; right: 0; bottom: 0px; height: 200px"
@@ -279,8 +313,8 @@
               </h4>
               <div style="margin-top: 20px;">
                 <div style="margin-left: 35px">
-                    <h1 style="margin-left: 45px"><strong style="color:#17AEBF">$ </strong> <?php echo number_format(rand(5000, $arregloProyecto['presupuesto_inicial']-($arregloProyecto['presupuesto_inicial']/3)), 0, ',', '.'); ?></h1>
-                    <h4 style="margin-left: 90px; font-weight: 300"><strong style="color:#17AEBF">de</strong> $ <?php echo number_format($arregloProyecto['presupuesto_inicial'], 0, ',', '.');?></h4>
+                    <h1 style="margin-left: 45px; letter-spacing:0.085em"><strong style="color:#17AEBF;">$ </strong> <?php echo number_format($arregloProyecto['presupuesto_usado'], 0, ',', '.'); ?></h1>
+                    <h4 style="margin-left: 90px; font-weight: 300; letter-spacing:0.085em"><strong style="color:#17AEBF">de</strong> $ <?php echo number_format($arregloProyecto['presupuesto_inicial'], 0, ',', '.');?></h4>
                   </div>
               </div>
             </div>
@@ -309,7 +343,29 @@
                 </div>
                 <div class="col-sm-4">
                   <div class="card-azul">
-                    <h2 class= "text-center" style="color:white">2/10</h2>
+                    <h2 class= "text-center" style="color:white">
+                <?php
+                if($arregloProyecto['etapa']=="Investigacion")
+                {
+                  echo 2;
+                }
+                else if ($arregloProyecto['etapa']=="Definicion")
+                {
+                  echo 4;
+                }
+                else if ($arregloProyecto['etapa']=="Implementacion")
+                {
+                  echo 6;
+                }
+                else if ($arregloProyecto['etapa']=="Correcion")
+                {
+                  echo 8;
+                }
+                else
+                {
+                  echo 10;
+                }
+                ?>/10</h2>
                     <p class= "text-center" style="color:white; margin-bottom: 0; font-size: 10pt">NIVEL DE<br>IMPLEMENTACION</p>
                   </div>
                 </div>
@@ -369,14 +425,54 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
   <script type="text/javascript">
+    function colorpr()
+    {
+      var diferencia = <?php echo $porcentajePr?> - <?php echo $arregloProyecto['progreso']?>;
+      if(diferencia <= 5)
+      {
+        //verde
+        console.log("menor a 5");
+        document.getElementById("percent-avance").style.color = "#30CF5D";
+        document.getElementById("boton-avance").style.backgroundColor="#30CF5D";
+      }
+      else if (diferencia > 5 && diferencia <= 20)
+      {
+        //amarillo
+        console.log("entre 6 y 20");
+        document.getElementById("percent-avance").style.color = "#FBD534";
+        document.getElementById("boton-avance").style.backgroundColor="#FBD534";
+      }
+      else
+      {
+        //rojo
+        console.log("mayor a 20");
+        document.getElementById("percent-avance").style.color = "#EB5757";
+        document.getElementById("boton-avance").style.backgroundColor="#EB5757";
+      }
+    }
+
+
     //Grafica de proyectos
     var ctx4 = document.getElementById('chartProyecto');
     var blue = "#17AEBF";
     var blue_alpha = "#17AEBF7A";
     var red = "#EB5757";
     var red_alpha = "#EB57577A";
-    var datapr = [33, 15, 0, 0, 0];
-    var datapr2 = [25, 7, 0, 0, 0];
+    var datapr = [
+      <?php echo $arregloProyecto['investigacion_p']?>, 
+      <?php echo $arregloProyecto['definicion_p']?>, 
+      <?php echo $arregloProyecto['implementacion_p']?>, 
+      <?php echo $arregloProyecto['correccion_p']?>, 
+      <?php echo $arregloProyecto['lanzamiento_p']?>
+    ];
+    var datapr2 = [
+      <?php echo $arregloProyecto['investigacion_c']?>, 
+      <?php echo $arregloProyecto['definicion_c']?>, 
+      <?php echo $arregloProyecto['implementacion_c']?>, 
+      <?php echo $arregloProyecto['correccion_c']?>, 
+      <?php echo $arregloProyecto['lanzamiento_c']?>
+    ];
+
     if(ctx4){
       var chartProyecto = new Chart(ctx4,{
         type: 'bar',
@@ -460,5 +556,7 @@
         }
       });
     }
+
+    colorpr();
   </script>
 </body>

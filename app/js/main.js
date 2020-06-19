@@ -309,32 +309,7 @@ jQuery(document).ready(function ($) {
         nombre:'Paula Muñoz Vergara',
         cargo:'Desarrollo',
         img:'img/iconos/avatar_mujer.svg'
-      },
-      {
-        nombre:'Jorge Castaño Valencia',
-        cargo:'Recursos',
-        img:'img/iconos/avatar_hombre.svg'
-      },
-      {
-        nombre:'Paula Muñoz Vergara',
-        cargo:'Desarrollo',
-        img:'img/iconos/avatar_mujer.svg'
-      },
-      {
-        nombre:'Jorge Castaño Valencia',
-        cargo:'Recursos',
-        img:'img/iconos/avatar_hombre.svg'
-      },
-      {
-        nombre:'Paula Muñoz Vergara',
-        cargo:'Desarrollo',
-        img:'img/iconos/avatar_mujer.svg'
-      },
-      {
-        nombre:'Jorge Castaño Valencia',
-        cargo:'Recursos',
-        img:'img/iconos/avatar_hombre.svg'
-      },
+      }
     ],
     'medio':[],
     'alto':[
