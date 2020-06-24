@@ -103,14 +103,7 @@
   </div>
 
 
-  <div class="Blanco-Fondo" style="padding-left: 240px; background-image: <?php
-  if ($_SESSION['induccion'] == 0){
-    echo "none;";
-  }
-  else if ($_SESSION['induccion'] == 1){
-    echo "url('../img/fondos/fondo.svg');";
-  }
-  ?>"> 
+  <div class="Blanco-Fondo" style="padding-left: 240px;"> 
 
     <!--Ventana cuando no hay proyectos-->
     <div id="Sin-Proyecto">
@@ -125,11 +118,12 @@
         style="margin:10px 0px 60px 55px;">
 
       <div>
-        <button class = "Boton-a-Principal-Fondo-Blanco" 
+        <a class = "Boton-a-Principal-Fondo-Blanco" 
                 name = "Boton-Proyecto" 
-                id = "Boton-Crear-Proyecto"
+                id = "Boton-Crear-Proyecto-1"
                 style = "max-width: 210px; margin-left: 140px;"
-                >Crear un Proyecto</button>
+                href="perfil_crear_pr.php"
+                >Crear un Proyecto</a>
 
         <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
                 style = "padding: 15px 10px; max-width: 190px"
@@ -319,7 +313,7 @@
      <div class = "Contenedor-Info-Proyectos" id="Induc-Proyecto"> 
       <p class = "Titulo-Dashboard">Proyectos en Curso (0)<p>
         <div class = "col-sm-3" style="float:left">
-          <button class = "Btn-Add-Proyecto" id="Boton-Crear-Proyecto-3">+</button>
+          <button class = "Btn-Add-Proyecto" id="Boton-Crear-Proyecto-3" >+</button>
         </div>
         <div class = "col-sm-9" style="float:left; height: 95%; position:relative">
           <div class = "contenedor-Induc-Proyecto">
@@ -386,10 +380,7 @@
 
         document.getElementById('Boton-Crear-Proyecto-3').onclick = function()
         {
-          document.getElementById('Sin-Proyecto').style.display = 'none';
-          document.getElementById('Crear-Proyecto').style.display = 'block';
-          document.getElementById('Cont-Proyecto').style.display = 'none';
-          document.getElementById('Induc-Proyecto').style.display = 'none';
+          window.location.href = "perfil_crear_pr.php";
         }
 
         document.getElementById('Boton-Cancelar-Creacion').onclick = function()
@@ -411,10 +402,7 @@
 
         document.getElementById('Boton-Crear-Proyecto-2').onclick = function()
         {
-          document.getElementById('Sin-Proyecto').style.display = 'none';
-          document.getElementById('Crear-Proyecto').style.display = 'block';
-          document.getElementById('Cont-Proyecto').style.display = 'none';
-          document.getElementById('Induc-Proyecto').style.display = 'none';
+          window.location.href = "perfil_crear_pr.php";
         }
 
         document.getElementById('Boton-Cancelar-Creacion').onclick = function()

@@ -44,7 +44,7 @@
         <img src="img/iconos/managinn.png" width="180px" alt="" class=""
         style="margin-left:30px; margin-bottom: 110px">
         <div class = "Botones-Perfil">
-          <a class="Icono-Menu-Perfil">
+          <a class="Icono-Menu-Perfil" href = "perfil.php">
             <img src="./img/iconos/Etiqueta-Dashboard.svg" alt="Dashboard" height="25px">
           </a>
           <a class="Icono-Menu-Perfil" href = "global.php">
