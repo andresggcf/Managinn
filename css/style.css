@@ -647,11 +647,12 @@ button:focus {
   height: 180px;
   margin-right: 10px;
   margin-left: 10px;
-  padding: 20px 20px 20px 20px;
+  padding: 75px 20px 20px 50px;
   box-shadow: 7px 7px 10px rgba(11, 16, 40, 0.25), -7px -7px 10px rgba(23, 32, 79, 0.5), inset 4px 4px 10px rgba(23, 32, 79, 0.5);
   font-size: 16px;
   border: none;
   border-radius: 4px;
+  font-weight: 900;
 }
 
 .panel_control1 .Contenedor-Menu {

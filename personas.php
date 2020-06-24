@@ -121,7 +121,7 @@
       else
       {
         console.log ("ind_per = 1 ? :" + ind_per);
-        window.location.href="personas_panel_control.php"
+        window.location.href="personas_panel_control.php?rol=Facilitador"
       }
     }
 

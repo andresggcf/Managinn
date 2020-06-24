@@ -84,3 +84,16 @@ ADD `lanzamiento_c` INT NOT NULL DEFAULT '0' AFTER `lanzamiento_p`;
 ALTER TABLE `proyecto` CHANGE `progreso` `progreso` INT(11) NOT NULL DEFAULT '0';
 
 ALTER TABLE `proyecto` ADD `etapa` VARCHAR(20) NOT NULL DEFAULT 'Investigacion' AFTER `presupuesto_usado`;
+
+ALTER TABLE `usuarios` ADD `rendimiento` VARCHAR(13) NOT NULL DEFAULT 'mejora' AFTER `induccion_presupuesto`;
+
+ALTER TABLE `data_presupuesto` ADD `p_papeleria` INT NOT NULL DEFAULT '0' AFTER `desarrollo`, 
+ADD `p_capacitaciones` INT NOT NULL DEFAULT '0' AFTER `p_papeleria`, 
+ADD `p_infraestructura` INT NOT NULL DEFAULT '0' AFTER `p_capacitaciones`, 
+ADD `p_salarios` INT NOT NULL DEFAULT '0' AFTER `p_infraestructura`, 
+ADD `p_licencias` INT NOT NULL DEFAULT '0' AFTER `p_salarios`, 
+ADD `p_mobiliario` INT NOT NULL DEFAULT '0' AFTER `p_licencias`, 
+ADD `p_experimentacion` INT NOT NULL DEFAULT '0' AFTER `p_mobiliario`,
+ADD `p_materiales` INT NOT NULL DEFAULT '0' AFTER `p_experimentacion`, 
+ADD `p_desarrollo` INT NOT NULL DEFAULT '0' AFTER `p_materiales`, 
+ADD `pr_ingresado` INT(1) NOT NULL DEFAULT '0' AFTER `p_desarrollo`;

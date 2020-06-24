@@ -12,6 +12,20 @@
   $resultado = mysqli_query($db, $queryInduccion);
   $arreglo= mysqli_fetch_array($resultado);
 
+  $queryCategorias = "SELECT * FROM data_presupuesto dp
+  WHERE dp.director = (
+      SELECT u.id FROM usuarios u 
+      WHERE u.rol = 'Director' 
+      AND u.id 
+      IN (
+        SELECT eq.id_usuario FROM equipos eq 
+        WHERE eq.id_proyecto IN (
+          SELECT e.id_proyecto FROM equipos e 
+          WHERE e.id_usuario = ".$usuario_id.")));";
+
+  $resultado2 = mysqli_query($db, $queryCategorias);
+  $arreglo_presupuesto= mysqli_fetch_array($resultado2);
+
   include("header.php");
   ?>
 
@@ -183,11 +197,12 @@
             <h4 class="uppercase"><img src="img/iconos/categorias_presupeusto.png" alt="Metricas" class="img_icons">Categorias</h4>
             <div class="row pt-4 categorias_presupuesto">
               <?php
-              if($arreglo['papeleria'] == 'on')
-              {
+              if($arreglo_presupuesto['pr_ingresado']==0){
+                if($arreglo['papeleria'] == 'on')
+                {
               ?>
                 <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
-                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" style="box-shadow: none;">
+                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;">
                     <img class="mt-auto" src="img/iconos/papeleria.svg" alt="capacitaciones">
                     <p class="text-center mt-auto mb-0">Papeleria</p>
                   </a>
@@ -199,14 +214,11 @@
                 </div>
               <?php
               }
-              ?>
-
-              <?php
               if($arreglo['capacitaciones'] == 'on')
               {
               ?>
                 <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
-                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" style="box-shadow: none;">
+                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;">
                     <img class="mt-auto" src="img/iconos/capacitaciones_cat.svg" alt="capacitaciones">
                     <p class="text-center mt-auto mb-0">Capacitaciones</p>
                   </a>
@@ -218,14 +230,11 @@
                 </div>
               <?php
               }
-              ?>
-
-              <?php
               if($arreglo['infraestructura'] == 'on')
               {
               ?>
                 <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
-                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" style="box-shadow: none;">
+                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;">
                     <img class="mt-auto" src="img/iconos/infraestructura.svg" alt="capacitaciones">
                     <p class="text-center mt-auto mb-0">Infraestructura</p>
                   </a>
@@ -237,14 +246,11 @@
                 </div>
               <?php
               }
-              ?>
-
-              <?php
               if($arreglo['salario'] == 'on')
               {
               ?>
                 <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
-                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" style="box-shadow: none;">
+                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;">
                     <img class="mt-auto" src="img/iconos/salarios.svg" alt="capacitaciones">
                     <p class="text-center mt-auto mb-0">Salario</p>
                   </a>
@@ -256,14 +262,11 @@
                 </div>
               <?php
               }
-              ?>
-
-              <?php
               if($arreglo['licencias'] == 'on')
               {
               ?>
                 <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
-                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" style="box-shadow: none;">
+                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;">
                     <img class="mt-auto" src="img/iconos/licencia.svg" alt="capacitaciones">
                     <p class="text-center mt-auto mb-0">Licencias</p>
                   </a>
@@ -275,14 +278,11 @@
                 </div>
               <?php
               }
-              ?>
-
-              <?php
               if($arreglo['mobiliario'] == 'on')
               {
               ?>
                 <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
-                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" style="box-shadow: none;">
+                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;">
                     <img class="mt-auto" src="img/iconos/mobiliario.svg" alt="capacitaciones">
                     <p class="text-center mt-auto mb-0">Mobiliario</p>
                   </a>
@@ -294,14 +294,11 @@
                 </div>
               <?php
               }
-              ?>
-
-              <?php
               if($arreglo['experimentacion'] == 'on')
               {
               ?>
                 <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
-                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" style="box-shadow: none;">
+                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;">
                     <img class="mt-auto" src="img/iconos/experimentacion.svg" alt="capacitaciones">
                     <p class="text-center mt-auto mb-0">Experimentación</p>
                   </a>
@@ -313,14 +310,11 @@
                 </div>
               <?php
               }
-              ?>
-
-              <?php
               if($arreglo['materiales'] == 'on')
               {
               ?>
                 <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
-                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" style="box-shadow: none;">
+                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;">
                     <img class="mt-auto" src="img/iconos/materiales.svg" alt="capacitaciones">
                     <p class="text-center mt-auto mb-0">Materiales</p>
                   </a>
@@ -332,14 +326,11 @@
                 </div>
               <?php
               }
-              ?>
-
-              <?php
               if($arreglo['desarrollo'] == 'on')
               {
               ?>
                 <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
-                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" style="box-shadow: none;">
+                  <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;">
                     <img class="mt-auto" src="img/iconos/desarrollo.svg" alt="capacitaciones">
                     <p class="text-center mt-auto mb-0">Desarrollo</p>
                   </a>
@@ -350,14 +341,237 @@
                   </div>
                 </div>
               <?php
+                }
+              }
+
+              else if($arreglo_presupuesto['pr_ingresado']==1)
+              {
+                if($arreglo['papeleria'] == 'on')
+                {
+              ?>
+              <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
+                <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;padding-top: 10px !important;padding-left: 10px !important;padding-right: 10px !important;">
+                  <img class="mt-auto" src="img/iconos/papeleria.svg" style="width: 24px;padding: 0px 0px;margin: 0px 0px 0px 10px!important;" alt="capacitaciones">
+                  <p class="mt-auto mb-0" style="font-weight: bold; font-size: 11pt; margin-left: 10px; letter-spacing:0.03rem ">$ 
+                  <?php
+                    echo number_format(rand(10000,$arreglo_presupuesto['p_papeleria']/2), 0, ',', '.');
+                   ?></p>
+                  <p class="mb-0" style="font-size: 8pt; margin-left: 10px">de $<?php echo number_format($arreglo_presupuesto['p_papeleria'], 0, ',', '.');?></p>
+                  <p class="text-center mt-auto mb-0" style="font-weight: bold">Papelería</p>
+                </a>
+                <div class="icono_mas">
+                  <a href="#">
+                    <img src="img/iconos/flecha_derecha.svg" alt="">
+                  </a>
+                </div>
+              </div>
+              <?php 
+                }
+
+                if($arreglo['capacitaciones'] == 'on')
+                {
+              ?>
+              <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
+                <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;padding-top: 10px !important;padding-left: 10px !important;padding-right: 10px !important;">
+                  <img class="mt-auto" src="img/iconos/capacitaciones_cat.svg" style="width: 24px;padding: 0px 0px;margin: 0px 0px 0px 10px!important;" alt="capacitaciones">
+                  <p class="mt-auto mb-0" style="font-weight: bold; font-size: 11pt; margin-left: 10px; letter-spacing:0.03rem ">$ 
+                  <?php
+                    echo number_format(rand(10000,$arreglo_presupuesto['p_capacitaciones']/2), 0, ',', '.');
+                   ?></p>
+                  <p class="mb-0" style="font-size: 8pt; margin-left: 10px">de $<?php echo number_format($arreglo_presupuesto['p_capacitaciones'], 0, ',', '.');?></p>
+                  <p class="text-center mt-auto mb-0" style="font-weight: bold">Capacitaciones</p>
+                </a>
+                <div class="icono_mas">
+                  <a href="#">
+                    <img src="img/iconos/flecha_derecha.svg" alt="">
+                  </a>
+                </div>
+              </div>
+              <?php
+                }
+              ?>
+
+              <?php
+                if($arreglo['infraestructura'] == 'on')
+                {
+              ?>
+              <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
+                <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;padding-top: 10px !important;padding-left: 10px !important;padding-right: 10px !important;">
+                  <img class="mt-auto" src="img/iconos/infraestructura.svg" style="width: 24px;padding: 0px 0px;margin: 0px 0px 0px 10px!important;" alt="capacitaciones">
+                  <p class="mt-auto mb-0" style="font-weight: bold; font-size: 11pt; margin-left: 10px; letter-spacing:0.03rem ">$ 
+                  <?php
+                    echo number_format(rand(10000,$arreglo_presupuesto['p_infraestructura']/2), 0, ',', '.');
+                   ?></p>
+                  <p class="mb-0" style="font-size: 8pt; margin-left: 10px">de $<?php echo number_format($arreglo_presupuesto['p_infraestructura'], 0, ',', '.');?></p>
+                  <p class="text-center mt-auto mb-0" style="font-weight: bold">Infraestructura</p>
+                </a>
+                <div class="icono_mas">
+                  <a href="#">
+                    <img src="img/iconos/flecha_derecha.svg" alt="">
+                  </a>
+                </div>
+              </div>
+              <?php
+                }
+              ?>
+
+              <?php
+                if($arreglo['salario'] == 'on')
+                {
+              ?>
+              <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
+                <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;padding-top: 10px !important;padding-left: 10px !important;padding-right: 10px !important;">
+                  <img class="mt-auto" src="img/iconos/salarios.svg" style="width: 24px;padding: 0px 0px;margin: 0px 0px 0px 10px!important;" alt="capacitaciones">
+                  <p class="mt-auto mb-0" style="font-weight: bold; font-size: 11pt; margin-left: 10px; letter-spacing:0.03rem ">$ 
+                  <?php
+                    echo number_format(rand(10000,$arreglo_presupuesto['p_salarios']/2), 0, ',', '.');
+                   ?></p>
+                  <p class="mb-0" style="font-size: 8pt; margin-left: 10px">de $<?php echo number_format($arreglo_presupuesto['p_salarios'], 0, ',', '.');?></p>
+                  <p class="text-center mt-auto mb-0" style="font-weight: bold">Salarios</p>
+                </a>
+                <div class="icono_mas">
+                  <a href="#">
+                    <img src="img/iconos/flecha_derecha.svg" alt="">
+                  </a>
+                </div>
+              </div>
+              <?php
+                }
+              ?>
+
+              <?php
+                if($arreglo['licencias'] == 'on')
+                {
+              ?>
+              <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
+                <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;padding-top: 10px !important;padding-left: 10px !important;padding-right: 10px !important;">
+                  <img class="mt-auto" src="img/iconos/licencia.svg" style="width: 24px;padding: 0px 0px;margin: 0px 0px 0px 10px!important;" alt="capacitaciones">
+                  <p class="mt-auto mb-0" style="font-weight: bold; font-size: 11pt; margin-left: 10px; letter-spacing:0.03rem ">$ 
+                  <?php
+                    echo number_format(rand(10000,$arreglo_presupuesto['p_licencias']/2), 0, ',', '.');
+                   ?></p>
+                  <p class="mb-0" style="font-size: 8pt; margin-left: 10px">de $<?php echo number_format($arreglo_presupuesto['p_licencias'], 0, ',', '.');?></p>
+                  <p class="text-center mt-auto mb-0" style="font-weight: bold">Licencias</p>
+                </a>
+                <div class="icono_mas">
+                  <a href="#">
+                    <img src="img/iconos/flecha_derecha.svg" alt="">
+                  </a>
+                </div>
+              </div>
+              <?php
+                }
+              ?>
+
+              <?php
+                if($arreglo['mobiliario'] == 'on')
+                {
+              ?>
+              <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
+                <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;padding-top: 10px !important;padding-left: 10px !important;padding-right: 10px !important;">
+                  <img class="mt-auto" src="img/iconos/mobiliario.svg" style="width: 24px;padding: 0px 0px;margin: 0px 0px 0px 10px!important;" alt="capacitaciones">
+                  <p class="mt-auto mb-0" style="font-weight: bold; font-size: 11pt; margin-left: 10px; letter-spacing:0.03rem ">$ 
+                  <?php
+                    echo number_format(rand(10000,$arreglo_presupuesto['p_mobiliario']/2), 0, ',', '.');
+                   ?></p>
+                  <p class="mb-0" style="font-size: 8pt; margin-left: 10px">de $<?php echo number_format($arreglo_presupuesto['p_mobiliario'], 0, ',', '.');?></p>
+                  <p class="text-center mt-auto mb-0" style="font-weight: bold">Mobiliario</p>
+                </a>
+                <div class="icono_mas">
+                  <a href="#">
+                    <img src="img/iconos/flecha_derecha.svg" alt="">
+                  </a>
+                </div>
+              </div>
+              <?php
+                }
+              ?>
+
+<?php
+                if($arreglo['experimentacion'] == 'on')
+                {
+              ?>
+              <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
+                <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;padding-top: 10px !important;padding-left: 10px !important;padding-right: 10px !important;">
+                  <img class="mt-auto" src="img/iconos/experimentacion.svg" style="width: 24px;padding: 0px 0px;margin: 0px 0px 0px 10px!important;" alt="capacitaciones">
+                  <p class="mt-auto mb-0" style="font-weight: bold; font-size: 11pt; margin-left: 10px; letter-spacing:0.03rem ">$ 
+                  <?php
+                    echo number_format(rand(10000,$arreglo_presupuesto['p_experimentacion']/2), 0, ',', '.');
+                   ?></p>
+                  <p class="mb-0" style="font-size: 8pt; margin-left: 10px">de $<?php echo number_format($arreglo_presupuesto['p_experimentacion'], 0, ',', '.');?></p>
+                  <p class="text-center mt-auto mb-0" style="font-weight: bold">Experimentación</p>
+                </a>
+                <div class="icono_mas">
+                  <a href="#">
+                    <img src="img/iconos/flecha_derecha.svg" alt="">
+                  </a>
+                </div>
+              </div>
+              <?php
+                }
+              ?>
+
+<?php
+                if($arreglo['materiales'] == 'on')
+                {
+              ?>
+              <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
+                <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;padding-top: 10px !important;padding-left: 10px !important;padding-right: 10px !important;">
+                  <img class="mt-auto" src="img/iconos/materiales.svg" style="width: 24px;padding: 0px 0px;margin: 0px 0px 0px 10px!important;" alt="capacitaciones">
+                  <p class="mt-auto mb-0" style="font-weight: bold; font-size: 11pt; margin-left: 10px; letter-spacing:0.03rem ">$ 
+                  <?php
+                    echo number_format(rand(10000,$arreglo_presupuesto['p_materiales']/2), 0, ',', '.');
+                   ?></p>
+                  <p class="mb-0" style="font-size: 8pt; margin-left: 10px">de $<?php echo number_format($arreglo_presupuesto['p_materiales'], 0, ',', '.');?></p>
+                  <p class="text-center mt-auto mb-0" style="font-weight: bold">Materiales</p>
+                </a>
+                <div class="icono_mas">
+                  <a href="#">
+                    <img src="img/iconos/flecha_derecha.svg" alt="">
+                  </a>
+                </div>
+              </div>
+              <?php
+                }
+              ?>
+
+<?php
+                if($arreglo['desarrollo'] == 'on')
+                {
+              ?>
+              <div class="col-lg-6 col-xl-3" style="margin-bottom: 15px;">
+                <a href="#" class="bg-blue categoria px-4 pt-4 pb-2 box-shadow d-flex flex-column justify-content-center" data-toggle="modal" data-target="#modalPresupuesto" style="box-shadow: none;padding-top: 10px !important;padding-left: 10px !important;padding-right: 10px !important;">
+                  <img class="mt-auto" src="img/iconos/desarrollo.svg" style="width: 24px;padding: 0px 0px;margin: 0px 0px 0px 10px!important;" alt="capacitaciones">
+                  <p class="mt-auto mb-0" style="font-weight: bold; font-size: 11pt; margin-left: 10px; letter-spacing:0.03rem ">$ 
+                  <?php
+                    echo number_format(rand(10000,$arreglo_presupuesto['p_desarrollo']/2), 0, ',', '.');
+                   ?></p>
+                  <p class="mb-0" style="font-size: 8pt; margin-left: 10px">de $<?php echo number_format($arreglo_presupuesto['p_desarrollo'], 0, ',', '.');?></p>
+                  <p class="text-center mt-auto mb-0" style="font-weight: bold">Desarrollo</p>
+                </a>
+                <div class="icono_mas">
+                  <a href="#">
+                    <img src="img/iconos/flecha_derecha.svg" alt="">
+                  </a>
+                </div>
+              </div>
+              <?php
+                }
+              ?>
+
+              
+
+              <?php
               }
               ?>
+
 
               <div class="col-lg-6 col-xl-3 d-flex" style="margin-bottom: 15px;">
                 <a class="border-radius d-flex flex-column justify-content-center align-items-center more_cat" href="#">
                   +
                 </a>
               </div>
+
             </div>
           </div>
         </div>
@@ -613,12 +827,167 @@
           </div>
       </div>
     </div>
-    <div class="btn-flotante"  data-toggle="modal" data-target="#modalPresupuesto">
+    <div class="btn-flotante"  data-toggle="modal" data-target="#Modal-Export-Presupuesto">
       <img src="img/iconos/boton_reporte.svg" alt="Descargar Reporte">
     </div>
   </div>
 
 
+<!--modal export-->
+  <div class="modal fade" 
+    id="Modal-Export-Presupuesto" 
+    tabindex="-1" 
+    role="dialog" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    
+    <div class="modal-dialog" role="document" style="max-width:530px !important">
+      <div class="modal-content" style="height: 500px; max-width:530px">
+        <div class="modal-header" 
+          style = "padding-bottom: 20px !important;padding-left: 110px !important;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div style="
+            margin-bottom: 10px;
+            margin-top: -25px; 
+            height:35px;">
+              <img src="img/iconos/Icono-Export.png" style="margin-left: 80px;width:30px;float:left;margin-right: 20px;">
+              <h5
+                style="color:#eb5757; font-size: 20pt; float: left;">Generar Reporte</h5>
+          </div>
+          <p>Selecciona los ítems que quieres<br>incluir en este reporte.</p>
+        </div>
+        <form class="form-export-global" action="con_pdf_global.php" method = "post">
+          <div class="modal-body">
+            <div class="row" style="margin-top:10px">
+
+              <div class="column" style=" width:50%; padding-left: 20px; height:200px">
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="escalamiento_check"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="escalamiento_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Presupuesto Gastado</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="tasa_check"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="tasa_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Alcance</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="dias_check"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="dias_act_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Coste</label>
+                </div>
+              </div>
+
+              <div class="column" style="height:200px; width:50%; padding-left: 20px">
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="personas_check"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="personas_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Evaluacion de Innovacion</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="presupuesto_check"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="presupuesto_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Calidad</label>
+                </div>
+
+                <div class="form-check" style="text-align: left; margin-bottom: 10px">
+                  <input type="checkbox" class="form-check-input" id="vlr_port_check"
+                   style="width: 20px !important;
+                      height: 20px !important;
+                      background: #F6F7F9 !important;
+                      box-shadow: inset 2px 2px 5px rgba(55, 84, 170, 0.25), 
+                        inset -2px -2px 5px #FFFFFF !important;
+                      border-radius: 6px !important;"
+                    name="vlr_portafolio_post">
+                  <label 
+                    class="form-check-label" 
+                    for="fechaCheck"
+                    style="font-weight: 700; font-size: 16pt; margin-left: 15px;">Valor del Portafolio</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="modal-footer" style="border-top: none; justify-content: center;">
+            <div>
+              <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                      name = "Boton-Proyecto" 
+                      id = "Boton-Omitir-Preferencias"
+                      href="presupuesto.php"
+                      style = "max-width: 180px"
+                      data-dismiss="modal"
+                      >Cancelar</a>
+            </div>
+            <div>
+              <button class = "Boton-a-Principal-Fondo-Blanco" 
+                      name = "Boton-PDF" 
+                      id = "Boton-Generar-PDF"
+                      style = "max-width: 190px"
+                      type="submit" 
+                      >Generar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--modal categorias-->
 <div class="modal fade" 
 id="modalPresupuesto" 
 tabindex="-1" role="dialog" 
@@ -626,13 +995,16 @@ aria-labelledby="modalPresupuestoLabel"
 aria-hidden="true">
   <div class="modal-dialog  modal-xl" role="document" style="width: 1100px !important; max-width: 1100px !important">
     <div class="modal-content" style="width: 1100px">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalPresupuestoLabel">
-          <img src="img/iconos/categoria_presupuesto.png" alt=""> Categorías
-        </h5>
+      <div class="modal-header" style="padding-bottom: 0px !important">
+        
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+      </div>
+      <div style="width: 100%;height: 60px;">
+        <h5 class="modal-title" id="modalPresupuestoLabel">
+          <img src="img/iconos/categoria_presupuesto.png" alt=""> Categorías
+        </h5>
       </div>
 
       <div class="modal-body">
@@ -646,14 +1018,11 @@ aria-hidden="true">
               <div class="col-xl-2 col-lg-12">
                 <span id="disponible">Disponible</span>
               </div>
-              <div style="margin-left: 40px;">
-                <span id="no_disponible">No disponible</span>
-              </div>
             </div>
           </div>
         </div>
 
-        <form action="#" class="form_download m-5">
+        <form class="form_download m-5" action="con_presupuesto_cat.php" method = "post">
           <div class="row justify-content-center slider_presupuesto">
 
             <?php
@@ -666,7 +1035,7 @@ aria-hidden="true">
             </div>
             <div class="col-9">
               <div class="form-group capacitaciones_presupuesto d-flex flex-row align-items-center">
-                <span class="min_valor">$0</span><input id="exCapacitaciones" data-slider-handle="custom" type="text"/><span class="max_valor">$
+                <span class="min_valor">$0</span><input id="exCapacitaciones" data-slider-handle="custom" type="text" name="capacitaciones_post"/><span class="max_valor">$
                   <?php echo number_format($arreglo['presupuesto_act'], 0, ',', '.');
                   ?></span>
               </div>
@@ -685,7 +1054,9 @@ aria-hidden="true">
             </div>
             <div class="col-9">
               <div class="form-group papeleria_presupuesto d-flex flex-row align-items-center">
-                <span class="min_valor">$0</span><input id="exPapeleria" data-slider-handle="custom" type="text"/><span class="max_valor">$
+                <span class="min_valor">$0</span>
+                  <input id="exPapeleria" data-slider-handle="custom" type="text" name="papeleria_post"/>
+                <span class="max_valor">$
                 <?php echo number_format($arreglo['presupuesto_act'], 0, ',', '.');
                   ?>
                 </span>
@@ -706,7 +1077,7 @@ aria-hidden="true">
             </div>
             <div class="col-9">
               <div class="form-group infraestructura_presupuesto d-flex flex-row align-items-center">
-                <span class="min_valor">$0</span><input id="exInfraestructura" data-slider-handle="custom" type="text"/><span class="max_valor">$
+                <span class="min_valor">$0</span><input id="exInfraestructura" data-slider-handle="custom" type="text" name="infraestructura_post"/><span class="max_valor">$
                 <?php echo number_format($arreglo['presupuesto_act'], 0, ',', '.');?>
                 </span>
               </div>
@@ -725,7 +1096,7 @@ aria-hidden="true">
             </div>
             <div class="col-9">
               <div class="form-group mobiliario_presupuesto d-flex flex-row align-items-center">
-                <span class="min_valor">$0</span><input id="exMobiliario" data-slider-handle="custom" type="text"/><span class="max_valor">$
+                <span class="min_valor">$0</span><input id="exMobiliario" data-slider-handle="custom" type="text" name="mobiliario_post"/><span class="max_valor">$
                   <?php echo number_format($arreglo['presupuesto_act'], 0, ',', '.');
                   ?></span>
               </div>
@@ -744,7 +1115,7 @@ aria-hidden="true">
             </div>
             <div class="col-9">
               <div class="form-group materiales_presupuesto d-flex flex-row align-items-center">
-                <span class="min_valor">$0</span><input id="exMateriales" data-slider-handle="custom" type="text"/><span class="max_valor">$
+                <span class="min_valor">$0</span><input id="exMateriales" data-slider-handle="custom" type="text" name="materiales_post"/><span class="max_valor">$
                 <?php echo number_format($arreglo['presupuesto_act'], 0, ',', '.');
                   ?>
                 </span>
@@ -764,7 +1135,7 @@ aria-hidden="true">
             </div>
             <div class="col-9">
               <div class="form-group desarrollo_presupuesto d-flex flex-row align-items-center">
-                <span class="min_valor">$0</span><input id="exDesarrollo" data-slider-handle="custom" type="text"/><span class="max_valor">$
+                <span class="min_valor">$0</span><input id="exDesarrollo" data-slider-handle="custom" type="text" name="desarrollo_post"/><span class="max_valor">$
                 <?php echo number_format($arreglo['presupuesto_act'], 0, ',', '.');
                   ?>
                 </span>
@@ -784,7 +1155,7 @@ aria-hidden="true">
             </div>
             <div class="col-9">
               <div class="form-group salarios_presupuesto d-flex flex-row align-items-center">
-                <span class="min_valor">$0</span><input id="exSalarios" data-slider-handle="custom" type="text"/><span class="max_valor">$
+                <span class="min_valor">$0</span><input id="exSalarios" data-slider-handle="custom" type="text" name="salario_post"/><span class="max_valor">$
                 <?php echo number_format($arreglo['presupuesto_act'], 0, ',', '.');
                   ?>
                 </span>
@@ -805,7 +1176,7 @@ aria-hidden="true">
             </div>
             <div class="col-9">
               <div class="form-group licencias_presupuesto d-flex flex-row align-items-center">
-                <span class="min_valor">$0</span><input id="exLicencias" data-slider-handle="custom" type="text"/><span class="max_valor">$
+                <span class="min_valor">$0</span><input id="exLicencias" data-slider-handle="custom" type="text" name="licencias_post"/><span class="max_valor">$
                 <?php echo number_format($arreglo['presupuesto_act'], 0, ',', '.');
                   ?>
                 </span>
@@ -825,7 +1196,7 @@ aria-hidden="true">
             </div>
             <div class="col-9">
               <div class="form-group experimentacion_presupuesto d-flex flex-row align-items-center">
-                <span class="min_valor">$0</span><input id="exExperimentacion" data-slider-handle="custom" type="text"/><span class="max_valor">$
+                <span class="min_valor">$0</span><input id="exExperimentacion" data-slider-handle="custom" type="text" name="experimentacion_post"/><span class="max_valor">$
                 <?php echo number_format($arreglo['presupuesto_act'], 0, ',', '.');
                   ?>
                 </span>
@@ -847,7 +1218,7 @@ aria-hidden="true">
             </div>
             <div>
               <button class = "Boton-a-Principal-Fondo-Blanco" 
-                      name = "Boton-PDF" 
+                      name = "Boton-Generar" 
                       id = "Boton-Generar-PDF"
                       style = "max-width: 190px;font-size: 12pt;"
                       type="submit" 
@@ -871,6 +1242,8 @@ aria-hidden="true">
         $('#Dashboard-Global').css('display', 'none');
         $('.Blanco-Fondo').addClass('general_bg');
       })
+
+      var maxVal = <?php echo $arreglo['presupuesto_act'];?>
      
       /**
       * Presupuesto
@@ -883,32 +1256,45 @@ aria-hidden="true">
           return numeral(value).format('$ 0,0[.]00');
         }
       });
-      $("#exCapacitaciones").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [1000000, 70000000],formatter: function(value) {
-        return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+      $("#exCapacitaciones").slider({ 
+        id: "slider12c", 
+        step: 100000,
+        min: 0, 
+        max: <?php echo $arreglo['presupuesto_act'];?>, 
+        range: true, value: [5000000, maxVal * 0.96],
+        formatter: function(value) {
+        return numeral(value[0]).format('$ 0,0[.]00');
       } });
-      $("#exPapeleria").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [1000000, 70000000] ,formatter: function(value) {
-        return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+
+      $("#exPapeleria").slider({ 
+        id: "slider12c", 
+        step: 100000,
+        min: 0, 
+        max: <?php echo $arreglo['presupuesto_act'];?>, 
+        range: true, value: [5000000, maxVal * 0.96],
+        formatter: function(value) {
+        return numeral(value[0]).format('$ 0,0[.]00') ;
       } });
-      $("#exInfraestructura").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [1000000, 70000000] ,formatter: function(value) {
-        return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+      $("#exInfraestructura").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [5000000, maxVal * 0.96] ,formatter: function(value) {
+        return numeral(value[0]).format('$ 0,0[.]00')  ;
       } });
-      $("#exMobiliario").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [1000000, 70000000] ,formatter: function(value) {
-        return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+      $("#exMobiliario").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [5000000, maxVal * 0.96] ,formatter: function(value) {
+        return numeral(value[0]).format('$ 0,0[.]00')  ;
       } });
-      $("#exMateriales").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [1000000, 70000000] ,formatter: function(value) {
-        return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+      $("#exMateriales").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [5000000, maxVal * 0.96] ,formatter: function(value) {
+        return numeral(value[0]).format('$ 0,0[.]00')  ;
       } });
-      $("#exDesarrollo").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [1000000, 70000000] ,formatter: function(value) {
-        return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+      $("#exDesarrollo").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [5000000, maxVal * 0.96] ,formatter: function(value) {
+        return numeral(value[0]).format('$ 0,0[.]00')  ;
       } });
-      $("#exSalarios").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [1000000, 70000000] ,formatter: function(value) {
-        return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+      $("#exSalarios").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [5000000, maxVal * 0.96] ,formatter: function(value) {
+        return numeral(value[0]).format('$ 0,0[.]00')  ;
       } });
-      $("#exExperimentacion").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [1000000, 70000000] ,formatter: function(value) {
-        return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+      $("#exExperimentacion").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [5000000, maxVal * 0.96] ,formatter: function(value) {
+        return numeral(value[0]).format('$ 0,0[.]00')  ;
       } });
-      $("#exLicencias").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [1000000, 90000000] ,formatter: function(value) {
-        return numeral(value[0]).format('$ 0,0[.]00') + ' / '+numeral(value[1]).format('$ 0,0[.]00');
+      $("#exLicencias").slider({ id: "slider12c", step: 100000,min: 0, max: <?php echo $arreglo['presupuesto_act'];?>, range: true, value: [5000000, maxVal * 0.96] ,formatter: function(value) {
+        return numeral(value[0]).format('$ 0,0[.]00')  ;
       } });
 
     }); // Close JQuery noConflict

@@ -86,7 +86,7 @@
   </div>
 
 
-  <div class="Blanco-Fondo" style="padding-left: 240px;"> 
+  <div class="Blanco-Fondo" style="padding-left: 240px; background-image: url('../img/fondos/fondo.svg'); "> 
 
     <!--Ventana para crear proyectos-->
     <div id="Crear-Proyecto" class = "Caja-Texto-Blanco" style = "display:block">
@@ -128,7 +128,7 @@
 
           <div style = "width: 100%; margin-bottom: 40px" class = "row">
             <div class="col-sm-8">
-              <input id = "h1fac" class = "input-copy" value="http://luxapp002managinn.site/perfil_invitar.php?pr=<?php echo $p_id?>&rol=f">
+              <input id = "h1fac" class = "input-copy" value="http://luxapp002managinn.site/invitacion.php?pr=<?php echo $p_id?>&rol=f">
             </div>
             <div class="col-sm-4">
               <button onclick="funcCopiar()"
@@ -145,7 +145,7 @@
 
           <div style = "width: 100%;" class = "row">
             <div class="col-sm-8">
-              <input id = "h1col" class = "input-copy" value="http://luxapp002managinn.site/perfil_invitar.php?pr=<?php echo $p_id?>&rol=c">
+              <input id = "h1col" class = "input-copy" value="http://luxapp002managinn.site/invitacion.php?pr=<?php echo $p_id?>&rol=c">
             </div>
             <div class="col-sm-4">
               <button onclick="funcCopiar2()"

@@ -86,7 +86,7 @@
   </div>
 
 
-  <div class="Blanco-Fondo" style="padding-left: 240px;"> 
+  <div class="Blanco-Fondo" style="padding-left: 240px; background-image: url('../img/fondos/fondo.svg'); "> 
 
     <!--Ventana para crear proyectos-->
     <div id="Crear-Proyecto" class = "Caja-Texto-Blanco" style = "display:block">

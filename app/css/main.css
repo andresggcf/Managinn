@@ -36,6 +36,10 @@ html {
 img {
   max-width: 100%; }
 
+.img-fluid{
+  max-width: 60% !important;
+}
+
 .badge-azul {
   background-color: #17AEBF;
   color: #fff; }

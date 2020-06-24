@@ -21,7 +21,7 @@ include("header.php");
       <h1 class = "Texto-Grande Text-Center">¡Bienvenido, 
         <?php echo $nombre?>!</h1>
       
-        <p class = "Parrafo-Bienvenida Text-Center" style="color: white">A continuación, construiremos paso a paso 
+        <p class = "Parrafo-Bienvenida Text-Center" style="color: white;padding-right: 80px;padding-left: 80px;font-size: 16pt;">A continuación, construiremos paso a paso 
           tu sistema de innovación para que puedas gestionarlo en cuanto empiece
           a fluir la información.
         </p>

@@ -103,7 +103,14 @@
   </div>
 
 
-  <div class="Blanco-Fondo" style="padding-left: 240px;"> 
+  <div class="Blanco-Fondo" style="padding-left: 240px; background-image: <?php
+  if ($_SESSION['induccion'] == 0){
+    echo "none;";
+  }
+  else if ($_SESSION['induccion'] == 1){
+    echo "url('../img/fondos/fondo.svg');";
+  }
+  ?>"> 
 
     <!--Ventana cuando no hay proyectos-->
     <div id="Sin-Proyecto">

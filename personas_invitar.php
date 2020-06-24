@@ -83,7 +83,7 @@
     </div>  
   </div>
 
-  <div class="Blanco-Fondo" style="padding-left: 240px;"> 
+  <div class="Blanco-Fondo" style="padding-left: 240px; background-image: url('../img/fondos/fondo.svg'); "> 
 
 <!--Ventana para crear proyectos-->
   <div id="Crear-Proyecto" class = "Caja-Texto-Blanco" style = "display:block; height: 75%; width: 67%">
@@ -219,8 +219,8 @@ alert("El enlace fue copiado: " + copyText.value);
 function select(text) {
   numero += 1;
   console.log( "numero " + numero);
-  var texto1="http://luxapp002managinn.site/perfil_invitar.php?pr="+text+"&rol=f"
-  var texto2="http://luxapp002managinn.site/perfil_invitar.php?pr="+text+"&rol=c"
+  var texto1="http://luxapp002managinn.site/invitacion.php?pr="+text+"&rol=f"
+  var texto2="http://luxapp002managinn.site/invitacion.php?pr="+text+"&rol=c"
 
   if(numero % 2 == 0)
   {

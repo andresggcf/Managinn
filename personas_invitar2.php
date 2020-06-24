@@ -1,26 +1,14 @@
 <?php
   session_start();
-
-  $usuario_nombre = $_SESSION['name_post'];
-  $usuario_correo = $_SESSION['email_post'];
-  $usuario_rol = $_SESSION['role_post'];
-  $usuario_id = $_SESSION['id_usuario'];
-
+  
   $nombre = $_SESSION['name_post'];
   $correo = $_SESSION['email_post'];
   $rol = $_SESSION['role_post'];
 
-  $p_nombre = $_SESSION['proyecto_nombre'];
-  $p_fecha = $_SESSION['fecha_proyecto'];
-  $p_descripcion = $_SESSION['desc_proyecto'];
-  $p_id= $_SESSION['id_proyecto'];
-
-
-  
   include("header.php");
-?>
+  ?>
 
-<body style="background-color: #f6f7f9" class="panel_control1">
+<body class="global-view panel_control1">
   <div class="NavBar">
     <div class="Contenedor-Menu d-flex align-items-center justify-content-end">
       <a href="#">
@@ -48,7 +36,7 @@
             <img src="./img/iconos/Etiqueta-Dashboard.svg" alt="Dashboard" height="25px">
           </a>
           <a class="Icono-Menu-Perfil" href = "global.php">
-            <img src="./img/iconos/Etiqueta-Global.svg" alt="Global" height="25px">
+            <img  src="./img/iconos/Etiqueta-Global.svg" alt="Global" height="25px">
           </a>
           <a class="Icono-Menu-Perfil current" href = "personas.php">
             <img class="current-Icono" src="./img/iconos/Etiqueta-Personas.svg" alt="Personas" height="27px">
@@ -83,40 +71,64 @@
         </div>
       </div>
     </div>  
-  </div>
+  </div>    
 
-  <div class="Blanco-Fondo" style="padding-left: 240px; background-image: url('../img/fondos/fondo.svg'); "> 
-    <div class="container-fluid">
-      <div class="invitados row justify-content-center align-items-center" style="padding-top: 0px">
-        <div class="col-6">
-          <div class="body-popup box-shadow pb-5">
-            <div class="title text-center">
-              <div>
-                <h3 class="Text-Center Titulo Azul" style="font-size: 28pt">¡GRACIAS!</h3>
-                <p class="Subtitulo Text-Center Azul">Gracias por invitar a tu equipo a nuestra plataforma.
-                </p>
+    <div class="new-body general_bg">
+      <div class="container-fluid">
+        <div class="row justify-content-center align-items-center py-5">
+          <div class="col-8">
+            <div class="body-popup box-shadow ">
+              <div class="title text-center">
+                <h2>
+                  Tu equipo de trabajo
+                </h2>
+                <p>Enviaremos una invitación a esta(s) persona(s), recibirán acceso una vez se registren.</p>
               </div>
-              <p>Esta(s) persona(s) se añadirá(n) a tu lista en cuanto acepte(n)<br>la invitación y se una(n) a Managinn’</p>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-6  mt-3 mb-0 d-flex justify-content-around" >
-                <a class="btn btn-custom  btn-bg-red" href="con_invitacion2.php" style="padding: 10px 20px">Continuar</a>
+              <form action="personas_invitados.php">
+                <div class="row justify-content-center select_proyectos">
+                  <div class="form-group mb-3 col-5 my-3">
+                    <input class="form-control border-radius" type="email" name="email_invite" id="email_invite" placeholder="Email">
+                    <span class="required_email">*</span>
+                  </div>
+                  <div class="form-group mb-3 col-3 my-3">
+                    <select class="form-control border-radius" id="proyectos_convertidos2" >
+                      <option value="" disabled selected>Asignar rol</option>
+                      <option>Desarrollo</option>
+                      <option>Diseño</option>
+                      <option>Marketing</option>
+                      <option>Recursos</option>
+                    </select>
+                  </div> 
+                  <div class="w-100"></div>
+                  <div class="col-8 d-flex flex-column mt-3 mb-5">
+                    <a href="" class="invitar_mas">  Invitar a más personas</a>
+                    <a href="" class="seleccionar_lista"> Seleccionar desde tu lista</a>
+                  </div> 
               </div>
-              <div class="w-100"></div>
-                <div class="col-6 mt-0 mb-4">
-                  <small>¿Quiéres enviar otra? <a href="personas_invitar.php">Hazlo aquí</a></small>
+              <div class="row justify-content-center">
+                <div class="col-5 mt-5 mb-3 d-flex justify-content-around" >
+                <a class = "btn btn-custom btn-large Boton-a-Principal-Sin-Fondo" 
+                    name = "Boton-Proyecto" 
+                    id = "Boton-Omitir-Preferencias"
+                    href="personas_panel_control.php"
+                    >Omitir</a>
+                  <input class = "Boton-a-Principal-Fondo-Blanco Boton-Creacion-Proyecto" 
+                    type="submit" 
+                    name="Boton-Continuar"
+                    value="Enviar"
+                    >
                 </div>
               </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
+      <!--container-fluid-->
     </div>
-  </div>
-
-<?php
-include("footer.php");
-?>
 
 
     
+<?php
+include("footer.php");
+?>
