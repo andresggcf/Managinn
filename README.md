@@ -1,5 +1,5 @@
 # Proyecto de Managinn
-Proyecto de Grado de aquel ser que me tormenta los fines de semana.
+Desarrollo de aplicación web de un entorno digital de trabajo para facilitar la gestión de Sistemas para directores de proyectos de inovación.
 
 ## Instalar servidor local:
 * Instalar **MAMP** que se encuentra en este [enlace](https://www.mamp.info/en/downloads/) 
